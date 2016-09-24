@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">五十音图</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="other">其他</string>
+    <string name="jp_start">五十音图</string>
+    <string name="translate">翻译</string>
+    <string name="pixiv">Pixiv</string>
+    <string name="setting">设置</string>
+    <string name="about">关于</string>
+</resources>
