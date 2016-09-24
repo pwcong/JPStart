@@ -2,7 +2,9 @@ package me.pwcong.jpstart.component.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import butterknife.ButterKnife;
 import me.pwcong.jpstart.manager.ActivityManager;
@@ -24,14 +26,15 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        initVariable();
+        initVariable(savedInstanceState);
+
         doAction();
 
     }
 
     protected abstract int setView();
 
-    protected abstract void initVariable();
+    protected abstract void initVariable(@Nullable Bundle savedInstanceState);
 
     protected abstract void doAction();
 
@@ -42,4 +45,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         ActivityManager.getInstance().unregister(this);
 
     }
+
+    public void showSnackBar(View view,String msg){
+
+        Snackbar.make(view,msg,Snackbar.LENGTH_SHORT).show();
+
+    }
+
 }

@@ -30,6 +30,7 @@ dependencies {
 
     compile 'com.jakewharton:butterknife:8.4.0'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
+    compile 'com.github.pwcong:RadioButtonView:v1.0.2'
 
 
 
