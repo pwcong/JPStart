@@ -12,10 +12,13 @@ import android.util.Log;
 import android.view.MenuItem;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.manager.ActivityManager;
+import me.pwcong.jpstart.manager.DBManager;
+import me.pwcong.jpstart.mvp.bean.JPStartItem;
 import me.pwcong.jpstart.mvp.presenter.BasePresenter;
 import me.pwcong.jpstart.mvp.presenter.MainActivityPresenterImpl;
 import me.pwcong.jpstart.mvp.view.BaseView;
@@ -39,7 +42,7 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
     private BasePresenter.MainActivityPresenter presenter;
 
     @Override
-    protected int setView() {
+    protected int getViewId() {
         return R.layout.activity_main;
     }
 
@@ -100,6 +103,8 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
     @Override
     protected void doAction() {
 
+        List<JPStartItem> query = DBManager.getInstance().query();
+        Log.i(TAG, "doAction: "+query);
 
         Log.i(TAG, "doAction: OK");
     }

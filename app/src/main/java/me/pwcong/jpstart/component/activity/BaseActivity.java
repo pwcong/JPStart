@@ -22,7 +22,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         ActivityManager.getInstance().register(this);
 
-        setContentView(setView());
+        setContentView(getViewId());
 
         ButterKnife.bind(this);
 
@@ -32,7 +32,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     }
 
-    protected abstract int setView();
+    protected abstract int getViewId();
 
     protected abstract void initVariable(@Nullable Bundle savedInstanceState);
 

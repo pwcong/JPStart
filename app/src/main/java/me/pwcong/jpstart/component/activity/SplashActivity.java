@@ -10,7 +10,7 @@ import android.support.annotation.Nullable;
 public class SplashActivity extends BaseActivity {
 
     @Override
-    protected int setView() {
+    protected int getViewId() {
         return 0;
     }
 

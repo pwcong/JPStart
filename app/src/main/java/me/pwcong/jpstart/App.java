@@ -2,6 +2,8 @@ package me.pwcong.jpstart;
 
 import android.app.Application;
 
+import me.pwcong.jpstart.manager.DBManager;
+
 /**
  * Created by Pwcong on 2016/9/24.
  */
@@ -13,7 +15,11 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
         instance=this;
+
+        DBManager.getInstance().initDBFile(this);
+
     }
 
     public synchronized static App getInstance(){

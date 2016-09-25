@@ -7,8 +7,10 @@ package me.pwcong.jpstart.conf;
 public class Constants {
 
     private Constants(){
+        throw new RuntimeException("T_T");
     }
 
+    public final static String PACKAGENAME="me.pwcong.jpstart";
 
 
 
