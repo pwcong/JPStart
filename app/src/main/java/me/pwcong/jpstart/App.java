@@ -19,7 +19,7 @@ public class App extends Application {
 
         instance=this;
 
-        DBUtils.copyFile(this, Constants.DB_PATH,Constants.DB_NAME);
+        DBUtils.copyFileFromAssets(this, Constants.DB_NAME,Constants.DB_PATH,Constants.DB_NAME);
 
     }
 

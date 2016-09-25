@@ -21,7 +21,7 @@ public class DBUtils {
         throw new RuntimeException("O.O");
     }
 
-    public static void copyFile(Context context,String path,String fileName){
+    public static void copyFileFromAssets(Context context, String assetName,String path, String fileName){
 
         File dir = new File(path);
         if (!dir.exists()){
@@ -32,7 +32,7 @@ public class DBUtils {
             InputStream is;
             OutputStream os;
             try {
-                is = context.getResources().getAssets().open(fileName);
+                is = context.getResources().getAssets().open(assetName);
                 os = new FileOutputStream(dbFile);
                 byte[] buffer = new byte[BUFFER_SIZE];
                 int length;

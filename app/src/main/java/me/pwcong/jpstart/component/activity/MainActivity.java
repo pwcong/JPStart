@@ -104,7 +104,11 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
     protected void doAction() {
 
         List<JPStartItem> query = DBManager.getInstance().query();
-        Log.i(TAG, "doAction: "+query);
+        for(JPStartItem item:query){
+
+            Log.i(TAG, "doAction: "+item.toString());
+
+        }
 
         Log.i(TAG, "doAction: OK");
     }
