@@ -13,6 +13,8 @@ public abstract class BasePresenter<T> {
     }
 
     public interface MainActivityPresenter{
+        void initMainActivity();
+        void onRadioButtonChanged(int position);
         void onNavigationItemSelected(int id);
     }
 

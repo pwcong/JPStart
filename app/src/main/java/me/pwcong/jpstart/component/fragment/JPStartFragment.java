@@ -1,6 +1,5 @@
 package me.pwcong.jpstart.component.fragment;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
@@ -26,7 +25,7 @@ public class JPStartFragment extends BaseFragment {
     public static JPStartFragment newInstance(int type){
 
         Bundle argument=new Bundle();
-        argument.putInt(Constants.TYPE,type);
+        argument.putInt(Constants.TYPE_YIN,type);
 
         JPStartFragment fragment=new JPStartFragment();
         fragment.setArguments(argument);
@@ -37,7 +36,6 @@ public class JPStartFragment extends BaseFragment {
 
     @Override
     protected void initVariable(@Nullable Bundle savedInstanceState) {
-
 
 
     }

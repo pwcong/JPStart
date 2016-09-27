@@ -5,12 +5,15 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.view.View;
 
 import java.util.List;
 
 import butterknife.BindView;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.adapter.JPStartTabPagerAdapter;
+import me.pwcong.jpstart.conf.Constants;
+import me.pwcong.jpstart.manager.SharedPreferenceManager;
 import me.pwcong.jpstart.mvp.bean.JPTab;
 import me.pwcong.jpstart.mvp.presenter.BasePresenter;
 import me.pwcong.jpstart.mvp.presenter.JPStartTabFragmentPresenterImpl;
@@ -29,7 +32,7 @@ public class JPStartTabFragment extends BaseFragment implements BaseView.JPStart
     @BindView(R.id.view_pager)
     ViewPager mViewPager;
 
-    BasePresenter.JPStartTabFragmentPresenter presenter;
+    private BasePresenter.JPStartTabFragmentPresenter presenter;
 
 
     @Override
@@ -42,15 +45,41 @@ public class JPStartTabFragment extends BaseFragment implements BaseView.JPStart
 
         presenter=new JPStartTabFragmentPresenterImpl(this);
 
-        mTabLayout.setupWithViewPager(mViewPager);
+        initTabLayout();
+        initViewPager();
 
     }
+
+    private void initTabLayout(){
+        mTabLayout.setupWithViewPager(mViewPager);
+    }
+
+    private void initViewPager(){
+
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                SharedPreferenceManager.getInstance().putInt(Constants.CURRENT_ITEM,position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
+    }
+
 
     @Override
     protected void doAction() {
 
         presenter.initJPStartTabFragment();
-
         Log.i(TAG, "doAction: OK");
 
     }
@@ -60,5 +89,10 @@ public class JPStartTabFragment extends BaseFragment implements BaseView.JPStart
 
         mViewPager.setAdapter(new JPStartTabPagerAdapter(getChildFragmentManager(),data));
 
+    }
+
+    @Override
+    public void scrollViewPager(int position) {
+        mViewPager.setCurrentItem(position,true);
     }
 }

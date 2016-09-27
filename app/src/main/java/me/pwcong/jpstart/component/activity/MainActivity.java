@@ -10,22 +10,21 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import me.pwcong.jpstart.R;
+import me.pwcong.jpstart.component.fragment.JPStartTabFragment;
 import me.pwcong.jpstart.manager.ActivityManager;
-import me.pwcong.jpstart.manager.DBManager;
-import me.pwcong.jpstart.mvp.bean.JPItem;
 import me.pwcong.jpstart.mvp.presenter.BasePresenter;
 import me.pwcong.jpstart.mvp.presenter.MainActivityPresenterImpl;
 import me.pwcong.jpstart.mvp.view.BaseView;
 import me.pwcong.jpstart.utils.ResourceUtils;
 import me.pwcong.radiobuttonview.view.RadioButtonView;
 
-public class MainActivity extends BaseActivity implements BaseView.MainActivityView, NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends BaseActivity implements BaseView.MainActivityView {
 
     private final String TAG=getClass().getSimpleName();
 
@@ -72,7 +71,7 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
         mRadioButtonView.setOnRadioButtonChangedListener(new RadioButtonView.OnRadioButtonChangedListener() {
             @Override
             public void onRadioButtonChanged(String s, int i) {
-                showSnackBar(mToolbar,s);
+                presenter.onRadioButtonChanged(i);
             }
         });
 
@@ -94,7 +93,16 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
 
     private void initNavigationView(){
         mNavigationView = (NavigationView) findViewById(R.id.nav_view);
-        mNavigationView.setNavigationItemSelectedListener(this);
+        mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                presenter.onNavigationItemSelected(item.getItemId());
+                Log.i(TAG, "onNavigationItemSelected: OK");
+
+                return true;
+            }
+        });
         mNavigationView.setCheckedItem(R.id.item_jpstart);
 
         Log.i(TAG, "initNavigationView: OK");
@@ -103,12 +111,7 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
     @Override
     protected void doAction() {
 
-        List<JPItem> query = DBManager.getInstance().query();
-        for(JPItem item:query){
-
-            Log.i(TAG, "doAction: "+item.toString());
-
-        }
+        presenter.initMainActivity();
 
         Log.i(TAG, "doAction: OK");
     }
@@ -146,6 +149,9 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
     @Override
     public void switchJPStart() {
 
+        mRadioButtonView.setVisibility(View.VISIBLE);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_main,new JPStartTabFragment()).commit();
 
         Log.i(TAG, "switchJPStart: OK");
     }
@@ -153,12 +159,14 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
     @Override
     public void switchTranslate() {
 
+        mRadioButtonView.setVisibility(View.GONE);
         Log.i(TAG, "switchTranslate: OK");
     }
 
     @Override
     public void switchPixiv() {
 
+        mRadioButtonView.setVisibility(View.GONE);
         Log.i(TAG, "switchPixiv: OK");
     }
 
@@ -174,14 +182,6 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
         Log.i(TAG, "switchAbout: OK");
     }
 
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-        presenter.onNavigationItemSelected(item.getItemId());
-        Log.i(TAG, "onNavigationItemSelected: OK");
-        return true;
-    }
 
     private ArrayList<String> getRadioButtonOptions(){
 

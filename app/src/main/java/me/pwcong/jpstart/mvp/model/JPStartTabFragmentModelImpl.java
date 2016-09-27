@@ -19,11 +19,13 @@ public class JPStartTabFragmentModelImpl implements BaseModel.JPStartTabFragment
     public List<JPTab> getData() {
 
         List<JPTab> list=new ArrayList<>();
-        String hiragana = ResourceUtils.getString(App.getInstance(), R.string.hiragana);
-        String katakana = ResourceUtils.getString(App.getInstance(), R.string.katakana);
+        String qingyin = ResourceUtils.getString(App.getInstance(), R.string.qingyin);
+        String zhuoyin = ResourceUtils.getString(App.getInstance(), R.string.zhuoyin);
+        String aoyin = ResourceUtils.getString(App.getInstance(), R.string.aoyin);
 
-        list.add(new JPTab(Constants.TYPE_HIRAGANA,hiragana));
-        list.add(new JPTab(Constants.TYPE_KATAKANA,katakana));
+        list.add(new JPTab(Constants.TYPE_QINGYIN,qingyin));
+        list.add(new JPTab(Constants.TYPE_ZHUOYIN,zhuoyin));
+        list.add(new JPTab(Constants.TYPE_AOYIN,aoyin));
 
         return list;
     }

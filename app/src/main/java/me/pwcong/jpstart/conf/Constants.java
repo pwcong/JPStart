@@ -24,10 +24,20 @@ public class Constants {
             + Environment.getDataDirectory().getAbsolutePath() + File.separator
             + PACKAGE_NAME + File.separator + "databases" + File.separator;
 
-    public static final String TYPE="type";
+    public static final String TYPE_YIN = "type_yin";
+    public static final int TYPE_QINGYIN = 1;
+    public static final int TYPE_ZHUOYIN = 2;
+    public static final int TYPE_AOYIN = 3;
 
+    public static final String TYPE_MIN = "type_min";
     public static final int TYPE_HIRAGANA = 666;
     public static final int TYPE_KATAKANA = 999;
+
+    public static final String PREF_NAME = "pref_jpstart";
+
+    public static final String CURRENT_ITEM = "current_item";
+
+
 
 
 

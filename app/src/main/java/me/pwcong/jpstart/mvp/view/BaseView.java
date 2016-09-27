@@ -23,7 +23,7 @@ public interface BaseView<T> {
     }
 
     interface JPStartTabFragmentView extends BaseView<JPTab>{
-
+        void scrollViewPager(int position);
     }
 
 
