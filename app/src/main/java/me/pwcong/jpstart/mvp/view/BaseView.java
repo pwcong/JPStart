@@ -2,6 +2,7 @@ package me.pwcong.jpstart.mvp.view;
 
 import java.util.List;
 
+import me.pwcong.jpstart.mvp.bean.JPItem;
 import me.pwcong.jpstart.mvp.bean.JPTab;
 
 /**
@@ -24,6 +25,12 @@ public interface BaseView<T> {
 
     interface JPStartTabFragmentView extends BaseView<JPTab>{
         void scrollViewPager(int position);
+    }
+
+    interface JPStartFragmentView extends BaseView<JPItem>{
+
+        void setRecyclerView(int type);
+
     }
 
 
