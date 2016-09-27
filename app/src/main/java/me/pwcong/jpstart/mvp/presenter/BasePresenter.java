@@ -8,15 +8,20 @@ public abstract class BasePresenter<T> {
 
     public final T view;
 
-    BasePresenter(T view){
+    public BasePresenter(T view){
         this.view=view;
     }
 
     public interface MainActivityPresenter{
-
         void onNavigationItemSelected(int id);
+    }
+
+    public interface JPStartTabFragmentPresenter{
+
+        void initJPStartTabFragment();
 
     }
+
 
 
 

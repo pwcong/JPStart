@@ -24,6 +24,10 @@ public class Constants {
             + Environment.getDataDirectory().getAbsolutePath() + File.separator
             + PACKAGE_NAME + File.separator + "databases" + File.separator;
 
+    public static final String TYPE="type";
+
+    public static final int TYPE_HIRAGANA = 666;
+    public static final int TYPE_KATAKANA = 999;
 
 
 

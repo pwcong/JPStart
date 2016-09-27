@@ -18,7 +18,7 @@ import butterknife.BindView;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.manager.ActivityManager;
 import me.pwcong.jpstart.manager.DBManager;
-import me.pwcong.jpstart.mvp.bean.JPStartItem;
+import me.pwcong.jpstart.mvp.bean.JPItem;
 import me.pwcong.jpstart.mvp.presenter.BasePresenter;
 import me.pwcong.jpstart.mvp.presenter.MainActivityPresenterImpl;
 import me.pwcong.jpstart.mvp.view.BaseView;
@@ -103,8 +103,8 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
     @Override
     protected void doAction() {
 
-        List<JPStartItem> query = DBManager.getInstance().query();
-        for(JPStartItem item:query){
+        List<JPItem> query = DBManager.getInstance().query();
+        for(JPItem item:query){
 
             Log.i(TAG, "doAction: "+item.toString());
 

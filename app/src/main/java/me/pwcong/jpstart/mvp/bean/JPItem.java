@@ -4,18 +4,18 @@ package me.pwcong.jpstart.mvp.bean;
  * Created by Pwcong on 2016/9/25.
  */
 
-public class JPStartItem {
+public class JPItem {
 
     private int id;
     private int row;
-    private int column;;
+    private int column;
     private String hiragana;
     private String katakana;
     private String rome;
     private int category;
     private boolean existed;
 
-    public JPStartItem(int id, int row, int column, String hiragana, String katakana, String rome, int category, boolean existed) {
+    public JPItem(int id, int row, int column, String hiragana, String katakana, String rome, int category, boolean existed) {
         this.id = id;
         this.row = row;
         this.column = column;
@@ -28,7 +28,7 @@ public class JPStartItem {
 
     @Override
     public String toString() {
-        return "JPStartItem{" +
+        return "JPItem{" +
                 "id=" + id +
                 ", row=" + row +
                 ", column=" + column +
