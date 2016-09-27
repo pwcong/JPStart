@@ -9,6 +9,7 @@ import java.util.List;
 
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.mvp.bean.JPItem;
+import me.pwcong.jpstart.mvp.bean.JPItemWithViewType;
 
 /**
  * Created by Pwcong on 2016/9/27.
@@ -16,9 +17,9 @@ import me.pwcong.jpstart.mvp.bean.JPItem;
 
 public class JPStartRecyclerAdapter extends RecyclerView.Adapter<JPStartRecyclerAdapter.ViewHolder>{
 
-    List<JPItem> list;
+    List<JPItemWithViewType> list;
 
-    public JPStartRecyclerAdapter(List<JPItem> list) {
+    public JPStartRecyclerAdapter(List<JPItemWithViewType> list) {
         this.list = list;
     }
 

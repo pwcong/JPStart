@@ -12,6 +12,7 @@ import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.adapter.JPStartRecyclerAdapter;
 import me.pwcong.jpstart.conf.Constants;
 import me.pwcong.jpstart.mvp.bean.JPItem;
+import me.pwcong.jpstart.mvp.bean.JPItemWithViewType;
 import me.pwcong.jpstart.mvp.presenter.BasePresenter;
 import me.pwcong.jpstart.mvp.presenter.JPStartFragmentPresenterImpl;
 import me.pwcong.jpstart.mvp.view.BaseView;
@@ -62,7 +63,7 @@ public class JPStartFragment extends BaseFragment implements BaseView.JPStartFra
     }
 
     @Override
-    public void setData(List<JPItem> data) {
+    public void setData(List<JPItemWithViewType> data) {
 
         mRecyclerView.setAdapter(new JPStartRecyclerAdapter(data));
 
