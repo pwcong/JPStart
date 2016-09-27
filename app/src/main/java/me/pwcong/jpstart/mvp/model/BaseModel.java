@@ -3,6 +3,7 @@ package me.pwcong.jpstart.mvp.model;
 import java.util.List;
 
 import me.pwcong.jpstart.mvp.bean.JPItem;
+import me.pwcong.jpstart.mvp.bean.JPItemWithViewType;
 import me.pwcong.jpstart.mvp.bean.JPTab;
 
 /**
@@ -17,7 +18,7 @@ public interface BaseModel<T> {
     }
 
     interface JPStartFragmentModel {
-        List<JPItem> getData(int type);
+        List<JPItemWithViewType> getData(int type);
     }
 
 

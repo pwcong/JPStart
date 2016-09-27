@@ -33,9 +33,14 @@ public class Constants {
     public static final int TYPE_HIRAGANA = 666;
     public static final int TYPE_KATAKANA = 999;
 
+    public static final int TYPE_HEADER = 111;
+    public static final int TYPE_ITEM = 222;
+
     public static final String PREF_NAME = "pref_jpstart";
 
     public static final String CURRENT_ITEM = "current_item";
+
+    public static final int ROW_FIRST = 1;
 
 
 

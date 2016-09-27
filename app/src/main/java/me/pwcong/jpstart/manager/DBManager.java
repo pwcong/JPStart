@@ -20,6 +20,9 @@ public class DBManager {
     private static DBManager instance = null;
 
     private static List<JPItem> query = null;
+    private static List<JPItem> qingYin = null;
+    private static List<JPItem> zhuoYin = null;
+    private static List<JPItem> aoYin = null;
 
     private DBManager() {
     }
@@ -60,6 +63,60 @@ public class DBManager {
 
         return query;
     }
+
+    public synchronized List<JPItem> getQingYin(){
+
+        if(qingYin==null){
+            List<JPItem> query = query();
+            qingYin=new ArrayList<>();
+            for(JPItem item:query){
+
+                if(item.getCategory()==Constants.TYPE_QINGYIN){
+                    qingYin.add(item);
+                }
+
+            }
+
+        }
+
+        return qingYin;
+    }
+    public synchronized List<JPItem> getZhuoYin(){
+
+        if(zhuoYin==null){
+            List<JPItem> query = query();
+            zhuoYin=new ArrayList<>();
+            for(JPItem item:query){
+
+                if(item.getCategory()==Constants.TYPE_ZHUOYIN){
+                    zhuoYin.add(item);
+                }
+
+            }
+
+        }
+
+        return zhuoYin;
+    }
+
+    public synchronized List<JPItem> getAoYin(){
+
+        if(aoYin==null){
+            List<JPItem> query = query();
+            aoYin=new ArrayList<>();
+            for(JPItem item:query){
+
+                if(item.getCategory()==Constants.TYPE_AOYIN){
+                    aoYin.add(item);
+                }
+
+            }
+
+        }
+        return aoYin;
+    }
+
+
 
 
 }

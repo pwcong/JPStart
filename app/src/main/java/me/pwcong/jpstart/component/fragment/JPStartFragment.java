@@ -3,14 +3,13 @@ package me.pwcong.jpstart.component.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import java.util.List;
 
 import butterknife.BindView;
 import me.pwcong.jpstart.R;
-import me.pwcong.jpstart.adapter.SimpleRecyclerAdapter;
+import me.pwcong.jpstart.adapter.JPStartRecyclerAdapter;
 import me.pwcong.jpstart.conf.Constants;
 import me.pwcong.jpstart.mvp.bean.JPItem;
 import me.pwcong.jpstart.mvp.presenter.BasePresenter;
@@ -65,7 +64,7 @@ public class JPStartFragment extends BaseFragment implements BaseView.JPStartFra
     @Override
     public void setData(List<JPItem> data) {
 
-        mRecyclerView.setAdapter(new SimpleRecyclerAdapter(data));
+        mRecyclerView.setAdapter(new JPStartRecyclerAdapter(data));
 
     }
 
