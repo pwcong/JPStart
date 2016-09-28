@@ -29,7 +29,14 @@ public class Constants {
     public static final int TYPE_ZHUOYIN = 2;
     public static final int TYPE_AOYIN = 3;
 
-    public static final String TYPE_MIN = "type_min";
+    public static final int ROW_QINGYIN = 10;
+    public static final int COLUMN_QINGYIN = 5;
+    public static final int ROW_ZHUOYIN = 5;
+    public static final int COLUMN_ZHUOYIN = 5;
+    public static final int ROW_AOYIN = 11;
+    public static final int COLUMN_AOYIN = 3;
+
+    public static final String TYPE_MING = "type_min";
     public static final int TYPE_HIRAGANA = 666;
     public static final int TYPE_KATAKANA = 999;
 

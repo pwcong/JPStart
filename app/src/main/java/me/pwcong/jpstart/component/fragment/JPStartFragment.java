@@ -11,7 +11,6 @@ import butterknife.BindView;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.adapter.JPStartRecyclerAdapter;
 import me.pwcong.jpstart.conf.Constants;
-import me.pwcong.jpstart.mvp.bean.JPItem;
 import me.pwcong.jpstart.mvp.bean.JPItemWithViewType;
 import me.pwcong.jpstart.mvp.presenter.BasePresenter;
 import me.pwcong.jpstart.mvp.presenter.JPStartFragmentPresenterImpl;
@@ -74,13 +73,15 @@ public class JPStartFragment extends BaseFragment implements BaseView.JPStartFra
 
         switch (type){
             case Constants.TYPE_QINGYIN:
-            case Constants.TYPE_ZHUOYIN:
-                RecyclerView.LayoutManager layoutManager1=new GridLayoutManager(getContext(),5);
+                RecyclerView.LayoutManager layoutManager1=new GridLayoutManager(getContext(),Constants.COLUMN_QINGYIN+1);
                 mRecyclerView.setLayoutManager(layoutManager1);
+            case Constants.TYPE_ZHUOYIN:
+                RecyclerView.LayoutManager layoutManager2=new GridLayoutManager(getContext(),Constants.COLUMN_ZHUOYIN+1);
+                mRecyclerView.setLayoutManager(layoutManager2);
                 break;
             case Constants.TYPE_AOYIN:
-                RecyclerView.LayoutManager layoutManager2=new GridLayoutManager(getContext(),3);
-                mRecyclerView.setLayoutManager(layoutManager2);
+                RecyclerView.LayoutManager layoutManager3=new GridLayoutManager(getContext(),Constants.COLUMN_AOYIN+1);
+                mRecyclerView.setLayoutManager(layoutManager3);
                 break;
             default:break;
         }

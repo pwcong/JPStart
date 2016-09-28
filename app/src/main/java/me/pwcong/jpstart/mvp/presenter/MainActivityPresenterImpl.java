@@ -27,10 +27,10 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
         switch (position){
 
             case 0:
-                SharedPreferenceManager.getInstance().putInt(Constants.TYPE_MIN,Constants.TYPE_HIRAGANA);
+                SharedPreferenceManager.getInstance().putInt(Constants.TYPE_MING,Constants.TYPE_HIRAGANA);
                 break;
             case 1:
-                SharedPreferenceManager.getInstance().putInt(Constants.TYPE_MIN,Constants.TYPE_KATAKANA);
+                SharedPreferenceManager.getInstance().putInt(Constants.TYPE_MING,Constants.TYPE_KATAKANA);
                 break;
             default:break;
         }

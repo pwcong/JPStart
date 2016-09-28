@@ -1,6 +1,7 @@
 package me.pwcong.jpstart.adapter;
 
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -8,6 +9,8 @@ import android.widget.TextView;
 import java.util.List;
 
 import me.pwcong.jpstart.R;
+import me.pwcong.jpstart.conf.Constants;
+import me.pwcong.jpstart.manager.SharedPreferenceManager;
 import me.pwcong.jpstart.mvp.bean.JPItem;
 import me.pwcong.jpstart.mvp.bean.JPItemWithViewType;
 
@@ -25,25 +28,43 @@ public class JPStartRecyclerAdapter extends RecyclerView.Adapter<JPStartRecycler
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return null;
+
+        View view;
+
+        if(viewType== Constants.TYPE_HEADER) {
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_jpitem_header,parent,false);
+        }
+        else {
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_jpitem,parent,false);
+        }
+        return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
+        JPItemWithViewType itemWithViewType = list.get(position);
+
+        if(SharedPreferenceManager.getInstance().getInt(Constants.TYPE_MING,0)==Constants.TYPE_HIRAGANA){
+            holder.tv_jiaming.setText(itemWithViewType.getItem().getHiragana());
+        }else {
+            holder.tv_jiaming.setText(itemWithViewType.getItem().getKatakana());
+        }
+
+        holder.tv_rome.setText(itemWithViewType.getItem().getRome());
+        holder.item=itemWithViewType.getItem();
+
+
     }
 
     @Override
     public int getItemViewType(int position) {
-
-
-
-        return super.getItemViewType(position);
+        return list.get(position).getViewType();
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return list.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{

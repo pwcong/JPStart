@@ -15,8 +15,6 @@ import me.pwcong.jpstart.mvp.bean.JPItem;
 
 public class DBManager {
 
-    private final String TAG=getClass().getSimpleName();
-
     private static DBManager instance = null;
 
     private static List<JPItem> query = null;
@@ -63,6 +61,20 @@ public class DBManager {
 
         return query;
     }
+
+    public synchronized List<JPItem> getYin(int type_yin){
+
+        switch (type_yin){
+
+            case Constants.TYPE_QINGYIN:return getQingYin();
+            case Constants.TYPE_ZHUOYIN:return getZhuoYin();
+            case Constants.TYPE_AOYIN:return getAoYin();
+            default:return null;
+        }
+
+    }
+
+
 
     public synchronized List<JPItem> getQingYin(){
 

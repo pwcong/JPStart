@@ -17,4 +17,7 @@
     <string name="zhuoyin">浊音</string>
     <string name="aoyin">拗音</string>
 
+    <string name="row">行</string>
+    <string name="column">列</string>
+
 </resources>
