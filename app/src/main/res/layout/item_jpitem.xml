@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_margin="@dimen/item_margin"
-    android:background="@drawable/selector_jpitem"
-    android:orientation="vertical"
     android:layout_width="match_parent"
+    android:layout_height="@dimen/item_height"
+    android:layout_margin="@dimen/item_margin"
+    android:orientation="vertical"
     android:gravity="center"
-    android:layout_height="@dimen/item_height">
+    android:background="@drawable/selector_jpitem">
 
     <TextView
-        android:textSize="@dimen/item_text_size"
         android:id="@+id/tv_jiaming"
-        android:textAppearance="@style/TextAppearance.AppCompat"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/item_text_size"
+        android:textAppearance="@style/TextAppearance.AppCompat"/>
 
     <TextView
-        android:textAppearance="@style/TextAppearance.AppCompat"
         android:id="@+id/tv_rome"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat"/>
 
 </LinearLayout>

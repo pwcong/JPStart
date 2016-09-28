@@ -16,6 +16,12 @@ public class ResourceUtils {
         return context.getResources().getString(resId);
     }
 
+    public static float getDimension(Context context,int resId){
+
+        return context.getResources().getDimension(resId);
+
+    }
+
 
 
 }

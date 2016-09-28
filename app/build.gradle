@@ -30,8 +30,8 @@ dependencies {
 
     compile 'com.jakewharton:butterknife:8.4.0'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
-    compile 'com.github.pwcong:RadioButtonView:v1.0.2'
-
-
+    compile 'com.github.pwcong:RadioButtonView:v1.0.3'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'io.reactivex:rxjava:1.1.6'
 
 }

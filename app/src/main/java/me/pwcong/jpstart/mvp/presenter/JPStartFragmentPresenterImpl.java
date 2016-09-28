@@ -1,14 +1,22 @@
 package me.pwcong.jpstart.mvp.presenter;
 
+import android.util.Log;
+
+import java.util.List;
+
+import me.pwcong.jpstart.mvp.bean.JPItemWithViewType;
 import me.pwcong.jpstart.mvp.model.BaseModel;
 import me.pwcong.jpstart.mvp.model.JPStartFragmentModelImpl;
 import me.pwcong.jpstart.mvp.view.BaseView;
+import rx.Subscriber;
 
 /**
  * Created by Pwcong on 2016/9/27.
  */
 
 public class JPStartFragmentPresenterImpl extends BasePresenter<BaseView.JPStartFragmentView> implements BasePresenter.JPStartFragmentPresenter {
+
+    private final String TAG=getClass().getSimpleName();
 
     BaseModel.JPStartFragmentModel model;
 
@@ -22,7 +30,23 @@ public class JPStartFragmentPresenterImpl extends BasePresenter<BaseView.JPStart
     public void initJPStartFragment(int type) {
 
         view.setRecyclerView(type);
-        view.setData(model.getData(type));
+        model.getData(type, new Subscriber<List<JPItemWithViewType>>() {
+            @Override
+            public void onCompleted() {
+                Log.i(TAG, "onCompleted: OK");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                Log.i(TAG, "onError: OK");
+            }
+
+            @Override
+            public void onNext(List<JPItemWithViewType> list) {
+                view.setData(list);
+                Log.i(TAG, "onNext: OK");
+            }
+        });
 
     }
 }

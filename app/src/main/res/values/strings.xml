@@ -1,23 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">五十音图</string>
-
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-
-    <string name="other">其他</string>
-    <string name="jp_start">五十音图</string>
-    <string name="translate">翻译</string>
-    <string name="pixiv">Pixiv</string>
-    <string name="setting">设置</string>
-    <string name="about">关于</string>
-    <string name="hiragana">平假名</string>
-    <string name="katakana">片假名</string>
-
-    <string name="qingyin">清音</string>
-    <string name="zhuoyin">浊音</string>
-    <string name="aoyin">拗音</string>
-
-    <string name="row">行</string>
-    <string name="column">列</string>
-
+	<string name="other">其他</string>
+	<string name="zhuoyin">浊音</string>
+	<string name="hiragana">平假名</string>
+	<string name="qingyin">清音</string>
+	<string name="about">关于</string>
+	<string name="column">列</string>
+	<string name="navigation_drawer_open">Open navigation drawer</string>
+	<string name="translate">翻译</string>
+	<string name="setting">设置</string>
+	<string name="app_name">五十音图</string>
+	<string name="jp_start">五十音图</string>
+	<string name="pixiv">Pixiv</string>
+	<string name="navigation_drawer_close">Close navigation drawer</string>
+	<string name="katakana">片假名</string>
+	<string name="aoyin">拗音</string>
+	<string name="row">行</string>
 </resources>

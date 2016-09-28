@@ -5,6 +5,7 @@ import java.util.List;
 import me.pwcong.jpstart.mvp.bean.JPItem;
 import me.pwcong.jpstart.mvp.bean.JPItemWithViewType;
 import me.pwcong.jpstart.mvp.bean.JPTab;
+import rx.Subscriber;
 
 /**
  * Created by Pwcong on 2016/9/24.
@@ -18,7 +19,7 @@ public interface BaseModel<T> {
     }
 
     interface JPStartFragmentModel {
-        List<JPItemWithViewType> getData(int type);
+        void getData(int type, Subscriber<List<JPItemWithViewType>> subscriber);
     }
 
 

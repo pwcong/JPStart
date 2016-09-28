@@ -33,6 +33,8 @@ public class JPStartRecyclerAdapter extends RecyclerView.Adapter<JPStartRecycler
 
         if(viewType== Constants.TYPE_HEADER) {
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_jpitem_header,parent,false);
+        }else if (viewType==Constants.TYPE_ITEM_DISABLE){
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_jpitem_disable,parent,false);
         }
         else {
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_jpitem,parent,false);
