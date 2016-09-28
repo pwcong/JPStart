@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
+
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.2"
@@ -33,5 +34,7 @@ dependencies {
     compile 'com.github.pwcong:RadioButtonView:v1.0.3'
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:1.1.6'
+
+    compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:2.0.1'
 
 }

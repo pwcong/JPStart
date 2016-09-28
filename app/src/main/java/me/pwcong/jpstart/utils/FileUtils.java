@@ -13,11 +13,11 @@ import java.io.OutputStream;
  * Created by Pwcong on 2016/9/26.
  */
 
-public class DBUtils {
+public class FileUtils {
 
     public static final int BUFFER_SIZE = 1024;
 
-    private DBUtils(){
+    private FileUtils(){
         throw new RuntimeException("O.O");
     }
 

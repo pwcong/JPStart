@@ -6,7 +6,9 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.pwcong.jpstart.App;
 import me.pwcong.jpstart.conf.Constants;
+import me.pwcong.jpstart.db.JPStartDatabase;
 import me.pwcong.jpstart.mvp.bean.JPItem;
 
 /**
@@ -37,8 +39,8 @@ public class DBManager {
     public synchronized List<JPItem> query(){
 
         if(query==null){
-            SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(Constants.DB_PATH + Constants.DB_NAME, null);
-            Cursor cursor = db.rawQuery("select * from " + Constants.DB_TABLE_NAME, null);
+            SQLiteDatabase db = new JPStartDatabase(App.getInstance()).getReadableDatabase();
+            Cursor cursor = db.rawQuery("select * from " + JPStartDatabase.DB_TABLE_NAME, null);
             query = new ArrayList<>();
             JPItem item;
             while (cursor.moveToNext()){
