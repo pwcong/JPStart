@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.component.fragment.JPStartTabFragment;
+import me.pwcong.jpstart.component.fragment.PixivFragment;
+import me.pwcong.jpstart.component.fragment.TranslateFragment;
 import me.pwcong.jpstart.manager.ActivityManager;
 import me.pwcong.jpstart.mvp.presenter.BasePresenter;
 import me.pwcong.jpstart.mvp.presenter.MainActivityPresenterImpl;
@@ -151,6 +153,8 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
     @Override
     public void switchJPStart() {
 
+        mToolbar.setTitle(R.string.jp_start);
+
         mRadioButtonView.setVisibility(View.VISIBLE);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.content_main,new JPStartTabFragment()).commit();
@@ -161,14 +165,24 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
     @Override
     public void switchTranslate() {
 
+        mToolbar.setTitle(R.string.translate);
+
         mRadioButtonView.setVisibility(View.GONE);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_main,new TranslateFragment()).commit();
+
         Log.i(TAG, "switchTranslate: OK");
     }
 
     @Override
     public void switchPixiv() {
 
+        mToolbar.setTitle(R.string.pixiv);
+
         mRadioButtonView.setVisibility(View.GONE);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_main,new PixivFragment()).commit();
+
         Log.i(TAG, "switchPixiv: OK");
     }
 
