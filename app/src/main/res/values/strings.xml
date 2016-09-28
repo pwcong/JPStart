@@ -16,4 +16,5 @@
 	<string name="katakana">片假名</string>
 	<string name="aoyin">拗音</string>
 	<string name="row">行</string>
+	<string name="loading">Loading</string>
 </resources>

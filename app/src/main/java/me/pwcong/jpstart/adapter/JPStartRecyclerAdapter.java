@@ -23,6 +23,10 @@ public class JPStartRecyclerAdapter extends RecyclerView.Adapter<JPStartRecycler
 
     List<JPItemWithViewType> list;
 
+    OnItemClickListener onItemClickListener;
+    OnItemLongClickListener onItemLongClickListener;
+
+
     public JPStartRecyclerAdapter(List<JPItemWithViewType> list) {
         this.list = list;
     }
@@ -44,7 +48,7 @@ public class JPStartRecyclerAdapter extends RecyclerView.Adapter<JPStartRecycler
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, int position) {
 
         JPItemWithViewType itemWithViewType = list.get(position);
 
@@ -57,6 +61,32 @@ public class JPStartRecyclerAdapter extends RecyclerView.Adapter<JPStartRecycler
         holder.tv_rome.setText(itemWithViewType.getItem().getRome());
         holder.item=itemWithViewType.getItem();
 
+        if(getItemViewType(position)==Constants.TYPE_ITEM&&holder.item.isExisted()){
+
+            holder.view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    if(onItemClickListener!=null){
+                        onItemClickListener.onClick(holder.item);
+                    }
+
+                }
+            });
+
+            holder.view.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+
+                    if(onItemLongClickListener!=null){
+                        onItemLongClickListener.onLongClick(holder.item);
+                    }
+
+                    return true;
+                }
+            });
+
+        }
 
     }
 
@@ -85,6 +115,27 @@ public class JPStartRecyclerAdapter extends RecyclerView.Adapter<JPStartRecycler
             this.tv_rome= (TextView) itemView.findViewById(R.id.tv_rome);
 
         }
+    }
+
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
+
+    public void setOnItemLongClickListener(OnItemLongClickListener onItemLongClickListener) {
+        this.onItemLongClickListener = onItemLongClickListener;
+    }
+
+    public interface OnItemClickListener{
+
+        void onClick(JPItem item);
+
+    }
+
+    public interface OnItemLongClickListener{
+
+        void onLongClick(JPItem item);
+
     }
 
 

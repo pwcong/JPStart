@@ -11,6 +11,8 @@ import butterknife.BindView;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.adapter.JPStartRecyclerAdapter;
 import me.pwcong.jpstart.conf.Constants;
+import me.pwcong.jpstart.manager.SoundPoolManager;
+import me.pwcong.jpstart.mvp.bean.JPItem;
 import me.pwcong.jpstart.mvp.bean.JPItemWithViewType;
 import me.pwcong.jpstart.mvp.presenter.BasePresenter;
 import me.pwcong.jpstart.mvp.presenter.JPStartFragmentPresenterImpl;
@@ -26,6 +28,8 @@ public class JPStartFragment extends BaseFragment implements BaseView.JPStartFra
     RecyclerView mRecyclerView;
 
     BasePresenter.JPStartFragmentPresenter presenter;
+
+    JPStartRecyclerAdapter adapter;
 
     int type_yin = 0;
 
@@ -64,7 +68,15 @@ public class JPStartFragment extends BaseFragment implements BaseView.JPStartFra
     @Override
     public void setData(List<JPItemWithViewType> data) {
 
-        mRecyclerView.setAdapter(new JPStartRecyclerAdapter(data));
+        adapter=new JPStartRecyclerAdapter(data);
+        adapter.setOnItemClickListener(new JPStartRecyclerAdapter.OnItemClickListener() {
+            @Override
+            public void onClick(JPItem item) {
+                SoundPoolManager.getInstance().play(item.getRome());
+            }
+        });
+
+        mRecyclerView.setAdapter(adapter);
 
     }
 
