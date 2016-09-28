@@ -2,6 +2,8 @@ package me.pwcong.jpstart;
 
 import android.app.Application;
 
+import me.pwcong.jpstart.conf.Constants;
+
 /**
  * Created by Pwcong on 2016/9/24.
  */
@@ -9,6 +11,9 @@ import android.app.Application;
 public class App extends Application {
 
     private static App instance = null;
+
+    public static int CURRENT_ITEM = 0;
+    public static int TYPE_MING = Constants.TYPE_HIRAGANA;
 
     @Override
     public void onCreate() {

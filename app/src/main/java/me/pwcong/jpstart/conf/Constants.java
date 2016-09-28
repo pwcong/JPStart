@@ -22,7 +22,6 @@ public class Constants {
     public static final int ROW_AOYIN = 11;
     public static final int COLUMN_AOYIN = 3;
 
-    public static final String TYPE_MING = "type_min";
     public static final int TYPE_HIRAGANA = 666;
     public static final int TYPE_KATAKANA = 999;
 
@@ -31,8 +30,6 @@ public class Constants {
     public static final int TYPE_ITEM_DISABLE = 333;
 
     public static final String PREF_NAME = "pref_jpstart";
-
-    public static final String CURRENT_ITEM = "current_item";
 
     public static final int ROW_FIRST = 1;
 

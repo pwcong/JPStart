@@ -1,5 +1,6 @@
 package me.pwcong.jpstart.mvp.presenter;
 
+import me.pwcong.jpstart.App;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.conf.Constants;
 import me.pwcong.jpstart.manager.SharedPreferenceManager;
@@ -27,10 +28,10 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
         switch (position){
 
             case 0:
-                SharedPreferenceManager.getInstance().putInt(Constants.TYPE_MING,Constants.TYPE_HIRAGANA);
+                App.TYPE_MING=Constants.TYPE_HIRAGANA;
                 break;
             case 1:
-                SharedPreferenceManager.getInstance().putInt(Constants.TYPE_MING,Constants.TYPE_KATAKANA);
+                App.TYPE_MING=Constants.TYPE_KATAKANA;
                 break;
             default:break;
         }

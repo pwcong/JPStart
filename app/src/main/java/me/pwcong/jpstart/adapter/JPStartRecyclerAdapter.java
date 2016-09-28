@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import me.pwcong.jpstart.App;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.conf.Constants;
 import me.pwcong.jpstart.manager.SharedPreferenceManager;
@@ -47,7 +48,7 @@ public class JPStartRecyclerAdapter extends RecyclerView.Adapter<JPStartRecycler
 
         JPItemWithViewType itemWithViewType = list.get(position);
 
-        if(SharedPreferenceManager.getInstance().getInt(Constants.TYPE_MING,0)==Constants.TYPE_HIRAGANA){
+        if(App.TYPE_MING==Constants.TYPE_HIRAGANA){
             holder.tv_jiaming.setText(itemWithViewType.getItem().getHiragana());
         }else {
             holder.tv_jiaming.setText(itemWithViewType.getItem().getKatakana());

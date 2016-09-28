@@ -10,6 +10,7 @@ import android.view.View;
 import java.util.List;
 
 import butterknife.BindView;
+import me.pwcong.jpstart.App;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.adapter.JPStartTabPagerAdapter;
 import me.pwcong.jpstart.conf.Constants;
@@ -64,7 +65,7 @@ public class JPStartTabFragment extends BaseFragment implements BaseView.JPStart
 
             @Override
             public void onPageSelected(int position) {
-                SharedPreferenceManager.getInstance().putInt(Constants.CURRENT_ITEM,position);
+                App.CURRENT_ITEM = position;
             }
 
             @Override
