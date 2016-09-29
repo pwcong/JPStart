@@ -49,7 +49,7 @@ public class SplashActivity extends BaseActivity {
 
                 if(integer==Constants.OK){
                     startActivity(new Intent(SplashActivity.this,MainActivity.class));
-                    SplashActivity.this.finish();
+                    finish();
                 }
             }
         });

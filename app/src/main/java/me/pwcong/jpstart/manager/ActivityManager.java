@@ -57,6 +57,8 @@ public class ActivityManager {
             t.finish();
         }
 
+        activities.clear();
+
     }
 
     

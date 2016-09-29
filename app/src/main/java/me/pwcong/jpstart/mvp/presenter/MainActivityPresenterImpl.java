@@ -46,6 +46,9 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
             case R.id.item_jpstart:
                 view.switchJPStart();
                 break;
+            case R.id.item_memory:
+                view.switchMemory();
+                break;
             case R.id.item_translate:
                 view.switchTranslate();
                 break;

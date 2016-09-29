@@ -17,6 +17,7 @@ public interface BaseView<T> {
         void openDrawer();
         void closeDrawer();
         void switchJPStart();
+        void switchMemory();
         void switchTranslate();
         void switchPixiv();
         void switchAbout();

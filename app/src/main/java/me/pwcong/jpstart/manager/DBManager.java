@@ -41,9 +41,11 @@ public class DBManager {
     }
 
     public void init(){
-        addHeaderString(getQingYin(),Constants.ROW_QINGYIN,Constants.COLUMN_QINGYIN);
-        addHeaderString(getZhuoYin(),Constants.ROW_ZHUOYIN,Constants.COLUMN_ZHUOYIN);
-        addHeaderString(getAoYin(),Constants.ROW_AOYIN,Constants.COLUMN_AOYIN);
+
+        getQingYin();
+        getZhuoYin();
+        getAoYin();
+
     }
 
 
@@ -90,9 +92,13 @@ public class DBManager {
 
             }
 
+            Collections.sort(qingYin,new JPItemComporator());
+
+            addHeaderString(qingYin,Constants.ROW_QINGYIN,Constants.COLUMN_QINGYIN);
+
+
         }
 
-        Collections.sort(qingYin,new JPItemComporator());
         return qingYin;
     }
 
@@ -110,8 +116,13 @@ public class DBManager {
 
             }
 
+            Collections.sort(zhuoYin,new JPItemComporator());
+
+            addHeaderString(zhuoYin,Constants.ROW_ZHUOYIN,Constants.COLUMN_ZHUOYIN);
+
+
         }
-        Collections.sort(zhuoYin,new JPItemComporator());
+
 
         return zhuoYin;
     }
@@ -130,9 +141,13 @@ public class DBManager {
 
             }
 
+            Collections.sort(aoYin,new JPItemComporator());
+
+            addHeaderString(aoYin,Constants.ROW_AOYIN,Constants.COLUMN_AOYIN);
+
         }
 
-        Collections.sort(aoYin,new JPItemComporator());
+
 
         return aoYin;
     }

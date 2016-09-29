@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.component.fragment.JPStartTabFragment;
+import me.pwcong.jpstart.component.fragment.MemoryFragment;
 import me.pwcong.jpstart.component.fragment.PixivFragment;
 import me.pwcong.jpstart.component.fragment.TranslateFragment;
 import me.pwcong.jpstart.manager.ActivityManager;
@@ -160,6 +161,18 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
         getSupportFragmentManager().beginTransaction().replace(R.id.content_main,new JPStartTabFragment()).commit();
 
         Log.i(TAG, "switchJPStart: OK");
+    }
+
+    @Override
+    public void switchMemory() {
+
+        mToolbar.setTitle(R.string.memory);
+
+        mRadioButtonView.setVisibility(View.GONE);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_main,new MemoryFragment()).commit();
+
+        Log.i(TAG, "switchMemory: OK");
     }
 
     @Override

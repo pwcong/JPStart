@@ -3,6 +3,7 @@
 
     <group android:checkableBehavior="single">
         <item android:id="@+id/item_jpstart" android:title="@string/jp_start" android:icon="@drawable/ic_library_books_black_24dp"/>
+        <item android:id="@+id/item_memory" android:title="@string/memory" android:icon="@drawable/ic_memory_black_24dp"/>
         <item android:id="@+id/item_translate" android:title="@string/translate" android:icon="@drawable/ic_g_translate_black_24dp"/>
         <item android:id="@+id/item_pixiv" android:title="@string/pixiv" android:icon="@drawable/ic_photo_black_24dp"/>
 
