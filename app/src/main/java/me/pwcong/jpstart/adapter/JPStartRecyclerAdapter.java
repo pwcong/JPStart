@@ -11,9 +11,7 @@ import java.util.List;
 import me.pwcong.jpstart.App;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.conf.Constants;
-import me.pwcong.jpstart.manager.SharedPreferenceManager;
 import me.pwcong.jpstart.mvp.bean.JPItem;
-import me.pwcong.jpstart.mvp.bean.JPItemWithViewType;
 
 /**
  * Created by Pwcong on 2016/9/27.
@@ -21,13 +19,13 @@ import me.pwcong.jpstart.mvp.bean.JPItemWithViewType;
 
 public class JPStartRecyclerAdapter extends RecyclerView.Adapter<JPStartRecyclerAdapter.ViewHolder>{
 
-    List<JPItemWithViewType> list;
+    List<JPItem> list;
 
     OnItemClickListener onItemClickListener;
     OnItemLongClickListener onItemLongClickListener;
 
 
-    public JPStartRecyclerAdapter(List<JPItemWithViewType> list) {
+    public JPStartRecyclerAdapter(List<JPItem> list) {
         this.list = list;
     }
 
@@ -50,16 +48,16 @@ public class JPStartRecyclerAdapter extends RecyclerView.Adapter<JPStartRecycler
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
 
-        JPItemWithViewType itemWithViewType = list.get(position);
+        JPItem item = list.get(position);
 
         if(App.TYPE_MING==Constants.TYPE_HIRAGANA){
-            holder.tv_jiaming.setText(itemWithViewType.getItem().getHiragana());
+            holder.tv_jiaming.setText(item.getHiragana());
         }else {
-            holder.tv_jiaming.setText(itemWithViewType.getItem().getKatakana());
+            holder.tv_jiaming.setText(item.getKatakana());
         }
 
-        holder.tv_rome.setText(itemWithViewType.getItem().getRome());
-        holder.item=itemWithViewType.getItem();
+        holder.tv_rome.setText(item.getRome());
+        holder.item=item;
 
         if(getItemViewType(position)==Constants.TYPE_ITEM&&holder.item.isExisted()){
 
@@ -92,7 +90,7 @@ public class JPStartRecyclerAdapter extends RecyclerView.Adapter<JPStartRecycler
 
     @Override
     public int getItemViewType(int position) {
-        return list.get(position).getViewType();
+        return list.get(position).getType();
     }
 
     @Override

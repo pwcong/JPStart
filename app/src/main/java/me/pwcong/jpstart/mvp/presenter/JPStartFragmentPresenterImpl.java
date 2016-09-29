@@ -4,7 +4,7 @@ import android.util.Log;
 
 import java.util.List;
 
-import me.pwcong.jpstart.mvp.bean.JPItemWithViewType;
+import me.pwcong.jpstart.mvp.bean.JPItem;
 import me.pwcong.jpstart.mvp.model.BaseModel;
 import me.pwcong.jpstart.mvp.model.JPStartFragmentModelImpl;
 import me.pwcong.jpstart.mvp.view.BaseView;
@@ -30,7 +30,7 @@ public class JPStartFragmentPresenterImpl extends BasePresenter<BaseView.JPStart
     public void initJPStartFragment(int type) {
 
         view.setRecyclerView(type);
-        model.getData(type, new Subscriber<List<JPItemWithViewType>>() {
+        model.getData(type, new Subscriber<List<JPItem>>() {
             @Override
             public void onCompleted() {
                 Log.i(TAG, "onCompleted: OK");
@@ -42,7 +42,7 @@ public class JPStartFragmentPresenterImpl extends BasePresenter<BaseView.JPStart
             }
 
             @Override
-            public void onNext(List<JPItemWithViewType> list) {
+            public void onNext(List<JPItem> list) {
                 view.setData(list);
                 Log.i(TAG, "onNext: OK");
             }

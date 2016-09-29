@@ -6,16 +6,17 @@ package me.pwcong.jpstart.mvp.bean;
 
 public class JPItem {
 
-    private int id;
-    private int row;
-    private int column;
-    private String hiragana;
-    private String katakana;
-    private String rome;
-    private int category;
-    private boolean existed;
+    int id;
+    int row;
+    int column;
+    String hiragana;
+    String katakana;
+    String rome;
+    int category;
+    int type;
+    boolean existed;
 
-    public JPItem(int id, int row, int column, String hiragana, String katakana, String rome, int category, boolean existed) {
+    public JPItem(int id, int row, int column, String hiragana, String katakana, String rome, int category, int type, boolean existed) {
         this.id = id;
         this.row = row;
         this.column = column;
@@ -23,6 +24,7 @@ public class JPItem {
         this.katakana = katakana;
         this.rome = rome;
         this.category = category;
+        this.type = type;
         this.existed = existed;
     }
 
@@ -36,6 +38,7 @@ public class JPItem {
                 ", katakana='" + katakana + '\'' +
                 ", rome='" + rome + '\'' +
                 ", category=" + category +
+                ", type=" + type +
                 ", existed=" + existed +
                 '}';
     }
@@ -94,6 +97,14 @@ public class JPItem {
 
     public void setCategory(int category) {
         this.category = category;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 
     public boolean isExisted() {

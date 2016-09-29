@@ -26,7 +26,7 @@ public abstract class BasePresenter<T> {
 
     public interface JPStartFragmentPresenter{
 
-        void initJPStartFragment(int type);
+        void initJPStartFragment(int category);
 
     }
 

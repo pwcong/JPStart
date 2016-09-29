@@ -4,12 +4,16 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import me.pwcong.jpstart.App;
+import me.pwcong.jpstart.R;
+import me.pwcong.jpstart.comparator.JPItemComporator;
 import me.pwcong.jpstart.conf.Constants;
 import me.pwcong.jpstart.db.JPStartDatabase;
 import me.pwcong.jpstart.mvp.bean.JPItem;
+import me.pwcong.jpstart.utils.ResourceUtils;
 
 /**
  * Created by Pwcong on 2016/9/25.
@@ -19,10 +23,10 @@ public class DBManager {
 
     private static DBManager instance = null;
 
-    private static List<JPItem> query = null;
-    private static List<JPItem> qingYin = null;
-    private static List<JPItem> zhuoYin = null;
-    private static List<JPItem> aoYin = null;
+    private List<JPItem> query = null;
+    private List<JPItem> qingYin = null;
+    private List<JPItem> zhuoYin = null;
+    private List<JPItem> aoYin = null;
 
     private DBManager() {
     }
@@ -35,6 +39,13 @@ public class DBManager {
 
         return instance;
     }
+
+    public void init(){
+        addHeaderString(getQingYin(),Constants.ROW_QINGYIN,Constants.COLUMN_QINGYIN);
+        addHeaderString(getZhuoYin(),Constants.ROW_ZHUOYIN,Constants.COLUMN_ZHUOYIN);
+        addHeaderString(getAoYin(),Constants.ROW_AOYIN,Constants.COLUMN_AOYIN);
+    }
+
 
     public synchronized List<JPItem> query(){
 
@@ -51,9 +62,10 @@ public class DBManager {
                 String katakana = cursor.getString(cursor.getColumnIndex("katakana"));
                 String rome = cursor.getString(cursor.getColumnIndex("rome"));
                 int category = cursor.getInt(cursor.getColumnIndex("category"));
+                int type = cursor.getInt(cursor.getColumnIndex("type"));
                 boolean existed = cursor.getInt(cursor.getColumnIndex("existed"))==1;
 
-                item=new JPItem(id,row,column,hiragana,katakana,rome,category,existed);
+                item=new JPItem(id,row,column,hiragana,katakana,rome,category,type,existed);
 
                 query.add(item);
             }
@@ -64,28 +76,15 @@ public class DBManager {
         return query;
     }
 
-    public synchronized List<JPItem> getYin(int type_yin){
+    public synchronized List<JPItem> getQingYin() {
 
-        switch (type_yin){
+        if (qingYin==null){
 
-            case Constants.TYPE_QINGYIN:return getQingYin();
-            case Constants.TYPE_ZHUOYIN:return getZhuoYin();
-            case Constants.TYPE_AOYIN:return getAoYin();
-            default:return null;
-        }
-
-    }
-
-
-
-    public synchronized List<JPItem> getQingYin(){
-
-        if(qingYin==null){
-            List<JPItem> query = query();
             qingYin=new ArrayList<>();
+            List<JPItem> query = query();
             for(JPItem item:query){
 
-                if(item.getCategory()==Constants.TYPE_QINGYIN){
+                if(item.getCategory()==Constants.CATEGORY_QINGYIN){
                     qingYin.add(item);
                 }
 
@@ -93,44 +92,76 @@ public class DBManager {
 
         }
 
+        Collections.sort(qingYin,new JPItemComporator());
         return qingYin;
     }
-    public synchronized List<JPItem> getZhuoYin(){
 
-        if(zhuoYin==null){
-            List<JPItem> query = query();
+    public List<JPItem> getZhuoYin() {
+
+        if (zhuoYin==null){
+
             zhuoYin=new ArrayList<>();
+            List<JPItem> query = query();
             for(JPItem item:query){
 
-                if(item.getCategory()==Constants.TYPE_ZHUOYIN){
+                if(item.getCategory()==Constants.CATEGORY_ZHUOYIN){
                     zhuoYin.add(item);
                 }
 
             }
 
         }
+        Collections.sort(zhuoYin,new JPItemComporator());
 
         return zhuoYin;
     }
 
-    public synchronized List<JPItem> getAoYin(){
+    public List<JPItem> getAoYin() {
 
-        if(aoYin==null){
-            List<JPItem> query = query();
+        if (aoYin==null){
+
             aoYin=new ArrayList<>();
+            List<JPItem> query = query();
             for(JPItem item:query){
 
-                if(item.getCategory()==Constants.TYPE_AOYIN){
+                if(item.getCategory()==Constants.CATEGORY_AOYIN){
                     aoYin.add(item);
                 }
 
             }
 
         }
+
+        Collections.sort(aoYin,new JPItemComporator());
+
         return aoYin;
     }
 
+    public static void addHeaderString(List<JPItem> list,int row,int column){
+
+        for(int i=1;i<column;i++){
+
+            JPItem item = list.get(i);
+            String hiragana = item.getHiragana();
+            String katakana = item.getKatakana();
+            item.setHiragana(hiragana+ResourceUtils.getString(App.getInstance(),R.string.column));
+            item.setKatakana(katakana+ResourceUtils.getString(App.getInstance(),R.string.column));
+
+        }
+
+        for(int i = 1;i<row;i++){
+
+            JPItem item = list.get(i * column);
+            String hiragana = item.getHiragana();
+            String katakana = item.getKatakana();
+            item.setHiragana(hiragana+ResourceUtils.getString(App.getInstance(),R.string.row));
+            item.setKatakana(katakana+ResourceUtils.getString(App.getInstance(),R.string.row));
 
 
+        }
+
+
+
+    }
 
 }

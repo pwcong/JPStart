@@ -136,7 +136,6 @@ public class SoundPoolManager {
 
     SoundPool soundPool = null;
     Map<String,Integer> soundsIdMap = new ConcurrentHashMap<>();
-    boolean ready = false;
 
     private SoundPoolManager(){
 
@@ -144,37 +143,14 @@ public class SoundPoolManager {
 
     }
 
-    public void init(final Subscriber<Void> subscriber){
+    public void init(){
 
-        Observable.create(new Observable.OnSubscribe<Void>() {
+        for(JPSound sound:sounds){
 
-            @Override
-            public void call(Subscriber<? super Void> subscriber) {
-                for(JPSound sound:sounds){
+            int id = soundPool.load(App.getInstance(), sound.getResId(), 1);
+            soundsIdMap.put(sound.getRome(),id);
 
-                    int id = soundPool.load(App.getInstance(), sound.getResId(), 1);
-                    soundsIdMap.put(sound.getRome(),id);
-                    subscriber.onCompleted();
-
-                }
-            }
-        }).observeOn(Schedulers.newThread()).subscribeOn(AndroidSchedulers.mainThread()).subscribe(new Subscriber<Void>() {
-            @Override
-            public void onCompleted() {
-                ready=true;
-                subscriber.onCompleted();
-            }
-
-            @Override
-            public void onError(Throwable e) {
-                subscriber.onError(e);
-            }
-
-            @Override
-            public void onNext(Void aVoid) {
-                subscriber.onNext(aVoid);
-            }
-        });
+        }
 
 
     }
@@ -191,10 +167,7 @@ public class SoundPoolManager {
 
     public void play(String rome){
 
-        if(ready){
-            soundPool.play(soundsIdMap.get(rome),1,1,0,0,1);
-        }
-            
+        soundPool.play(soundsIdMap.get(rome),1,1,0,0,1);
 
     }
 

@@ -23,9 +23,9 @@ public class JPStartTabFragmentModelImpl implements BaseModel.JPStartTabFragment
         String zhuoyin = ResourceUtils.getString(App.getInstance(), R.string.zhuoyin);
         String aoyin = ResourceUtils.getString(App.getInstance(), R.string.aoyin);
 
-        list.add(new JPTab(Constants.TYPE_QINGYIN,qingyin));
-        list.add(new JPTab(Constants.TYPE_ZHUOYIN,zhuoyin));
-        list.add(new JPTab(Constants.TYPE_AOYIN,aoyin));
+        list.add(new JPTab(Constants.CATEGORY_QINGYIN,qingyin));
+        list.add(new JPTab(Constants.CATEGORY_ZHUOYIN,zhuoyin));
+        list.add(new JPTab(Constants.CATEGORY_AOYIN,aoyin));
 
         return list;
     }

@@ -5,8 +5,14 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import me.pwcong.jpstart.R;
+import me.pwcong.jpstart.conf.Constants;
+import me.pwcong.jpstart.manager.DBManager;
 import me.pwcong.jpstart.manager.SoundPoolManager;
+import rx.Observable;
 import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by Pwcong on 2016/9/23.
@@ -27,23 +33,25 @@ public class SplashActivity extends BaseActivity {
     @Override
     protected void doAction() {
 
-        SoundPoolManager.getInstance().init(new Subscriber<Void>() {
+        Observable.create(new Observable.OnSubscribe<Integer>() {
+
             @Override
-            public void onCompleted() {
-                startActivity(new Intent(SplashActivity.this,MainActivity.class));
-                finish();
+            public void call(Subscriber<? super Integer> subscriber) {
+                subscriber.onStart();
+                DBManager.getInstance().init();
+                SoundPoolManager.getInstance().init();
+                subscriber.onNext(Constants.OK);
+
             }
-
+        }).subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Action1<Integer>() {
             @Override
-            public void onError(Throwable e) {
+            public void call(Integer integer) {
 
-            }
-
-            @Override
-            public void onNext(Void aVoid) {
-
+                if(integer==Constants.OK){
+                    startActivity(new Intent(SplashActivity.this,MainActivity.class));
+                    SplashActivity.this.finish();
+                }
             }
         });
-
     }
 }
