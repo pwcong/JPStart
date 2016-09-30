@@ -16,6 +16,8 @@ import me.pwcong.jpstart.mvp.bean.JPItem;
 import me.pwcong.jpstart.mvp.presenter.BasePresenter;
 import me.pwcong.jpstart.mvp.presenter.JPStartFragmentPresenterImpl;
 import me.pwcong.jpstart.mvp.view.BaseView;
+import me.pwcong.jpstart.utils.ResourceUtils;
+import me.pwcong.jpstart.widget.ImageDialog;
 
 /**
  * Created by Pwcong on 2016/9/27.
@@ -72,6 +74,18 @@ public class JPStartFragment extends BaseFragment implements BaseView.JPStartFra
             @Override
             public void onClick(JPItem item) {
                 SoundPoolManager.getInstance().play(item.getRome());
+            }
+        });
+
+        adapter.setOnItemLongClickListener(new JPStartRecyclerAdapter.OnItemLongClickListener() {
+            @Override
+            public void onLongClick(JPItem item) {
+                new ImageDialog.Builder(getContext())
+                        .setResId(R.raw.show)
+                        .override((int)ResourceUtils.getDimension(getContext(),R.dimen.dialog_width),
+                                (int)ResourceUtils.getDimension(getContext(),R.dimen.dialog_height))
+                        .create()
+                        .show();
             }
         });
 
