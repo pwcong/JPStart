@@ -9,7 +9,7 @@ import android.content.Context;
 public class ResourceUtils {
 
     private ResourceUtils(){
-        throw new RuntimeException("O_O");
+        throw new RuntimeException("♪(^∇^*)");
     }
 
     public static String getString(Context context,int resId){

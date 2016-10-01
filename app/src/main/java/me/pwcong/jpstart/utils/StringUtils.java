@@ -7,7 +7,7 @@ package me.pwcong.jpstart.utils;
 public class StringUtils {
 
     private StringUtils(){
-        throw new RuntimeException("X_X");
+        throw new RuntimeException("(￣y▽,￣)╭ ");
     }
 
 

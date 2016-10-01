@@ -7,7 +7,7 @@ package me.pwcong.jpstart.conf;
 public class Constants {
 
     private Constants(){
-        throw new RuntimeException("T_T");
+        throw new RuntimeException("/(ㄒoㄒ)/~~");
     }
 
     public static final int OK = 200;
