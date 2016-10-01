@@ -1,5 +1,7 @@
 package me.pwcong.jpstart.mvp.view;
 
+import android.content.DialogInterface;
+
 import java.util.List;
 
 import me.pwcong.jpstart.mvp.bean.JPItem;
@@ -22,6 +24,9 @@ public interface BaseView<T> {
         void switchPixiv();
         void switchAbout();
         void switchSetting();
+        void showAlertDialog(int titleId, int messageId,
+                             int positiveTextId, DialogInterface.OnClickListener positiveButtonListener,
+                             int negativeTextId, DialogInterface.OnClickListener negativeButtonListener);
     }
 
     interface JPStartTabFragmentView extends BaseView<JPTab>{

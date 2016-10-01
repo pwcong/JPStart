@@ -122,28 +122,10 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
 
         presenter.initMainActivity();
 
-        if(SharedPreferenceManager.getInstance().getBoolean(Constants.FLAG_TIPS,true)){
-
-            new AlertDialog.Builder(MainActivity.this)
-                    .setTitle(R.string.small_tips)
-                    .setMessage(R.string.small_tips_contents)
-                    .setPositiveButton(R.string.remember, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-
-                            dialog.dismiss();
-                        }
-                    })
-                    .setIcon(R.drawable.ic_info_black_24dp)
-                    .create()
-                    .show();
-
-
-        }
-
-
         Log.i(TAG, "doAction: OK");
     }
+
+
 
     @Override
     public void onBackPressed() {
@@ -227,6 +209,22 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
     public void switchSetting() {
 
         Log.i(TAG, "switchSetting: OK");
+    }
+
+    @Override
+    public void showAlertDialog(int titleId, int messageId,
+                                int positiveTextId, DialogInterface.OnClickListener positiveButtonListener,
+                                int negativeTextId, DialogInterface.OnClickListener negativeButtonListener) {
+
+        new AlertDialog.Builder(MainActivity.this)
+                .setTitle(titleId)
+                .setMessage(messageId)
+                .setPositiveButton(positiveTextId,positiveButtonListener)
+                .setNegativeButton(negativeTextId,negativeButtonListener)
+                .setIcon(R.drawable.ic_lightbulb_outline_black_24dp)
+                .create()
+                .show();
+
     }
 
     @Override

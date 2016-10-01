@@ -1,5 +1,7 @@
 package me.pwcong.jpstart.mvp.presenter;
 
+import android.content.DialogInterface;
+
 import me.pwcong.jpstart.App;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.conf.Constants;
@@ -20,6 +22,22 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
     public void initMainActivity() {
 
         view.switchJPStart();
+
+        if(SharedPreferenceManager.getInstance().getBoolean(Constants.FLAG_TIPS,true)){
+
+            view.showAlertDialog(R.string.small_tips,
+                    R.string.small_tips_contents, R.string.remember, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    }, R.string.do_not_remind, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS,false);
+                        }
+                    });
+        }
 
     }
 

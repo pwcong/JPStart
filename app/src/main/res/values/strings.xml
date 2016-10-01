@@ -22,4 +22,5 @@
 	<string name="small_tips">小提示</string>
 	<string name="small_tips_contents">点击五十音按钮播放拼读语音\n长按五十音按钮演示文字书写</string>
 	<string name="remember">知道了</string>
+	<string name="do_not_remind">不再提醒</string>
 </resources>
