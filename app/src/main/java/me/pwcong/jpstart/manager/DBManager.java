@@ -94,8 +94,6 @@ public class DBManager {
 
             Collections.sort(qingYin,new JPItemComporator());
 
-            addHeaderString(qingYin,Constants.ROW_QINGYIN,Constants.COLUMN_QINGYIN);
-
 
         }
 
@@ -118,7 +116,6 @@ public class DBManager {
 
             Collections.sort(zhuoYin,new JPItemComporator());
 
-            addHeaderString(zhuoYin,Constants.ROW_ZHUOYIN,Constants.COLUMN_ZHUOYIN);
 
 
         }
@@ -143,7 +140,6 @@ public class DBManager {
 
             Collections.sort(aoYin,new JPItemComporator());
 
-            addHeaderString(aoYin,Constants.ROW_AOYIN,Constants.COLUMN_AOYIN);
 
         }
 
