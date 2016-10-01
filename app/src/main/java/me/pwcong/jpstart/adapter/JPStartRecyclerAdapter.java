@@ -56,7 +56,10 @@ public class JPStartRecyclerAdapter extends RecyclerView.Adapter<JPStartRecycler
             holder.tv_jiaming.setText(item.getKatakana());
         }
 
-        holder.tv_rome.setText(item.getRome());
+        if(holder.tv_rome!=null){
+            holder.tv_rome.setText(item.getRome());
+        }
+
         holder.item=item;
 
         if(getItemViewType(position)==Constants.TYPE_ITEM&&holder.item.isExisted()){
