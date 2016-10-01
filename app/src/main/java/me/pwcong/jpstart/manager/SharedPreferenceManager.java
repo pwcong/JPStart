@@ -55,5 +55,12 @@ public class SharedPreferenceManager {
 
     }
 
+    public boolean getBoolean(String key,boolean defValue){
+        return sharedPreferences.getBoolean(key,defValue);
+    }
+
+    public void putBoolean(String key,boolean value){
+        sharedPreferences.edit().putBoolean(key,value).apply();
+    }
 
 }

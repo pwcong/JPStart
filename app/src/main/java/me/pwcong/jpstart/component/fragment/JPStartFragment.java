@@ -81,7 +81,7 @@ public class JPStartFragment extends BaseFragment implements BaseView.JPStartFra
             @Override
             public void onLongClick(JPItem item) {
                 new ImageDialog.Builder(getContext())
-                        .setResId(R.raw.show)
+                        .setResId(R.raw.write_a)
                         .override((int)ResourceUtils.getDimension(getContext(),R.dimen.dialog_width),
                                 (int)ResourceUtils.getDimension(getContext(),R.dimen.dialog_height))
                         .create()

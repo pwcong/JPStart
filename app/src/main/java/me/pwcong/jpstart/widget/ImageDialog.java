@@ -47,7 +47,7 @@ public class ImageDialog extends Dialog{
 
             ImageDialog dialog=new ImageDialog(context, R.style.AppTheme_Dialog_NoTitle);
             ImageView imageView=new ImageView(context);
-            Glide.with(context).load(resId).asGif().centerCrop().diskCacheStrategy(DiskCacheStrategy.SOURCE).into(imageView);
+            Glide.with(context).load(resId).asGif().fitCenter().diskCacheStrategy(DiskCacheStrategy.SOURCE).into(imageView);
 
             dialog.addContentView(imageView,new LinearLayout.LayoutParams(width,height));
 

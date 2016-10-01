@@ -1,5 +1,6 @@
 package me.pwcong.jpstart.component.activity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -7,6 +8,7 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
@@ -21,7 +23,9 @@ import me.pwcong.jpstart.component.fragment.JPStartTabFragment;
 import me.pwcong.jpstart.component.fragment.MemoryFragment;
 import me.pwcong.jpstart.component.fragment.PixivFragment;
 import me.pwcong.jpstart.component.fragment.TranslateFragment;
+import me.pwcong.jpstart.conf.Constants;
 import me.pwcong.jpstart.manager.ActivityManager;
+import me.pwcong.jpstart.manager.SharedPreferenceManager;
 import me.pwcong.jpstart.mvp.presenter.BasePresenter;
 import me.pwcong.jpstart.mvp.presenter.MainActivityPresenterImpl;
 import me.pwcong.jpstart.mvp.view.BaseView;
@@ -117,6 +121,26 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
     protected void doAction() {
 
         presenter.initMainActivity();
+
+        if(SharedPreferenceManager.getInstance().getBoolean(Constants.FLAG_TIPS,true)){
+
+            new AlertDialog.Builder(MainActivity.this)
+                    .setTitle(R.string.small_tips)
+                    .setMessage(R.string.small_tips_contents)
+                    .setPositiveButton(R.string.remember, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                            dialog.dismiss();
+                        }
+                    })
+                    .setIcon(R.drawable.ic_info_black_24dp)
+                    .create()
+                    .show();
+
+
+        }
+
 
         Log.i(TAG, "doAction: OK");
     }
