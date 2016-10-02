@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="small_tips_contents">• 短按五十音按钮播放拼读语音\n• 长按五十音按钮演示文字书写</string>
+	<string name="tips_jpstart">• 短按五十音按钮播放拼读语音\n• 长按五十音按钮演示文字书写</string>
+	<string name="tips_translate">1.将要翻译的内容输入至原文文本框\n2.点击上方双方向按钮进行翻译</string>
 	<string name="other">其他</string>
 	<string name="zhuoyin">浊音</string>
 	<string name="memory">记忆</string>
@@ -40,6 +41,7 @@
 
 	<string name="copy_successfully">已成功复制到剪切板</string>
 
+	<string name="error_unknown">未知错误</string>
 
 
 

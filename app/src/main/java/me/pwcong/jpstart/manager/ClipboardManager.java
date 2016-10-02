@@ -33,7 +33,7 @@ public class ClipboardManager {
     }
 
     public String getText(){
-        return clipboardManager.getPrimaryClip().toString();
+        return clipboardManager.getPrimaryClip().getItemAt(0).getText().toString();
     }
 
     public void setText(String label,String text){

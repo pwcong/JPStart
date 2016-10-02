@@ -36,6 +36,7 @@ public abstract class BasePresenter<T> {
         void checkFromLanguate(int from);
         void checkToLanguage(int to);
         void checkImageViewClick(int id);
+        void doTranslate();
 
     }
 

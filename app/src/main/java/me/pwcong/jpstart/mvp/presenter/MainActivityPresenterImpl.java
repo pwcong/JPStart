@@ -21,23 +21,7 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
     @Override
     public void initMainActivity() {
 
-        view.switchJPStart();
-
-        if(SharedPreferenceManager.getInstance().getBoolean(Constants.FLAG_TIPS,true)){
-
-            view.showAlertDialog(R.string.small_tips,
-                    R.string.small_tips_contents, R.string.remember, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    }, R.string.do_not_remind, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS,false);
-                        }
-                    });
-        }
+        onNavigationItemSelected(R.id.item_jpstart);
 
     }
 
@@ -62,13 +46,52 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
 
         switch (id){
             case R.id.item_jpstart:
+
                 view.switchJPStart();
+
+                if(SharedPreferenceManager.getInstance().getBoolean(Constants.FLAG_TIPS_JPSTART,true)){
+
+                    view.showAlertDialog(R.string.small_tips,
+                            R.string.tips_jpstart, R.string.remember, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            }, R.string.do_not_remind, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS_JPSTART,false);
+                                }
+                            });
+
+                }
+
                 break;
             case R.id.item_memory:
                 view.switchMemory();
                 break;
             case R.id.item_translate:
+
                 view.switchTranslate();
+
+                if(SharedPreferenceManager.getInstance().getBoolean(Constants.FLAG_TIPS_TRANSLATE,true)){
+
+                    view.showAlertDialog(R.string.small_tips,
+                            R.string.tips_translate, R.string.remember, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            }, R.string.do_not_remind, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS_TRANSLATE,false);
+                                }
+                            });
+
+                }
+
+
                 break;
             case R.id.item_pixiv:
                 view.switchPixiv();

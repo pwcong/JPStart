@@ -2,6 +2,7 @@ package me.pwcong.jpstart.mvp.model;
 
 import java.util.List;
 
+import me.pwcong.jpstart.mvp.bean.BaiduTranslateBean;
 import me.pwcong.jpstart.mvp.bean.JPItem;
 import me.pwcong.jpstart.mvp.bean.JPTab;
 import me.pwcong.jpstart.mvp.bean.TranslateSpinnerItem;
@@ -26,6 +27,8 @@ public interface BaseModel<T> {
 
         List<TranslateSpinnerItem> getFromList();
         List<TranslateSpinnerItem> getToList();
+
+        void translate(String q, String from, String to, Subscriber<BaiduTranslateBean> subscriber);
 
     }
 

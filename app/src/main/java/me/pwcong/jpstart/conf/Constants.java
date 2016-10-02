@@ -33,7 +33,9 @@ public class Constants {
 
     public static final String PREF_NAME = "pref_jpstart";
 
-    public static final String FLAG_TIPS = "flag_tips";
+    public static final String FLAG_TIPS_JPSTART = "flag_tips_jpstart";
+    public static final String FLAG_TIPS_TRANSLATE = "flag_tips_translate";
+
 
 
 

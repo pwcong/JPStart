@@ -31,7 +31,6 @@ import me.pwcong.jpstart.utils.ResourceUtils;
 
 public class TranslateFragment extends BaseFragment implements BaseView.TranslateFragmentView, View.OnClickListener {
 
-    private final String TAG=getClass().getSimpleName();
 
     @BindView(R.id.layout_root)
     LinearLayout mRootLayout;
@@ -72,6 +71,7 @@ public class TranslateFragment extends BaseFragment implements BaseView.Translat
         initSpinner();
         initButton();
         initImageView();
+
     }
 
     private void initSpinner(){
@@ -98,6 +98,12 @@ public class TranslateFragment extends BaseFragment implements BaseView.Translat
 
     private void initButton(){
 
+        mTranslateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.doTranslate();
+            }
+        });
 
     }
 
@@ -146,6 +152,7 @@ public class TranslateFragment extends BaseFragment implements BaseView.Translat
     public void setDstTextView(String text) {
         mDstTextView.setText(text);
     }
+
 
     @Override
     public void setFromSpinner(List<TranslateSpinnerItem> list) {
