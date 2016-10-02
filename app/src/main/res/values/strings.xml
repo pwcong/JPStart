@@ -1,41 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<string name="small_tips_contents">• 短按五十音按钮播放拼读语音\n• 长按五十音按钮演示文字书写</string>
 	<string name="other">其他</string>
 	<string name="zhuoyin">浊音</string>
+	<string name="memory">记忆</string>
 	<string name="hiragana">平假名</string>
-	<string name="qingyin">清音</string>
+	<string name="source_contents">原文：</string>
 	<string name="about">关于</string>
-	<string name="column">列</string>
+	<string name="translation_contents">译文：</string>
+	<string name="paste">粘贴</string>
 	<string name="navigation_drawer_open">Open navigation drawer</string>
 	<string name="translate">翻译</string>
+	<string name="auto_check">自动检测</string>
 	<string name="setting">设置</string>
+	<string name="remember">知道了</string>
+	<string name="enter_frame">入口界面</string>
+	<string name="chinese">中文</string>
+	<string name="japanese">日语</string>
+	<string name="hello_world">Hello World !</string>
+	<string name="pixiv">Pixiv</string>
+	<string name="english">英语</string>
+	<string name="katakana">片假名</string>
+	<string name="row">行</string>
+	<string name="copy">复制</string>
+	<string name="hint_translate_source">(￣y▽￣)╭ 这里输入原文</string>
+	<string name="small_tips">小提示</string>
+	<string name="image">图片</string>
+	<string name="national_flag">国旗</string>
+	<string name="qingyin">清音</string>
+	<string name="column">列</string>
+	<string name="clear">清空</string>
+	<string name="loading">Loading</string>
 	<string name="app_name">五十音图</string>
 	<string name="jp_start">五十音图</string>
-	<string name="pixiv">Pixiv</string>
-	<string name="navigation_drawer_close">Close navigation drawer</string>
-	<string name="katakana">片假名</string>
-	<string name="aoyin">拗音</string>
-	<string name="row">行</string>
-	<string name="loading">Loading</string>
-	<string name="enter_frame">入口界面</string>
-	<string name="memory">记忆</string>
-	<string name="small_tips">小提示</string>
-	<string name="small_tips_contents">• 短按五十音按钮播放拼读语音\n• 长按五十音按钮演示文字书写</string>
-	<string name="remember">知道了</string>
 	<string name="do_not_remind">不再提醒</string>
-	<string name="source_contents">原文：</string>
-	<string name="image">图片</string>
-	<string name="copy">复制</string>
-	<string name="paste">粘贴</string>
-	<string name="clear">清空</string>
-	<string name="translation_contents">译文：</string>
-	<string name="hello_world">Hello World !</string>
+	<string name="hint_translation_destination">ㄟ( ▔, ▔ )ㄏ 译文为空，我什么也不知道</string>
+	<string name="navigation_drawer_close">Close navigation drawer</string>
+	<string name="aoyin">拗音</string>
+
+	<string name="copy_successfully">已成功复制到剪切板</string>
 
 
-	<string name="chinese">中文</string>
-	<string name="english">英语</string>
-	<string name="japanese">日语</string>
-	<string name="auto_check">自动检测</string>
 
 
 </resources>

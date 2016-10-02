@@ -6,6 +6,7 @@ import java.util.List;
 
 import me.pwcong.jpstart.mvp.bean.JPItem;
 import me.pwcong.jpstart.mvp.bean.JPTab;
+import me.pwcong.jpstart.mvp.bean.TranslateSpinnerItem;
 
 /**
  * Created by Pwcong on 2016/9/24.
@@ -41,8 +42,13 @@ public interface BaseView<T> {
 
     interface TranslateFragmentView{
         void showMsg(String msg);
+        void showMsg(int msg);
+        String getSrcText();
         void setSrcEditText(String text);
+        String getDstText();
         void setDstTextView(String text);
+        void setFromSpinner(List<TranslateSpinnerItem> list);
+        void setToSpinner(List<TranslateSpinnerItem> list);
     }
 
 

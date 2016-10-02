@@ -4,6 +4,7 @@ import java.util.List;
 
 import me.pwcong.jpstart.mvp.bean.JPItem;
 import me.pwcong.jpstart.mvp.bean.JPTab;
+import me.pwcong.jpstart.mvp.bean.TranslateSpinnerItem;
 import rx.Subscriber;
 
 /**
@@ -19,6 +20,13 @@ public interface BaseModel<T> {
 
     interface JPStartFragmentModel {
         void getData(int category, Subscriber<List<JPItem>> subscriber);
+    }
+
+    interface TranslateFragmentModel{
+
+        List<TranslateSpinnerItem> getFromList();
+        List<TranslateSpinnerItem> getToList();
+
     }
 
 

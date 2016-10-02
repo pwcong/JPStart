@@ -30,6 +30,15 @@ public abstract class BasePresenter<T> {
 
     }
 
+    public interface TranslateFragmentPresenter{
+
+        void initTranslateFragment();
+        void checkFromLanguate(int from);
+        void checkToLanguage(int to);
+        void checkImageViewClick(int id);
+
+    }
+
 
 
 

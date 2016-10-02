@@ -81,6 +81,7 @@
                     android:layout_height="wrap_content" />
 
                 <EditText
+                    android:hint="@string/hint_translate_source"
                     android:textColor="@color/white"
                     android:id="@+id/et_src"
                     android:layout_width="match_parent"
@@ -142,9 +143,9 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:text="@string/hint_translation_destination"
                     android:textAppearance="@style/TextAppearance.AppCompat"
                     android:id="@+id/tv_dst"
-                    android:text="@string/hello_world"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -166,14 +167,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
-                    <ImageView
-                        android:layout_marginLeft="@dimen/translate_margin"
-                        android:layout_marginRight="@dimen/translate_margin"
-                        android:contentDescription="@string/paste"
-                        android:id="@+id/iv_dst_paste"
-                        android:src="@drawable/ic_content_paste_black_24dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
 
                     <ImageView
                         android:layout_marginStart="@dimen/translate_margin"
