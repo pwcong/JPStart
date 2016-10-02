@@ -39,6 +39,12 @@ public interface BaseView<T> {
 
     }
 
+    interface TranslateFragmentView{
+        void showMsg(String msg);
+        void setSrcEditText(String text);
+        void setDstTextView(String text);
+    }
+
 
 
 

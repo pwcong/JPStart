@@ -1,27 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    android:id="@+id/layout_root"
+    android:gravity="center_horizontal"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.design.widget.TextInputLayout
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/translate_button_height">
+
+        <Spinner
+            android:id="@+id/spinner_from"
+            android:background="@drawable/shape_corners_translate"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:id="@+id/btn_translate"
+            android:layout_marginLeft="@dimen/translate_button_margin"
+            android:layout_marginRight="@dimen/translate_button_margin"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:background="@drawable/selector_translate"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:contentDescription="@string/image"
+                android:src="@drawable/ic_swap_horiz_black_48dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+
+
+        <Spinner
+            android:id="@+id/spinner_to"
+            android:background="@drawable/shape_corners_translate"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_marginTop="@dimen/translate_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        
-        <EditText
-            android:background="#aaa"
-            android:inputType="text"
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp" />
-        
-        
-    </android.support.design.widget.TextInputLayout>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
 
+            <LinearLayout
+                android:padding="@dimen/translate_padding"
+                android:background="@drawable/shape_corners_translate_top"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:textSize="@dimen/translate_title_size"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="@dimen/translate_margin"
+                    android:text="@string/source_contents"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:textColor="@color/white"
+                    android:id="@+id/et_src"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"/>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/translate_margin"
+                    android:gravity="end"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_marginEnd="@dimen/translate_margin"
+                        android:layout_marginRight="@dimen/translate_margin"
+                        android:contentDescription="@string/copy"
+                        android:id="@+id/iv_src_copy"
+                        android:src="@drawable/ic_content_copy_black_24dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_marginRight="@dimen/translate_margin"
+                        android:layout_marginLeft="@dimen/translate_margin"
+                        android:contentDescription="@string/paste"
+                        android:id="@+id/iv_src_paste"
+                        android:src="@drawable/ic_content_paste_black_24dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_marginStart="@dimen/translate_margin"
+                        android:layout_marginLeft="@dimen/translate_margin"
+                        android:contentDescription="@string/clear"
+                        android:id="@+id/iv_src_clear"
+                        android:src="@drawable/ic_clear_black_24dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:padding="@dimen/translate_padding"
+                android:background="@drawable/shape_corners_translate_bottom"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textSize="@dimen/translate_title_size"
+                    android:layout_marginBottom="@dimen/translate_margin"
+                    android:textColor="@color/colorAccent"
+                    android:text="@string/translation_contents"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:id="@+id/tv_dst"
+                    android:text="@string/hello_world"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/translate_margin"
+                    android:gravity="end"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_marginEnd="@dimen/translate_margin"
+                        android:layout_marginRight="@dimen/translate_margin"
+                        android:contentDescription="@string/copy"
+                        android:id="@+id/iv_dst_copy"
+                        android:src="@drawable/ic_content_copy_black_24dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_marginLeft="@dimen/translate_margin"
+                        android:layout_marginRight="@dimen/translate_margin"
+                        android:contentDescription="@string/paste"
+                        android:id="@+id/iv_dst_paste"
+                        android:src="@drawable/ic_content_paste_black_24dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_marginStart="@dimen/translate_margin"
+                        android:layout_marginLeft="@dimen/translate_margin"
+                        android:contentDescription="@string/clear"
+                        android:id="@+id/iv_dst_clear"
+                        android:src="@drawable/ic_clear_black_24dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

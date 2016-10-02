@@ -2,6 +2,7 @@ package me.pwcong.jpstart.component.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,5 +46,11 @@ public abstract class BaseFragment extends Fragment {
 
     protected abstract void doAction();
 
+    public void showSnackBar(View view,String msg){
+        Snackbar.make(view,msg,Snackbar.LENGTH_SHORT).show();
+    }
+    public void showSnackBar(View view,int msg){
+        Snackbar.make(view,msg,Snackbar.LENGTH_SHORT).show();
+    }
 
 }

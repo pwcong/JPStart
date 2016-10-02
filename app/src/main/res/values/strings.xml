@@ -23,4 +23,19 @@
 	<string name="small_tips_contents">• 短按五十音按钮播放拼读语音\n• 长按五十音按钮演示文字书写</string>
 	<string name="remember">知道了</string>
 	<string name="do_not_remind">不再提醒</string>
+	<string name="source_contents">原文：</string>
+	<string name="image">图片</string>
+	<string name="copy">复制</string>
+	<string name="paste">粘贴</string>
+	<string name="clear">清空</string>
+	<string name="translation_contents">译文：</string>
+	<string name="hello_world">Hello World !</string>
+
+
+	<string name="chinese">中文</string>
+	<string name="english">英语</string>
+	<string name="japanese">日语</string>
+	<string name="auto_check">自动检测</string>
+
+
 </resources>

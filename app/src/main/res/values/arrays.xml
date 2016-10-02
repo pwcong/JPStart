@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+    <string-array name="from_languages">
+
+        <item>@string/auto_check</item>
+        <item>@string/chinese</item>
+        <item>@string/english</item>
+        <item>@string/japanese</item>
+    </string-array>
+
+    <string-array name="to_languages">
+
+        <item>@string/chinese</item>
+        <item>@string/english</item>
+        <item>@string/japanese</item>
+
+    </string-array>
+
+
+
+</resources>
