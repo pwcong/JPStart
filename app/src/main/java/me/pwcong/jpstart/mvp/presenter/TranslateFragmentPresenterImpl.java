@@ -80,49 +80,55 @@ public class TranslateFragmentPresenterImpl extends BasePresenter<BaseView.Trans
     @Override
     public void doTranslate() {
 
-        String from;
+        String srcText = view.getSrcText();
 
-        switch (App.FROM_LAN){
+        if(!StringUtils.isNullOrEmpty(srcText)){
 
-            case 0:from= BaiduTranslateApi.AUTO;break;
-            case 1:from=BaiduTranslateApi.ZH;break;
-            case 2:from=BaiduTranslateApi.EN;break;
-            case 3:from=BaiduTranslateApi.JP;break;
-            default:from=BaiduTranslateApi.AUTO;break;
+            String from;
 
-        }
+            switch (App.FROM_LAN){
 
-        String to;
+                case 0:from= BaiduTranslateApi.AUTO;break;
+                case 1:from=BaiduTranslateApi.ZH;break;
+                case 2:from=BaiduTranslateApi.EN;break;
+                case 3:from=BaiduTranslateApi.JP;break;
+                default:from=BaiduTranslateApi.AUTO;break;
 
-        switch (App.TO_LAN){
-
-            case 0:to=BaiduTranslateApi.ZH;break;
-            case 1:to=BaiduTranslateApi.EN;break;
-            case 2:to=BaiduTranslateApi.JP;break;
-            default:to=BaiduTranslateApi.ZH;break;
-
-        }
-
-        model.translate(view.getSrcText(), from, to, new Subscriber<BaiduTranslateBean>() {
-            @Override
-            public void onCompleted() {
             }
 
-            @Override
-            public void onError(Throwable e) {
-                view.showMsg(R.string.error_unknown);
-                e.printStackTrace();
+            String to;
+
+            switch (App.TO_LAN){
+
+                case 0:to=BaiduTranslateApi.ZH;break;
+                case 1:to=BaiduTranslateApi.EN;break;
+                case 2:to=BaiduTranslateApi.JP;break;
+                default:to=BaiduTranslateApi.ZH;break;
+
             }
 
-            @Override
-            public void onNext(BaiduTranslateBean baiduTranslateBean) {
-                if(baiduTranslateBean.getError_code()==null){
-                    view.setDstTextView(baiduTranslateBean.getTrans_result()[0].getDst());
-                }else {
-                    view.showMsg(baiduTranslateBean.getError_msg());
+            model.translate(view.getSrcText(), from, to, new Subscriber<BaiduTranslateBean>() {
+                @Override
+                public void onCompleted() {
                 }
-            }
-        });
+
+                @Override
+                public void onError(Throwable e) {
+                    view.showMsg(R.string.error_unknown);
+                    e.printStackTrace();
+                }
+
+                @Override
+                public void onNext(BaiduTranslateBean baiduTranslateBean) {
+                    if(baiduTranslateBean.getError_code()==null){
+                        view.setDstTextView(baiduTranslateBean.getTrans_result()[0].getDst());
+                    }else {
+                        view.showMsg(baiduTranslateBean.getError_msg());
+                    }
+                }
+            });
+        }
+
 
 
     }
