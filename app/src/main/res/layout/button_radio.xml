@@ -4,5 +4,5 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     app:margin="12dp"
-    app:textColor="@color/colorAccent"
+    app:textColor="@color/colorPrimary"
     app:frameColor="@color/white"/>
