@@ -1,6 +1,7 @@
 package me.pwcong.jpstart.mvp.presenter;
 
 import me.pwcong.jpstart.mvp.bean.PixivIllustBean;
+import me.pwcong.jpstart.rxbus.event.EventContainer;
 
 /**
  * Created by Pwcong on 2016/9/24.
@@ -18,6 +19,7 @@ public abstract class BasePresenter<T> {
         void initMainActivity();
         void onRadioButtonChanged(int position);
         void onNavigationItemSelected(int id);
+        void onBusEventInteraction(EventContainer eventContainer);
     }
 
     public interface JPStartTabFragmentPresenter{

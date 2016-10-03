@@ -62,9 +62,12 @@ public class PhotoViewActivity extends BaseActivity {
 
             public boolean onLongClick(View v) {
 
-                Observable.create(new Observable.OnSubscribe<String>() {
+                Observable.create(new Observable.OnSubscribe<Integer>() {
+
                     @Override
-                    public void call(Subscriber<? super String> subscriber) {
+                    public void call(Subscriber<? super Integer> subscriber) {
+
+                        subscriber.onStart();
 
                         try {
 
@@ -85,8 +88,10 @@ public class PhotoViewActivity extends BaseActivity {
                             subscriber.onError(e);
                         }
 
+                        subscriber.onNext(R.string.save_success);
+
                     }
-                }).observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io()).subscribe(new Subscriber<String>() {
+                }).observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io()).subscribe(new Subscriber<Integer>() {
                     @Override
                     public void onCompleted() {
 
@@ -99,13 +104,13 @@ public class PhotoViewActivity extends BaseActivity {
                     }
 
                     @Override
-                    public void onNext(String s) {
+                    public void onNext(Integer s) {
 
-                        showSnackBar(mRootLayout,R.string.save_success);
+                        showSnackBar(mRootLayout,s);
                     }
                 });
 
-                return true;
+                return false;
             }
         });
 
@@ -125,5 +130,11 @@ public class PhotoViewActivity extends BaseActivity {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
         }
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 }

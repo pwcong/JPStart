@@ -1,7 +1,6 @@
 package me.pwcong.jpstart.component.fragment;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -15,12 +14,14 @@ import java.util.List;
 import butterknife.BindView;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.adapter.PixivIllustRecyclerAdapter;
-import me.pwcong.jpstart.component.activity.PhotoViewActivity;
 import me.pwcong.jpstart.conf.Constants;
 import me.pwcong.jpstart.mvp.bean.PixivIllustBean;
 import me.pwcong.jpstart.mvp.presenter.BasePresenter;
 import me.pwcong.jpstart.mvp.presenter.PixivIllustFragmentPresenterImpl;
 import me.pwcong.jpstart.mvp.view.BaseView;
+import me.pwcong.jpstart.rxbus.RxBus;
+import me.pwcong.jpstart.rxbus.event.EventContainer;
+import me.pwcong.jpstart.rxbus.event.PhotoViewEvent;
 
 /**
  * Created by Pwcong on 2016/9/28.
@@ -128,10 +129,8 @@ public class PixivIllustFragment extends BaseFragment implements BaseView.PixivI
     @Override
     public void showImg(String url,int id) {
 
-        Intent intent=new Intent(getContext(), PhotoViewActivity.class);
-        intent.putExtra(Constants.IMG_URL,url);
-        intent.putExtra(Constants.IMG_ID,id);
-        startActivity(intent);
+        PhotoViewEvent event=new PhotoViewEvent(url,id);
+        RxBus.getDefault().post(new EventContainer(EventContainer.TYPE_PHOTOVIEW,event));
 
     }
 

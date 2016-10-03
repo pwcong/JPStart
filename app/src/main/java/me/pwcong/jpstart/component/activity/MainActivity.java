@@ -1,6 +1,7 @@
 package me.pwcong.jpstart.component.activity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -21,15 +22,17 @@ import butterknife.BindView;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.component.fragment.JPStartTabFragment;
 import me.pwcong.jpstart.component.fragment.MemoryFragment;
-import me.pwcong.jpstart.component.fragment.PixivIllustFragment;
 import me.pwcong.jpstart.component.fragment.PixivIllustTabFragment;
 import me.pwcong.jpstart.component.fragment.TranslateFragment;
 import me.pwcong.jpstart.manager.ActivityManager;
 import me.pwcong.jpstart.mvp.presenter.BasePresenter;
 import me.pwcong.jpstart.mvp.presenter.MainActivityPresenterImpl;
 import me.pwcong.jpstart.mvp.view.BaseView;
+import me.pwcong.jpstart.rxbus.RxBus;
+import me.pwcong.jpstart.rxbus.event.EventContainer;
 import me.pwcong.jpstart.utils.ResourceUtils;
 import me.pwcong.radiobuttonview.view.RadioButtonView;
+import rx.functions.Action1;
 
 public class MainActivity extends BaseActivity implements BaseView.MainActivityView {
 
@@ -57,10 +60,18 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
 
         presenter=new MainActivityPresenterImpl(this);
 
+        RxBus.getDefault().toObserverable(EventContainer.class).subscribe(new Action1<EventContainer>() {
+            @Override
+            public void call(EventContainer eventContainer) {
+                presenter.onBusEventInteraction(eventContainer);
+            }
+        });
+
         initToolbar();
         initRadioButtonView();
         initDrawerLayout();
         initNavigationView();
+
 
 
     }
@@ -208,6 +219,16 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
     public void switchSetting() {
 
         Log.i(TAG, "switchSetting: OK");
+    }
+
+    @Override
+    public void startPhotoViewActivity(Bundle bundle) {
+
+        Intent intent=new Intent(MainActivity.this,PhotoViewActivity.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
     }
 
     @Override

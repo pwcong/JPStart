@@ -1,6 +1,8 @@
 package me.pwcong.jpstart.mvp.view;
 
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Bundle;
 
 import java.util.List;
 
@@ -27,6 +29,7 @@ public interface BaseView<T> {
         void switchPixivIllust();
         void switchAbout();
         void switchSetting();
+        void startPhotoViewActivity(Bundle bundle);
         void showAlertDialog(int titleId, int messageId,
                              int positiveTextId, DialogInterface.OnClickListener positiveButtonListener,
                              int negativeTextId, DialogInterface.OnClickListener negativeButtonListener);

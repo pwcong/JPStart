@@ -1,12 +1,15 @@
 package me.pwcong.jpstart.mvp.presenter;
 
 import android.content.DialogInterface;
+import android.os.Bundle;
 
 import me.pwcong.jpstart.App;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.conf.Constants;
 import me.pwcong.jpstart.manager.SharedPreferenceManager;
 import me.pwcong.jpstart.mvp.view.BaseView;
+import me.pwcong.jpstart.rxbus.event.EventContainer;
+import me.pwcong.jpstart.rxbus.event.PhotoViewEvent;
 
 /**
  * Created by Pwcong on 2016/9/24.
@@ -128,6 +131,30 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
         }
 
         view.closeDrawer();
+
+
+    }
+
+    @Override
+    public void onBusEventInteraction(EventContainer eventContainer) {
+
+        switch (eventContainer.getType()){
+
+            case EventContainer.TYPE_PHOTOVIEW:
+
+                PhotoViewEvent event= (PhotoViewEvent) eventContainer.getEvent();
+
+                Bundle bundle=new Bundle();
+                bundle.putString(Constants.IMG_URL,event.getImg_url());
+                bundle.putInt(Constants.IMG_ID,event.getImg_id());
+
+                view.startPhotoViewActivity(bundle);
+
+                break;
+            default:break;
+
+
+        }
 
 
     }
