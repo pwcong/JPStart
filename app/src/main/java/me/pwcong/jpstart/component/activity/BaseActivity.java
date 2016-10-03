@@ -21,6 +21,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         ActivityManager.getInstance().register(this);
+        ActivityManager.setCurrent(this);
 
         setContentView(getViewId());
 
@@ -54,4 +55,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         Snackbar.make(view,msg,Snackbar.LENGTH_SHORT).show();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        ActivityManager.setCurrent(this);
+
+    }
 }

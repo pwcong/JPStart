@@ -63,6 +63,8 @@ public interface BaseView<T> {
         void showMsg(String msg);
         void showProgress();
         void hideProgress();
+        void showOptionsDialog(String[] options, DialogInterface.OnClickListener listener);
+        void showImg(String url);
 
     }
 

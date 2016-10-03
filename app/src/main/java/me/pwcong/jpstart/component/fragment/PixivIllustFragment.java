@@ -1,15 +1,21 @@
 package me.pwcong.jpstart.component.fragment;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+import android.widget.LinearLayout;
 
 import java.util.List;
 
 import butterknife.BindView;
 import me.pwcong.jpstart.R;
+import me.pwcong.jpstart.adapter.PixivIllustRecyclerAdapter;
+import me.pwcong.jpstart.component.activity.PhotoViewActivity;
 import me.pwcong.jpstart.conf.Constants;
 import me.pwcong.jpstart.mvp.bean.PixivIllustBean;
 import me.pwcong.jpstart.mvp.presenter.BasePresenter;
@@ -24,6 +30,8 @@ public class PixivIllustFragment extends BaseFragment implements BaseView.PixivI
 
     private final String TAG=getClass().getSimpleName();
 
+    @BindView(R.id.layout_root)
+    LinearLayout mRootLayout;
     @BindView(R.id.recycler_view)
     RecyclerView mRecyclerView;
     @BindView(R.id.refresh_layout)
@@ -57,12 +65,24 @@ public class PixivIllustFragment extends BaseFragment implements BaseView.PixivI
 
         presenter=new PixivIllustFragmentPresenterImpl(this);
 
+        initRecyclerView();
         initRefreshLayout();
+
+    }
+
+    private void initRecyclerView(){
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+
+        mRecyclerView.setLayoutManager(linearLayoutManager);
 
     }
 
 
     private void initRefreshLayout(){
+
+        mRefreshLayout.setColorSchemeResources(R.color.colorPrimary,R.color.blue,R.color.orange,R.color.amber,R.color.green,R.color.purple);
 
         mRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -81,12 +101,12 @@ public class PixivIllustFragment extends BaseFragment implements BaseView.PixivI
 
     @Override
     public void showMsg(int msg) {
-
+        showSnackBar(mRootLayout,msg);
     }
 
     @Override
     public void showMsg(String msg) {
-
+        showSnackBar(mRootLayout,msg);
     }
 
     @Override
@@ -100,13 +120,36 @@ public class PixivIllustFragment extends BaseFragment implements BaseView.PixivI
     }
 
     @Override
-    public void setData(List<PixivIllustBean> data) {
+    public void showOptionsDialog(String[] options, DialogInterface.OnClickListener listener) {
 
-        for (PixivIllustBean bean:data){
-            Log.i(TAG, "setData: "+bean.toString());
-
-        }
-
+        new AlertDialog.Builder(getContext()).setItems(options, listener).create().show();
 
     }
+
+    @Override
+    public void showImg(String url) {
+
+        Intent intent=new Intent(getContext(), PhotoViewActivity.class);
+        intent.putExtra(Constants.IMG_URL,url);
+        startActivity(intent);
+
+    }
+
+
+    @Override
+    public void setData(List<PixivIllustBean> data) {
+
+        PixivIllustRecyclerAdapter adapter=new PixivIllustRecyclerAdapter(getContext(),data);
+        adapter.setOnItemClickListener(new PixivIllustRecyclerAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(PixivIllustBean bean) {
+                presenter.onItemClick(bean);
+            }
+        });
+
+        mRecyclerView.setAdapter(adapter);
+        mRecyclerView.refreshDrawableState();
+
+    }
+
 }

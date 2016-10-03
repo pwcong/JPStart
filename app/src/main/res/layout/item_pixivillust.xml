@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/pixivillust_corners"
+    app:cardElevation="@dimen/pixivillust_elevation"
+    android:layout_marginLeft="@dimen/pixivillust_horizontal_margin"
+    android:layout_marginRight="@dimen/pixivillust_horizontal_margin"
+    android:layout_marginTop="@dimen/pixivillust_vertical_margin"
+    android:layout_marginBottom="@dimen/pixivillust_vertical_margin"
+    android:clickable="true"
+    android:foreground="?android:selectableItemBackground"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/pixivillust_padding">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_marginBottom="@dimen/pixivillust_text_margin"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="@dimen/pixivillust_text_size"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:contentDescription="@string/image"
+            android:id="@+id/iv_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/pixivillust_text_margin"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:id="@+id/tv_id"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_bookmark_border_black_24dp"
+                android:drawableStart="@drawable/ic_bookmark_border_black_24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:layout_marginStart="@dimen/pixivillust_margin"
+                android:layout_marginLeft="@dimen/pixivillust_margin"
+                android:id="@+id/tv_author"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_face_black_24dp"
+                android:drawableStart="@drawable/ic_face_black_24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>
+
+
+

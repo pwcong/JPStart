@@ -48,5 +48,13 @@
 	<string name="monthly">本月</string>
 	<string name="rookie">新人</string>
 
+	<string name="source_img">原图</string>
+	<string name="thumbnail">缩略图</string>
+	<string name="share">分享</string>
+	<string name="share_to">分享到…</string>
+
+
+
+
 
 </resources>

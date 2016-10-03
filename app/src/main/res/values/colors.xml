@@ -10,8 +10,13 @@
     <color name="primaryText">#212121</color>
     <color name="frame">#FAFAFA</color>
     <color name="window">#DCDEE3</color>
-
     <color name="white">#FFFFFF</color>
+
+    <color name="blue">#2196F3</color>
+    <color name="orange">#FF5722</color>
+    <color name="purple">#9C27B0</color>
+    <color name="amber">#FFC107</color>
+    <color name="green">#4CAF50</color>
 
 
 </resources>

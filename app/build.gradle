@@ -21,17 +21,15 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.android.support:design:24.2.1'
     testCompile 'junit:junit:4.12'
-
     compile 'com.jakewharton:butterknife:8.4.0'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
-
     compile 'com.blankj:utilcode:1.2.1'
     compile 'com.github.pwcong:RadioButtonView:v1.0.3'
     compile 'io.reactivex:rxandroid:1.2.1'
@@ -44,5 +42,5 @@ dependencies {
     compile 'com.google.code.gson:gson:2.7'
     compile 'com.github.chrisbanes:PhotoView:1.3.0'
     compile 'org.jsoup:jsoup:1.9.2'
-
+    compile 'com.android.support:cardview-v7:24.2.1'
 }

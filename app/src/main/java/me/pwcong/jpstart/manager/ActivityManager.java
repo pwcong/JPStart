@@ -17,6 +17,8 @@ public class ActivityManager {
 
     private Vector<Activity> activities = new Vector<>();
 
+    public static Activity current;
+
     private ActivityManager() {
     }
 
@@ -61,11 +63,11 @@ public class ActivityManager {
 
     }
 
-    
+    public static Activity getCurrent() {
+        return current;
+    }
 
-
-
-
-
-
+    public static void setCurrent(Activity current) {
+        ActivityManager.current = current;
+    }
 }

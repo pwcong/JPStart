@@ -38,6 +38,8 @@ public interface BaseModel<T> {
 
         void getIllusts(String mode, Subscriber<List<PixivIllustBean>> subscriber);
 
+        String[] getOptions();
+
     }
 
     interface PixivIllustTabFragmentModel extends BaseModel<PixivIllustTab>{}

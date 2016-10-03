@@ -22,4 +22,12 @@
 	<dimen name="translate_corners">8dp</dimen>
 	<dimen name="translate_spinner_text_size">16sp</dimen>
 	<dimen name="translate_spinner_padding">4dp</dimen>
+	<dimen name="pixivillust_corners">8dp</dimen>
+	<dimen name="pixivillust_padding">16dp</dimen>
+	<dimen name="pixivillust_elevation">4dp</dimen>
+	<dimen name="pixivillust_margin">16dp</dimen>
+	<dimen name="pixivillust_vertical_margin">8dp</dimen>
+	<dimen name="pixivillust_horizontal_margin">16dp</dimen>
+	<dimen name="pixivillust_text_margin">8dp</dimen>
+	<dimen name="pixivillust_text_size">22sp</dimen>
 </resources>

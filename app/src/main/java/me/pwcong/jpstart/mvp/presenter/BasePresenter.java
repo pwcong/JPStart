@@ -1,5 +1,7 @@
 package me.pwcong.jpstart.mvp.presenter;
 
+import me.pwcong.jpstart.mvp.bean.PixivIllustBean;
+
 /**
  * Created by Pwcong on 2016/9/24.
  */
@@ -47,6 +49,7 @@ public abstract class BasePresenter<T> {
     public interface PixivIllustFragmentPresenter{
         void initPixivIllustFragment(String mode);
         void reloadData(String mode);
+        void onItemClick(PixivIllustBean bean);
     }
 
 

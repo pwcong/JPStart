@@ -13,6 +13,7 @@
         android:name=".App"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
+
         <activity
             android:theme="@style/AppTheme.NoActionBar"
             android:name=".component.activity.SplashActivity"
@@ -22,6 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".component.activity.MainActivity"/>
 
         <activity android:name=".component.activity.PhotoViewActivity" android:theme="@style/AppTheme.Transparent"/>

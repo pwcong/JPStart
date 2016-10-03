@@ -9,10 +9,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.pwcong.jpstart.App;
+import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.mvp.bean.PixivIllustBean;
 import me.pwcong.jpstart.network.Api;
 import me.pwcong.jpstart.network.pixiv.service.PixivIllustServiceImpl;
 import me.pwcong.jpstart.network.pixiv.service.PixivService;
+import me.pwcong.jpstart.utils.ResourceUtils;
 import okhttp3.ResponseBody;
 import rx.Observable;
 import rx.Subscriber;
@@ -63,6 +66,15 @@ public class PixivIllustFragmentModelImpl implements BaseModel.PixivIllustFragme
         }).observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(subscriber);
+    }
+
+    @Override
+    public String[] getOptions() {
+
+        return new String[]{ResourceUtils.getString(App.getInstance(), R.string.source_img),
+                ResourceUtils.getString(App.getInstance(),R.string.thumbnail),
+                ResourceUtils.getString(App.getInstance(),R.string.share)};
+
     }
 
     private static List<PixivIllustBean> handleResponseBody(ResponseBody responseBody){

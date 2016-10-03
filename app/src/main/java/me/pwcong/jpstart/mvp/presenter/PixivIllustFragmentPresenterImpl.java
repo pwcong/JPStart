@@ -1,11 +1,18 @@
 package me.pwcong.jpstart.mvp.presenter;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Bundle;
+
 import java.util.List;
 
+import me.pwcong.jpstart.R;
+import me.pwcong.jpstart.conf.Constants;
 import me.pwcong.jpstart.mvp.bean.PixivIllustBean;
 import me.pwcong.jpstart.mvp.model.BaseModel;
 import me.pwcong.jpstart.mvp.model.PixivIllustFragmentModelImpl;
 import me.pwcong.jpstart.mvp.view.BaseView;
+import me.pwcong.jpstart.utils.ActivityUtils;
 import rx.Subscriber;
 
 /**
@@ -42,7 +49,7 @@ public class PixivIllustFragmentPresenterImpl extends BasePresenter<BaseView.Pix
 
             @Override
             public void onError(Throwable e) {
-
+                view.showMsg(R.string.error_unknown);
             }
 
             @Override
@@ -50,6 +57,34 @@ public class PixivIllustFragmentPresenterImpl extends BasePresenter<BaseView.Pix
                 view.setData(list);
             }
         });
+
+    }
+
+    @Override
+    public void onItemClick(final PixivIllustBean bean) {
+
+        view.showOptionsDialog(model.getOptions(), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                switch (which){
+
+                    case 0:
+                        ActivityUtils.openUrl(bean.getLink());
+                        break;
+                    case 1:
+                        view.showImg(bean.getImg_240x480());
+                        break;
+                    case 2:
+                        ActivityUtils.share(bean.getLink());
+                        break;
+                    default:break;
+                }
+
+                dialog.dismiss();
+            }
+        });
+
 
     }
 }
