@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import butterknife.BindView;
+import me.pwcong.jpstart.App;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.component.fragment.JPStartTabFragment;
 import me.pwcong.jpstart.component.fragment.MemoryFragment;
@@ -60,12 +61,18 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
 
         presenter=new MainActivityPresenterImpl(this);
 
-        RxBus.getDefault().toObserverable(EventContainer.class).subscribe(new Action1<EventContainer>() {
-            @Override
-            public void call(EventContainer eventContainer) {
-                presenter.onBusEventInteraction(eventContainer);
-            }
-        });
+        if(App.FLAG_MAIN){
+
+            RxBus.getDefault().toObserverable(EventContainer.class).subscribe(new Action1<EventContainer>() {
+                @Override
+                public void call(EventContainer eventContainer) {
+                    presenter.onBusEventInteraction(eventContainer);
+                }
+            });
+
+            App.FLAG_MAIN = false;
+        }
+
 
         initToolbar();
         initRadioButtonView();

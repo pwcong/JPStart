@@ -12,6 +12,8 @@ public class App extends Application {
 
     private static App instance = null;
 
+    public static boolean FLAG_MAIN = true;
+
     public static int CURRENT_ITEM = 0;
     public static int TYPE_MING = Constants.TYPE_HIRAGANA;
 
