@@ -139,7 +139,7 @@ public class SoundPoolManager {
 
     private SoundPoolManager(){
 
-        soundPool=new SoundPool(sounds.size(), AudioManager.STREAM_MUSIC,0);
+        soundPool=new SoundPool(1, AudioManager.STREAM_MUSIC,0);
 
     }
 

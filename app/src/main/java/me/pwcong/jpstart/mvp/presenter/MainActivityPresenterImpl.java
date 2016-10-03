@@ -93,8 +93,8 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
 
 
                 break;
-            case R.id.item_pixiv:
-                view.switchPixiv();
+            case R.id.item_pixiv_illust:
+                view.switchPixivIllust();
                 break;
             case R.id.item_setting:
                 view.switchSetting();

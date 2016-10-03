@@ -5,6 +5,8 @@ import java.util.List;
 import me.pwcong.jpstart.mvp.bean.BaiduTranslateBean;
 import me.pwcong.jpstart.mvp.bean.JPItem;
 import me.pwcong.jpstart.mvp.bean.JPTab;
+import me.pwcong.jpstart.mvp.bean.PixivIllustBean;
+import me.pwcong.jpstart.mvp.bean.PixivIllustTab;
 import me.pwcong.jpstart.mvp.bean.TranslateSpinnerItem;
 import rx.Subscriber;
 
@@ -31,6 +33,14 @@ public interface BaseModel<T> {
         void translate(String q, String from, String to, Subscriber<BaiduTranslateBean> subscriber);
 
     }
+
+    interface PixivIllustFragmentModel {
+
+        void getIllusts(String mode, Subscriber<List<PixivIllustBean>> subscriber);
+
+    }
+
+    interface PixivIllustTabFragmentModel extends BaseModel<PixivIllustTab>{}
 
 
 }

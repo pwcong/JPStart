@@ -21,11 +21,9 @@ import butterknife.BindView;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.component.fragment.JPStartTabFragment;
 import me.pwcong.jpstart.component.fragment.MemoryFragment;
-import me.pwcong.jpstart.component.fragment.PixivFragment;
+import me.pwcong.jpstart.component.fragment.PixivIllustTabFragment;
 import me.pwcong.jpstart.component.fragment.TranslateFragment;
-import me.pwcong.jpstart.conf.Constants;
 import me.pwcong.jpstart.manager.ActivityManager;
-import me.pwcong.jpstart.manager.SharedPreferenceManager;
 import me.pwcong.jpstart.mvp.presenter.BasePresenter;
 import me.pwcong.jpstart.mvp.presenter.MainActivityPresenterImpl;
 import me.pwcong.jpstart.mvp.view.BaseView;
@@ -194,15 +192,15 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
     }
 
     @Override
-    public void switchPixiv() {
+    public void switchPixivIllust() {
 
-        mToolbar.setTitle(R.string.pixiv);
+        mToolbar.setTitle(R.string.pixiv_illust);
 
         mRadioButtonView.setVisibility(View.GONE);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.content_main,new PixivFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_main,new PixivIllustTabFragment()).commit();
 
-        Log.i(TAG, "switchPixiv: OK");
+        Log.i(TAG, "switchPixivIllust: OK");
     }
 
     @Override

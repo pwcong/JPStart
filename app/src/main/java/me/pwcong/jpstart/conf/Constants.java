@@ -36,7 +36,7 @@ public class Constants {
     public static final String FLAG_TIPS_JPSTART = "flag_tips_jpstart";
     public static final String FLAG_TIPS_TRANSLATE = "flag_tips_translate";
 
-
+    public static final String MODE_ILLUST = "mode_illust";
 
 
 

@@ -3,6 +3,8 @@
     package="me.pwcong.jpstart">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
 
     <application
         android:allowBackup="true"
@@ -21,6 +23,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".component.activity.MainActivity"/>
+
+        <activity android:name=".component.activity.PhotoViewActivity" android:theme="@style/AppTheme.Transparent"/>
 
     </application>
 

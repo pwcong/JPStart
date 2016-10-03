@@ -40,6 +40,14 @@ public abstract class BasePresenter<T> {
 
     }
 
+    public interface PixivIllustTabFragmentPresenter{
+        void initPixivIllustTabFragment();
+    }
+
+    public interface PixivIllustFragmentPresenter{
+        void initPixivIllustFragment(String mode);
+        void reloadData(String mode);
+    }
 
 
 

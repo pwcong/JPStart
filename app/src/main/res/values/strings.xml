@@ -19,7 +19,7 @@
 	<string name="chinese">中文</string>
 	<string name="japanese">日语</string>
 	<string name="hello_world">Hello World !</string>
-	<string name="pixiv">Pixiv</string>
+	<string name="pixiv_illust">Pixiv插画</string>
 	<string name="english">英语</string>
 	<string name="katakana">片假名</string>
 	<string name="row">行</string>
@@ -43,6 +43,10 @@
 
 	<string name="error_unknown">未知错误</string>
 
+	<string name="daily">今日</string>
+	<string name="weekly">本周</string>
+	<string name="monthly">本月</string>
+	<string name="rookie">新人</string>
 
 
 </resources>

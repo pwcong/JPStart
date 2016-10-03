@@ -6,6 +6,8 @@ import java.util.List;
 
 import me.pwcong.jpstart.mvp.bean.JPItem;
 import me.pwcong.jpstart.mvp.bean.JPTab;
+import me.pwcong.jpstart.mvp.bean.PixivIllustBean;
+import me.pwcong.jpstart.mvp.bean.PixivIllustTab;
 import me.pwcong.jpstart.mvp.bean.TranslateSpinnerItem;
 
 /**
@@ -22,7 +24,7 @@ public interface BaseView<T> {
         void switchJPStart();
         void switchMemory();
         void switchTranslate();
-        void switchPixiv();
+        void switchPixivIllust();
         void switchAbout();
         void switchSetting();
         void showAlertDialog(int titleId, int messageId,
@@ -51,6 +53,18 @@ public interface BaseView<T> {
         void setToSpinner(List<TranslateSpinnerItem> list);
     }
 
+    interface PixivIllustTabFragmentView extends BaseView<PixivIllustTab>{
+
+    }
+
+    interface PixivIllustFragmentView extends BaseView<PixivIllustBean>{
+
+        void showMsg(int msg);
+        void showMsg(String msg);
+        void showProgress();
+        void hideProgress();
+
+    }
 
 
 
