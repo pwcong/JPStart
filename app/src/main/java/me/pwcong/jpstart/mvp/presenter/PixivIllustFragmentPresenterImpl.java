@@ -73,7 +73,7 @@ public class PixivIllustFragmentPresenterImpl extends BasePresenter<BaseView.Pix
                         ActivityUtils.openUrl(bean.getLink());
                         break;
                     case 1:
-                        view.showImg(bean.getImg_240x480());
+                        view.showImg(bean.getImg_240x480(),bean.getId());
                         break;
                     case 2:
                         ActivityUtils.share(bean.getLink());

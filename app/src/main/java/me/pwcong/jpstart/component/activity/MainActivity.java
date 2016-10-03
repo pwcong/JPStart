@@ -21,6 +21,7 @@ import butterknife.BindView;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.component.fragment.JPStartTabFragment;
 import me.pwcong.jpstart.component.fragment.MemoryFragment;
+import me.pwcong.jpstart.component.fragment.PixivIllustFragment;
 import me.pwcong.jpstart.component.fragment.PixivIllustTabFragment;
 import me.pwcong.jpstart.component.fragment.TranslateFragment;
 import me.pwcong.jpstart.manager.ActivityManager;

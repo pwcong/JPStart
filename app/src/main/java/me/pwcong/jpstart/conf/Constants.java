@@ -1,5 +1,7 @@
 package me.pwcong.jpstart.conf;
 
+import android.os.Environment;
+
 /**
  * Created by Pwcong on 2016/9/24.
  */
@@ -35,9 +37,14 @@ public class Constants {
 
     public static final String FLAG_TIPS_JPSTART    = "flag_tips_jpstart";
     public static final String FLAG_TIPS_TRANSLATE  = "flag_tips_translate";
+    public static final String FLAG_TIPS_PIXIVILLUST  = "flag_tips_pixivillust";
 
     public static final String MODE_ILLUST          = "mode_illust";
     public static final String IMG_URL              = "img_url";
+    public static final String IMG_ID               = "img_id";
+
+    public static final String FILEDIR_ROOT             = Environment.getExternalStorageDirectory()+"/JPStart";
+    public static final String FILETYPE_JPG         = ".jpg";
 
 
 

@@ -28,7 +28,6 @@ import me.pwcong.jpstart.mvp.view.BaseView;
 
 public class PixivIllustFragment extends BaseFragment implements BaseView.PixivIllustFragmentView{
 
-    private final String TAG=getClass().getSimpleName();
 
     @BindView(R.id.layout_root)
     LinearLayout mRootLayout;
@@ -127,10 +126,11 @@ public class PixivIllustFragment extends BaseFragment implements BaseView.PixivI
     }
 
     @Override
-    public void showImg(String url) {
+    public void showImg(String url,int id) {
 
         Intent intent=new Intent(getContext(), PhotoViewActivity.class);
         intent.putExtra(Constants.IMG_URL,url);
+        intent.putExtra(Constants.IMG_ID,id);
         startActivity(intent);
 
     }

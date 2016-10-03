@@ -64,7 +64,7 @@ public interface BaseView<T> {
         void showProgress();
         void hideProgress();
         void showOptionsDialog(String[] options, DialogInterface.OnClickListener listener);
-        void showImg(String url);
+        void showImg(String url,int id);
 
     }
 

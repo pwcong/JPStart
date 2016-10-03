@@ -26,7 +26,6 @@ import me.pwcong.jpstart.mvp.view.BaseView;
 
 public class JPStartTabFragment extends BaseFragment implements BaseView.JPStartTabFragmentView {
 
-    private final String TAG=getClass().getSimpleName();
 
     @BindView(R.id.tab_layout)
     TabLayout mTabLayout;
@@ -81,7 +80,6 @@ public class JPStartTabFragment extends BaseFragment implements BaseView.JPStart
     protected void doAction() {
 
         presenter.initJPStartTabFragment();
-        Log.i(TAG, "doAction: OK");
 
     }
 

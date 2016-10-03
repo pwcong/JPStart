@@ -94,7 +94,28 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
 
                 break;
             case R.id.item_pixiv_illust:
+
                 view.switchPixivIllust();
+
+                if(SharedPreferenceManager.getInstance().getBoolean(Constants.FLAG_TIPS_PIXIVILLUST,true)){
+
+                    view.showAlertDialog(R.string.small_tips, R.string.tips_pixivillust,
+                            R.string.remember, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            }, R.string.do_not_remind, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS_PIXIVILLUST,false);
+                                }
+                            });
+
+
+                }
+
+
                 break;
             case R.id.item_setting:
                 view.switchSetting();
