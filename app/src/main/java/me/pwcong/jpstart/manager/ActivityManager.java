@@ -55,11 +55,14 @@ public class ActivityManager {
 
     public void finishAll(){
 
+        current=null;
+
         for(Activity t:activities){
             t.finish();
         }
 
         activities.clear();
+
 
     }
 
