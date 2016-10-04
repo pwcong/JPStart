@@ -1,4 +1,4 @@
-package me.pwcong.jpstart.widget;
+package me.pwcong.jpstart.widget.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
