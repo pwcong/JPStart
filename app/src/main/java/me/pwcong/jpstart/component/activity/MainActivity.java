@@ -46,11 +46,12 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
     NavigationView mNavigationView;
 
     RadioButtonView mRadioButtonView;
-
     Subscription subscription;
 
     private long mExitTime;
     private BasePresenter.MainActivityPresenter presenter;
+
+    boolean registered = false;
 
     @Override
     protected int getViewId() {
@@ -62,19 +63,23 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
 
         presenter=new MainActivityPresenterImpl(this);
 
-        subscription = RxBus.getDefault().toObserverable(EventContainer.class).subscribe(new Action1<EventContainer>() {
-            @Override
-            public void call(EventContainer eventContainer) {
-                presenter.onBusEventInteraction(eventContainer);
-            }
-        });
+        if(!registered){
+
+            subscription = RxBus.getDefault().toObserverable(EventContainer.class).subscribe(new Action1<EventContainer>() {
+                @Override
+                public void call(EventContainer eventContainer) {
+                    presenter.onBusEventInteraction(eventContainer);
+                }
+            });
+
+            registered = true;
+
+        }
 
         initToolbar();
         initRadioButtonView();
         initDrawerLayout();
         initNavigationView();
-
-
 
     }
 
@@ -136,7 +141,6 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
 
         Log.i(TAG, "doAction: OK");
     }
-
 
 
     @Override
@@ -251,12 +255,6 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
     }
 
     @Override
-    protected void onStop() {
-        super.onStop();
-        subscription.unsubscribe();
-    }
-
-    @Override
     public void switchAbout() {
 
         Log.i(TAG, "switchAbout: OK");
@@ -271,4 +269,9 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
 
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        subscription.unsubscribe();
+    }
 }
