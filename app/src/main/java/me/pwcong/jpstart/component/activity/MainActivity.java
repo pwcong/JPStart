@@ -19,13 +19,11 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import butterknife.BindView;
-import me.pwcong.jpstart.App;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.component.fragment.JPStartTabFragment;
 import me.pwcong.jpstart.component.fragment.MemoryFragment;
 import me.pwcong.jpstart.component.fragment.PixivIllustTabFragment;
 import me.pwcong.jpstart.component.fragment.TranslateFragment;
-import me.pwcong.jpstart.manager.ActivityManager;
 import me.pwcong.jpstart.mvp.presenter.BasePresenter;
 import me.pwcong.jpstart.mvp.presenter.MainActivityPresenterImpl;
 import me.pwcong.jpstart.mvp.view.BaseView;
@@ -33,6 +31,7 @@ import me.pwcong.jpstart.rxbus.RxBus;
 import me.pwcong.jpstart.rxbus.event.EventContainer;
 import me.pwcong.jpstart.utils.ResourceUtils;
 import me.pwcong.radiobuttonview.view.RadioButtonView;
+import rx.Subscription;
 import rx.functions.Action1;
 
 public class MainActivity extends BaseActivity implements BaseView.MainActivityView {
@@ -48,6 +47,8 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
 
     RadioButtonView mRadioButtonView;
 
+    Subscription subscription;
+
     private long mExitTime;
     private BasePresenter.MainActivityPresenter presenter;
 
@@ -61,18 +62,12 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
 
         presenter=new MainActivityPresenterImpl(this);
 
-        if(App.FLAG_MAIN){
-
-            RxBus.getDefault().toObserverable(EventContainer.class).subscribe(new Action1<EventContainer>() {
-                @Override
-                public void call(EventContainer eventContainer) {
-                    presenter.onBusEventInteraction(eventContainer);
-                }
-            });
-
-            App.FLAG_MAIN = false;
-        }
-
+        subscription = RxBus.getDefault().toObserverable(EventContainer.class).subscribe(new Action1<EventContainer>() {
+            @Override
+            public void call(EventContainer eventContainer) {
+                presenter.onBusEventInteraction(eventContainer);
+            }
+        });
 
         initToolbar();
         initRadioButtonView();
@@ -146,6 +141,7 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
 
     @Override
     public void onBackPressed() {
+
         if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
             closeDrawer();
         } else {
@@ -156,7 +152,7 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
                 mExitTime = System.currentTimeMillis();
 
             } else {
-                ActivityManager.getInstance().finishAll();
+                super.onBackPressed();
             }
         }
     }
@@ -255,11 +251,16 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
     }
 
     @Override
+    protected void onStop() {
+        super.onStop();
+        subscription.unsubscribe();
+    }
+
+    @Override
     public void switchAbout() {
 
         Log.i(TAG, "switchAbout: OK");
     }
-
 
     private ArrayList<String> getRadioButtonOptions(){
 
@@ -269,4 +270,5 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
         return options;
 
     }
+
 }

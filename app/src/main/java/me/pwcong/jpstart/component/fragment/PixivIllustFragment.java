@@ -132,6 +132,7 @@ public class PixivIllustFragment extends BaseFragment implements BaseView.PixivI
         PhotoViewEvent event=new PhotoViewEvent(url,id);
         RxBus.getDefault().post(new EventContainer(EventContainer.TYPE_PHOTOVIEW,event));
 
+
     }
 
 

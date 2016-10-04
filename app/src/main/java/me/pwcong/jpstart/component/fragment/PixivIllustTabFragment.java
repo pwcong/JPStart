@@ -35,7 +35,7 @@ public class PixivIllustTabFragment extends BaseFragment implements BaseView.Pix
 
     @Override
     protected int getViewId() {
-        return R.layout.fragment_tab;
+        return R.layout.fragment_pixivillust_tab;
     }
 
     @Override

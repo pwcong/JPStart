@@ -17,6 +17,10 @@ public interface PixivIllustApi {
     String MODE_WEEKLY      = "weekly";
     String MODE_MONTHLY     = "monthly";
     String MODE_ROOKIE      = "rookie";
+    String MODE_ORIGINAL    = "original";
+    String MODE_MALE        = "male";
+    String MODE_FEMALE      = "female";
+
 
     String MODE_MEDIUM      = "medium";
 

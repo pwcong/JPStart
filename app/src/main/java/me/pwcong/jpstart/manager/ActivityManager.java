@@ -59,11 +59,10 @@ public class ActivityManager {
 
         for(Activity t:activities){
             t.finish();
+            Log.i(TAG, "unregister: OK -> "+ t);
         }
-
         activities.clear();
-
-
+        Log.i(TAG, "unregister: ALL -> "+activities);
     }
 
     public static Activity getCurrent() {

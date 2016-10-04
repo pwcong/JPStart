@@ -48,6 +48,9 @@
 	<string name="weekly">本周</string>
 	<string name="monthly">本月</string>
 	<string name="rookie">新人</string>
+	<string name="original">原创</string>
+	<string name="male">受男性欢迎</string>
+	<string name="female">受女性欢迎</string>
 
 	<string name="source_img">原图</string>
 	<string name="thumbnail">缩略图</string>
