@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    
+    <me.pwcong.jpstart.widget.swipecardview.SwipeFlingAdapterView
+        android:id="@+id/swipe_view"
+        app:min_adapter_stack="4"
+        app:max_visible="4"
+        app:y_offset_step="@dimen/memory_swipe_offset_y"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    
 
-    <ImageView
-        android:src="@drawable/ic_warning_black_24dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView2"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="120dp" />
-
-    <TextView
-        android:textSize="18sp"
-        android:text="@string/warn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2"
-        android:layout_marginTop="19dp"
-        android:layout_below="@+id/imageView2"
-        android:layout_centerHorizontal="true" />
-
-</RelativeLayout>
+</LinearLayout>

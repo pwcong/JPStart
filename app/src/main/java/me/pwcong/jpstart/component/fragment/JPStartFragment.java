@@ -17,7 +17,7 @@ import me.pwcong.jpstart.mvp.presenter.BasePresenter;
 import me.pwcong.jpstart.mvp.presenter.JPStartFragmentPresenterImpl;
 import me.pwcong.jpstart.mvp.view.BaseView;
 import me.pwcong.jpstart.utils.ResourceUtils;
-import me.pwcong.jpstart.widget.ImageDialog;
+import me.pwcong.jpstart.widget.dialog.ImageDialog;
 
 /**
  * Created by Pwcong on 2016/9/27.

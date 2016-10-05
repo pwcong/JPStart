@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_root"
+    android:layout_width="match_parent"
+    android:layout_margin="@dimen/memory_item_margin"
+    android:layout_height="wrap_content"
+    app:cardElevation="@dimen/memory_item_elevation"
+    app:cardCornerRadius="@dimen/memory_item_corners"
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="@dimen/memory_item_padding"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_rome"
+                android:textSize="36sp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginRight="12dp"
+                android:text="a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:gravity="end|center_vertical"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <Button
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:id="@+id/btn_yin"
+                    android:text="音"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/selector_memory_button"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp" />
+
+                <Button
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:id="@+id/btn_write"
+                    android:textColor="@color/white"
+                    android:text="写"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/selector_memory_button"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_ming"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="160sp"
+            android:gravity="center_horizontal"
+            android:text="あ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

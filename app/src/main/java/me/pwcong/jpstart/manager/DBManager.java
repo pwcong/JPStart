@@ -27,6 +27,9 @@ public class DBManager {
     private List<JPItem> qingYin = null;
     private List<JPItem> zhuoYin = null;
     private List<JPItem> aoYin = null;
+    private List<JPItem> qingYinWithoutHeader = null;
+    private List<JPItem> zhuoYinWithoutHeader = null;
+    private List<JPItem> aoYinWithoutHeader = null;
 
     private DBManager() {
     }
@@ -42,9 +45,9 @@ public class DBManager {
 
     public void init(){
 
-        getQingYin();
-        getZhuoYin();
-        getAoYin();
+        getQingYinWithoutHeader();
+        getZhuoYinWithoutHeader();
+        getAoYinWithoutHeader();
 
     }
 
@@ -143,12 +146,66 @@ public class DBManager {
 
         }
 
-
-
         return aoYin;
     }
 
-    public static void addHeaderString(List<JPItem> list,int row,int column){
+    public List<JPItem> getQingYinWithoutHeader() {
+
+        if (qingYinWithoutHeader==null){
+
+            qingYinWithoutHeader=new ArrayList<>();
+            List<JPItem> query = getQingYin();
+            for(JPItem item:query){
+
+                if(item.getRow()!=0&&item.getColumn()!=0){
+                    qingYinWithoutHeader.add(item);
+                }
+
+            }
+        }
+
+
+
+        return qingYinWithoutHeader;
+    }
+
+    public List<JPItem> getZhuoYinWithoutHeader() {
+
+        if (zhuoYinWithoutHeader==null){
+
+            zhuoYinWithoutHeader=new ArrayList<>();
+            List<JPItem> query = getZhuoYin();
+            for(JPItem item:query){
+
+                if(item.getRow()!=0&&item.getColumn()!=0){
+                    zhuoYinWithoutHeader.add(item);
+                }
+
+            }
+        }
+
+        return zhuoYinWithoutHeader;
+    }
+
+    public List<JPItem> getAoYinWithoutHeader() {
+
+        if (aoYinWithoutHeader==null){
+
+            aoYinWithoutHeader=new ArrayList<>();
+            List<JPItem> query = getAoYin();
+            for(JPItem item:query){
+
+                if(item.getRow()!=0&&item.getColumn()!=0){
+                    aoYinWithoutHeader.add(item);
+                }
+
+            }
+        }
+
+        return aoYinWithoutHeader;
+    }
+
+    public static void addHeaderString(List<JPItem> list, int row, int column){
 
         for(int i=1;i<column;i++){
 
@@ -168,11 +225,10 @@ public class DBManager {
             item.setHiragana(hiragana+ResourceUtils.getString(App.getInstance(),R.string.row));
             item.setKatakana(katakana+ResourceUtils.getString(App.getInstance(),R.string.row));
 
-
         }
 
-
-
     }
+
+
 
 }
