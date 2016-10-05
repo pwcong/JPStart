@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:gravity="center"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     
@@ -14,6 +14,21 @@
         app:y_offset_step="@dimen/memory_swipe_offset_y"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-    
 
-</LinearLayout>
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/fab_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        fab:fab_addButtonColorNormal="@color/colorPrimary"
+        fab:fab_addButtonColorPressed="@color/colorPrimaryDark"
+        fab:fab_addButtonPlusIconColor="@color/white"
+        fab:fab_labelStyle="@style/menu_labels_style"
+        android:layout_marginBottom="16dp"
+        fab:fab_addButtonSize="mini"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"/>
+
+</RelativeLayout>

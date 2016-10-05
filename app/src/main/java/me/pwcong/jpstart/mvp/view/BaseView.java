@@ -71,6 +71,12 @@ public interface BaseView<T> {
 
     }
 
+    interface MemoryFragmentView extends BaseView<JPItem>{
+        void showMsg(int msg);
+        void showMsg(String msg);
+        void hideFabMenu();
+
+    }
 
 
 }

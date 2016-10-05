@@ -32,6 +32,8 @@
 	<string name="qingyin">清音</string>
 	<string name="column">列</string>
 	<string name="clear">清空</string>
+	<string name="yin">音</string>
+	<string name="write">写</string>
 	<string name="loading">Loading</string>
 	<string name="app_name">五十音图</string>
 	<string name="jp_start">五十音图</string>
@@ -62,6 +64,7 @@
 
 	<string name="warn">该功能暂未完成</string>
 
+	<string name="one_more_time">全部记住了吗？再来一次吧！</string>
 
 
 

@@ -54,6 +54,13 @@ public abstract class BasePresenter<T> {
         void onItemClick(PixivIllustBean bean);
     }
 
+    public interface MemoryFragmentPresenter {
+
+        void initMemoryFragment();
+        void loadMore(int category);
+        void setDate(int category);
+
+    }
 
 
 }

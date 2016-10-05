@@ -44,5 +44,13 @@ public interface BaseModel<T> {
 
     interface PixivIllustTabFragmentModel extends BaseModel<PixivIllustTab>{}
 
+    interface MemoryFragmentModel{
+
+        List<JPItem> getQingYinWithoutHeader();
+        List<JPItem> getZhuoYinWithoutHeader();
+        List<JPItem> getAoYinWithoutHeader();
+
+
+    }
 
 }
