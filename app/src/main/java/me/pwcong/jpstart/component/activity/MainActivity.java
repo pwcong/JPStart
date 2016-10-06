@@ -230,6 +230,8 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
     @Override
     public void switchSetting() {
 
+        startActivity(new Intent(MainActivity.this,SettingActivity.class));
+
         Log.i(TAG, "switchSetting: OK");
     }
 

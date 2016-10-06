@@ -70,4 +70,15 @@
 
     <string name="one_more_press_to_exit">Click again to exit</string>
 
+    <string name="system_setting">系統設置</string>
+    <string name="theme">主題</string>
+    <string name="other_setting">其他設定</string>
+    <string name="more_setting">更多設定</string>
+    <string name="tips_setting">更多設定將來再添加完善。</string>
+    <string name="auto">自動</string>
+    <string name="day">白天</string>
+    <string name="night">夜晚</string>
+
+    <string name="reboot_to_take_effect">請重新啟動使設定生效。</string>
+
 </resources>

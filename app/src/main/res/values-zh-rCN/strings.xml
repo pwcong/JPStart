@@ -70,5 +70,14 @@
 
     <string name="one_more_press_to_exit">再按一次退出</string>
 
+    <string name="system_setting">系统设置</string>
+    <string name="theme">主题</string>
+    <string name="other_setting">其他设置</string>
+    <string name="more_setting">更多设置</string>
+    <string name="tips_setting">更多设置将来再添加完善。</string>
+    <string name="auto">自动</string>
+    <string name="day">白天</string>
+    <string name="night">夜晚</string>
 
+    <string name="reboot_to_take_effect">请重新启动使设置生效。</string>
 </resources>

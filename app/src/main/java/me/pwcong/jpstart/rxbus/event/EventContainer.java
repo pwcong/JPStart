@@ -7,6 +7,7 @@ package me.pwcong.jpstart.rxbus.event;
 public class EventContainer {
 
     public static final int TYPE_PHOTOVIEW = 123;
+    public static final int TYPE_SETTING = 456;
 
 
     int type;

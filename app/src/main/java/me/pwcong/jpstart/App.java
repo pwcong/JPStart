@@ -28,7 +28,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         instance=this;
-        setDayNightMode(SharedPreferenceManager.getInstance().getInt(Constants.MODE,Constants.MODE_AUTO));
+        setDayNightMode(SharedPreferenceManager.getInstance().getString(Constants.MODE_THEME,Constants.MODE_AUTO));
     }
 
     public synchronized static App getInstance(){
@@ -37,7 +37,7 @@ public class App extends Application {
 
 
 
-    private void setDayNightMode(int mode){
+    private void setDayNightMode(String mode){
 
         switch (mode){
             case Constants.MODE_AUTO:
@@ -47,7 +47,7 @@ public class App extends Application {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                 break;
             case Constants.MODE_DAY:
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                 break;
             default:
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO);

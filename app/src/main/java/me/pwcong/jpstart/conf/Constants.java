@@ -48,15 +48,10 @@ public class Constants {
     public static final String FILETYPE_JPG         = ".jpg";
 
 
-    public static final String COUNTRY = "country";
-    public static final int ZH = 111;
-    public static final int EN = 222;
-    public static final int TW = 333;
-
-    public static final String MODE = "mode";
-    public static final int MODE_AUTO = 444;
-    public static final int MODE_DAY = 555;
-    public static final int MODE_NIGHT = 666;
+    public static final String MODE_THEME = "mode_theme";
+    public static final String MODE_AUTO = "auto";
+    public static final String MODE_DAY = "day";
+    public static final String MODE_NIGHT = "night";
 
 
 

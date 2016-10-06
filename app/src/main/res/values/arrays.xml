@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="themes_values">
+        <item>auto</item>
+        <item>day</item>
+        <item>night</item>
+    </string-array>
+
+    <string-array name="themes_entries">
+        <item>@string/auto</item>
+        <item>@string/day</item>
+        <item>@string/night</item>
+    </string-array>
+
+</resources>
