@@ -157,7 +157,7 @@ public class DBManager {
             List<JPItem> query = getQingYin();
             for(JPItem item:query){
 
-                if(item.getRow()!=0&&item.getColumn()!=0){
+                if(item.getRow()!=0&&item.getColumn()!=0&&item.isExisted()){
                     qingYinWithoutHeader.add(item);
                 }
 
@@ -177,7 +177,7 @@ public class DBManager {
             List<JPItem> query = getZhuoYin();
             for(JPItem item:query){
 
-                if(item.getRow()!=0&&item.getColumn()!=0){
+                if(item.getRow()!=0&&item.getColumn()!=0&&item.isExisted()){
                     zhuoYinWithoutHeader.add(item);
                 }
 
@@ -195,7 +195,7 @@ public class DBManager {
             List<JPItem> query = getAoYin();
             for(JPItem item:query){
 
-                if(item.getRow()!=0&&item.getColumn()!=0){
+                if(item.getRow()!=0&&item.getColumn()!=0&&item.isExisted()){
                     aoYinWithoutHeader.add(item);
                 }
 
