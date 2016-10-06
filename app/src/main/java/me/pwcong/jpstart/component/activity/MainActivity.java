@@ -263,6 +263,7 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
 
     @Override
     public void switchAbout() {
+        startActivity(new Intent(MainActivity.this,AboutActivity.class));
 
         Log.i(TAG, "switchAbout: OK");
     }

@@ -11,8 +11,8 @@
 
     <item android:title="@string/other">
         <menu>
-            <item android:id="@+id/item_setting" android:title="@string/setting" android:icon="@drawable/ic_settings_black_24dp"/>
             <item android:id="@+id/item_about" android:title="@string/about" android:icon="@drawable/ic_info_outline_black_24dp"/>
+            <item android:id="@+id/item_setting" android:title="@string/setting" android:icon="@drawable/ic_settings_black_24dp"/>
         </menu>
     </item>
 

@@ -31,6 +31,10 @@
 
         <activity android:configChanges="locale" android:name=".component.activity.SettingActivity" android:label="@string/setting"/>
 
+        <activity android:configChanges="locale" android:name=".component.activity.AboutActivity" android:label="@string/about"/>
+
+
+
     </application>
 
 </manifest>
