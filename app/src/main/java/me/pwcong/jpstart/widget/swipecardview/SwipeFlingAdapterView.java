@@ -111,7 +111,7 @@ public class SwipeFlingAdapterView extends BaseFlingAdapterView {
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
-        // if we don't have an adapter, we don't need to do anything
+        // if we don't have an adapter, we don't need to doo anything
         if (mAdapter == null) {
             return;
         }

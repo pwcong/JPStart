@@ -4,7 +4,9 @@
     android:background="@drawable/bg_card"
     android:id="@+id/layout_root"
     android:layout_width="match_parent"
-    android:layout_margin="@dimen/memory_item_margin"
+    android:layout_marginTop="46dp"
+    android:layout_marginLeft="@dimen/memory_item_margin"
+    android:layout_marginRight="@dimen/memory_item_margin"
     android:layout_height="wrap_content"
     >
 
@@ -20,11 +22,24 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <TextView
                 android:id="@+id/tv_rome"
-                android:textSize="42sp"
+                android:textSize="30sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
+            <TextView
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:id="@+id/tv_katakana"
+                android:textSize="30sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+
 
             <LinearLayout
                 android:gravity="end|center_vertical"
@@ -59,9 +74,9 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/tv_ming"
+            android:layout_marginTop="12dp"
+            android:id="@+id/tv_hiragana"
             android:textAppearance="@style/TextAppearance.AppCompat"
-            android:textSize="@dimen/memory_item_text_size"
             android:gravity="center_horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />

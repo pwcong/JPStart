@@ -27,7 +27,6 @@
         fab:fab_addButtonPlusIconColor="@color/white"
         fab:fab_labelStyle="@style/menu_labels_style"
         android:layout_marginBottom="16dp"
-        fab:fab_addButtonSize="mini"
         android:layout_marginRight="16dp"
         android:layout_marginEnd="16dp"/>
 

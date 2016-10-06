@@ -35,7 +35,9 @@
 	<dimen name="memory_item_elevation">4dp</dimen>
 	<dimen name="memory_item_corners">8dp</dimen>
 	<dimen name="memory_item_margin">18dp</dimen>
-	<dimen name="memory_item_button_margin">8dp</dimen>
+	<dimen name="memory_item_button_margin">6dp</dimen>
 	<dimen name="memory_item_button_size">32dp</dimen>
-	<dimen name="memory_item_text_size">160sp</dimen>
+	<dimen name="memory_item_text_size">65sp</dimen>
+	<dimen name="memory_item_text_size_mini">40sp</dimen>
+	<dimen name="memory_item_fab_text_size">24sp</dimen>
 </resources>

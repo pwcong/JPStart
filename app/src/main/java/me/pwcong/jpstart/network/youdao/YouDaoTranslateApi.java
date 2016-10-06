@@ -29,7 +29,7 @@ public interface YoudaoTranslateApi {
 
 
 
-    @GET("/openapi.do")
+    @GET("/openapi.doo")
     Observable<YoudaoTranslateBean> request(@Query("keyfrom") String keyfrom, @Query("key") String key, @Query("type") String type,
                                             @Query("doctype") String doctype, @Query("version")String version, @Query("q") String q);
 

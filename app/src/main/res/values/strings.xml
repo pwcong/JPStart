@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="tips_jpstart">• 短按五十音按钮播放拼读语音\n• 长按五十音按钮演示文字书写</string>
+	<string name="tips_memory">• 左右滑动可切换卡片</string>
 	<string name="tips_translate">1.将要翻译的内容输入至原文文本框\n2.点击上方双方向按钮进行翻译</string>
 	<string name="tips_pixivillust">• 点击卡片可浏览原图、缩略图和分享插画链接\n• 目前只提供低分辨率插画本地预览，原图需访问插画原址</string>
 	<string name="other">其他</string>

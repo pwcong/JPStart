@@ -10,7 +10,9 @@ import android.widget.TextView;
 import java.util.List;
 
 import me.pwcong.jpstart.R;
+import me.pwcong.jpstart.conf.Constants;
 import me.pwcong.jpstart.mvp.bean.JPItem;
+import me.pwcong.jpstart.utils.ResourceUtils;
 
 /**
  * Created by Pwcong on 2016/10/5.
@@ -19,6 +21,8 @@ import me.pwcong.jpstart.mvp.bean.JPItem;
 public class MemorySwipeAdapter extends BaseAdapter {
 
     List<JPItem> list;
+    OnYinButtonClickListener onYinButtonClickListener;
+    OnWriteButtonClickListener onWriteButtonClickListener;
 
     public MemorySwipeAdapter(List<JPItem> list) {
         this.list = list;
@@ -43,6 +47,8 @@ public class MemorySwipeAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         ViewHolder holder;
+        final JPItem item = list.get(position);
+
         if(convertView==null){
 
             convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_memory,parent,false);
@@ -51,7 +57,8 @@ public class MemorySwipeAdapter extends BaseAdapter {
             holder.tv_rome= (TextView) convertView.findViewById(R.id.tv_rome);
             holder.btn_yin= (Button) convertView.findViewById(R.id.btn_yin);
             holder.btn_write= (Button) convertView.findViewById(R.id.btn_write);
-            holder.tv_ming= (TextView) convertView.findViewById(R.id.tv_ming);
+            holder.tv_hiragana= (TextView) convertView.findViewById(R.id.tv_hiragana);
+            holder.tv_katakana= (TextView) convertView.findViewById(R.id.tv_katakana);
 
             convertView.setTag(holder);
 
@@ -59,8 +66,34 @@ public class MemorySwipeAdapter extends BaseAdapter {
             holder= (ViewHolder) convertView.getTag();
         }
 
-        holder.tv_rome.setText(list.get(position).getRome());
-        holder.tv_ming.setText(list.get(position).getHiragana());
+        holder.tv_rome.setText(item.getRome());
+
+        if(item.getCategory()== Constants.CATEGORY_AOYIN){
+            holder.tv_hiragana.setTextSize(ResourceUtils.getDimension(parent.getContext(),R.dimen.memory_item_text_size_mini));
+        }else {
+            holder.tv_hiragana.setTextSize(ResourceUtils.getDimension(parent.getContext(),R.dimen.memory_item_text_size));
+        }
+
+        holder.tv_hiragana.setText(item.getHiragana());
+        holder.tv_katakana.setText(item.getKatakana());
+
+        holder.btn_yin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(onYinButtonClickListener!=null){
+                    onYinButtonClickListener.onClick(item);
+                }
+            }
+        });
+
+        holder.btn_write.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(onWriteButtonClickListener!=null){
+                    onWriteButtonClickListener.onClick(item);
+                }
+            }
+        });
 
 
         return convertView;
@@ -83,10 +116,31 @@ public class MemorySwipeAdapter extends BaseAdapter {
         public TextView tv_rome;
         public Button btn_yin;
         public Button btn_write;
-        public TextView tv_ming;
+        public TextView tv_hiragana;
+        public TextView tv_katakana;
 
     }
 
+    public void setOnYinButtonClickListener(OnYinButtonClickListener onYinButtonClickListener) {
+        this.onYinButtonClickListener = onYinButtonClickListener;
+    }
+
+    public void setOnWriteButtonClickListener(OnWriteButtonClickListener onWriteButtonClickListener) {
+        this.onWriteButtonClickListener = onWriteButtonClickListener;
+    }
+
+    public void setList(List<JPItem> list) {
+        this.list = list;
+        notifyDataSetChanged();
+    }
+
+    public interface OnYinButtonClickListener{
+        void onClick(JPItem item);
+    }
+
+    public interface OnWriteButtonClickListener{
+        void onClick(JPItem item);
+    }
 
 
 }

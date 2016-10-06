@@ -53,7 +53,7 @@ public class PixivIllustTabFragment extends BaseFragment implements BaseView.Pix
     }
 
     private void initViewPager(){
-        // do something
+        // doo something
     }
 
 

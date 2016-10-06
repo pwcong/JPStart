@@ -143,7 +143,6 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
-                    android:text="@string/hint_translation_destination"
                     android:textAppearance="@style/TextAppearance.AppCompat"
                     android:id="@+id/tv_dst"
                     android:layout_width="match_parent"

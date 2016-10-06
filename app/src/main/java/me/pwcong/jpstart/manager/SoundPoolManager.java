@@ -41,7 +41,7 @@ public class SoundPoolManager {
         sounds.add(new JPSound("chu",R.raw.chu));
         sounds.add(new JPSound("da",R.raw.da));
         sounds.add(new JPSound("de",R.raw.de));
-        sounds.add(new JPSound("do",R.raw.duo));
+        sounds.add(new JPSound("do",R.raw.doo));
         sounds.add(new JPSound("e",R.raw.e));
         sounds.add(new JPSound("fu",R.raw.fu));
         sounds.add(new JPSound("ga",R.raw.ga));
@@ -120,7 +120,7 @@ public class SoundPoolManager {
         sounds.add(new JPSound("tsu",R.raw.tsu));
         sounds.add(new JPSound("u",R.raw.u));
         sounds.add(new JPSound("wa",R.raw.wa));
-        sounds.add(new JPSound("wo",R.raw.wo));
+        sounds.add(new JPSound("wo",R.raw.o));
         sounds.add(new JPSound("ya",R.raw.ya));
         sounds.add(new JPSound("yo",R.raw.yo));
         sounds.add(new JPSound("yu",R.raw.yu));
@@ -167,7 +167,9 @@ public class SoundPoolManager {
 
     public void play(String rome){
 
-        soundPool.play(soundsIdMap.get(rome),1,1,0,0,1);
+        if(soundsIdMap.get(rome)!=null){
+            soundPool.play(soundsIdMap.get(rome),1,1,0,0,1);
+        }
 
     }
 
