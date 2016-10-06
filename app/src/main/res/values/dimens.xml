@@ -6,7 +6,7 @@
 	<dimen name="translate_margin">8dp</dimen>
 	<dimen name="item_margin">2dp</dimen>
 	<dimen name="jpstart_corners">12dp</dimen>
-	<dimen name="radio_button_width">120dp</dimen>
+	<dimen name="radio_button_width">130dp</dimen>
 	<dimen name="dialog_width">200dp</dimen>
 	<dimen name="item_height">56dp</dimen>
 	<dimen name="translate_button_margin">4dp</dimen>

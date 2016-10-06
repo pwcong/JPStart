@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="tips_jpstart">• Short press to play sound spelling pronunciation\n• Long press to demonstrate the writing of the text</string>
+    <string name="tips_memory">• Left and right sliding switch card</string>
+    <string name="tips_translate">1.The content to be translated into the text box\n2.Click on the top two direction button for translation</string>
+    <string name="tips_pixivillust">• Click on the card can browse the artwork, thumbnails and illustration share links\n• At present, only low resolution illustration local preview, to visit the site of the original illustration</string>
+    <string name="other">Other</string>
+    <string name="zhuoyin">浊音</string>
+    <string name="memory">Memory</string>
+    <string name="hiragana">Hiragana</string>
+    <string name="source_contents">Original：</string>
+    <string name="about">About</string>
+    <string name="translation_contents">Translation：</string>
+    <string name="paste">Paste</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="translate">Translate</string>
+    <string name="auto_check">Auto Check</string>
+    <string name="setting">Setting</string>
+    <string name="remember">Remember</string>
+    <string name="enter_frame">Enter View</string>
+    <string name="chinese">CN</string>
+    <string name="japanese">JP</string>
+    <string name="hello_world">Hello World !</string>
+    <string name="pixiv_illust">Pixiv Illust</string>
+    <string name="english">EN</string>
+    <string name="katakana">Katakana</string>
+    <string name="row">Row</string>
+    <string name="copy">Copy</string>
+    <string name="hint_translate_source">(￣y▽￣)╭ Please enter here!</string>
+    <string name="small_tips">Tips</string>
+    <string name="image">Image</string>
+    <string name="national_flag">National Flag</string>
+    <string name="qingyin">清音</string>
+    <string name="column">Column</string>
+    <string name="clear">Clear</string>
+    <string name="yin">音</string>
+    <string name="write">写</string>
+    <string name="loading">Loading</string>
+    <string name="app_name">五十音图</string>
+    <string name="jp_start">JP Start</string>
+    <string name="do_not_remind">Don\'t remind</string>
+    <string name="hint_translation_destination">ㄟ( ▔, ▔ )ㄏ The translation is empty, I don\'t know anything.</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="aoyin">拗音</string>
+
+    <string name="copy_successfully">Has successfully copied to the clipboard</string>
+
+    <string name="error_unknown">Unknown Error</string>
+
+    <string name="daily">Daily</string>
+    <string name="weekly">Weekly</string>
+    <string name="monthly">Monthly</string>
+    <string name="rookie">Rookie</string>
+    <string name="original">Original</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+
+    <string name="source_img">Original</string>
+    <string name="thumbnail">Thumbnail</string>
+    <string name="share">Share</string>
+    <string name="share_to">Share To…</string>
+
+    <string name="save_success">Illustration has been successfully downloaded and saved</string>
+
+    <string name="save_error">Illustration save failed</string>
+
+    <string name="warn">The function not complete</string>
+
+    <string name="one_more_time">Do you remember all that? One more time!</string>
+
+    <string name="one_more_press_to_exit">Click again to exit</string>
+
+</resources>

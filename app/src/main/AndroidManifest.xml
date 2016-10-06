@@ -15,6 +15,7 @@
         android:theme="@style/AppTheme.NoActionBar">
 
         <activity
+            android:configChanges="locale"
             android:theme="@style/AppTheme.NoActionBar"
             android:name=".component.activity.SplashActivity"
             android:label="@string/app_name">
@@ -24,9 +25,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".component.activity.MainActivity"/>
+        <activity android:configChanges="locale" android:name=".component.activity.MainActivity" android:label="@string/jp_start"/>
 
-        <activity android:name=".component.activity.PhotoViewActivity" android:theme="@style/AppTheme.Transparent"/>
+        <activity android:configChanges="locale" android:name=".component.activity.PhotoViewActivity" android:theme="@style/AppTheme.Transparent"/>
+
+        <activity android:configChanges="locale" android:name=".component.activity.SettingActivity" android:label="@string/setting"/>
 
     </application>
 

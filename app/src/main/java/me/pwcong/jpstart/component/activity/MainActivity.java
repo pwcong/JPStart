@@ -17,13 +17,18 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 import butterknife.BindView;
+import me.pwcong.jpstart.App;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.component.fragment.JPStartTabFragment;
 import me.pwcong.jpstart.component.fragment.MemoryFragment;
 import me.pwcong.jpstart.component.fragment.PixivIllustTabFragment;
 import me.pwcong.jpstart.component.fragment.TranslateFragment;
+import me.pwcong.jpstart.conf.Constants;
+import me.pwcong.jpstart.manager.ActivityManager;
+import me.pwcong.jpstart.manager.SharedPreferenceManager;
 import me.pwcong.jpstart.mvp.presenter.BasePresenter;
 import me.pwcong.jpstart.mvp.presenter.MainActivityPresenterImpl;
 import me.pwcong.jpstart.mvp.view.BaseView;
@@ -151,12 +156,12 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
         } else {
             if ((System.currentTimeMillis() - mExitTime) > 2000) {
 
-                showSnackBar(mToolbar,"再按一次退出程序");
+                showSnackBar(mToolbar,R.string.one_more_press_to_exit);
 
                 mExitTime = System.currentTimeMillis();
 
             } else {
-                super.onBackPressed();
+                ActivityManager.getInstance().finishAll();
             }
         }
     }
