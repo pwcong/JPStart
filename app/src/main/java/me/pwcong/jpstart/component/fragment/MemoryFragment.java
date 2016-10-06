@@ -104,7 +104,7 @@ public class MemoryFragment extends BaseFragment implements BaseView.MemoryFragm
                 .beginConfig()
                 .fontSize((int) getContext().getResources().getDimension(R.dimen.memory_item_fab_text_size))
                 .endConfig()
-                .buildRound("清", getContext().getResources().getColor(R.color.green));
+                .buildRound("清", getContext().getResources().getColor(R.color.transparent));
 
 
         FloatingActionButton fab_qingyin = new FloatingActionButton(getContext());
@@ -126,7 +126,7 @@ public class MemoryFragment extends BaseFragment implements BaseView.MemoryFragm
                 .beginConfig()
                 .fontSize((int) getContext().getResources().getDimension(R.dimen.memory_item_fab_text_size))
                 .endConfig()
-                .buildRound("浊", getContext().getResources().getColor(R.color.orange));
+                .buildRound("浊", getContext().getResources().getColor(R.color.transparent));
 
         FloatingActionButton fab_zhuoyin = new FloatingActionButton(getContext());
         fab_zhuoyin.setIconDrawable(textZhuo);
@@ -145,7 +145,7 @@ public class MemoryFragment extends BaseFragment implements BaseView.MemoryFragm
                 .beginConfig()
                 .fontSize((int) getContext().getResources().getDimension(R.dimen.memory_item_fab_text_size))
                 .endConfig()
-                .buildRound("拗", getContext().getResources().getColor(R.color.blue));
+                .buildRound("拗", getContext().getResources().getColor(R.color.transparent));
 
         FloatingActionButton fab_aoyin = new FloatingActionButton(getContext());
         fab_aoyin.setIconDrawable(textAo);
