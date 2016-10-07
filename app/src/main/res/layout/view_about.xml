@@ -220,11 +220,12 @@
                 android:layout_height="wrap_content" />
 
             <ImageView
+                android:layout_marginTop="12dp"
+                android:src="@drawable/mm_facetoface_collect_qrcode"
                 android:contentDescription="@string/image"
                 android:scaleType="centerInside"
-                android:src="@drawable/mm_facetoface_collect_qrcode"
                 android:layout_width="match_parent"
-                android:layout_height="300dp" />
+                android:layout_height="280dp" />
 
         </LinearLayout>
 
