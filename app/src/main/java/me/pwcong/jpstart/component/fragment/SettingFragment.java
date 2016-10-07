@@ -6,6 +6,7 @@ import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.util.Log;
 
+import me.pwcong.jpstart.App;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.conf.Constants;
 import me.pwcong.jpstart.manager.SharedPreferenceManager;
@@ -58,9 +59,9 @@ public class SettingFragment extends PreferenceFragment {
             @Override
             public boolean onPreferenceChange(Preference preference, Object newValue) {
 
-                Log.i(TAG, "onPreferenceChange: "+newValue);
                 SharedPreferenceManager.getInstance().putString(Constants.MODE_THEME, (String) newValue);
-                RxBus.getDefault().post(new EventContainer(EventContainer.TYPE_SETTING,new SettingEvent(R.string.reboot_to_take_effect)));
+                RxBus.getDefault().post(new EventContainer(EventContainer.TYPE_SETTING,new SettingEvent(R.string.setting_effect)));
+                App.getInstance().setDayNightMode((String) newValue);
 
                 return true;
             }

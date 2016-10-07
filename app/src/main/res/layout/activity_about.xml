@@ -22,7 +22,7 @@
             <ImageView
                 android:contentDescription="@string/image"
                 android:scaleType="centerCrop"
-                android:background="@color/colorPrimary"
+                android:background="@drawable/bg_about"
                 app:layout_collapseMode="parallax"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />

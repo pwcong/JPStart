@@ -37,7 +37,7 @@ public class App extends Application {
 
 
 
-    private void setDayNightMode(String mode){
+    public void setDayNightMode(String mode){
 
         switch (mode){
             case Constants.MODE_AUTO:

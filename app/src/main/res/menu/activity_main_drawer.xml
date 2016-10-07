@@ -5,7 +5,7 @@
         <item android:id="@+id/item_jpstart" android:title="@string/jp_start" android:icon="@drawable/ic_library_books_black_24dp"/>
         <item android:id="@+id/item_memory" android:title="@string/memory" android:icon="@drawable/ic_memory_black_24dp"/>
         <item android:id="@+id/item_translate" android:title="@string/translate" android:icon="@drawable/ic_g_translate_black_24dp"/>
-        <item android:id="@+id/item_pixiv_illust" android:title="@string/pixiv_illust" android:icon="@drawable/ic_wallpaper_black_24dp"/>
+        <item android:id="@+id/item_pixiv_illust" android:title="@string/pixiv_illust" android:icon="@drawable/ic_local_parking_black_24dp"/>
 
     </group>
 

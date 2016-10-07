@@ -83,5 +83,22 @@
     <string name="night">Night</string>
 
     <string name="reboot_to_take_effect">Please reboot to take effect.</string>
-
+    <string name="setting_effect">Setup is in effect.</string>
+    <string name="hello_contents">\"I want a lightweight App without advertising fifty tone.\"\nAnd that\'s what I\'ve been developing for the App.</string>
+    <string name="hello_u">Hello U</string>
+    <string name="thanks">Thanks</string>
+    <string name="thanks_contents">Thanks to the following open source project code support and open platform data service support.</string>
+    <string name="rxjava_rxandroid">RxJava | RxAndroid</string>
+    <string name="butterknife">ButterKnife</string>
+    <string name="retrofit2">Retrofit2</string>
+    <string name="glide">Glide</string>
+    <string name="photoview">PhotoView</string>
+    <string name="floatingactionbutton">FloatingActionButton</string>
+    <string name="swipecardview">SwipeCardView</string>
+    <string name="baidu_translate">Baidu Translate</string>
+    <string name="pixiv">Pixiv</string>
+    <string name="here">Here</string>
+    <string name="here_contents">If you like the App, I sincerely hope you can encourage me. ( •̀ ω •́ )y</string>
+    <string name="now">Now</string>
+    <string name="now_contents">Current Version: v1.0.0</string>
 </resources>
