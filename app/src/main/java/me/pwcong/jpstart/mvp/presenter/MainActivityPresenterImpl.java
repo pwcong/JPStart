@@ -7,6 +7,8 @@ import me.pwcong.jpstart.App;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.conf.Constants;
 import me.pwcong.jpstart.manager.SharedPreferenceManager;
+import me.pwcong.jpstart.mvp.model.BaseModel;
+import me.pwcong.jpstart.mvp.model.MainActivityModelImpl;
 import me.pwcong.jpstart.mvp.view.BaseView;
 import me.pwcong.jpstart.rxbus.event.EventContainer;
 import me.pwcong.jpstart.rxbus.event.PhotoViewEvent;
@@ -17,14 +19,18 @@ import me.pwcong.jpstart.rxbus.event.PhotoViewEvent;
 
 public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivityView> implements BasePresenter.MainActivityPresenter {
 
+    BaseModel.MainActivityModel model;
+
     public MainActivityPresenterImpl(BaseView.MainActivityView view) {
         super(view);
+        model=new MainActivityModelImpl();
     }
 
     @Override
     public void initMainActivity() {
 
         onNavigationItemSelected(R.id.item_jpstart);
+        view.setViewPager(model.getData());
 
     }
 

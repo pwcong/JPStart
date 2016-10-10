@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import java.util.List;
 
+import me.pwcong.jpstart.mvp.bean.BannerItem;
 import me.pwcong.jpstart.mvp.bean.JPItem;
 import me.pwcong.jpstart.mvp.bean.JPTab;
 import me.pwcong.jpstart.mvp.bean.PixivIllustBean;
@@ -20,7 +21,8 @@ public interface BaseView<T> {
 
     void setData(List<T> data);
 
-    interface MainActivityView {
+    interface MainActivityView{
+        void setViewPager(List<BannerItem> data);
         void openDrawer();
         void closeDrawer();
         void switchJPStart();

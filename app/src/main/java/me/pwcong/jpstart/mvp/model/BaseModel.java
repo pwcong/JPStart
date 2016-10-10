@@ -3,6 +3,7 @@ package me.pwcong.jpstart.mvp.model;
 import java.util.List;
 
 import me.pwcong.jpstart.mvp.bean.BaiduTranslateBean;
+import me.pwcong.jpstart.mvp.bean.BannerItem;
 import me.pwcong.jpstart.mvp.bean.JPItem;
 import me.pwcong.jpstart.mvp.bean.JPTab;
 import me.pwcong.jpstart.mvp.bean.PixivIllustBean;
@@ -17,6 +18,10 @@ import rx.Subscriber;
 public interface BaseModel<T> {
 
     List<T> getData();
+
+
+    interface MainActivityModel extends BaseModel<BannerItem>{}
+
 
     interface JPStartTabFragmentModel extends BaseModel<JPTab>{
     }

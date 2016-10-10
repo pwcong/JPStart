@@ -56,6 +56,8 @@ public class Constants {
     public static final String URL_PWCONG = "http://pwcong.me/";
     public static final String URL_PANDA = "http://weibo.com/1693463425/";
 
+    public static final String IMG_BANNER = "img_banner";
+
 
 
 

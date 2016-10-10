@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
@@ -17,18 +18,18 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
-import java.util.Locale;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
-import me.pwcong.jpstart.App;
 import me.pwcong.jpstart.R;
+import me.pwcong.jpstart.adapter.BannerPagerAdapter;
 import me.pwcong.jpstart.component.fragment.JPStartTabFragment;
 import me.pwcong.jpstart.component.fragment.MemoryFragment;
 import me.pwcong.jpstart.component.fragment.PixivIllustTabFragment;
 import me.pwcong.jpstart.component.fragment.TranslateFragment;
-import me.pwcong.jpstart.conf.Constants;
 import me.pwcong.jpstart.manager.ActivityManager;
-import me.pwcong.jpstart.manager.SharedPreferenceManager;
+import me.pwcong.jpstart.mvp.bean.BannerItem;
 import me.pwcong.jpstart.mvp.presenter.BasePresenter;
 import me.pwcong.jpstart.mvp.presenter.MainActivityPresenterImpl;
 import me.pwcong.jpstart.mvp.view.BaseView;
@@ -36,8 +37,12 @@ import me.pwcong.jpstart.rxbus.RxBus;
 import me.pwcong.jpstart.rxbus.event.EventContainer;
 import me.pwcong.jpstart.utils.ResourceUtils;
 import me.pwcong.radiobuttonview.view.RadioButtonView;
+import me.relex.circleindicator.CircleIndicator;
+import rx.Observable;
 import rx.Subscription;
+import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
+import rx.schedulers.Schedulers;
 
 public class MainActivity extends BaseActivity implements BaseView.MainActivityView {
 
@@ -50,8 +55,12 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
     @BindView(R.id.nav_view)
     NavigationView mNavigationView;
 
+    ViewPager mBannerViewPager;
+    CircleIndicator mCircleIndicator;
+
     RadioButtonView mRadioButtonView;
-    Subscription subscription;
+    Subscription busSubscription;
+    Subscription bannerSubscription;
 
     private long mExitTime;
     private BasePresenter.MainActivityPresenter presenter;
@@ -70,7 +79,7 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
 
         if(!registered){
 
-            subscription = RxBus.getDefault().toObserverable(EventContainer.class).subscribe(new Action1<EventContainer>() {
+            busSubscription = RxBus.getDefault().toObserverable(EventContainer.class).subscribe(new Action1<EventContainer>() {
                 @Override
                 public void call(EventContainer eventContainer) {
                     presenter.onBusEventInteraction(eventContainer);
@@ -85,6 +94,7 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
         initRadioButtonView();
         initDrawerLayout();
         initNavigationView();
+        initBanner();
 
     }
 
@@ -137,6 +147,17 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
         mNavigationView.setCheckedItem(R.id.item_jpstart);
 
         Log.i(TAG, "initNavigationView: OK");
+    }
+
+    private void initBanner(){
+
+        View view = mNavigationView.getHeaderView(0);
+
+        mBannerViewPager= (ViewPager) view.findViewById(R.id.banner_view_pager);
+        mCircleIndicator= (CircleIndicator) view.findViewById(R.id.indicator);
+
+
+
     }
 
     @Override
@@ -280,6 +301,28 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        subscription.unsubscribe();
+        busSubscription.unsubscribe();
+        bannerSubscription.unsubscribe();
+    }
+
+    @Override
+    public void setViewPager(final List<BannerItem> data) {
+
+        mBannerViewPager.setAdapter(new BannerPagerAdapter(getSupportFragmentManager(),data));
+        mCircleIndicator.setViewPager(mBannerViewPager);
+
+        bannerSubscription = Observable.timer(10, 10, TimeUnit.SECONDS)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Action1<Long>() {
+            @Override
+            public void call(Long aLong) {
+
+                int next = (mBannerViewPager.getCurrentItem() + 1) % data.size();
+                mBannerViewPager.setCurrentItem(next);
+
+            }
+        });
+
     }
 }
