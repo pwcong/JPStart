@@ -95,7 +95,7 @@
     <string name="baidu_translate">百度翻譯</string>
     <string name="pixiv">Pixiv</string>
     <string name="here">Here</string>
-    <string name="here_contents">如果你喜歡這個App，真心希望你能捐助一毛兩毛鼓勵我。 ( •̀ ω •́ )y</string>
+    <string name="here_contents">如果你喜歡這個App，期望你能捐助一毛兩毛鼓勵鼓勵。 ( •̀ ω •́ )y</string>
     <string name="now">Now</string>
-    <string name="now_contents">當前版本：v1.0.0</string>
+    <string name="now_contents">當前版本：v1.0.0\n作者：Pwcong</string>
 </resources>

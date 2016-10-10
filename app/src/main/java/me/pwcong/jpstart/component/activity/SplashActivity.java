@@ -43,10 +43,10 @@ public class SplashActivity extends BaseActivity {
             public void call(Subscriber<? super String> subscriber) {
 
                 subscriber.onStart();
-                subscriber.onNext("正在加载数据…");
+                subscriber.onNext("正在加载数据");
                 DBManager.getInstance().init();
                 SoundPoolManager.getInstance().init();
-                subscriber.onNext("加载完成！");
+                subscriber.onNext("加载完成");
                 subscriber.onCompleted();
 
             }
@@ -60,7 +60,7 @@ public class SplashActivity extends BaseActivity {
 
             @Override
             public void onError(Throwable e) {
-                mTextView.setText("数据加载错误，请重新启动！");
+                mTextView.setText("数据加载错误，请重新启动");
             }
 
             @Override
