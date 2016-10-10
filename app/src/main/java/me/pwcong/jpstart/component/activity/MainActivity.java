@@ -308,6 +308,10 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
     @Override
     public void setViewPager(final List<BannerItem> data) {
 
+        if(bannerSubscription!=null){
+            bannerSubscription.unsubscribe();
+        }
+
         mBannerViewPager.setAdapter(new BannerPagerAdapter(getSupportFragmentManager(),data));
         mCircleIndicator.setViewPager(mBannerViewPager);
 
