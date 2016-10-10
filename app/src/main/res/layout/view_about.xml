@@ -15,8 +15,8 @@
             android:textColor="@color/colorPrimaryDark"
             android:drawablePadding="4dp"
             android:gravity="center_vertical"
-            android:drawableStart="@drawable/ic_message_black_24dp"
-            android:drawableLeft="@drawable/ic_message_black_24dp"
+            android:drawableStart="@drawable/ic_chat_bubble_outline_black_24dp"
+            android:drawableLeft="@drawable/ic_chat_bubble_outline_black_24dp"
             android:layout_marginLeft="4dp"
             android:layout_marginStart="4dp"
             android:textAppearance="@style/TextAppearance.AppCompat"
@@ -179,6 +179,8 @@
 
     </LinearLayout>
 
+
+
     <FrameLayout
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
@@ -229,6 +231,72 @@
 
         </LinearLayout>
 
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="@color/colorPrimaryDark"
+            android:drawableLeft="@drawable/ic_people_outline_black_24dp"
+            android:drawableStart="@drawable/ic_people_outline_black_24dp"
+            android:drawablePadding="4dp"
+            android:layout_marginStart="4dp"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="4dp"
+            android:text="@string/author"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            style="?buttonBarStyle"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <Button
+                style="?buttonBarButtonStyle"
+                android:id="@+id/btn_pwcong"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:drawableStart="@drawable/github_box"
+                android:drawablePadding="4dp"
+                android:drawableLeft="@drawable/github_box"
+                android:text="@string/pwcong"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                style="?buttonBarButtonStyle"
+                android:id="@+id/btn_panda"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:drawableStart="@drawable/blogger"
+                android:drawablePadding="4dp"
+                android:drawableLeft="@drawable/blogger"
+                android:text="@string/panda"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
     </LinearLayout>
 
     <FrameLayout

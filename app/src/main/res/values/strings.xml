@@ -96,8 +96,15 @@
 	<string name="baidu_translate">百度翻译</string>
 	<string name="pixiv">Pixiv</string>
 	<string name="here">Here</string>
-	<string name="here_contents">如果你喜欢这个App，期望你能捐助一毛两毛鼓励鼓励。 ( •̀ ω •́ )y</string>
+	<string name="here_contents">如果你喜欢这个App，期望你能打赏一毛两毛。 ( •̀ ω •́ )y</string>
 	<string name="now">Now</string>
-	<string name="now_contents">当前版本：v1.0.0\n作者：Pwcong</string>
+	<string name="now_contents">当前版本：v1.0.0</string>
+
+	<string name="loading_data">正在加载数据</string>
+	<string name="loading_data_success">加载完成</string>
+	<string name="loading_data_error">数据加载错误，请重新启动</string>
+	<string name="author">Author</string>
+	<string name="pwcong">Pwcong</string>
+	<string name="panda">Panda</string>
 
 </resources>

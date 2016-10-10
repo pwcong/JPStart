@@ -7,13 +7,12 @@ import android.widget.TextView;
 
 import butterknife.BindView;
 import me.pwcong.jpstart.R;
-import me.pwcong.jpstart.conf.Constants;
 import me.pwcong.jpstart.manager.DBManager;
 import me.pwcong.jpstart.manager.SoundPoolManager;
+import me.pwcong.jpstart.utils.ResourceUtils;
 import rx.Observable;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
 /**
@@ -43,14 +42,17 @@ public class SplashActivity extends BaseActivity {
             public void call(Subscriber<? super String> subscriber) {
 
                 subscriber.onStart();
-                subscriber.onNext("正在加载数据");
+                subscriber.onNext(ResourceUtils.getString(SplashActivity.this,R.string.loading_data));
                 DBManager.getInstance().init();
                 SoundPoolManager.getInstance().init();
-                subscriber.onNext("加载完成");
+                subscriber.onNext(ResourceUtils.getString(SplashActivity.this,R.string.loading_data_success));
                 subscriber.onCompleted();
 
             }
-        }).subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Subscriber<String>() {
+        })
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<String>() {
             @Override
             public void onCompleted() {
 
@@ -60,7 +62,7 @@ public class SplashActivity extends BaseActivity {
 
             @Override
             public void onError(Throwable e) {
-                mTextView.setText("数据加载错误，请重新启动");
+                mTextView.setText(ResourceUtils.getString(SplashActivity.this,R.string.loading_data_error));
             }
 
             @Override
