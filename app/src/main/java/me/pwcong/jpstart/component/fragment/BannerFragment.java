@@ -48,6 +48,6 @@ public class BannerFragment extends BaseFragment {
 
     @Override
     protected void doAction() {
-        Glide.with(getContext()).load(banner).asBitmap().centerCrop().into(mImageView);
+        Glide.with(getContext()).load(banner).asBitmap().into(mImageView);
     }
 }

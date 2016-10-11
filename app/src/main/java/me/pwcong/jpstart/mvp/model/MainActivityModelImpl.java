@@ -17,9 +17,9 @@ public class MainActivityModelImpl implements BaseModel.MainActivityModel{
     public List<BannerItem> getData() {
 
         List<BannerItem> list=new ArrayList<>();
-        list.add(new BannerItem(R.drawable.bg_about,""));
-        list.add(new BannerItem(R.drawable.bg_about,""));
-        list.add(new BannerItem(R.drawable.bg_about,""));
+        list.add(new BannerItem(R.drawable.banner01,""));
+        list.add(new BannerItem(R.drawable.banner02,""));
+        list.add(new BannerItem(R.drawable.banner03,""));
 
         return list;
     }

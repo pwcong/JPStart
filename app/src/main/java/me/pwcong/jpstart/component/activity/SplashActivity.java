@@ -1,8 +1,11 @@
 package me.pwcong.jpstart.component.activity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import butterknife.BindView;
@@ -32,7 +35,7 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     protected void initVariable(@Nullable Bundle savedInstanceState) {
-
+        hideState();
     }
 
     @Override
@@ -72,5 +75,15 @@ public class SplashActivity extends BaseActivity {
                 mTextView.setText(s);
             }
         });
+    }
+
+    private void hideState(){
+
+        if(Build.VERSION.SDK_INT < 16){
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        }else {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
+        }
+
     }
 }

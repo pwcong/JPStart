@@ -96,7 +96,7 @@
     <string name="baidu_translate">百度翻譯</string>
     <string name="pixiv">Pixiv</string>
     <string name="here">Here</string>
-    <string name="here_contents">如果你喜歡這個App，期望你能打賞一毛兩毛。 ( •̀ ω •́ )y</string>
+    <string name="here_contents">如果你喜歡這個App，期望你能打賞一毛兩毛。\n( •̀ ω •́ )y</string>
     <string name="now">Now</string>
     <string name="now_contents">當前版本：v1.0.0</string>
 

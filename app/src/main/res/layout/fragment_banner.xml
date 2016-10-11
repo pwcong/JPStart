@@ -4,6 +4,7 @@
     android:layout_height="match_parent">
 
     <ImageView
+        android:scaleType="fitXY"
         android:contentDescription="@string/image"
         android:id="@+id/iv_banner"
         android:layout_width="match_parent"
