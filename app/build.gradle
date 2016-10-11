@@ -17,8 +17,22 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+
     }
 
+    productFlavors{
+
+        wandoujia {}
+        baidu {}
+        c360 {}
+        uc {}
+        xiaomi{}
+
+        productFlavors.all { flavor ->
+            flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+        }
+
+    }
 }
 
 dependencies {
@@ -47,4 +61,6 @@ dependencies {
     compile 'com.getbase:floatingactionbutton:1.10.1'
     compile 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
     compile 'me.relex:circleindicator:1.2.1@aar'
+    compile 'com.umeng.analytics:analytics:latest.integration'
 }
+
