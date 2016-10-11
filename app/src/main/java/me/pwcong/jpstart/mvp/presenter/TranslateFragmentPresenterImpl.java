@@ -114,7 +114,7 @@ public class TranslateFragmentPresenterImpl extends BasePresenter<BaseView.Trans
 
                 @Override
                 public void onError(Throwable e) {
-                    view.showMsg(R.string.error_unknown);
+                    view.showMsg(R.string.translate_error);
                     e.printStackTrace();
                 }
 

@@ -1,6 +1,7 @@
 package me.pwcong.jpstart.component.fragment;
 
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
@@ -23,8 +24,10 @@ public class SettingFragment extends PreferenceFragment {
     private final String TAG=getClass().getSimpleName();
 
     ListPreference mThemesListPreference;
+    CheckBoxPreference mConnectCheckBoxPreference;
 
     String mode_theme;
+    boolean allow_connect;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -45,7 +48,8 @@ public class SettingFragment extends PreferenceFragment {
 
     private void initVariable(){
 
-        mode_theme = SharedPreferenceManager.getInstance().getString(Constants.MODE_THEME,Constants.MODE_AUTO);
+        mode_theme = SharedPreferenceManager.getInstance().getString(Constants.MODE_THEME,Constants.MODE_DAY);
+        allow_connect = SharedPreferenceManager.getInstance().getBoolean(Constants.ALLOW_CONNECT_WITHOUT_WIFI,false);
 
     }
 
@@ -60,13 +64,25 @@ public class SettingFragment extends PreferenceFragment {
             public boolean onPreferenceChange(Preference preference, Object newValue) {
 
                 SharedPreferenceManager.getInstance().putString(Constants.MODE_THEME, (String) newValue);
-                RxBus.getDefault().post(new EventContainer(EventContainer.TYPE_SETTING,new SettingEvent(R.string.setting_effect)));
-                App.getInstance().setDayNightMode((String) newValue);
+                RxBus.getDefault().post(new EventContainer(EventContainer.TYPE_SETTING,new SettingEvent(R.string.reboot_to_take_effect)));
 
                 return true;
             }
         });
 
+        mConnectCheckBoxPreference= (CheckBoxPreference) getPreferenceManager().findPreference("setting_wifi");
+        mConnectCheckBoxPreference.setChecked(allow_connect);
+        mConnectCheckBoxPreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+
+                Log.i(TAG, "onPreferenceChange: "+newValue);
+
+                SharedPreferenceManager.getInstance().putBoolean(Constants.ALLOW_CONNECT_WITHOUT_WIFI, (Boolean) newValue);
+                RxBus.getDefault().post(new EventContainer(EventContainer.TYPE_SETTING,new SettingEvent(R.string.setting_effect)));
+                return true;
+            }
+        });
 
     }
 

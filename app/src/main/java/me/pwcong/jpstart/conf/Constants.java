@@ -39,6 +39,7 @@ public class Constants {
     public static final String FLAG_TIPS_TRANSLATE  = "flag_tips_translate";
     public static final String FLAG_TIPS_MEMORY     = "flag_tips_memory";
     public static final String FLAG_TIPS_PIXIVILLUST  = "flag_tips_pixivillust";
+    public static final String FLAG_TIPS_WIFI  = "flag_tips_wifi";
 
     public static final String MODE_ILLUST          = "mode_illust";
     public static final String IMG_URL              = "img_url";
@@ -57,6 +58,8 @@ public class Constants {
     public static final String URL_PANDA = "http://weibo.com/1693463425/";
 
     public static final String IMG_BANNER = "img_banner";
+
+    public static final String ALLOW_CONNECT_WITHOUT_WIFI = "allow_connect_without_wifi";
 
 
 

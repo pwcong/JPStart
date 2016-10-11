@@ -4,6 +4,8 @@
     <PreferenceCategory android:title="@string/system_setting">
 
         <ListPreference android:title="@string/theme" android:key="setting_theme"/>
+        <CheckBoxPreference android:title="@string/title_allow_download_without_wifi"
+            android:summary="@string/summary_allow_download_without_wifi" android:key="setting_wifi"/>
 
     </PreferenceCategory>
 

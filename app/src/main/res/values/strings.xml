@@ -4,6 +4,8 @@
 	<string name="tips_memory">• 左右滑动可切换卡片</string>
 	<string name="tips_translate">1.将要翻译的内容输入至原文文本框\n2.点击上方双方向按钮进行翻译</string>
 	<string name="tips_pixivillust">• 点击卡片可浏览原图、缩略图和分享插画链接\n• 目前只提供低分辨率插画本地预览，原图需访问插画原址</string>
+	<string name="warn_no_wifi">检测到您当前未使用WIFI网络，可能会消耗大量流量，是否允许继续加载？</string>
+
 	<string name="other">其他</string>
 	<string name="zhuoyin">浊音</string>
 	<string name="memory">记忆</string>
@@ -63,7 +65,7 @@
 	<string name="save_success">插画已成功下载并保存</string>
 	<string name="save_error">插画保存失败</string>
 
-	<string name="warn">该功能暂未完成</string>
+	<string name="warn">提醒</string>
 
 	<string name="one_more_time">全部记住了吗？再来一次吧！</string>
 
@@ -106,5 +108,12 @@
 	<string name="author">Author</string>
 	<string name="pwcong">Pwcong</string>
 	<string name="panda">Panda</string>
+	<string name="title_allow_download_without_wifi">启用2G/3G/4G网络下载Pixiv插图</string>
+	<string name="summary_allow_download_without_wifi">允许通过需要付费的移动网络下载</string>
+	<string name="yes">是</string>
+	<string name="no">否</string>
+	<string name="loading_error">加载失败</string>
+	<string name="loading_disallow_pixiv">已禁止在移动网络下加载Pixiv插图</string>
+	<string name="translate_error">翻译失败</string>
 
 </resources>

@@ -301,14 +301,20 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        busSubscription.unsubscribe();
-        bannerSubscription.unsubscribe();
+        if(busSubscription.isUnsubscribed()){
+            busSubscription.unsubscribe();
+        }
+        if (bannerSubscription.isUnsubscribed()){
+            bannerSubscription.unsubscribe();
+        }
+
+
     }
 
     @Override
     public void setViewPager(final List<BannerItem> data) {
 
-        if(bannerSubscription!=null){
+        if(bannerSubscription!=null&&bannerSubscription.isUnsubscribed()){
             bannerSubscription.unsubscribe();
         }
 

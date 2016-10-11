@@ -70,6 +70,7 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS_JPSTART,false);
+                                    dialog.dismiss();
                                 }
                             });
 
@@ -90,6 +91,7 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS_MEMORY,false);
+                                    dialog.dismiss();
                                 }
                             });
 
@@ -115,6 +117,7 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS_TRANSLATE,false);
+                                    dialog.dismiss();
                                 }
                             });
 
@@ -138,6 +141,7 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS_PIXIVILLUST,false);
+                                    dialog.dismiss();
                                 }
                             });
 

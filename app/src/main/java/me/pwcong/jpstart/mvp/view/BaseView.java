@@ -59,7 +59,11 @@ public interface BaseView<T> {
     }
 
     interface PixivIllustTabFragmentView extends BaseView<PixivIllustTab>{
-
+        void showAlertDialog(int titleId, int messageId,
+                             int positiveTextId, DialogInterface.OnClickListener positiveButtonListener,
+                             int negativeTextId, DialogInterface.OnClickListener negativeButtonListener);
+        void showMsg(String msg);
+        void showMsg(int msg);
     }
 
     interface PixivIllustFragmentView extends BaseView<PixivIllustBean>{

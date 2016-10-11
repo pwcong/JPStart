@@ -49,7 +49,7 @@ public class PixivIllustFragmentPresenterImpl extends BasePresenter<BaseView.Pix
 
             @Override
             public void onError(Throwable e) {
-                view.showMsg(R.string.error_unknown);
+                view.showMsg(R.string.loading_error);
                 view.hideProgress();
             }
 

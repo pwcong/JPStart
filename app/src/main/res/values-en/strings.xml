@@ -5,6 +5,7 @@
     <string name="tips_memory">• Left and right sliding switch card</string>
     <string name="tips_translate">1.The content to be translated into the text box\n2.Click on the top two direction button for translation</string>
     <string name="tips_pixivillust">• Click on the card can browse the artwork, thumbnails and illustration share links\n• At present, only low resolution illustration local preview, to visit the site of the original illustration</string>
+    <string name="warn_no_wifi">Detected that you currently do not use the WIFI network, you may consume a large amount of traffic, whether to allow to continue to load ?</string>
     <string name="other">Other</string>
     <string name="zhuoyin">浊音</string>
     <string name="memory">Memory</string>
@@ -65,7 +66,7 @@
 
     <string name="save_error">Illustration save failed</string>
 
-    <string name="warn">The function not complete</string>
+    <string name="warn">Warning</string>
 
     <string name="one_more_time">Do you remember all that? One more time!</string>
 
@@ -107,6 +108,12 @@
     <string name="loading_data_error">Data loading error, please restart</string>
     <string name="pwcong">Pwcong</string>
     <string name="panda">Panda</string>
+    <string name="title_allow_download_without_wifi">Enable 2G/3G/4G network download Pixiv illustrations</string>
+    <string name="summary_allow_download_without_wifi">Allows mobile networks to be downloaded through the need to pay</string>
 
-
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+    <string name="loading_error">Failed to load</string>
+    <string name="loading_disallow_pixiv">Pixiv illustrations have been banned in the mobile network.</string>
+    <string name="translate_error">Translation failure</string>
 </resources>
