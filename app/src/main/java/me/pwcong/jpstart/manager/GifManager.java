@@ -38,7 +38,7 @@ public class GifManager {
         gifs.put("chi",new JPGif("chi",R.raw.gif_chi,R.raw.gif_chi_));
         gifs.put("da",new JPGif("da",R.raw.gif_da,R.raw.gif_da_));
         gifs.put("de",new JPGif("de",R.raw.gif_de,R.raw.gif_de_));
-        gifs.put("doo",new JPGif("doo",R.raw.gif_do,R.raw.gif_do_));
+        gifs.put("do",new JPGif("do",R.raw.gif_do,R.raw.gif_do_));
         gifs.put("du",new JPGif("du",R.raw.gif_du,R.raw.gif_du_));
         gifs.put("e",new JPGif("e",R.raw.gif_e,R.raw.gif_e_));
         gifs.put("fu",new JPGif("fu",R.raw.gif_fu,R.raw.gif_fu_));

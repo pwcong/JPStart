@@ -75,17 +75,20 @@ public class JPStartRecyclerAdapter extends RecyclerView.Adapter<JPStartRecycler
                 }
             });
 
-            holder.view.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View v) {
+            if(holder.item.getCategory()!=Constants.CATEGORY_AOYIN){
+                holder.view.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
 
-                    if(onItemLongClickListener!=null){
-                        onItemLongClickListener.onLongClick(holder.item);
+                        if(onItemLongClickListener!=null){
+                            onItemLongClickListener.onLongClick(holder.item);
+                        }
+
+                        return true;
                     }
-
-                    return true;
-                }
-            });
+                });
+            }
+            
 
         }
 

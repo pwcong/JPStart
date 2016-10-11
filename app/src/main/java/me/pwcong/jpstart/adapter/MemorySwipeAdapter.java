@@ -86,14 +86,20 @@ public class MemorySwipeAdapter extends BaseAdapter {
             }
         });
 
-        holder.btn_write.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(onWriteButtonClickListener!=null){
-                    onWriteButtonClickListener.onClick(item);
+        if(item.getCategory()==Constants.CATEGORY_AOYIN){
+            holder.btn_write.setEnabled(false);
+        }else {
+            holder.btn_write.setEnabled(true);
+            holder.btn_write.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(onWriteButtonClickListener!=null){
+                        onWriteButtonClickListener.onClick(item);
+                    }
                 }
-            }
-        });
+            });
+        }
+
 
 
         return convertView;
