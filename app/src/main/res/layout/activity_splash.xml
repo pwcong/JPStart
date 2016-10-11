@@ -5,6 +5,7 @@
     android:layout_height="match_parent">
 
     <ImageView
+        android:contentDescription="@string/image"
         android:scaleType="fitXY"
         android:src="@drawable/splash"
         android:layout_width="match_parent"
@@ -16,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="6dp"
         android:id="@+id/tv_tips" />
 
 
