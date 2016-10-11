@@ -2,7 +2,6 @@ package me.pwcong.jpstart.manager;
 
 import android.media.AudioManager;
 import android.media.SoundPool;
-import android.util.Log;
 
 import java.util.Map;
 import java.util.Vector;
@@ -11,10 +10,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import me.pwcong.jpstart.App;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.mvp.bean.JPSound;
-import rx.Observable;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 
 /**
  * Created by Pwcong on 2016/9/29.
@@ -80,7 +75,7 @@ public class SoundPoolManager {
         sounds.add(new JPSound("mya",R.raw.mya));
         sounds.add(new JPSound("myo",R.raw.myo));
         sounds.add(new JPSound("myu",R.raw.myu));
-        sounds.add(new JPSound("n",R.raw.n));
+        sounds.add(new JPSound("n",R.raw.gif_n));
         sounds.add(new JPSound("na",R.raw.na));
         sounds.add(new JPSound("ne",R.raw.ne));
         sounds.add(new JPSound("ni",R.raw.ni));
@@ -119,7 +114,7 @@ public class SoundPoolManager {
         sounds.add(new JPSound("to",R.raw.to));
         sounds.add(new JPSound("tsu",R.raw.tsu));
         sounds.add(new JPSound("u",R.raw.u));
-        sounds.add(new JPSound("wa",R.raw.wa));
+        sounds.add(new JPSound("wa",R.raw.gif_wa));
         sounds.add(new JPSound("wo",R.raw.o));
         sounds.add(new JPSound("ya",R.raw.ya));
         sounds.add(new JPSound("yo",R.raw.yo));
@@ -128,6 +123,9 @@ public class SoundPoolManager {
         sounds.add(new JPSound("ze",R.raw.ze));
         sounds.add(new JPSound("zo",R.raw.zo));
         sounds.add(new JPSound("zu",R.raw.zu));
+        sounds.add(new JPSound("zi",R.raw.zi));
+        sounds.add(new JPSound("wo",R.raw.gif_wo));
+        sounds.add(new JPSound("du",R.raw.du));
 
 
     }

@@ -15,7 +15,9 @@ import butterknife.BindView;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.adapter.MemorySwipeAdapter;
 import me.pwcong.jpstart.conf.Constants;
+import me.pwcong.jpstart.manager.GifManager;
 import me.pwcong.jpstart.manager.SoundPoolManager;
+import me.pwcong.jpstart.mvp.bean.JPGif;
 import me.pwcong.jpstart.mvp.bean.JPItem;
 import me.pwcong.jpstart.mvp.presenter.BasePresenter;
 import me.pwcong.jpstart.mvp.presenter.MemoryFragmentPresenterImpl;
@@ -178,12 +180,15 @@ public class MemoryFragment extends BaseFragment implements BaseView.MemoryFragm
                 @Override
                 public void onClick(JPItem item) {
 
-                    new ImageDialog.Builder(getContext())
-                            .setResId(R.raw.write_a)
-                            .override((int)ResourceUtils.getDimension(getContext(),R.dimen.dialog_width),
-                                    (int)ResourceUtils.getDimension(getContext(),R.dimen.dialog_height))
-                            .create()
-                            .show();
+                    JPGif gif = GifManager.getInstance().getJPGif(item.getRome());
+                    if(gif!=null){
+                        new ImageDialog.Builder(getContext())
+                                .setResId(gif.getHiragana())
+                                .override((int)ResourceUtils.getDimension(getContext(),R.dimen.dialog_width),
+                                        (int)ResourceUtils.getDimension(getContext(),R.dimen.dialog_height))
+                                .create()
+                                .show();
+                    }
 
                 }
             });

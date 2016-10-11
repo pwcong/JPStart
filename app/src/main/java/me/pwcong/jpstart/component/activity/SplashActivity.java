@@ -8,6 +8,7 @@ import android.widget.TextView;
 import butterknife.BindView;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.manager.DBManager;
+import me.pwcong.jpstart.manager.GifManager;
 import me.pwcong.jpstart.manager.SoundPoolManager;
 import me.pwcong.jpstart.utils.ResourceUtils;
 import rx.Observable;
@@ -45,6 +46,7 @@ public class SplashActivity extends BaseActivity {
                 subscriber.onNext(ResourceUtils.getString(SplashActivity.this,R.string.loading_data));
                 DBManager.getInstance().init();
                 SoundPoolManager.getInstance().init();
+                GifManager.getInstance().init();
                 subscriber.onNext(ResourceUtils.getString(SplashActivity.this,R.string.loading_data_success));
                 subscriber.onCompleted();
 

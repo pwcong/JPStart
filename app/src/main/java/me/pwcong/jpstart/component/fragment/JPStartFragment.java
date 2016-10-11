@@ -8,10 +8,13 @@ import android.support.v7.widget.RecyclerView;
 import java.util.List;
 
 import butterknife.BindView;
+import me.pwcong.jpstart.App;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.adapter.JPStartRecyclerAdapter;
 import me.pwcong.jpstart.conf.Constants;
+import me.pwcong.jpstart.manager.GifManager;
 import me.pwcong.jpstart.manager.SoundPoolManager;
+import me.pwcong.jpstart.mvp.bean.JPGif;
 import me.pwcong.jpstart.mvp.bean.JPItem;
 import me.pwcong.jpstart.mvp.presenter.BasePresenter;
 import me.pwcong.jpstart.mvp.presenter.JPStartFragmentPresenterImpl;
@@ -80,12 +83,29 @@ public class JPStartFragment extends BaseFragment implements BaseView.JPStartFra
         adapter.setOnItemLongClickListener(new JPStartRecyclerAdapter.OnItemLongClickListener() {
             @Override
             public void onLongClick(JPItem item) {
-                new ImageDialog.Builder(getContext())
-                        .setResId(R.raw.write_a)
-                        .override((int)ResourceUtils.getDimension(getContext(),R.dimen.dialog_width),
-                                (int)ResourceUtils.getDimension(getContext(),R.dimen.dialog_height))
-                        .create()
-                        .show();
+
+                JPGif gif = GifManager.getInstance().getJPGif(item.getRome());
+                if(gif!=null){
+                    if(App.TYPE_MING==Constants.TYPE_HIRAGANA){
+                        new ImageDialog.Builder(getContext())
+                                .setResId(gif.getHiragana())
+                                .override((int)ResourceUtils.getDimension(getContext(),R.dimen.dialog_width),
+                                        (int)ResourceUtils.getDimension(getContext(),R.dimen.dialog_height))
+                                .create()
+                                .show();
+                    }else {
+                        new ImageDialog.Builder(getContext())
+                                .setResId(gif.getKatakana())
+                                .override((int)ResourceUtils.getDimension(getContext(),R.dimen.dialog_width),
+                                        (int)ResourceUtils.getDimension(getContext(),R.dimen.dialog_height))
+                                .create()
+                                .show();
+                    }
+                }
+
+
+
+
             }
         });
 
