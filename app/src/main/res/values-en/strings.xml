@@ -106,6 +106,7 @@
     <string name="loading_data">Loading data</string>
     <string name="loading_data_success">Loading completed</string>
     <string name="loading_data_error">Data loading error, please restart</string>
+    <string name="author">Author</string>
     <string name="pwcong">Pwcong</string>
     <string name="panda">Panda</string>
     <string name="title_allow_download_without_wifi">Enable 2G/3G/4G network download Pixiv illustrations</string>
