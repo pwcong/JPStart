@@ -35,7 +35,7 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     protected void initVariable(@Nullable Bundle savedInstanceState) {
-        hideState();
+        //hideState();
     }
 
     @Override

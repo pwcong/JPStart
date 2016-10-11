@@ -27,45 +27,44 @@ public class PixivIllustTabFragmentPresenterImpl extends BasePresenter<BaseView.
     @Override
     public void initPixivIllustTabFragment() {
 
-
-        if(!SharedPreferenceManager.getInstance().getBoolean(Constants.ALLOW_CONNECT_WITHOUT_WIFI,false)
-                &&SharedPreferenceManager.getInstance().getBoolean(Constants.FLAG_TIPS_WIFI,true)
-                && !App.ISWIFI){
-
-            view.showAlertDialog(R.string.warn,
-                    R.string.warn_no_wifi, R.string.yes, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS_WIFI,false);
-                            SharedPreferenceManager.getInstance().putBoolean(Constants.ALLOW_CONNECT_WITHOUT_WIFI,true);
-                            dialog.dismiss();
-                            view.setData(model.getData());
-                        }
-                    }, R.string.no, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS_WIFI,false);
-                            SharedPreferenceManager.getInstance().putBoolean(Constants.ALLOW_CONNECT_WITHOUT_WIFI,false);
-                            dialog.dismiss();
-                            view.showMsg(R.string.loading_disallow_pixiv);
-                        }
-                    });
-
-
-        }else if(App.ISWIFI){
+        if(App.ISWIFI){
 
             view.setData(model.getData());
 
 
-        }
-        else {
+        }else {
 
-            if(SharedPreferenceManager.getInstance().getBoolean(Constants.ALLOW_CONNECT_WITHOUT_WIFI,false)){
+            if(SharedPreferenceManager.getInstance().getBoolean(Constants.FLAG_TIPS_WIFI,true)){
 
-                view.setData(model.getData());
+                view.showAlertDialog(R.string.warn,
+                        R.string.warn_no_wifi, R.string.yes, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS_WIFI,false);
+                                SharedPreferenceManager.getInstance().putBoolean(Constants.ALLOW_CONNECT_WITHOUT_WIFI,true);
+                                dialog.dismiss();
+                                view.setData(model.getData());
+                            }
+                        }, R.string.no, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS_WIFI,false);
+                                SharedPreferenceManager.getInstance().putBoolean(Constants.ALLOW_CONNECT_WITHOUT_WIFI,false);
+                                dialog.dismiss();
+                                view.showMsg(R.string.loading_disallow_pixiv);
+                            }
+                        });
 
             }else {
-                view.showMsg(R.string.loading_disallow_pixiv);
+
+                if(SharedPreferenceManager.getInstance().getBoolean(Constants.ALLOW_CONNECT_WITHOUT_WIFI,false)){
+
+                    view.setData(model.getData());
+
+                }else {
+                    view.showMsg(R.string.loading_disallow_pixiv);
+                }
+
             }
 
         }
