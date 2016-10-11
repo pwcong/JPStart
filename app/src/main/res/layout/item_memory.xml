@@ -4,7 +4,7 @@
     android:background="@drawable/bg_card"
     android:id="@+id/layout_root"
     android:layout_width="match_parent"
-    android:layout_marginTop="46dp"
+    android:layout_marginTop="@dimen/memory_item_margin_top"
     android:layout_marginLeft="@dimen/memory_item_margin"
     android:layout_marginRight="@dimen/memory_item_margin"
     android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
 
             <TextView
                 android:id="@+id/tv_rome"
-                android:textSize="30sp"
+                android:textSize="@dimen/memory_item_text_size_second"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -34,7 +34,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:id="@+id/tv_katakana"
-                android:textSize="30sp"
+                android:textSize="@dimen/memory_item_text_size_second"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 

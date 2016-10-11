@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <dimen name="memory_item_text_size">240sp</dimen>
+    <dimen name="memory_item_text_size_mini">160sp</dimen>
+    <dimen name="memory_item_text_size_second">45sp</dimen>
+    <dimen name="memory_item_margin_top">72dp</dimen>
+
+
+
+</resources>

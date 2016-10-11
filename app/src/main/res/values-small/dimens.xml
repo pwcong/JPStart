@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="memory_item_text_size">60sp</dimen>
+    <dimen name="memory_item_text_size_mini">30sp</dimen>
+    <dimen name="memory_item_text_size_second">20sp</dimen>
+    <dimen name="memory_item_margin_top">36dp</dimen>
+
+
+</resources>

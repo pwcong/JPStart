@@ -52,7 +52,13 @@ public class PixivIllustTabFragmentPresenterImpl extends BasePresenter<BaseView.
                     });
 
 
-        }else {
+        }else if(App.ISWIFI){
+
+            view.setData(model.getData());
+
+
+        }
+        else {
 
             if(SharedPreferenceManager.getInstance().getBoolean(Constants.ALLOW_CONNECT_WITHOUT_WIFI,false)){
 
