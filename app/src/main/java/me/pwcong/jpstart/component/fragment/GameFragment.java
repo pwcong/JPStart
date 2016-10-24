@@ -1,5 +1,6 @@
 package me.pwcong.jpstart.component.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.CardView;
@@ -7,6 +8,9 @@ import android.view.View;
 
 import butterknife.BindView;
 import me.pwcong.jpstart.R;
+import me.pwcong.jpstart.rxbus.RxBus;
+import me.pwcong.jpstart.rxbus.event.EventContainer;
+import me.pwcong.jpstart.rxbus.event.GameEvent;
 
 /**
  * Created by Pwcong on 2016/10/24.
@@ -30,14 +34,14 @@ public class GameFragment extends BaseFragment{
         mPuzzleCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                redirectToPuzzleActivity();
+                RxBus.getDefault().post(new EventContainer(EventContainer.TYPE_GAME,new GameEvent(GameEvent.TYPE_PUZZLE)));
             }
         });
 
         mSupperzzleCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                redirectToSupperzzleActivity();
+                RxBus.getDefault().post(new EventContainer(EventContainer.TYPE_GAME,new GameEvent(GameEvent.TYPE_SUPPERZZLE)));
             }
         });
 
@@ -48,12 +52,5 @@ public class GameFragment extends BaseFragment{
 
     }
 
-    private void redirectToSupperzzleActivity(){
-
-
-    }
-    private void redirectToPuzzleActivity(){
-
-    }
 
 }

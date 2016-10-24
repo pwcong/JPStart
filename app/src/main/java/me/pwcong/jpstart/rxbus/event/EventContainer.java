@@ -8,6 +8,7 @@ public class EventContainer {
 
     public static final int TYPE_PHOTOVIEW = 123;
     public static final int TYPE_SETTING = 456;
+    public static final int TYPE_GAME = 666;
 
 
     int type;

@@ -279,6 +279,20 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
     }
 
     @Override
+    public void startPuzzleActivity() {
+
+        Intent intent=new Intent(MainActivity.this,PuzzleActivity.class);
+        startActivity(intent);
+
+    }
+
+    @Override
+    public void startSupperzzleActivity() {
+        Intent intent=new Intent(MainActivity.this,SupperzzleActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
     public void showAlertDialog(int titleId, int messageId,
                                 int positiveTextId, DialogInterface.OnClickListener positiveButtonListener,
                                 int negativeTextId, DialogInterface.OnClickListener negativeButtonListener) {

@@ -33,6 +33,8 @@ public interface BaseView<T> {
         void switchAbout();
         void switchSetting();
         void startPhotoViewActivity(Bundle bundle);
+        void startPuzzleActivity();
+        void startSupperzzleActivity();
         void showAlertDialog(int titleId, int messageId,
                              int positiveTextId, DialogInterface.OnClickListener positiveButtonListener,
                              int negativeTextId, DialogInterface.OnClickListener negativeButtonListener);

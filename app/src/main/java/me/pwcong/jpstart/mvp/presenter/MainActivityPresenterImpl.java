@@ -11,6 +11,7 @@ import me.pwcong.jpstart.mvp.model.BaseModel;
 import me.pwcong.jpstart.mvp.model.MainActivityModelImpl;
 import me.pwcong.jpstart.mvp.view.BaseView;
 import me.pwcong.jpstart.rxbus.event.EventContainer;
+import me.pwcong.jpstart.rxbus.event.GameEvent;
 import me.pwcong.jpstart.rxbus.event.PhotoViewEvent;
 
 /**
@@ -176,15 +177,31 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
 
             case EventContainer.TYPE_PHOTOVIEW:
 
-                PhotoViewEvent event= (PhotoViewEvent) eventContainer.getEvent();
+                PhotoViewEvent photoViewEvent= (PhotoViewEvent) eventContainer.getEvent();
 
                 Bundle bundle=new Bundle();
-                bundle.putString(Constants.IMG_URL,event.getImg_url());
-                bundle.putInt(Constants.IMG_ID,event.getImg_id());
+                bundle.putString(Constants.IMG_URL,photoViewEvent.getImg_url());
+                bundle.putInt(Constants.IMG_ID,photoViewEvent.getImg_id());
 
                 view.startPhotoViewActivity(bundle);
 
                 break;
+
+            case EventContainer.TYPE_GAME:
+
+                GameEvent gameEvent = (GameEvent) eventContainer.getEvent();
+                switch (gameEvent.getType()){
+
+                    case GameEvent.TYPE_PUZZLE:
+                        view.startPuzzleActivity();
+                        break;
+                    case GameEvent.TYPE_SUPPERZZLE:
+                        view.startSupperzzleActivity();
+                        break;
+                    default:break;
+                }
+                break;
+
             default:break;
 
 

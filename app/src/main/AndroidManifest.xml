@@ -36,6 +36,9 @@
 
         <activity android:configChanges="locale" android:name=".component.activity.AboutActivity" android:label="@string/about"/>
 
+        <activity android:configChanges="locale" android:name=".component.activity.PuzzleActivity" android:label="@string/whoami"/>
+        <activity android:configChanges="locale" android:name=".component.activity.SupperzzleActivity" android:label="@string/supperzzle"/>
+
         <meta-data android:value="57fcdf6ae0f55a310300163d" android:name="UMENG_APPKEY"/>
         <meta-data android:value="${UMENG_CHANNEL_VALUE}" android:name="UMENG_CHANNEL"/>
 
