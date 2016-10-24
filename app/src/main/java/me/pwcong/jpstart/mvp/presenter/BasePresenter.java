@@ -1,5 +1,8 @@
 package me.pwcong.jpstart.mvp.presenter;
 
+import java.util.List;
+
+import me.pwcong.jpstart.mvp.bean.JPItem;
 import me.pwcong.jpstart.mvp.bean.PixivIllustBean;
 import me.pwcong.jpstart.rxbus.event.EventContainer;
 
@@ -59,6 +62,16 @@ public abstract class BasePresenter<T> {
         void initMemoryFragment();
         void loadMore(int category);
         void setDate(int category);
+
+    }
+
+    public interface PuzzleActivityPresenter{
+
+        void initPuzzleActivity();
+        void loadData();
+        void checkTypeSelect(int which);
+        void checkAnswerSelect(int id, JPItem current,List<JPItem> items);
+
 
     }
 

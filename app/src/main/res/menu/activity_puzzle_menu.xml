@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+
+        <item android:id="@+id/menu_hiragana_rome" android:title="@string/hiragana_rome"/>
+        <item android:id="@+id/menu_hiragana_katakana" android:title="@string/hiragana_katakana"/>
+        <item android:id="@+id/menu_katakana_rome" android:title="@string/katakana_rome"/>
+
+    </group>
+
+    <item android:title="@string/other">
+
+        <menu>
+
+            <item android:title="@string/help"
+                android:id="@+id/menu_help"
+                android:icon="@drawable/ic_help_outline_black_24dp"/>
+            <item android:title="@string/ranking"
+                android:id="@+id/menu_ranking"
+                android:icon="@drawable/ic_filter_list_black_24dp"/>
+
+        </menu>
+
+    </item>
+
+</menu>

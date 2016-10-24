@@ -58,4 +58,9 @@ public interface BaseModel<T> {
 
     }
 
+    interface  PuzzleActivityModel{
+        String[] getOptions();
+        List<JPItem> getItems();
+    }
+
 }

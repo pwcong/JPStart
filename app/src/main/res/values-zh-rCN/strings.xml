@@ -116,4 +116,9 @@
     <string name="supperzzle">对对碰</string>
     <string name="game">游戏</string>
     <string name="whoami">我是谁</string>
+    <string name="help">帮助</string>
+    <string name="ranking">排行榜</string>
+    <string name="hiragana_rome">平假名 -> 罗马音</string>
+    <string name="hiragana_katakana">平假名 -> 片假名</string>
+    <string name="katakana_rome">片假名 -> 罗马音</string>
 </resources>

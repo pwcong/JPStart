@@ -120,4 +120,9 @@
     <string name="supperzzle">Supperzzle</string>
     <string name="game">Game</string>
     <string name="whoami">Who am I</string>
+    <string name="help">Help</string>
+    <string name="ranking">Ranking</string>
+    <string name="hiragana_rome">Hiragana -> Rome</string>
+    <string name="hiragana_katakana">Hiragana -> Katakana</string>
+    <string name="katakana_rome">Katakana -> Rome</string>
 </resources>
