@@ -117,4 +117,6 @@
     <string name="loading_error">Failed to load</string>
     <string name="loading_disallow_pixiv">Pixiv illustrations have been banned in the mobile network.</string>
     <string name="translate_error">Translation failure</string>
+    <string name="supperzzle">Supperzzle</string>
+    <string name="game">Game</string>
 </resources>

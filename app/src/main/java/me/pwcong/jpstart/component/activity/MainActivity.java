@@ -24,6 +24,7 @@ import java.util.concurrent.TimeUnit;
 import butterknife.BindView;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.adapter.BannerPagerAdapter;
+import me.pwcong.jpstart.component.fragment.GameFragment;
 import me.pwcong.jpstart.component.fragment.JPStartTabFragment;
 import me.pwcong.jpstart.component.fragment.MemoryFragment;
 import me.pwcong.jpstart.component.fragment.PixivIllustTabFragment;
@@ -234,6 +235,17 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
         getSupportFragmentManager().beginTransaction().replace(R.id.content_main,new TranslateFragment()).commit();
 
         Log.i(TAG, "switchTranslate: OK");
+    }
+
+    @Override
+    public void switchGame() {
+        mToolbar.setTitle(R.string.game);
+
+        mRadioButtonView.setVisibility(View.GONE);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_main,new GameFragment()).commit();
+
+        Log.i(TAG, "switchGame: OK");
     }
 
     @Override

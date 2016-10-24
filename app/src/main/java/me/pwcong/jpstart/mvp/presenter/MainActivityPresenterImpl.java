@@ -97,8 +97,6 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
 
                 }
 
-
-
                 view.switchMemory();
                 break;
             case R.id.item_translate:
@@ -122,7 +120,6 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
                             });
 
                 }
-
 
                 break;
             case R.id.item_pixiv_illust:
@@ -150,6 +147,13 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
 
 
                 break;
+
+            case R.id.item_game:
+
+                view.switchGame();
+
+                break;
+
             case R.id.item_setting:
                 view.switchSetting();
                 break;

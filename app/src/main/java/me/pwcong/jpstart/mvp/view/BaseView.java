@@ -28,6 +28,7 @@ public interface BaseView<T> {
         void switchJPStart();
         void switchMemory();
         void switchTranslate();
+        void switchGame();
         void switchPixivIllust();
         void switchAbout();
         void switchSetting();

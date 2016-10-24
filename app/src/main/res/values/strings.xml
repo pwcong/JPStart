@@ -115,5 +115,7 @@
 	<string name="loading_error">加载失败</string>
 	<string name="loading_disallow_pixiv">已禁止在移动网络下加载Pixiv插图</string>
 	<string name="translate_error">翻译失败</string>
+	<string name="supperzzle">对对碰</string>
+	<string name="game">游戏</string>
 
 </resources>
