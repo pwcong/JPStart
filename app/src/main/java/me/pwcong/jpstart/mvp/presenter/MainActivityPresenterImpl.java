@@ -2,6 +2,7 @@ package me.pwcong.jpstart.mvp.presenter;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 
 import me.pwcong.jpstart.App;
 import me.pwcong.jpstart.R;
@@ -19,6 +20,8 @@ import me.pwcong.jpstart.rxbus.event.PhotoViewEvent;
  */
 
 public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivityView> implements BasePresenter.MainActivityPresenter {
+
+    private final String TAG =getClass().getSimpleName();
 
     BaseModel.MainActivityModel model;
 
@@ -172,6 +175,8 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
 
     @Override
     public void onBusEventInteraction(EventContainer eventContainer) {
+
+        Log.i(TAG, "onBusEventInteraction: "+eventContainer);
 
         switch (eventContainer.getType()){
 
