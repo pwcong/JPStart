@@ -71,6 +71,7 @@ public abstract class BasePresenter<T> {
         void loadData();
         void checkTypeSelect(int which);
         void checkAnswerSelect(int id, JPItem current,List<JPItem> items);
+        void checkMenuSelect(int id);
 
 
     }

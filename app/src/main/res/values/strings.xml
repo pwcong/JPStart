@@ -123,5 +123,13 @@
 	<string name="hiragana_rome">平假名 -> 罗马音</string>
 	<string name="hiragana_katakana">平假名 -> 片假名</string>
 	<string name="katakana_rome">片假名 -> 罗马音</string>
+	<string name="sad">/(ㄒoㄒ)/~~</string>
+	<string name="one_more_time_2">再来一次</string>
+	<string name="exit">退出</string>
+	<string name="highedt_score">最高分</string>
+	<string name="tips_correct_contents">当前连续答对次数：</string>
+	<string name="tips_highest_score_contents">最高连续答对次数：</string>
+	<string name="tips_puzzle_contents">我是谁？\n我的平假名、片假名和罗马音是哪个？</string>
+	<string name="tips_supperzzle_contents">在规定时间内进行配对，配对方式有：\n1.平假名 -> 罗马音\n2.平假名 -> 片假名\n3.片假名 -> 罗马音</string>
 
 </resources>

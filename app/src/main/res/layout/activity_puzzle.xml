@@ -20,6 +20,13 @@
             android:layout_height="match_parent">
 
             <TextView
+                android:gravity="center"
+                android:id="@+id/tv_tips"
+                android:textSize="250sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
                 android:textColor="@color/item"
                 android:id="@+id/tv_show"
                 android:textSize="200sp"
@@ -104,7 +111,7 @@
 
                 <TextView
                     android:textColor="@color/item"
-                    android:text="连续答对次数："
+                    android:text="@string/tips_correct_contents"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 

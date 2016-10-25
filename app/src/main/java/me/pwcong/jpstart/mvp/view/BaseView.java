@@ -90,8 +90,12 @@ public interface BaseView<T> {
     interface PuzzleActivityView{
         void setData(JPItem current,List<JPItem> jams);
         void showSelectDialog(String[] selection);
-        void showResultDialog(String msg);
-        void showResultDialog(int msg);
+        void showResultDialog(int title, String msg, int icon,
+                              int pbt, DialogInterface.OnClickListener pbl,
+                              int nbt, DialogInterface.OnClickListener nbl);
+
+        void showDialog(int icon,int title,String msg);
+
         void setTitle(String title);
         void setTitle(int title);
         void addCount();

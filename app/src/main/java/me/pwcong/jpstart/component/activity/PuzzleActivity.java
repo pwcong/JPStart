@@ -8,6 +8,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -17,6 +20,8 @@ import java.util.List;
 
 import butterknife.BindView;
 import me.pwcong.jpstart.R;
+import me.pwcong.jpstart.conf.Constants;
+import me.pwcong.jpstart.manager.SharedPreferenceManager;
 import me.pwcong.jpstart.mvp.bean.JPItem;
 import me.pwcong.jpstart.mvp.presenter.BasePresenter;
 import me.pwcong.jpstart.mvp.presenter.PuzzleActivityPresenterImpl;
@@ -39,6 +44,8 @@ public class PuzzleActivity extends BaseActivity implements BaseView.PuzzleActiv
     TextView mShowTextView;
     @BindView(R.id.tv_count)
     TextView mCountTextView;
+    @BindView(R.id.tv_tips)
+    TextView mTipsTextView;
     @BindView(R.id.btn_answer1)
     Button mButton1;
     @BindView(R.id.btn_answer2)
@@ -67,9 +74,7 @@ public class PuzzleActivity extends BaseActivity implements BaseView.PuzzleActiv
 
         initToolbar();
         initButton();
-
-        mCountTextView.setText(String.valueOf(count));
-
+        initTextView();
     }
 
     private void initToolbar(){
@@ -93,6 +98,10 @@ public class PuzzleActivity extends BaseActivity implements BaseView.PuzzleActiv
         mButton3.setOnClickListener(this);
         mButton4.setOnClickListener(this);
 
+    }
+
+    private void initTextView(){
+        mCountTextView.setText(String.valueOf(count));
     }
 
 
@@ -180,12 +189,31 @@ public class PuzzleActivity extends BaseActivity implements BaseView.PuzzleActiv
     }
 
     @Override
-    public void showResultDialog(String msg) {
+    public void showResultDialog(int title, String msg, int icon,
+                                 int pbt, DialogInterface.OnClickListener pbl,
+                                 int nbt, DialogInterface.OnClickListener nbl) {
+
+
+        new AlertDialog.Builder(this)
+                .setCancelable(false)
+                .setMessage(msg)
+                .setTitle(title)
+                .setPositiveButton(pbt,pbl)
+                .setNegativeButton(nbt,nbl)
+                .create()
+                .show();
 
     }
 
     @Override
-    public void showResultDialog(int msg) {
+    public void showDialog(int icon,int title,String msg) {
+
+        new AlertDialog.Builder(this)
+                .setTitle(title)
+                .setIcon(icon)
+                .setMessage(msg)
+                .create()
+                .show();
 
     }
 
@@ -203,12 +231,21 @@ public class PuzzleActivity extends BaseActivity implements BaseView.PuzzleActiv
     public void addCount() {
         count++;
         mCountTextView.setText(String.valueOf(count));
+        mTipsTextView.setText(String.valueOf(count));
+        mTipsTextView.startAnimation(getTipsAnimation());
     }
 
     @Override
     public void clearCount() {
+
+        int hs = SharedPreferenceManager.getInstance().getInt(Constants.HIGHEST_SCORE, 0);
+        if(count > hs)
+            SharedPreferenceManager.getInstance().putInt(Constants.HIGHEST_SCORE,count);
+
+
         count=0;
         mCountTextView.setText(String.valueOf(count));
+
     }
 
     @Override
@@ -244,15 +281,26 @@ public class PuzzleActivity extends BaseActivity implements BaseView.PuzzleActiv
                 type = TYPE_KATAKANA_ROME;
                 presenter.checkTypeSelect(TYPE_KATAKANA_ROME);
                 break;
-            case R.id.menu_help:
+
+            default:
+
+                presenter.checkMenuSelect(item.getItemId());
 
                 break;
-            case R.id.menu_ranking:
-
-                break;
-            default:break;
 
         }
         return true;
+    }
+
+
+    private Animation getTipsAnimation(){
+
+        AnimationSet animationSet = new AnimationSet(true);
+        animationSet.addAnimation(new AlphaAnimation(1,0));
+        animationSet.setDuration(1000);
+        animationSet.setFillAfter(true);
+
+        return  animationSet;
+
     }
 }

@@ -125,4 +125,12 @@
     <string name="hiragana_rome">Hiragana -> Rome</string>
     <string name="hiragana_katakana">Hiragana -> Katakana</string>
     <string name="katakana_rome">Katakana -> Rome</string>
+    <string name="sad">/(ㄒoㄒ)/~~</string>
+    <string name="one_more_time_2">One More</string>
+    <string name="exit">Exit</string>
+    <string name="highedt_score">Highest Score</string>
+    <string name="tips_correct_contents">The correct number of continuous: </string>
+    <string name="tips_highest_score_contents">The highest number of consecutive correct answers: </string>
+    <string name="tips_puzzle_contents">Who am I ? \nWhich is my hiragana, katakana and Rome sound ?</string>
+    <string name="tips_supperzzle_contents">Pairing within the specified time, matching methods are:\n1.Hiragana -> Rome\n2.Hiragana -> Katakana\n3.Katakana -> Rome</string>
 </resources>

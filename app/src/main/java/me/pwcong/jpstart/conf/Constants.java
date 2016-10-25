@@ -61,6 +61,8 @@ public class Constants {
 
     public static final String ALLOW_CONNECT_WITHOUT_WIFI = "allow_connect_without_wifi";
 
+    public static final String HIGHEST_SCORE = "highest_score";
+
 
 
 

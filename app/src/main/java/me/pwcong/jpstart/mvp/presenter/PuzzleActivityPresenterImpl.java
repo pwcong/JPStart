@@ -1,14 +1,22 @@
 package me.pwcong.jpstart.mvp.presenter;
 
+import android.content.DialogInterface;
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
+import me.pwcong.jpstart.App;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.component.activity.PuzzleActivity;
+import me.pwcong.jpstart.conf.Constants;
+import me.pwcong.jpstart.manager.ActivityManager;
+import me.pwcong.jpstart.manager.SharedPreferenceManager;
 import me.pwcong.jpstart.mvp.bean.JPItem;
 import me.pwcong.jpstart.mvp.model.BaseModel;
 import me.pwcong.jpstart.mvp.model.PuzzleActivityModelImpl;
 import me.pwcong.jpstart.mvp.view.BaseView;
+import me.pwcong.jpstart.utils.ResourceUtils;
 
 /**
  * Created by Pwcong on 2016/10/24.
@@ -52,12 +60,15 @@ public class PuzzleActivityPresenterImpl extends BasePresenter<BaseView.PuzzleAc
 
             case PuzzleActivity.TYPE_HIRAGANA_ROME:
                 view.setTitle(R.string.hiragana_rome);
+                view.clearCount();
                 break;
             case PuzzleActivity.TYPE_HIRAGANA_KATAKANA:
                 view.setTitle(R.string.hiragana_katakana);
+                view.clearCount();
                 break;
             case PuzzleActivity.TYPE_KATAKANA_ROME:
                 view.setTitle(R.string.katakana_rome);
+                view.clearCount();
                 break;
             default:break;
 
@@ -81,6 +92,8 @@ public class PuzzleActivityPresenterImpl extends BasePresenter<BaseView.PuzzleAc
 
                 }else {
                     view.clearCount();
+                    showResult(current);
+
                 }
 
                 break;
@@ -93,6 +106,7 @@ public class PuzzleActivityPresenterImpl extends BasePresenter<BaseView.PuzzleAc
 
                 }else {
                     view.clearCount();
+                    showResult(current);
                 }
 
                 break;
@@ -104,6 +118,7 @@ public class PuzzleActivityPresenterImpl extends BasePresenter<BaseView.PuzzleAc
 
                 }else {
                     view.clearCount();
+                    showResult(current);
                 }
 
                 break;
@@ -115,12 +130,61 @@ public class PuzzleActivityPresenterImpl extends BasePresenter<BaseView.PuzzleAc
 
                 }else {
                     view.clearCount();
+                    showResult(current);
                 }
 
                 break;
             default:break;
 
         }
+
+    }
+
+    @Override
+    public void checkMenuSelect(int id) {
+
+        switch (id){
+            case R.id.menu_help:
+
+                view.showDialog(R.drawable.ic_help_outline_black_24dp,
+                        R.string.help,
+                        ResourceUtils.getString(App.getInstance(),R.string.tips_puzzle_contents));
+
+                break;
+            case R.id.menu_ranking:
+
+                int hs = SharedPreferenceManager.getInstance().getInt(Constants.HIGHEST_SCORE,0);
+
+                view.showDialog(R.drawable.ic_filter_list_black_24dp,R.string.highedt_score,
+                        ResourceUtils.getString(App.getInstance(),R.string.tips_highest_score_contents)+
+                            String.valueOf(hs));
+
+                break;
+            default:break;
+
+        }
+
+
+    }
+
+    private void showResult(JPItem currrent){
+
+        String msg = currrent.getHiragana() + " -> " + currrent.getKatakana() + " -> " + currrent.getRome();
+
+        view.showResultDialog(R.string.sad, msg, R.drawable.ic_mood_bad_black_24dp,
+                R.string.one_more_time_2, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        loadData();
+                        dialog.dismiss();
+                    }
+                }, R.string.exit, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        ActivityManager.getCurrent().finish();
+                    }
+                });
 
     }
 }

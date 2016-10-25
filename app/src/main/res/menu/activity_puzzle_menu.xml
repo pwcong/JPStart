@@ -16,7 +16,7 @@
             <item android:title="@string/help"
                 android:id="@+id/menu_help"
                 android:icon="@drawable/ic_help_outline_black_24dp"/>
-            <item android:title="@string/ranking"
+            <item android:title="@string/highedt_score"
                 android:id="@+id/menu_ranking"
                 android:icon="@drawable/ic_filter_list_black_24dp"/>
 
