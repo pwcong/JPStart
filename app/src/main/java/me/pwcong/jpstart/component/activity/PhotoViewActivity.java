@@ -7,9 +7,10 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 
-import com.blankj.utilcode.utils.FileUtils;
+import com.blankj.utilcode.util.FileUtils;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.Target;
+import com.github.chrisbanes.photoview.PhotoView;
 
 import java.io.File;
 import java.util.concurrent.ExecutionException;
@@ -21,7 +22,6 @@ import rx.Observable;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
-import uk.co.senab.photoview.PhotoView;
 
 /**
  * Created by Pwcong on 2016/10/3.
@@ -55,7 +55,7 @@ public class PhotoViewActivity extends BaseActivity {
 
     private void initPhotoView(){
 
-        Glide.with(this).load(img_url).asBitmap().into(mPhotoView);
+        Glide.with(this).asBitmap().load(img_url).into(mPhotoView);
 
         mPhotoView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override

@@ -222,6 +222,7 @@
                 android:layout_height="wrap_content" />
 
             <ImageView
+                android:id="@+id/img_qrcode"
                 android:layout_marginTop="12dp"
                 android:src="@drawable/mm_facetoface_collect_qrcode"
                 android:contentDescription="@string/image"

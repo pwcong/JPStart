@@ -20,9 +20,9 @@ import me.pwcong.jpstart.utils.ResourceUtils;
 
 public class MemorySwipeAdapter extends BaseAdapter {
 
-    List<JPItem> list;
-    OnYinButtonClickListener onYinButtonClickListener;
-    OnWriteButtonClickListener onWriteButtonClickListener;
+    private List<JPItem> list;
+    private OnYinButtonClickListener onYinButtonClickListener;
+    private OnWriteButtonClickListener onWriteButtonClickListener;
 
     public MemorySwipeAdapter(List<JPItem> list) {
         this.list = list;

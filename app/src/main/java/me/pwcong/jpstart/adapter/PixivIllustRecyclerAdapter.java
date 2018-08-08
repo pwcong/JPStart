@@ -1,6 +1,7 @@
 package me.pwcong.jpstart.adapter;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,10 +22,10 @@ import me.pwcong.jpstart.mvp.bean.PixivIllustBean;
 
 public class PixivIllustRecyclerAdapter extends RecyclerView.Adapter<PixivIllustRecyclerAdapter.ViewHolder>{
 
-    Context context;
-    List<PixivIllustBean> list;
+    private Context context;
+    private List<PixivIllustBean> list;
 
-    OnItemClickListener onItemClickListener;
+    private OnItemClickListener onItemClickListener;
 
     public PixivIllustRecyclerAdapter(Context context, List<PixivIllustBean> list) {
         this.context = context;
@@ -32,7 +33,7 @@ public class PixivIllustRecyclerAdapter extends RecyclerView.Adapter<PixivIllust
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_pixivillust, parent, false);
 
@@ -40,14 +41,14 @@ public class PixivIllustRecyclerAdapter extends RecyclerView.Adapter<PixivIllust
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
 
         holder.bean=list.get(position);
         holder.tv_title.setText(holder.bean.getTitle());
         holder.tv_id.setText(String.valueOf(holder.bean.getId()));
         holder.tv_author.setText(holder.bean.getAuthor());
 
-        Glide.with(context).load(holder.bean.getImg_240x480()).asBitmap().into(holder.iv_img);
+        Glide.with(context).asBitmap().load(holder.bean.getImg_240x480()).into(holder.iv_img);
 
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override

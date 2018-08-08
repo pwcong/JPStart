@@ -6,15 +6,15 @@ package me.pwcong.jpstart.mvp.bean;
 
 public class PixivIllustBean {
 
-    int id;
-    String title;
-    String author;
-    String date;
-    String img_240x480;
-    String img_600x600;
-    String img_1200x1200;
-    String img_original;
-    String link;
+    private int id;
+    private String title;
+    private String author;
+    private String date;
+    private String img_240x480;
+    private String img_600x600;
+    private String img_1200x1200;
+    private String img_original;
+    private String link;
 
     public PixivIllustBean() {
     }

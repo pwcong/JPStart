@@ -1,7 +1,6 @@
 package me.pwcong.jpstart.mvp.presenter;
 
 import android.content.DialogInterface;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +23,7 @@ import me.pwcong.jpstart.utils.ResourceUtils;
 
 public class PuzzleActivityPresenterImpl extends BasePresenter<BaseView.PuzzleActivityView> implements BasePresenter.PuzzleActivityPresenter {
 
-    BaseModel.PuzzleActivityModel model;
+    private BaseModel.PuzzleActivityModel model;
 
     public PuzzleActivityPresenterImpl(BaseView.PuzzleActivityView view) {
         super(view);
@@ -49,14 +48,14 @@ public class PuzzleActivityPresenterImpl extends BasePresenter<BaseView.PuzzleAc
         jams.add(items.get(2));
         jams.add(items.get(3));
 
-        view.setData(current,jams);
+        view.setData(current, jams);
 
     }
 
     @Override
     public void checkTypeSelect(int which) {
 
-        switch (which){
+        switch (which) {
 
             case PuzzleActivity.TYPE_HIRAGANA_ROME:
                 view.setTitle(R.string.hiragana_rome);
@@ -70,7 +69,8 @@ public class PuzzleActivityPresenterImpl extends BasePresenter<BaseView.PuzzleAc
                 view.setTitle(R.string.katakana_rome);
                 view.clearCount();
                 break;
-            default:break;
+            default:
+                break;
 
         }
 
@@ -81,16 +81,16 @@ public class PuzzleActivityPresenterImpl extends BasePresenter<BaseView.PuzzleAc
     @Override
     public void checkAnswerSelect(int id, JPItem current, List<JPItem> items) {
 
-        switch (id){
+        switch (id) {
 
             case R.id.btn_answer1:
 
-                if(items.get(0).getId() == current.getId()){
+                if (items.get(0).getId() == current.getId()) {
 
                     view.addCount();
                     loadData();
 
-                }else {
+                } else {
                     view.clearCount();
                     showResult(current);
 
@@ -99,12 +99,12 @@ public class PuzzleActivityPresenterImpl extends BasePresenter<BaseView.PuzzleAc
                 break;
             case R.id.btn_answer2:
 
-                if(items.get(1).getId() == current.getId()){
+                if (items.get(1).getId() == current.getId()) {
 
                     view.addCount();
                     loadData();
 
-                }else {
+                } else {
                     view.clearCount();
                     showResult(current);
                 }
@@ -112,11 +112,11 @@ public class PuzzleActivityPresenterImpl extends BasePresenter<BaseView.PuzzleAc
                 break;
             case R.id.btn_answer3:
 
-                if(items.get(2).getId() == current.getId()){
+                if (items.get(2).getId() == current.getId()) {
                     view.addCount();
                     loadData();
 
-                }else {
+                } else {
                     view.clearCount();
                     showResult(current);
                 }
@@ -124,17 +124,18 @@ public class PuzzleActivityPresenterImpl extends BasePresenter<BaseView.PuzzleAc
                 break;
             case R.id.btn_answer4:
 
-                if(items.get(3).getId() == current.getId()){
+                if (items.get(3).getId() == current.getId()) {
                     view.addCount();
                     loadData();
 
-                }else {
+                } else {
                     view.clearCount();
                     showResult(current);
                 }
 
                 break;
-            default:break;
+            default:
+                break;
 
         }
 
@@ -143,31 +144,32 @@ public class PuzzleActivityPresenterImpl extends BasePresenter<BaseView.PuzzleAc
     @Override
     public void checkMenuSelect(int id) {
 
-        switch (id){
+        switch (id) {
             case R.id.menu_help:
 
                 view.showDialog(R.drawable.ic_help_outline_black_24dp,
                         R.string.help,
-                        ResourceUtils.getString(App.getInstance(),R.string.tips_puzzle_contents));
+                        ResourceUtils.getString(App.getInstance(), R.string.tips_puzzle_contents));
 
                 break;
             case R.id.menu_ranking:
 
-                int hs = SharedPreferenceManager.getInstance().getInt(Constants.HIGHEST_SCORE,0);
+                int hs = SharedPreferenceManager.getInstance().getInt(Constants.HIGHEST_SCORE, 0);
 
-                view.showDialog(R.drawable.ic_filter_list_black_24dp,R.string.highedt_score,
-                        ResourceUtils.getString(App.getInstance(),R.string.tips_highest_score_contents)+
-                            String.valueOf(hs));
+                view.showDialog(R.drawable.ic_filter_list_black_24dp, R.string.highedt_score,
+                        ResourceUtils.getString(App.getInstance(), R.string.tips_highest_score_contents) +
+                                String.valueOf(hs));
 
                 break;
-            default:break;
+            default:
+                break;
 
         }
 
 
     }
 
-    private void showResult(JPItem currrent){
+    private void showResult(JPItem currrent) {
 
         String msg = currrent.getHiragana() + " -> " + currrent.getKatakana() + " -> " + currrent.getRome();
 

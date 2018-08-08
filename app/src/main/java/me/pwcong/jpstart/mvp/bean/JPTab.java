@@ -6,8 +6,8 @@ package me.pwcong.jpstart.mvp.bean;
 
 public class JPTab {
 
-    int type;
-    String title;
+    private int type;
+    private String title;
 
     public JPTab(int type, String title) {
         this.type = type;

@@ -1,7 +1,8 @@
-package me.pwcong.jpstart.network.pixiv.service;
+package me.pwcong.jpstart.network.pixiv.service.impl;
 
 import me.pwcong.jpstart.network.Api;
 import me.pwcong.jpstart.network.pixiv.PixivIllustApi;
+import me.pwcong.jpstart.network.pixiv.service.PixivService;
 import okhttp3.ResponseBody;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;

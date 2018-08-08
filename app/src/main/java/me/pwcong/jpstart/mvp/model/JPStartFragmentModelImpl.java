@@ -16,7 +16,6 @@ import rx.schedulers.Schedulers;
 
 public class JPStartFragmentModelImpl implements BaseModel.JPStartFragmentModel {
 
-
     @Override
     public void getData(final int category, Subscriber<List<JPItem>> subscriber) {
         Observable.create(new Observable.OnSubscribe<List<JPItem>>() {

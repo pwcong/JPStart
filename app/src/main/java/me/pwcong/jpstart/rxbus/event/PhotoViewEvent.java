@@ -6,8 +6,8 @@ package me.pwcong.jpstart.rxbus.event;
 
 public class PhotoViewEvent {
 
-    String img_url;
-    int img_id;
+    private String img_url;
+    private int img_id;
 
     public PhotoViewEvent(String img_url, int img_id) {
         this.img_url = img_url;

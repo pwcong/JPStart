@@ -6,8 +6,8 @@ package me.pwcong.jpstart.mvp.bean;
 
 public class BannerItem {
 
-    int banner;
-    String title;
+    private int banner;
+    private String title;
 
     public BannerItem(int banner, String title) {
         this.banner = banner;

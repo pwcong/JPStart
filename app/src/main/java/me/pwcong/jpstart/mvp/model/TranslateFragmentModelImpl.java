@@ -8,7 +8,7 @@ import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.mvp.bean.BaiduTranslateBean;
 import me.pwcong.jpstart.mvp.bean.TranslateSpinnerItem;
 import me.pwcong.jpstart.network.baidu.service.BaiduService;
-import me.pwcong.jpstart.network.baidu.service.BaiduTranslateServiceImpl;
+import me.pwcong.jpstart.network.baidu.service.impl.BaiduTranslateServiceImpl;
 import me.pwcong.jpstart.utils.ResourceUtils;
 import rx.Subscriber;
 
@@ -18,7 +18,7 @@ import rx.Subscriber;
 
 public class TranslateFragmentModelImpl implements BaseModel.TranslateFragmentModel {
 
-    BaiduService.TranslateService service;
+    private BaiduService.TranslateService service;
 
     public TranslateFragmentModelImpl() {
         super();

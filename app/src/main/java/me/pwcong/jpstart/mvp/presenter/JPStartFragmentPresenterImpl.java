@@ -16,14 +16,14 @@ import rx.Subscriber;
 
 public class JPStartFragmentPresenterImpl extends BasePresenter<BaseView.JPStartFragmentView> implements BasePresenter.JPStartFragmentPresenter {
 
-    private final String TAG=getClass().getSimpleName();
+    private final String TAG = getClass().getSimpleName();
 
-    BaseModel.JPStartFragmentModel model;
+    private BaseModel.JPStartFragmentModel model;
 
     public JPStartFragmentPresenterImpl(BaseView.JPStartFragmentView view) {
         super(view);
 
-        model=new JPStartFragmentModelImpl();
+        model = new JPStartFragmentModelImpl();
     }
 
     @Override

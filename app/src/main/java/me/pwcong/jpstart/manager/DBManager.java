@@ -9,7 +9,7 @@ import java.util.List;
 
 import me.pwcong.jpstart.App;
 import me.pwcong.jpstart.R;
-import me.pwcong.jpstart.comparator.JPItemComporator;
+import me.pwcong.jpstart.comparator.JPItemComparator;
 import me.pwcong.jpstart.conf.Constants;
 import me.pwcong.jpstart.db.JPStartDatabase;
 import me.pwcong.jpstart.mvp.bean.JPItem;
@@ -95,7 +95,7 @@ public class DBManager {
 
             }
 
-            Collections.sort(qingYin,new JPItemComporator());
+            Collections.sort(qingYin,new JPItemComparator());
 
 
         }
@@ -117,7 +117,7 @@ public class DBManager {
 
             }
 
-            Collections.sort(zhuoYin,new JPItemComporator());
+            Collections.sort(zhuoYin,new JPItemComparator());
 
 
 
@@ -141,7 +141,7 @@ public class DBManager {
 
             }
 
-            Collections.sort(aoYin,new JPItemComporator());
+            Collections.sort(aoYin,new JPItemComparator());
 
 
         }

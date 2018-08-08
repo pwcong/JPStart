@@ -8,16 +8,11 @@ import java.util.concurrent.TimeUnit;
 
 import rx.Observable;
 import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
-
-/**
- * Created by Pwcong on 2016/9/24.
- */
 
 public class ActivityManager {
 
-    private final String TAG=getClass().getSimpleName();
+    private final String TAG = getClass().getSimpleName();
 
     private static ActivityManager instance = null;
 
@@ -29,51 +24,50 @@ public class ActivityManager {
     }
 
 
-    public synchronized static ActivityManager getInstance(){
+    public synchronized static ActivityManager getInstance() {
 
-        if(instance==null){
-            instance=new ActivityManager();
+        if (instance == null) {
+            instance = new ActivityManager();
         }
 
         return instance;
     }
 
-    public void register(Activity activity){
+    public void register(Activity activity) {
 
-        if(!activities.contains(activity)){
+        if (!activities.contains(activity)) {
             activities.add(activity);
             Log.i(TAG, "register: OK -> " + activity);
-            
+
         }
 
     }
 
-    public void unregister(Activity activity){
+    public void unregister(Activity activity) {
 
-        if(activities.contains(activity)){
+        if (activities.contains(activity)) {
             activities.remove(activity);
-            Log.i(TAG, "unregister: OK -> "+ activity);
-            Log.i(TAG, "unregister: ALL -> "+activities);
+            Log.i(TAG, "unregister: OK -> " + activity);
+            Log.i(TAG, "unregister: ALL -> " + activities);
         }
 
     }
 
 
-    public void finishAll(){
+    public void finishAll() {
 
-        current=null;
+        current = null;
 
-        for(Activity t:activities){
+        for (Activity t: activities) {
             t.finish();
-            Log.i(TAG, "unregister: OK -> "+ t);
+            Log.i(TAG, "unregister: OK -> " + t);
         }
         activities.clear();
-        Log.i(TAG, "unregister: ALL -> "+activities);
+        Log.i(TAG, "unregister: ALL -> " + activities);
 
         // 三秒后完全退出程序，清空后台
         Observable.timer(3, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())
-                .subscribeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<Long>() {
                     @Override
                     public void onCompleted() {
@@ -89,7 +83,7 @@ public class ActivityManager {
                         System.exit(0);
                     }
                 });
-        
+
     }
 
     public static Activity getCurrent() {

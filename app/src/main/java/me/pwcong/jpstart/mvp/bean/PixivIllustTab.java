@@ -6,8 +6,8 @@ package me.pwcong.jpstart.mvp.bean;
 
 public class PixivIllustTab {
 
-    String mode;
-    String title;
+    private String mode;
+    private String title;
 
     public PixivIllustTab(String mode, String title) {
         this.mode = mode;

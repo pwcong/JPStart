@@ -6,8 +6,8 @@ package me.pwcong.jpstart.mvp.bean;
 
 public class JPSound {
 
-    String rome;
-    int resId;
+    private String rome;
+    private int resId;
 
     public JPSound(String rome, int resId) {
         this.rome = rome;

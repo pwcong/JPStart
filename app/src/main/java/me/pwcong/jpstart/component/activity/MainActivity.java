@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -117,7 +118,7 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
         });
 
         Toolbar.LayoutParams params=new Toolbar.LayoutParams((int)(ResourceUtils.getDimension(MainActivity.this,R.dimen.radio_button_width)),
-                ViewGroup.LayoutParams.MATCH_PARENT,GravityCompat.END);
+                ViewGroup.LayoutParams.MATCH_PARENT, GravityCompat.END);
         mToolbar.addView(mRadioButtonView,params);
 
         Log.i(TAG, "initRadioButtonView: OK");

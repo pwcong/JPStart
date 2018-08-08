@@ -1,5 +1,6 @@
 package me.pwcong.jpstart.adapter;
 
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,10 +20,10 @@ import me.pwcong.jpstart.mvp.bean.JPItem;
 
 public class JPStartRecyclerAdapter extends RecyclerView.Adapter<JPStartRecyclerAdapter.ViewHolder>{
 
-    List<JPItem> list;
+    private List<JPItem> list;
 
-    OnItemClickListener onItemClickListener;
-    OnItemLongClickListener onItemLongClickListener;
+    private OnItemClickListener onItemClickListener;
+    private OnItemLongClickListener onItemLongClickListener;
 
 
     public JPStartRecyclerAdapter(List<JPItem> list) {
@@ -30,7 +31,7 @@ public class JPStartRecyclerAdapter extends RecyclerView.Adapter<JPStartRecycler
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view;
 
@@ -46,7 +47,7 @@ public class JPStartRecyclerAdapter extends RecyclerView.Adapter<JPStartRecycler
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
 
         JPItem item = list.get(position);
 

@@ -17,11 +17,11 @@ import rx.Subscriber;
 
 public class TranslateFragmentPresenterImpl extends BasePresenter<BaseView.TranslateFragmentView> implements BasePresenter.TranslateFragmentPresenter {
 
-    BaseModel.TranslateFragmentModel model;
+    private BaseModel.TranslateFragmentModel model;
 
     public TranslateFragmentPresenterImpl(BaseView.TranslateFragmentView view) {
         super(view);
-        model=new TranslateFragmentModelImpl();
+        model = new TranslateFragmentModelImpl();
     }
 
     @Override
@@ -34,24 +34,24 @@ public class TranslateFragmentPresenterImpl extends BasePresenter<BaseView.Trans
 
     @Override
     public void checkFromLanguate(int from) {
-        App.FROM_LAN=from;
+        App.FROM_LAN = from;
     }
 
     @Override
     public void checkToLanguage(int to) {
-        App.TO_LAN=to;
+        App.TO_LAN = to;
     }
 
     @Override
     public void checkImageViewClick(int id) {
 
-        switch (id){
+        switch (id) {
 
             case R.id.iv_src_copy:
 
                 String srcText = view.getSrcText();
-                if(!StringUtils.isNullOrEmpty(srcText)){
-                    ClipboardManager.getInstance().setText("label",view.getSrcText());
+                if (!StringUtils.isNullOrEmpty(srcText)) {
+                    ClipboardManager.getInstance().setText("label", view.getSrcText());
                     view.showMsg(R.string.copy_successfully);
                 }
                 break;
@@ -64,15 +64,16 @@ public class TranslateFragmentPresenterImpl extends BasePresenter<BaseView.Trans
             case R.id.iv_dst_copy:
 
                 String dstText = view.getDstText();
-                if(!StringUtils.isNullOrEmpty(dstText)){
-                    ClipboardManager.getInstance().setText("label",view.getDstText());
+                if (!StringUtils.isNullOrEmpty(dstText)) {
+                    ClipboardManager.getInstance().setText("label", view.getDstText());
                     view.showMsg(R.string.copy_successfully);
                 }
                 break;
             case R.id.iv_dst_clear:
                 view.setDstTextView("");
                 break;
-            default:break;
+            default:
+                break;
         }
 
     }
@@ -82,28 +83,46 @@ public class TranslateFragmentPresenterImpl extends BasePresenter<BaseView.Trans
 
         String srcText = view.getSrcText();
 
-        if(!StringUtils.isNullOrEmpty(srcText)){
+        if (!StringUtils.isNullOrEmpty(srcText)) {
 
             String from;
 
-            switch (App.FROM_LAN){
+            switch (App.FROM_LAN) {
 
-                case 0:from= BaiduTranslateApi.AUTO;break;
-                case 1:from=BaiduTranslateApi.ZH;break;
-                case 2:from=BaiduTranslateApi.EN;break;
-                case 3:from=BaiduTranslateApi.JP;break;
-                default:from=BaiduTranslateApi.AUTO;break;
+                case 0:
+                    from = BaiduTranslateApi.AUTO;
+                    break;
+                case 1:
+                    from = BaiduTranslateApi.ZH;
+                    break;
+                case 2:
+                    from = BaiduTranslateApi.EN;
+                    break;
+                case 3:
+                    from = BaiduTranslateApi.JP;
+                    break;
+                default:
+                    from = BaiduTranslateApi.AUTO;
+                    break;
 
             }
 
             String to;
 
-            switch (App.TO_LAN){
+            switch (App.TO_LAN) {
 
-                case 0:to=BaiduTranslateApi.ZH;break;
-                case 1:to=BaiduTranslateApi.EN;break;
-                case 2:to=BaiduTranslateApi.JP;break;
-                default:to=BaiduTranslateApi.ZH;break;
+                case 0:
+                    to = BaiduTranslateApi.ZH;
+                    break;
+                case 1:
+                    to = BaiduTranslateApi.EN;
+                    break;
+                case 2:
+                    to = BaiduTranslateApi.JP;
+                    break;
+                default:
+                    to = BaiduTranslateApi.ZH;
+                    break;
 
             }
 
@@ -120,15 +139,14 @@ public class TranslateFragmentPresenterImpl extends BasePresenter<BaseView.Trans
 
                 @Override
                 public void onNext(BaiduTranslateBean baiduTranslateBean) {
-                    if(baiduTranslateBean.getError_code()==null){
+                    if (baiduTranslateBean.getError_code() == null) {
                         view.setDstTextView(baiduTranslateBean.getTrans_result()[0].getDst());
-                    }else {
+                    } else {
                         view.showMsg(baiduTranslateBean.getError_msg());
                     }
                 }
             });
         }
-
 
 
     }

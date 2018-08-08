@@ -3,9 +3,9 @@ package me.pwcong.jpstart.adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 
 import java.util.List;
+
 
 /**
  * Created by Pwcong on 2016/9/27.
@@ -13,7 +13,7 @@ import java.util.List;
 
 public abstract class BasePagerAdapter<T> extends FragmentPagerAdapter {
 
-    List<T> list;
+    private List<T> list;
 
     public BasePagerAdapter(FragmentManager fm, List<T> list) {
         super(fm);

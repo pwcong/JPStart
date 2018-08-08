@@ -6,9 +6,9 @@ package me.pwcong.jpstart.mvp.bean;
 
 public class JPGif {
 
-    String rome;
-    int hiragana;
-    int katakana;
+    private String rome;
+    private int hiragana;
+    private int katakana;
 
     public JPGif(String rome, int hiragana, int katakana) {
         this.rome = rome;

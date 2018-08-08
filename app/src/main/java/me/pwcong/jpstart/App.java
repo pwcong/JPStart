@@ -3,8 +3,7 @@ package me.pwcong.jpstart;
 import android.app.Application;
 import android.support.v7.app.AppCompatDelegate;
 
-import com.blankj.utilcode.utils.NetworkUtils;
-import com.umeng.analytics.MobclickAgent;
+import com.blankj.utilcode.util.NetworkUtils;
 
 import me.pwcong.jpstart.conf.Constants;
 import me.pwcong.jpstart.manager.SharedPreferenceManager;
@@ -33,9 +32,7 @@ public class App extends Application {
 
         setDayNightMode(SharedPreferenceManager.getInstance().getString(Constants.MODE_THEME,Constants.MODE_DAY));
 
-        ISWIFI = NetworkUtils.isWifiConnected(this);
-
-        MobclickAgent.setScenarioType(this, MobclickAgent.EScenarioType.E_UM_NORMAL);
+        ISWIFI = NetworkUtils.isWifiConnected();
 
     }
 
@@ -62,6 +59,5 @@ public class App extends Application {
         }
 
     }
-
 
 }

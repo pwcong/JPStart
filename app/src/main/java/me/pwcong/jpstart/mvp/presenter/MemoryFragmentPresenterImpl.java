@@ -10,13 +10,13 @@ import me.pwcong.jpstart.mvp.view.BaseView;
  * Created by Pwcong on 2016/10/5.
  */
 
-public class MemoryFragmentPresenterImpl extends BasePresenter<BaseView.MemoryFragmentView> implements BasePresenter.MemoryFragmentPresenter{
+public class MemoryFragmentPresenterImpl extends BasePresenter<BaseView.MemoryFragmentView> implements BasePresenter.MemoryFragmentPresenter {
 
-    BaseModel.MemoryFragmentModel model;
+    private BaseModel.MemoryFragmentModel model;
 
     public MemoryFragmentPresenterImpl(BaseView.MemoryFragmentView view) {
         super(view);
-        model=new MemoryFragmentModelImpl();
+        model = new MemoryFragmentModelImpl();
     }
 
     @Override
@@ -34,7 +34,7 @@ public class MemoryFragmentPresenterImpl extends BasePresenter<BaseView.MemoryFr
     @Override
     public void setDate(int category) {
 
-        switch (category){
+        switch (category) {
 
             case Constants.CATEGORY_QINGYIN:
 
@@ -51,7 +51,8 @@ public class MemoryFragmentPresenterImpl extends BasePresenter<BaseView.MemoryFr
                 view.setData(model.getAoYinWithoutHeader());
 
                 break;
-            default:break;
+            default:
+                break;
 
 
         }

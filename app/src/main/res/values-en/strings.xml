@@ -101,7 +101,7 @@
     <string name="here">Here</string>
     <string name="here_contents">If you like the App, I sincerely hope you can encourage me.\n( •̀ ω •́ )y</string>
     <string name="now">Now</string>
-    <string name="now_contents">Current Version: v1.0.0</string>
+    <string name="now_contents">Current Version: v1.1.0</string>
 
     <string name="loading_data">Loading data</string>
     <string name="loading_data_success">Loading completed</string>
@@ -133,4 +133,7 @@
     <string name="tips_highest_score_contents">The highest number of consecutive correct answers: </string>
     <string name="tips_puzzle_contents">Who am I ? \nWhich is my hiragana, katakana and Rome sound ?</string>
     <string name="tips_supperzzle_contents">Pairing within the specified time, matching methods are:\n1.Hiragana -> Rome\n2.Hiragana -> Katakana\n3.Katakana -> Rome</string>
+    <string name="trust_to_save_qrcode">Do you save the WeChat Pay QRCode ?</string>
+    <string name="success_to_save">Save successfully !</string>
+    <string name="fail_to_save">Save failed !</string>
 </resources>

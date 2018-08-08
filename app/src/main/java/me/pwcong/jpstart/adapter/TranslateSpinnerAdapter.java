@@ -56,7 +56,7 @@ public class TranslateSpinnerAdapter extends BaseAdapter {
             TextView textView = (TextView) view.findViewById(R.id.tv_name);
             textView.setText(spinnerItem.getName());
             ImageView imageView = (ImageView) view.findViewById(R.id.iv_icon);
-            Glide.with(context).load(spinnerItem.getIcon()).asBitmap().into(imageView);
+            Glide.with(context).asBitmap().load(spinnerItem.getIcon()).into(imageView);
 
         }else {
             view= LayoutInflater.from(context).inflate(R.layout.spinner_item_translate,parent,false);

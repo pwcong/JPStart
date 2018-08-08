@@ -20,7 +20,7 @@ public class BannerFragment extends BaseFragment {
     @BindView(R.id.iv_banner)
     ImageView mImageView;
 
-    int banner;
+    private int banner;
 
     public static BannerFragment newInstance(BannerItem item){
 
@@ -48,6 +48,6 @@ public class BannerFragment extends BaseFragment {
 
     @Override
     protected void doAction() {
-        Glide.with(getContext()).load(banner).asBitmap().into(mImageView);
+        Glide.with(getContext()).asBitmap().load(banner).into(mImageView);
     }
 }

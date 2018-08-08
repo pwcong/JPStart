@@ -1,13 +1,10 @@
 package me.pwcong.jpstart.mvp.presenter;
 
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.os.Bundle;
 
 import java.util.List;
 
 import me.pwcong.jpstart.R;
-import me.pwcong.jpstart.conf.Constants;
 import me.pwcong.jpstart.mvp.bean.PixivIllustBean;
 import me.pwcong.jpstart.mvp.model.BaseModel;
 import me.pwcong.jpstart.mvp.model.PixivIllustFragmentModelImpl;
@@ -19,14 +16,14 @@ import rx.Subscriber;
  * Created by Pwcong on 2016/10/3.
  */
 
-public class PixivIllustFragmentPresenterImpl extends BasePresenter<BaseView.PixivIllustFragmentView> implements BasePresenter.PixivIllustFragmentPresenter{
+public class PixivIllustFragmentPresenterImpl extends BasePresenter<BaseView.PixivIllustFragmentView> implements BasePresenter.PixivIllustFragmentPresenter {
 
-    BaseModel.PixivIllustFragmentModel model;
+    private BaseModel.PixivIllustFragmentModel model;
 
 
     public PixivIllustFragmentPresenterImpl(BaseView.PixivIllustFragmentView view) {
         super(view);
-        model=new PixivIllustFragmentModelImpl();
+        model = new PixivIllustFragmentModelImpl();
     }
 
     @Override
@@ -68,18 +65,19 @@ public class PixivIllustFragmentPresenterImpl extends BasePresenter<BaseView.Pix
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
-                switch (which){
+                switch (which) {
 
                     case 0:
                         ActivityUtils.openUrl(bean.getLink());
                         break;
                     case 1:
-                        view.showImg(bean.getImg_240x480(),bean.getId());
+                        view.showImg(bean.getImg_240x480(), bean.getId());
                         break;
                     case 2:
                         ActivityUtils.share(bean.getLink());
                         break;
-                    default:break;
+                    default:
+                        break;
                 }
 
                 dialog.dismiss();

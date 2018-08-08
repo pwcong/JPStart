@@ -8,21 +8,24 @@ import me.pwcong.jpstart.mvp.bean.JPItem;
  * Created by Pwcong on 2016/9/28.
  */
 
-public class JPItemComporator implements Comparator<JPItem> {
+public class JPItemComparator implements Comparator<JPItem> {
 
     @Override
     public int compare(JPItem o1, JPItem o2) {
 
         if (o1.getRow() < o2.getRow()) {
-                return -1;
-        } else if(o1.getRow()==o2.getRow()){
+            return -1;
+        } else if (o1.getRow() == o2.getRow()) {
 
-            if(o1.getColumn()<=o2.getColumn()){
+            if (o1.getColumn() < o2.getColumn()) {
                 return -1;
-            }else
+            } else if (o1.getColumn() == o2.getColumn()) {
+                return 0;
+            } else {
                 return 1;
+            }
 
-        } else{
+        } else {
             return 1;
         }
     }

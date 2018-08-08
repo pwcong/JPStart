@@ -11,8 +11,8 @@ public class EventContainer {
     public static final int TYPE_GAME = 666;
 
 
-    int type;
-    Object event;
+    private int type;
+    private Object event;
 
     public EventContainer(int type, Object event) {
         this.type = type;

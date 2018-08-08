@@ -6,7 +6,7 @@ package me.pwcong.jpstart.rxbus.event;
 
 public class SettingEvent {
 
-    int msg;
+    private int msg;
 
     public SettingEvent(int msg) {
         this.msg = msg;

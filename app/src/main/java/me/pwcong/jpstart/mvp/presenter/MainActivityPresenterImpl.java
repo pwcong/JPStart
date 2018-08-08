@@ -21,13 +21,13 @@ import me.pwcong.jpstart.rxbus.event.PhotoViewEvent;
 
 public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivityView> implements BasePresenter.MainActivityPresenter {
 
-    private final String TAG =getClass().getSimpleName();
+    private final String TAG = getClass().getSimpleName();
 
-    BaseModel.MainActivityModel model;
+    private BaseModel.MainActivityModel model;
 
     public MainActivityPresenterImpl(BaseView.MainActivityView view) {
         super(view);
-        model=new MainActivityModelImpl();
+        model = new MainActivityModelImpl();
     }
 
     @Override
@@ -40,15 +40,16 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
 
     @Override
     public void onRadioButtonChanged(int position) {
-        switch (position){
+        switch (position) {
 
             case 0:
-                App.TYPE_MING=Constants.TYPE_HIRAGANA;
+                App.TYPE_MING = Constants.TYPE_HIRAGANA;
                 break;
             case 1:
-                App.TYPE_MING=Constants.TYPE_KATAKANA;
+                App.TYPE_MING = Constants.TYPE_KATAKANA;
                 break;
-            default:break;
+            default:
+                break;
         }
 
         view.switchJPStart();
@@ -57,12 +58,12 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
     @Override
     public void onNavigationItemSelected(int id) {
 
-        switch (id){
+        switch (id) {
             case R.id.item_jpstart:
 
                 view.switchJPStart();
 
-                if(SharedPreferenceManager.getInstance().getBoolean(Constants.FLAG_TIPS_JPSTART,true)){
+                if (SharedPreferenceManager.getInstance().getBoolean(Constants.FLAG_TIPS_JPSTART, true)) {
 
                     view.showAlertDialog(R.string.small_tips,
                             R.string.tips_jpstart, R.string.remember, new DialogInterface.OnClickListener() {
@@ -73,7 +74,7 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
                             }, R.string.do_not_remind, new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS_JPSTART,false);
+                                    SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS_JPSTART, false);
                                     dialog.dismiss();
                                 }
                             });
@@ -83,7 +84,7 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
                 break;
             case R.id.item_memory:
 
-                if(SharedPreferenceManager.getInstance().getBoolean(Constants.FLAG_TIPS_MEMORY,true)){
+                if (SharedPreferenceManager.getInstance().getBoolean(Constants.FLAG_TIPS_MEMORY, true)) {
 
                     view.showAlertDialog(R.string.small_tips,
                             R.string.tips_memory, R.string.remember, new DialogInterface.OnClickListener() {
@@ -94,7 +95,7 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
                             }, R.string.do_not_remind, new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS_MEMORY,false);
+                                    SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS_MEMORY, false);
                                     dialog.dismiss();
                                 }
                             });
@@ -107,7 +108,7 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
 
                 view.switchTranslate();
 
-                if(SharedPreferenceManager.getInstance().getBoolean(Constants.FLAG_TIPS_TRANSLATE,true)){
+                if (SharedPreferenceManager.getInstance().getBoolean(Constants.FLAG_TIPS_TRANSLATE, true)) {
 
                     view.showAlertDialog(R.string.small_tips,
                             R.string.tips_translate, R.string.remember, new DialogInterface.OnClickListener() {
@@ -118,7 +119,7 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
                             }, R.string.do_not_remind, new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS_TRANSLATE,false);
+                                    SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS_TRANSLATE, false);
                                     dialog.dismiss();
                                 }
                             });
@@ -126,31 +127,31 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
                 }
 
                 break;
-            case R.id.item_pixiv_illust:
-
-                view.switchPixivIllust();
-
-                if(SharedPreferenceManager.getInstance().getBoolean(Constants.FLAG_TIPS_PIXIVILLUST,true)){
-
-                    view.showAlertDialog(R.string.small_tips, R.string.tips_pixivillust,
-                            R.string.remember, new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    dialog.dismiss();
-                                }
-                            }, R.string.do_not_remind, new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS_PIXIVILLUST,false);
-                                    dialog.dismiss();
-                                }
-                            });
-
-
-                }
-
-
-                break;
+//            case R.id.item_pixiv_illust:
+//
+//                view.switchPixivIllust();
+//
+//                if (SharedPreferenceManager.getInstance().getBoolean(Constants.FLAG_TIPS_PIXIVILLUST, true)) {
+//
+//                    view.showAlertDialog(R.string.small_tips, R.string.tips_pixivillust,
+//                            R.string.remember, new DialogInterface.OnClickListener() {
+//                                @Override
+//                                public void onClick(DialogInterface dialog, int which) {
+//                                    dialog.dismiss();
+//                                }
+//                            }, R.string.do_not_remind, new DialogInterface.OnClickListener() {
+//                                @Override
+//                                public void onClick(DialogInterface dialog, int which) {
+//                                    SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS_PIXIVILLUST, false);
+//                                    dialog.dismiss();
+//                                }
+//                            });
+//
+//
+//                }
+//
+//
+//                break;
 
             case R.id.item_game:
 
@@ -164,7 +165,8 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
             case R.id.item_about:
                 view.switchAbout();
                 break;
-            default:break;
+            default:
+                break;
 
         }
 
@@ -176,17 +178,17 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
     @Override
     public void onBusEventInteraction(EventContainer eventContainer) {
 
-        Log.i(TAG, "onBusEventInteraction: "+eventContainer);
+        Log.i(TAG, "onBusEventInteraction: " + eventContainer);
 
-        switch (eventContainer.getType()){
+        switch (eventContainer.getType()) {
 
             case EventContainer.TYPE_PHOTOVIEW:
 
-                PhotoViewEvent photoViewEvent= (PhotoViewEvent) eventContainer.getEvent();
+                PhotoViewEvent photoViewEvent = (PhotoViewEvent) eventContainer.getEvent();
 
-                Bundle bundle=new Bundle();
-                bundle.putString(Constants.IMG_URL,photoViewEvent.getImg_url());
-                bundle.putInt(Constants.IMG_ID,photoViewEvent.getImg_id());
+                Bundle bundle = new Bundle();
+                bundle.putString(Constants.IMG_URL, photoViewEvent.getImg_url());
+                bundle.putInt(Constants.IMG_ID, photoViewEvent.getImg_id());
 
                 view.startPhotoViewActivity(bundle);
 
@@ -195,7 +197,7 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
             case EventContainer.TYPE_GAME:
 
                 GameEvent gameEvent = (GameEvent) eventContainer.getEvent();
-                switch (gameEvent.getType()){
+                switch (gameEvent.getType()) {
 
                     case GameEvent.TYPE_PUZZLE:
                         view.startPuzzleActivity();
@@ -203,11 +205,13 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
                     case GameEvent.TYPE_SUPPERZZLE:
                         view.startSupperzzleActivity();
                         break;
-                    default:break;
+                    default:
+                        break;
                 }
                 break;
 
-            default:break;
+            default:
+                break;
 
 
         }

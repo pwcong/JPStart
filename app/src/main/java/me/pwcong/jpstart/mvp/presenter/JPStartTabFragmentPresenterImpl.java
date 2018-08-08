@@ -1,8 +1,6 @@
 package me.pwcong.jpstart.mvp.presenter;
 
 import me.pwcong.jpstart.App;
-import me.pwcong.jpstart.conf.Constants;
-import me.pwcong.jpstart.manager.SharedPreferenceManager;
 import me.pwcong.jpstart.mvp.model.BaseModel;
 import me.pwcong.jpstart.mvp.model.JPStartTabFragmentModelImpl;
 import me.pwcong.jpstart.mvp.view.BaseView;
@@ -13,11 +11,11 @@ import me.pwcong.jpstart.mvp.view.BaseView;
 
 public class JPStartTabFragmentPresenterImpl extends BasePresenter<BaseView.JPStartTabFragmentView> implements BasePresenter.JPStartTabFragmentPresenter {
 
-    BaseModel.JPStartTabFragmentModel model;
+    private BaseModel.JPStartTabFragmentModel model;
 
     public JPStartTabFragmentPresenterImpl(BaseView.JPStartTabFragmentView view) {
         super(view);
-        model=new JPStartTabFragmentModelImpl();
+        model = new JPStartTabFragmentModelImpl();
     }
 
     @Override

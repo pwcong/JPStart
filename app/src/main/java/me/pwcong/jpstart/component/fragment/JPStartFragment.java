@@ -31,11 +31,11 @@ public class JPStartFragment extends BaseFragment implements BaseView.JPStartFra
     @BindView(R.id.recycler_view)
     RecyclerView mRecyclerView;
 
-    BasePresenter.JPStartFragmentPresenter presenter;
+    private BasePresenter.JPStartFragmentPresenter presenter;
 
-    JPStartRecyclerAdapter adapter;
+    private JPStartRecyclerAdapter adapter;
 
-    int category_yin = 0;
+    private int category_yin = 0;
 
     @Override
     protected int getViewId() {

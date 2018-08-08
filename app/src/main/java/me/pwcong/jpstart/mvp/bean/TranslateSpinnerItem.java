@@ -6,9 +6,9 @@ package me.pwcong.jpstart.mvp.bean;
 
 public class TranslateSpinnerItem {
 
-    int icon;
-    String name;
-    boolean hasIcon;
+    private int icon;
+    private String name;
+    private boolean hasIcon;
 
 
     public TranslateSpinnerItem(int icon, String name, boolean hasIcon) {

@@ -15,29 +15,29 @@ public class ClipboardManager {
     private static ClipboardManager instance;
     private android.content.ClipboardManager clipboardManager;
 
-    private ClipboardManager(){
+    private ClipboardManager() {
 
-        clipboardManager= (android.content.ClipboardManager) App.getInstance().getSystemService(Context.CLIPBOARD_SERVICE);
+        clipboardManager = (android.content.ClipboardManager) App.getInstance().getSystemService(Context.CLIPBOARD_SERVICE);
 
     }
 
 
-    public static synchronized ClipboardManager getInstance(){
+    public static synchronized ClipboardManager getInstance() {
 
-        if(instance==null){
-            instance=new ClipboardManager();
+        if (instance == null) {
+            instance = new ClipboardManager();
         }
 
         return instance;
 
     }
 
-    public String getText(){
+    public String getText() {
         return clipboardManager.getPrimaryClip().getItemAt(0).getText().toString();
     }
 
-    public void setText(String label,String text){
-        clipboardManager.setPrimaryClip(ClipData.newPlainText(label,text));
+    public void setText(String label, String text) {
+        clipboardManager.setPrimaryClip(ClipData.newPlainText(label, text));
     }
 
 }

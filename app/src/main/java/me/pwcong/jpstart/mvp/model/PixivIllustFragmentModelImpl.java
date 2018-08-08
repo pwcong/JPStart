@@ -13,7 +13,7 @@ import me.pwcong.jpstart.App;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.mvp.bean.PixivIllustBean;
 import me.pwcong.jpstart.network.Api;
-import me.pwcong.jpstart.network.pixiv.service.PixivIllustServiceImpl;
+import me.pwcong.jpstart.network.pixiv.service.impl.PixivIllustServiceImpl;
 import me.pwcong.jpstart.network.pixiv.service.PixivService;
 import me.pwcong.jpstart.utils.ResourceUtils;
 import okhttp3.ResponseBody;
@@ -29,7 +29,7 @@ import rx.schedulers.Schedulers;
 public class PixivIllustFragmentModelImpl implements BaseModel.PixivIllustFragmentModel {
 
 
-    PixivService.IllustService service;
+    private PixivService.IllustService service;
 
     public PixivIllustFragmentModelImpl() {
         service=new PixivIllustServiceImpl();

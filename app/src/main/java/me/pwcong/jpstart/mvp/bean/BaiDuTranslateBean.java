@@ -8,11 +8,11 @@ import java.util.Arrays;
 
 public class BaiduTranslateBean {
 
-    String from;
-    String to;
-    TranslateResult[] trans_result;
-    String error_code;
-    String error_msg;
+    private String from;
+    private String to;
+    private TranslateResult[] trans_result;
+    private String error_code;
+    private String error_msg;
 
     public BaiduTranslateBean(String from, String to, TranslateResult[] trans_result, String error_code, String error_msg) {
         this.from = from;

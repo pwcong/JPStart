@@ -6,8 +6,6 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.umeng.analytics.MobclickAgent;
-
 import butterknife.ButterKnife;
 import me.pwcong.jpstart.manager.ActivityManager;
 
@@ -49,26 +47,22 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     }
 
-    public void showSnackBar(View view,String msg){
-        Snackbar.make(view,msg,Snackbar.LENGTH_SHORT).show();
+    public void showSnackBar(View view, String msg) {
+        Snackbar.make(view, msg, Snackbar.LENGTH_SHORT).show();
     }
 
-    public void showSnackBar(View view,int msg){
-        Snackbar.make(view,msg,Snackbar.LENGTH_SHORT).show();
+    public void showSnackBar(View view, int msg) {
+        Snackbar.make(view, msg, Snackbar.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        MobclickAgent.onResume(this);
-
         ActivityManager.setCurrent(this);
-
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        MobclickAgent.onPause(this);
     }
 }

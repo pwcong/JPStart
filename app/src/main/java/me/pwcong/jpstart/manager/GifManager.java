@@ -1,6 +1,5 @@
 package me.pwcong.jpstart.manager;
 
-import java.util.Vector;
 import java.util.concurrent.ConcurrentHashMap;
 
 import me.pwcong.jpstart.R;
@@ -14,7 +13,7 @@ public class GifManager {
 
     private static GifManager instance;
 
-    public ConcurrentHashMap<String,JPGif> gifs=new ConcurrentHashMap<>();
+    private ConcurrentHashMap<String,JPGif> gifs=new ConcurrentHashMap<>();
 
     private GifManager(){
     }

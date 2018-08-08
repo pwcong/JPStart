@@ -9,7 +9,7 @@ public class GameEvent {
     public static final int TYPE_PUZZLE = 1;
     public static final int TYPE_SUPPERZZLE = 2;
 
-    int type;
+    private int type;
 
     public GameEvent(int type) {
         this.type = type;

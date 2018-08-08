@@ -8,10 +8,9 @@ import java.util.Arrays;
 
 public class YoudaoTranslateBean {
 
-
-    String[] translation;
-    String query;
-    int errorCode;
+    private String[] translation;
+    private String query;
+    private int errorCode;
 
     public YoudaoTranslateBean(String[] translation, String query, int errorCode) {
         this.translation = translation;

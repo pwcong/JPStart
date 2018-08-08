@@ -1,10 +1,11 @@
-package me.pwcong.jpstart.network.baidu.service;
+package me.pwcong.jpstart.network.baidu.service.impl;
 
-import com.blankj.utilcode.utils.EncryptUtils;
+import com.blankj.utilcode.util.EncryptUtils;
 
 import me.pwcong.jpstart.mvp.bean.BaiduTranslateBean;
 import me.pwcong.jpstart.network.Api;
 import me.pwcong.jpstart.network.baidu.BaiduTranslateApi;
+import me.pwcong.jpstart.network.baidu.service.BaiduService;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -16,7 +17,7 @@ import rx.schedulers.Schedulers;
  * Created by Pwcong on 2016/10/1.
  */
 
-public class BaiduTranslateServiceImpl implements BaiduService.TranslateService{
+public class BaiduTranslateServiceImpl implements BaiduService.TranslateService {
 
     private static Retrofit instance = null;
 

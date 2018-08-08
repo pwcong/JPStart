@@ -47,6 +47,7 @@ public class Constants {
 
     public static final String FILEDIR_ROOT             = Environment.getExternalStorageDirectory()+"/JPStart";
     public static final String FILETYPE_JPG         = ".jpg";
+    public static final String FILETYPE_PNG         = ".png";
 
 
     public static final String MODE_THEME = "mode_theme";
@@ -62,10 +63,5 @@ public class Constants {
     public static final String ALLOW_CONNECT_WITHOUT_WIFI = "allow_connect_without_wifi";
 
     public static final String HIGHEST_SCORE = "highest_score";
-
-
-
-
-
 
 }

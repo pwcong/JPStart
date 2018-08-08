@@ -6,15 +6,15 @@ package me.pwcong.jpstart.mvp.bean;
 
 public class JPItem {
 
-    int id;
-    int row;
-    int column;
-    String hiragana;
-    String katakana;
-    String rome;
-    int category;
-    int type;
-    boolean existed;
+    private int id;
+    private int row;
+    private int column;
+    private String hiragana;
+    private String katakana;
+    private String rome;
+    private int category;
+    private int type;
+    private boolean existed;
 
     public JPItem(int id, int row, int column, String hiragana, String katakana, String rome, int category, int type, boolean existed) {
         this.id = id;

@@ -2,7 +2,6 @@ package me.pwcong.jpstart.component.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -11,7 +10,6 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -22,8 +20,6 @@ import me.pwcong.jpstart.mvp.bean.TranslateSpinnerItem;
 import me.pwcong.jpstart.mvp.presenter.BasePresenter;
 import me.pwcong.jpstart.mvp.presenter.TranslateFragmentPresenterImpl;
 import me.pwcong.jpstart.mvp.view.BaseView;
-import me.pwcong.jpstart.network.baidu.BaiduTranslateApi;
-import me.pwcong.jpstart.utils.ResourceUtils;
 
 /**
  * Created by Pwcong on 2016/9/28.

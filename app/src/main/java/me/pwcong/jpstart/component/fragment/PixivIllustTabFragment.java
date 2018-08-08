@@ -11,10 +11,8 @@ import android.util.Log;
 import java.util.List;
 
 import butterknife.BindView;
-import me.pwcong.jpstart.App;
 import me.pwcong.jpstart.R;
 import me.pwcong.jpstart.adapter.PixivIllustTabPagerAdapter;
-import me.pwcong.jpstart.component.activity.MainActivity;
 import me.pwcong.jpstart.mvp.bean.PixivIllustTab;
 import me.pwcong.jpstart.mvp.presenter.BasePresenter;
 import me.pwcong.jpstart.mvp.presenter.PixivIllustTabFragmentPresenterImpl;

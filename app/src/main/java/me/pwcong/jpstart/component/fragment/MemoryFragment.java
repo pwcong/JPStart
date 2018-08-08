@@ -39,10 +39,10 @@ public class MemoryFragment extends BaseFragment implements BaseView.MemoryFragm
     @BindView(R.id.fab_menu)
     FloatingActionsMenu mFabMenu;
 
-    MemorySwipeAdapter adapter;
-    BasePresenter.MemoryFragmentPresenter presenter;
+    private MemorySwipeAdapter adapter;
+    private BasePresenter.MemoryFragmentPresenter presenter;
 
-    int category = Constants.CATEGORY_QINGYIN;
+    private int category = Constants.CATEGORY_QINGYIN;
 
     @Override
     protected int getViewId() {

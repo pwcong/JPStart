@@ -98,7 +98,7 @@
     <string name="here">Here</string>
     <string name="here_contents">如果你喜欢这个App，期望你能打赏一毛两毛。\n( •̀ ω •́ )y</string>
     <string name="now">Now</string>
-    <string name="now_contents">当前版本：v1.0.0</string>
+    <string name="now_contents">当前版本：v1.1.0</string>
 
     <string name="loading_data">正在加载数据</string>
     <string name="loading_data_success">加载完成</string>
@@ -129,4 +129,7 @@
     <string name="tips_highest_score_contents">最高连续答对次数：</string>
     <string name="tips_puzzle_contents">我是谁？\n我的平假名、片假名和罗马音是哪个？</string>
     <string name="tips_supperzzle_contents">在规定时间内进行配对，配对方式有：\n1.平假名 -> 罗马音\n2.平假名 -> 片假名\n3.片假名 -> 罗马音</string>
+    <string name="trust_to_save_qrcode">是否保存该微信支付二维码？</string>
+    <string name="success_to_save">保存成功！</string>
+    <string name="fail_to_save">保存失败！</string>
 </resources>

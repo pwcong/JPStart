@@ -58,23 +58,23 @@ public class SplashActivity extends BaseActivity {
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<String>() {
-            @Override
-            public void onCompleted() {
+                    @Override
+                    public void onCompleted() {
 
-                startActivity(new Intent(SplashActivity.this,MainActivity.class));
-                finish();
-            }
+                        startActivity(new Intent(SplashActivity.this,MainActivity.class));
+                        finish();
+                    }
 
-            @Override
-            public void onError(Throwable e) {
-                mTextView.setText(ResourceUtils.getString(SplashActivity.this,R.string.loading_data_error));
-            }
+                    @Override
+                    public void onError(Throwable e) {
+                        mTextView.setText(ResourceUtils.getString(SplashActivity.this,R.string.loading_data_error));
+                    }
 
-            @Override
-            public void onNext(String s) {
-                mTextView.setText(s);
-            }
-        });
+                    @Override
+                    public void onNext(String s) {
+                        mTextView.setText(s);
+                    }
+                });
     }
 
     private void hideState(){
