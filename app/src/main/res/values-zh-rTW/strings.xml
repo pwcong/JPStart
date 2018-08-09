@@ -106,7 +106,7 @@
     <string name="author">Author</string>
     <string name="pwcong">Pwcong</string>
     <string name="panda">Panda</string>
-    <string name="title_allow_download_without_wifi">啟用2G/3G/4G網絡下載Pixiv插圖</string>
+    <string name="title_allow_download_without_wifi">啟用移動網絡下載</string>
     <string name="summary_allow_download_without_wifi">允許通過需要付費的移動網絡下載</string>
     <string name="yes">是</string>
     <string name="no">否</string>

@@ -1,0 +1,8 @@
+html, body {
+    font-family: 'Microsoft YaHei', sans-serif;
+}
+
+.container {
+    min-height: 100vh;
+    background-color: orangered;
+}

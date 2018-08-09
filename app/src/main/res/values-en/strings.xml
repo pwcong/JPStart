@@ -109,7 +109,7 @@
     <string name="author">Author</string>
     <string name="pwcong">Pwcong</string>
     <string name="panda">Panda</string>
-    <string name="title_allow_download_without_wifi">Enable 2G/3G/4G network download Pixiv illustrations</string>
+    <string name="title_allow_download_without_wifi">Enable mobile network download</string>
     <string name="summary_allow_download_without_wifi">Allows mobile networks to be downloaded through the need to pay</string>
 
     <string name="yes">YES</string>

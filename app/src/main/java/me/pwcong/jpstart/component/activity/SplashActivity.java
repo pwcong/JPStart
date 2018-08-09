@@ -62,6 +62,7 @@ public class SplashActivity extends BaseActivity {
                     public void onCompleted() {
 
                         startActivity(new Intent(SplashActivity.this, MainActivity.class));
+//                        startActivity(new Intent(SplashActivity.this, SupperzzleActivity.class));
                         finish();
                     }
 

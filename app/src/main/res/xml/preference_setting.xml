@@ -9,11 +9,11 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="@string/more_setting">
+    <!--<PreferenceCategory android:title="@string/more_setting">-->
 
-        <Preference android:title="@string/tips_setting"/>
+        <!--<Preference android:title="@string/tips_setting"/>-->
 
-    </PreferenceCategory>
+    <!--</PreferenceCategory>-->
 
 
 </PreferenceScreen>

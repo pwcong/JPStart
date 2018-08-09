@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Supperzzle</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1 id="welcome">Hello World</h1>
+
+    </div>
+
+
+    <script>
+
+        document.getElementById('welcome').innerHTML = 'Ready';
+
+        alert('Start');
+
+        setTimeout(function(){
+            confirm('是否确认？', function() {
+
+                setTimeout(function(){
+                    alert('OK');
+                }, 3000);
+
+            });
+        }, 3000);
+
+
+
+    </script>
+
+</body>
+</html>
