@@ -20,7 +20,7 @@ import me.pwcong.jpstart.mvp.bean.PixivIllustBean;
  * Created by Pwcong on 2016/10/3.
  */
 
-public class PixivIllustRecyclerAdapter extends RecyclerView.Adapter<PixivIllustRecyclerAdapter.ViewHolder>{
+public class PixivIllustRecyclerAdapter extends RecyclerView.Adapter<PixivIllustRecyclerAdapter.ViewHolder> {
 
     private Context context;
     private List<PixivIllustBean> list;
@@ -43,7 +43,7 @@ public class PixivIllustRecyclerAdapter extends RecyclerView.Adapter<PixivIllust
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
 
-        holder.bean=list.get(position);
+        holder.bean = list.get(position);
         holder.tv_title.setText(holder.bean.getTitle());
         holder.tv_id.setText(String.valueOf(holder.bean.getId()));
         holder.tv_author.setText(holder.bean.getAuthor());
@@ -53,7 +53,7 @@ public class PixivIllustRecyclerAdapter extends RecyclerView.Adapter<PixivIllust
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(onItemClickListener!=null){
+                if (onItemClickListener != null) {
                     onItemClickListener.onItemClick(holder.bean);
                 }
             }
@@ -66,7 +66,7 @@ public class PixivIllustRecyclerAdapter extends RecyclerView.Adapter<PixivIllust
         return list.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         public final View view;
         public final ImageView iv_img;
@@ -79,11 +79,11 @@ public class PixivIllustRecyclerAdapter extends RecyclerView.Adapter<PixivIllust
         public ViewHolder(View itemView) {
             super(itemView);
 
-            this.view=itemView;
-            this.iv_img= (ImageView) itemView.findViewById(R.id.iv_img);
-            this.tv_title= (TextView) itemView.findViewById(R.id.tv_title);
-            this.tv_id= (TextView) itemView.findViewById(R.id.tv_id);
-            this.tv_author= (TextView) itemView.findViewById(R.id.tv_author);
+            this.view = itemView;
+            this.iv_img = (ImageView) itemView.findViewById(R.id.iv_img);
+            this.tv_title = (TextView) itemView.findViewById(R.id.tv_title);
+            this.tv_id = (TextView) itemView.findViewById(R.id.tv_id);
+            this.tv_author = (TextView) itemView.findViewById(R.id.tv_author);
 
 
         }
@@ -96,7 +96,7 @@ public class PixivIllustRecyclerAdapter extends RecyclerView.Adapter<PixivIllust
         this.onItemClickListener = onItemClickListener;
     }
 
-    public interface OnItemClickListener{
+    public interface OnItemClickListener {
 
         void onItemClick(PixivIllustBean bean);
 

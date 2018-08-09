@@ -26,7 +26,7 @@ import me.pwcong.jpstart.widget.dialog.ImageDialog;
  * Created by Pwcong on 2016/9/27.
  */
 
-public class JPStartFragment extends BaseFragment implements BaseView.JPStartFragmentView{
+public class JPStartFragment extends BaseFragment implements BaseView.JPStartFragmentView {
 
     @BindView(R.id.recycler_view)
     RecyclerView mRecyclerView;
@@ -42,12 +42,12 @@ public class JPStartFragment extends BaseFragment implements BaseView.JPStartFra
         return R.layout.fragment_jpstart;
     }
 
-    public static JPStartFragment newInstance(int type){
+    public static JPStartFragment newInstance(int type) {
 
-        Bundle argument=new Bundle();
-        argument.putInt(Constants.CATEGORY_YIN,type);
+        Bundle argument = new Bundle();
+        argument.putInt(Constants.CATEGORY_YIN, type);
 
-        JPStartFragment fragment=new JPStartFragment();
+        JPStartFragment fragment = new JPStartFragment();
         fragment.setArguments(argument);
 
         return fragment;
@@ -59,7 +59,7 @@ public class JPStartFragment extends BaseFragment implements BaseView.JPStartFra
 
         category_yin = getArguments().getInt(Constants.CATEGORY_YIN);
 
-        presenter=new JPStartFragmentPresenterImpl(this);
+        presenter = new JPStartFragmentPresenterImpl(this);
 
     }
 
@@ -72,7 +72,7 @@ public class JPStartFragment extends BaseFragment implements BaseView.JPStartFra
     @Override
     public void setData(List<JPItem> data) {
 
-        adapter=new JPStartRecyclerAdapter(data);
+        adapter = new JPStartRecyclerAdapter(data);
         adapter.setOnItemClickListener(new JPStartRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onClick(JPItem item) {
@@ -85,25 +85,23 @@ public class JPStartFragment extends BaseFragment implements BaseView.JPStartFra
             public void onLongClick(JPItem item) {
 
                 JPGif gif = GifManager.getInstance().getJPGif(item.getRome());
-                if(gif!=null){
-                    if(App.TYPE_MING==Constants.TYPE_HIRAGANA){
+                if (gif != null) {
+                    if (App.TYPE_MING == Constants.TYPE_HIRAGANA) {
                         new ImageDialog.Builder(getContext())
                                 .setResId(gif.getHiragana())
-                                .override((int)ResourceUtils.getDimension(getContext(),R.dimen.dialog_width),
-                                        (int)ResourceUtils.getDimension(getContext(),R.dimen.dialog_height))
+                                .override((int) ResourceUtils.getDimension(getContext(), R.dimen.dialog_width),
+                                        (int) ResourceUtils.getDimension(getContext(), R.dimen.dialog_height))
                                 .create()
                                 .show();
-                    }else {
+                    } else {
                         new ImageDialog.Builder(getContext())
                                 .setResId(gif.getKatakana())
-                                .override((int)ResourceUtils.getDimension(getContext(),R.dimen.dialog_width),
-                                        (int)ResourceUtils.getDimension(getContext(),R.dimen.dialog_height))
+                                .override((int) ResourceUtils.getDimension(getContext(), R.dimen.dialog_width),
+                                        (int) ResourceUtils.getDimension(getContext(), R.dimen.dialog_height))
                                 .create()
                                 .show();
                     }
                 }
-
-
 
 
             }
@@ -116,19 +114,20 @@ public class JPStartFragment extends BaseFragment implements BaseView.JPStartFra
     @Override
     public void setRecyclerView(int type) {
 
-        switch (type){
+        switch (type) {
             case Constants.CATEGORY_QINGYIN:
-                RecyclerView.LayoutManager layoutManager1=new GridLayoutManager(getContext(),Constants.COLUMN_QINGYIN);
+                RecyclerView.LayoutManager layoutManager1 = new GridLayoutManager(getContext(), Constants.COLUMN_QINGYIN);
                 mRecyclerView.setLayoutManager(layoutManager1);
             case Constants.CATEGORY_ZHUOYIN:
-                RecyclerView.LayoutManager layoutManager2=new GridLayoutManager(getContext(),Constants.COLUMN_ZHUOYIN);
+                RecyclerView.LayoutManager layoutManager2 = new GridLayoutManager(getContext(), Constants.COLUMN_ZHUOYIN);
                 mRecyclerView.setLayoutManager(layoutManager2);
                 break;
             case Constants.CATEGORY_AOYIN:
-                RecyclerView.LayoutManager layoutManager3=new GridLayoutManager(getContext(),Constants.COLUMN_AOYIN);
+                RecyclerView.LayoutManager layoutManager3 = new GridLayoutManager(getContext(), Constants.COLUMN_AOYIN);
                 mRecyclerView.setLayoutManager(layoutManager3);
                 break;
-            default:break;
+            default:
+                break;
         }
 
     }

@@ -27,7 +27,7 @@ import me.pwcong.jpstart.rxbus.event.PhotoViewEvent;
  * Created by Pwcong on 2016/9/28.
  */
 
-public class PixivIllustFragment extends BaseFragment implements BaseView.PixivIllustFragmentView{
+public class PixivIllustFragment extends BaseFragment implements BaseView.PixivIllustFragmentView {
 
 
     @BindView(R.id.layout_root)
@@ -41,12 +41,12 @@ public class PixivIllustFragment extends BaseFragment implements BaseView.PixivI
 
     BasePresenter.PixivIllustFragmentPresenter presenter;
 
-    public static PixivIllustFragment newInstance(String mode){
+    public static PixivIllustFragment newInstance(String mode) {
 
-        Bundle arguments=new Bundle();
-        arguments.putString(Constants.MODE_ILLUST,mode);
+        Bundle arguments = new Bundle();
+        arguments.putString(Constants.MODE_ILLUST, mode);
 
-        PixivIllustFragment fragment=new PixivIllustFragment();
+        PixivIllustFragment fragment = new PixivIllustFragment();
         fragment.setArguments(arguments);
         return fragment;
 
@@ -61,16 +61,16 @@ public class PixivIllustFragment extends BaseFragment implements BaseView.PixivI
     @Override
     protected void initVariable(@Nullable Bundle savedInstanceState) {
 
-        mode_illust=getArguments().getString(Constants.MODE_ILLUST);
+        mode_illust = getArguments().getString(Constants.MODE_ILLUST);
 
-        presenter=new PixivIllustFragmentPresenterImpl(this);
+        presenter = new PixivIllustFragmentPresenterImpl(this);
 
         initRecyclerView();
         initRefreshLayout();
 
     }
 
-    private void initRecyclerView(){
+    private void initRecyclerView() {
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -80,9 +80,9 @@ public class PixivIllustFragment extends BaseFragment implements BaseView.PixivI
     }
 
 
-    private void initRefreshLayout(){
+    private void initRefreshLayout() {
 
-        mRefreshLayout.setColorSchemeResources(R.color.colorPrimary,R.color.blue,R.color.orange,R.color.amber,R.color.green,R.color.purple);
+        mRefreshLayout.setColorSchemeResources(R.color.colorPrimary, R.color.blue, R.color.orange, R.color.amber, R.color.green, R.color.purple);
 
         mRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -101,12 +101,12 @@ public class PixivIllustFragment extends BaseFragment implements BaseView.PixivI
 
     @Override
     public void showMsg(int msg) {
-        showSnackBar(mRootLayout,msg);
+        showSnackBar(mRootLayout, msg);
     }
 
     @Override
     public void showMsg(String msg) {
-        showSnackBar(mRootLayout,msg);
+        showSnackBar(mRootLayout, msg);
     }
 
     @Override
@@ -127,10 +127,10 @@ public class PixivIllustFragment extends BaseFragment implements BaseView.PixivI
     }
 
     @Override
-    public void showImg(String url,int id) {
+    public void showImg(String url, int id) {
 
-        PhotoViewEvent event=new PhotoViewEvent(url,id);
-        RxBus.getDefault().post(new EventContainer(EventContainer.TYPE_PHOTOVIEW,event));
+        PhotoViewEvent event = new PhotoViewEvent(url, id);
+        RxBus.getDefault().post(new EventContainer(EventContainer.TYPE_PHOTOVIEW, event));
 
 
     }
@@ -139,7 +139,7 @@ public class PixivIllustFragment extends BaseFragment implements BaseView.PixivI
     @Override
     public void setData(List<PixivIllustBean> data) {
 
-        PixivIllustRecyclerAdapter adapter=new PixivIllustRecyclerAdapter(getContext(),data);
+        PixivIllustRecyclerAdapter adapter = new PixivIllustRecyclerAdapter(getContext(), data);
         adapter.setOnItemClickListener(new PixivIllustRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(PixivIllustBean bean) {

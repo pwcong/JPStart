@@ -27,18 +27,26 @@ public class JPStartFragmentModelImpl implements BaseModel.JPStartFragmentModel 
 
                 subscriber.onStart();
 
-                switch (category){
+                switch (category) {
 
-                    case Constants.CATEGORY_QINGYIN:list=DBManager.getInstance().getQingYin();break;
-                    case Constants.CATEGORY_ZHUOYIN:list=DBManager.getInstance().getZhuoYin();break;
-                    case Constants.CATEGORY_AOYIN:list=DBManager.getInstance().getAoYin();break;
-                    default:list=null;break;
+                    case Constants.CATEGORY_QINGYIN:
+                        list = DBManager.getInstance().getQingYin();
+                        break;
+                    case Constants.CATEGORY_ZHUOYIN:
+                        list = DBManager.getInstance().getZhuoYin();
+                        break;
+                    case Constants.CATEGORY_AOYIN:
+                        list = DBManager.getInstance().getAoYin();
+                        break;
+                    default:
+                        list = null;
+                        break;
 
                 }
 
-                if(list==null){
+                if (list == null) {
                     subscriber.onError(new Exception());
-                }else {
+                } else {
                     subscriber.onNext(list);
                 }
 

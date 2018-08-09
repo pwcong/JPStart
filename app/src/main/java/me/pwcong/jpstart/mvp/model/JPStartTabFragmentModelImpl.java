@@ -18,14 +18,14 @@ public class JPStartTabFragmentModelImpl implements BaseModel.JPStartTabFragment
     @Override
     public List<JPTab> getData() {
 
-        List<JPTab> list=new ArrayList<>();
+        List<JPTab> list = new ArrayList<>();
         String qingyin = ResourceUtils.getString(App.getInstance(), R.string.qingyin);
         String zhuoyin = ResourceUtils.getString(App.getInstance(), R.string.zhuoyin);
         String aoyin = ResourceUtils.getString(App.getInstance(), R.string.aoyin);
 
-        list.add(new JPTab(Constants.CATEGORY_QINGYIN,qingyin));
-        list.add(new JPTab(Constants.CATEGORY_ZHUOYIN,zhuoyin));
-        list.add(new JPTab(Constants.CATEGORY_AOYIN,aoyin));
+        list.add(new JPTab(Constants.CATEGORY_QINGYIN, qingyin));
+        list.add(new JPTab(Constants.CATEGORY_ZHUOYIN, zhuoyin));
+        list.add(new JPTab(Constants.CATEGORY_AOYIN, aoyin));
 
         return list;
     }

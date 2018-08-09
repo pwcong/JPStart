@@ -22,11 +22,11 @@ public class BannerFragment extends BaseFragment {
 
     private int banner;
 
-    public static BannerFragment newInstance(BannerItem item){
+    public static BannerFragment newInstance(BannerItem item) {
 
         Bundle arguments = new Bundle();
-        arguments.putInt(Constants.IMG_BANNER,item.getBanner());
-        BannerFragment fragment=new BannerFragment();
+        arguments.putInt(Constants.IMG_BANNER, item.getBanner());
+        BannerFragment fragment = new BannerFragment();
         fragment.setArguments(arguments);
 
         return fragment;
@@ -42,7 +42,7 @@ public class BannerFragment extends BaseFragment {
     @Override
     protected void initVariable(@Nullable Bundle savedInstanceState) {
 
-        banner=getArguments().getInt(Constants.IMG_BANNER);
+        banner = getArguments().getInt(Constants.IMG_BANNER);
 
     }
 

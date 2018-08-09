@@ -31,7 +31,7 @@ import me.pwcong.jpstart.mvp.view.BaseView;
  * Created by Pwcong on 2016/10/24.
  */
 
-public class PuzzleActivity extends BaseActivity implements BaseView.PuzzleActivityView,View.OnClickListener {
+public class PuzzleActivity extends BaseActivity implements BaseView.PuzzleActivityView, View.OnClickListener {
 
     public static final int TYPE_HIRAGANA_ROME = 0;
     public static final int TYPE_HIRAGANA_KATAKANA = 1;
@@ -77,7 +77,7 @@ public class PuzzleActivity extends BaseActivity implements BaseView.PuzzleActiv
         initTextView();
     }
 
-    private void initToolbar(){
+    private void initToolbar() {
         mToolbar.setTitle(R.string.whoami);
         mToolbar.setNavigationIcon(R.drawable.ic_chevron_left_white_24dp);
         setSupportActionBar(mToolbar);
@@ -91,7 +91,7 @@ public class PuzzleActivity extends BaseActivity implements BaseView.PuzzleActiv
 
     }
 
-    private void initButton(){
+    private void initButton() {
 
         mButton1.setOnClickListener(this);
         mButton2.setOnClickListener(this);
@@ -100,10 +100,9 @@ public class PuzzleActivity extends BaseActivity implements BaseView.PuzzleActiv
 
     }
 
-    private void initTextView(){
+    private void initTextView() {
         mCountTextView.setText(String.valueOf(count));
     }
-
 
 
     @Override
@@ -115,7 +114,7 @@ public class PuzzleActivity extends BaseActivity implements BaseView.PuzzleActiv
     @Override
     public void onClick(View v) {
 
-        presenter.checkAnswerSelect(v.getId(),current,items);
+        presenter.checkAnswerSelect(v.getId(), current, items);
 
     }
 
@@ -125,12 +124,12 @@ public class PuzzleActivity extends BaseActivity implements BaseView.PuzzleActiv
 
         this.current = current;
 
-        items=new ArrayList<>();
+        items = new ArrayList<>();
         items.add(current);
         items.addAll(jams);
         Collections.shuffle(items);
 
-        switch (type){
+        switch (type) {
 
             case TYPE_HIRAGANA_ROME:
 
@@ -163,12 +162,12 @@ public class PuzzleActivity extends BaseActivity implements BaseView.PuzzleActiv
                 mButton4.setText(this.items.get(3).getRome());
 
                 break;
-            default:break;
+            default:
+                break;
 
         }
 
     }
-
 
 
     @Override
@@ -198,15 +197,15 @@ public class PuzzleActivity extends BaseActivity implements BaseView.PuzzleActiv
                 .setCancelable(false)
                 .setMessage(msg)
                 .setTitle(title)
-                .setPositiveButton(pbt,pbl)
-                .setNegativeButton(nbt,nbl)
+                .setPositiveButton(pbt, pbl)
+                .setNegativeButton(nbt, nbl)
                 .create()
                 .show();
 
     }
 
     @Override
-    public void showDialog(int icon,int title,String msg) {
+    public void showDialog(int icon, int title, String msg) {
 
         new AlertDialog.Builder(this)
                 .setTitle(title)
@@ -239,36 +238,36 @@ public class PuzzleActivity extends BaseActivity implements BaseView.PuzzleActiv
     public void clearCount() {
 
         int hs = SharedPreferenceManager.getInstance().getInt(Constants.HIGHEST_SCORE, 0);
-        if(count > hs)
-            SharedPreferenceManager.getInstance().putInt(Constants.HIGHEST_SCORE,count);
+        if (count > hs)
+            SharedPreferenceManager.getInstance().putInt(Constants.HIGHEST_SCORE, count);
 
 
-        count=0;
+        count = 0;
         mCountTextView.setText(String.valueOf(count));
 
     }
 
     @Override
     public void showMsg(int msg) {
-        showSnackBar(mToolbar,msg);
+        showSnackBar(mToolbar, msg);
     }
 
     @Override
     public void showMsg(String msg) {
-        showSnackBar(mToolbar,msg);
+        showSnackBar(mToolbar, msg);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        getMenuInflater().inflate(R.menu.activity_puzzle_menu,menu);
+        getMenuInflater().inflate(R.menu.activity_puzzle_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.menu_hiragana_rome:
                 type = TYPE_HIRAGANA_ROME;
                 presenter.checkTypeSelect(TYPE_HIRAGANA_ROME);
@@ -293,14 +292,14 @@ public class PuzzleActivity extends BaseActivity implements BaseView.PuzzleActiv
     }
 
 
-    private Animation getTipsAnimation(){
+    private Animation getTipsAnimation() {
 
         AnimationSet animationSet = new AnimationSet(true);
-        animationSet.addAnimation(new AlphaAnimation(1,0));
+        animationSet.addAnimation(new AlphaAnimation(1, 0));
         animationSet.setDuration(1000);
         animationSet.setFillAfter(true);
 
-        return  animationSet;
+        return animationSet;
 
     }
 }

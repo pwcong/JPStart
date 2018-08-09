@@ -62,7 +62,7 @@ public class TranslateFragment extends BaseFragment implements BaseView.Translat
     @Override
     protected void initVariable(@Nullable Bundle savedInstanceState) {
 
-        presenter=new TranslateFragmentPresenterImpl(this);
+        presenter = new TranslateFragmentPresenterImpl(this);
 
         initSpinner();
         initButton();
@@ -70,15 +70,17 @@ public class TranslateFragment extends BaseFragment implements BaseView.Translat
 
     }
 
-    private void initSpinner(){
+    private void initSpinner() {
 
         mFromSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 presenter.checkFromLanguate(position);
             }
+
             @Override
-            public void onNothingSelected(AdapterView<?> parent) { }
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
         });
 
         mToSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -86,13 +88,15 @@ public class TranslateFragment extends BaseFragment implements BaseView.Translat
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 presenter.checkToLanguage(position);
             }
+
             @Override
-            public void onNothingSelected(AdapterView<?> parent) { }
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
         });
 
     }
 
-    private void initButton(){
+    private void initButton() {
 
         mTranslateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,7 +107,7 @@ public class TranslateFragment extends BaseFragment implements BaseView.Translat
 
     }
 
-    private void initImageView(){
+    private void initImageView() {
 
         mSrcCopyImageView.setOnClickListener(this);
         mSrcPasteImageView.setOnClickListener(this);
@@ -120,12 +124,12 @@ public class TranslateFragment extends BaseFragment implements BaseView.Translat
 
     @Override
     public void showMsg(String msg) {
-        showSnackBar(mRootLayout,msg);
+        showSnackBar(mRootLayout, msg);
     }
 
     @Override
     public void showMsg(int msg) {
-        showSnackBar(mRootLayout,msg);
+        showSnackBar(mRootLayout, msg);
 
     }
 
@@ -153,13 +157,13 @@ public class TranslateFragment extends BaseFragment implements BaseView.Translat
     @Override
     public void setFromSpinner(List<TranslateSpinnerItem> list) {
 
-        mFromSpinner.setAdapter(new TranslateSpinnerAdapter(list,getContext()));
+        mFromSpinner.setAdapter(new TranslateSpinnerAdapter(list, getContext()));
         mFromSpinner.setSelection(App.FROM_LAN);
     }
 
     @Override
     public void setToSpinner(List<TranslateSpinnerItem> list) {
-        mToSpinner.setAdapter(new TranslateSpinnerAdapter(list,getContext()));
+        mToSpinner.setAdapter(new TranslateSpinnerAdapter(list, getContext()));
         mToSpinner.setSelection(App.TO_LAN);
     }
 

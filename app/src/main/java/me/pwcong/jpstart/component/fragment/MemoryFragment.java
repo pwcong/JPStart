@@ -30,7 +30,7 @@ import me.pwcong.jpstart.widget.swipecardview.SwipeFlingAdapterView;
  * Created by Pwcong on 2016/9/29.
  */
 
-public class MemoryFragment extends BaseFragment implements BaseView.MemoryFragmentView{
+public class MemoryFragment extends BaseFragment implements BaseView.MemoryFragmentView {
 
     @BindView(R.id.layout_root)
     RelativeLayout mRootLayout;
@@ -52,7 +52,7 @@ public class MemoryFragment extends BaseFragment implements BaseView.MemoryFragm
     @Override
     protected void initVariable(@Nullable Bundle savedInstanceState) {
 
-        presenter=new MemoryFragmentPresenterImpl(this);
+        presenter = new MemoryFragmentPresenterImpl(this);
 
         initSwipeFlingAdapterView();
         initFabMenu();
@@ -60,13 +60,13 @@ public class MemoryFragment extends BaseFragment implements BaseView.MemoryFragm
     }
 
 
-    private void initSwipeFlingAdapterView(){
+    private void initSwipeFlingAdapterView() {
 
         mSwipeFlingAdapterView.setFlingListener(new SwipeFlingAdapterView.onFlingListener() {
             @Override
             public void removeFirstObjectInAdapter() {
                 adapter.remove(0);
-                if (adapter.isEmpty()){
+                if (adapter.isEmpty()) {
                     presenter.loadMore(category);
                 }
             }
@@ -95,7 +95,7 @@ public class MemoryFragment extends BaseFragment implements BaseView.MemoryFragm
 
     }
 
-    private void initFabMenu(){
+    private void initFabMenu() {
 
 
         TextDrawable textQing = TextDrawable.builder()
@@ -114,7 +114,7 @@ public class MemoryFragment extends BaseFragment implements BaseView.MemoryFragm
             public void onClick(View v) {
 
                 presenter.setDate(Constants.CATEGORY_QINGYIN);
-                category=Constants.CATEGORY_QINGYIN;
+                category = Constants.CATEGORY_QINGYIN;
                 hideFabMenu();
 
             }
@@ -134,7 +134,7 @@ public class MemoryFragment extends BaseFragment implements BaseView.MemoryFragm
             @Override
             public void onClick(View v) {
                 presenter.setDate(Constants.CATEGORY_ZHUOYIN);
-                category=Constants.CATEGORY_ZHUOYIN;
+                category = Constants.CATEGORY_ZHUOYIN;
                 hideFabMenu();
             }
         });
@@ -153,7 +153,7 @@ public class MemoryFragment extends BaseFragment implements BaseView.MemoryFragm
             @Override
             public void onClick(View v) {
                 presenter.setDate(Constants.CATEGORY_AOYIN);
-                category=Constants.CATEGORY_AOYIN;
+                category = Constants.CATEGORY_AOYIN;
                 hideFabMenu();
             }
         });
@@ -173,19 +173,19 @@ public class MemoryFragment extends BaseFragment implements BaseView.MemoryFragm
     @Override
     public void setData(List<JPItem> data) {
 
-        if(adapter==null){
-            adapter=new MemorySwipeAdapter(data);
+        if (adapter == null) {
+            adapter = new MemorySwipeAdapter(data);
 
             adapter.setOnWriteButtonClickListener(new MemorySwipeAdapter.OnWriteButtonClickListener() {
                 @Override
                 public void onClick(JPItem item) {
 
                     JPGif gif = GifManager.getInstance().getJPGif(item.getRome());
-                    if(gif!=null){
+                    if (gif != null) {
                         new ImageDialog.Builder(getContext())
                                 .setResId(gif.getHiragana())
-                                .override((int)ResourceUtils.getDimension(getContext(),R.dimen.dialog_width),
-                                        (int)ResourceUtils.getDimension(getContext(),R.dimen.dialog_height))
+                                .override((int) ResourceUtils.getDimension(getContext(), R.dimen.dialog_width),
+                                        (int) ResourceUtils.getDimension(getContext(), R.dimen.dialog_height))
                                 .create()
                                 .show();
                     }
@@ -201,8 +201,6 @@ public class MemoryFragment extends BaseFragment implements BaseView.MemoryFragm
             });
 
 
-
-
         }
         adapter.setList(data);
         mSwipeFlingAdapterView.setAdapter(adapter);
@@ -211,12 +209,12 @@ public class MemoryFragment extends BaseFragment implements BaseView.MemoryFragm
 
     @Override
     public void showMsg(int msg) {
-        showSnackBar(mRootLayout,msg);
+        showSnackBar(mRootLayout, msg);
     }
 
     @Override
     public void showMsg(String msg) {
-        showSnackBar(mRootLayout,msg);
+        showSnackBar(mRootLayout, msg);
     }
 
     @Override

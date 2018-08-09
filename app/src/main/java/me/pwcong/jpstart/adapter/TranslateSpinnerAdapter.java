@@ -51,16 +51,16 @@ public class TranslateSpinnerAdapter extends BaseAdapter {
 
         TranslateSpinnerItem spinnerItem = list.get(position);
 
-        if(spinnerItem.isHasIcon()){
-            view= LayoutInflater.from(context).inflate(R.layout.spinner_item_translate_icon,parent,false);
+        if (spinnerItem.isHasIcon()) {
+            view = LayoutInflater.from(context).inflate(R.layout.spinner_item_translate_icon, parent, false);
             TextView textView = (TextView) view.findViewById(R.id.tv_name);
             textView.setText(spinnerItem.getName());
             ImageView imageView = (ImageView) view.findViewById(R.id.iv_icon);
             Glide.with(context).asBitmap().load(spinnerItem.getIcon()).into(imageView);
 
-        }else {
-            view= LayoutInflater.from(context).inflate(R.layout.spinner_item_translate,parent,false);
-            TextView textView= (TextView) view.findViewById(R.id.tv_name);
+        } else {
+            view = LayoutInflater.from(context).inflate(R.layout.spinner_item_translate, parent, false);
+            TextView textView = (TextView) view.findViewById(R.id.tv_name);
             textView.setText(spinnerItem.getName());
         }
 

@@ -34,16 +34,16 @@ public class DBManager {
     private DBManager() {
     }
 
-    public static synchronized DBManager getInstance(){
+    public static synchronized DBManager getInstance() {
 
-        if(instance==null){
-            instance=new DBManager();
+        if (instance == null) {
+            instance = new DBManager();
         }
 
         return instance;
     }
 
-    public void init(){
+    public void init() {
 
         getQingYinWithoutHeader();
         getZhuoYinWithoutHeader();
@@ -52,14 +52,14 @@ public class DBManager {
     }
 
 
-    public synchronized List<JPItem> query(){
+    public synchronized List<JPItem> query() {
 
-        if(query==null){
+        if (query == null) {
             SQLiteDatabase db = new JPStartDatabase(App.getInstance()).getReadableDatabase();
             Cursor cursor = db.rawQuery("select * from " + JPStartDatabase.DB_TABLE_NAME, null);
             query = new ArrayList<>();
             JPItem item;
-            while (cursor.moveToNext()){
+            while (cursor.moveToNext()) {
                 int id = cursor.getInt(cursor.getColumnIndex("id"));
                 int row = cursor.getInt(cursor.getColumnIndex("row"));
                 int column = cursor.getInt(cursor.getColumnIndex("column"));
@@ -68,9 +68,9 @@ public class DBManager {
                 String rome = cursor.getString(cursor.getColumnIndex("rome"));
                 int category = cursor.getInt(cursor.getColumnIndex("category"));
                 int type = cursor.getInt(cursor.getColumnIndex("type"));
-                boolean existed = cursor.getInt(cursor.getColumnIndex("existed"))==1;
+                boolean existed = cursor.getInt(cursor.getColumnIndex("existed")) == 1;
 
-                item=new JPItem(id,row,column,hiragana,katakana,rome,category,type,existed);
+                item = new JPItem(id, row, column, hiragana, katakana, rome, category, type, existed);
 
                 query.add(item);
             }
@@ -83,19 +83,19 @@ public class DBManager {
 
     public synchronized List<JPItem> getQingYin() {
 
-        if (qingYin==null){
+        if (qingYin == null) {
 
-            qingYin=new ArrayList<>();
+            qingYin = new ArrayList<>();
             List<JPItem> query = query();
-            for(JPItem item:query){
+            for (JPItem item : query) {
 
-                if(item.getCategory()==Constants.CATEGORY_QINGYIN){
+                if (item.getCategory() == Constants.CATEGORY_QINGYIN) {
                     qingYin.add(item);
                 }
 
             }
 
-            Collections.sort(qingYin,new JPItemComparator());
+            Collections.sort(qingYin, new JPItemComparator());
 
 
         }
@@ -105,20 +105,19 @@ public class DBManager {
 
     public List<JPItem> getZhuoYin() {
 
-        if (zhuoYin==null){
+        if (zhuoYin == null) {
 
-            zhuoYin=new ArrayList<>();
+            zhuoYin = new ArrayList<>();
             List<JPItem> query = query();
-            for(JPItem item:query){
+            for (JPItem item : query) {
 
-                if(item.getCategory()==Constants.CATEGORY_ZHUOYIN){
+                if (item.getCategory() == Constants.CATEGORY_ZHUOYIN) {
                     zhuoYin.add(item);
                 }
 
             }
 
-            Collections.sort(zhuoYin,new JPItemComparator());
-
+            Collections.sort(zhuoYin, new JPItemComparator());
 
 
         }
@@ -129,19 +128,19 @@ public class DBManager {
 
     public List<JPItem> getAoYin() {
 
-        if (aoYin==null){
+        if (aoYin == null) {
 
-            aoYin=new ArrayList<>();
+            aoYin = new ArrayList<>();
             List<JPItem> query = query();
-            for(JPItem item:query){
+            for (JPItem item : query) {
 
-                if(item.getCategory()==Constants.CATEGORY_AOYIN){
+                if (item.getCategory() == Constants.CATEGORY_AOYIN) {
                     aoYin.add(item);
                 }
 
             }
 
-            Collections.sort(aoYin,new JPItemComparator());
+            Collections.sort(aoYin, new JPItemComparator());
 
 
         }
@@ -151,13 +150,13 @@ public class DBManager {
 
     public List<JPItem> getQingYinWithoutHeader() {
 
-        if (qingYinWithoutHeader==null){
+        if (qingYinWithoutHeader == null) {
 
-            qingYinWithoutHeader=new ArrayList<>();
+            qingYinWithoutHeader = new ArrayList<>();
             List<JPItem> query = getQingYin();
-            for(JPItem item:query){
+            for (JPItem item : query) {
 
-                if(item.getRow()!=0&&item.getColumn()!=0&&item.isExisted()){
+                if (item.getRow() != 0 && item.getColumn() != 0 && item.isExisted()) {
                     qingYinWithoutHeader.add(item);
                 }
 
@@ -165,19 +164,18 @@ public class DBManager {
         }
 
 
-
         return qingYinWithoutHeader;
     }
 
     public List<JPItem> getZhuoYinWithoutHeader() {
 
-        if (zhuoYinWithoutHeader==null){
+        if (zhuoYinWithoutHeader == null) {
 
-            zhuoYinWithoutHeader=new ArrayList<>();
+            zhuoYinWithoutHeader = new ArrayList<>();
             List<JPItem> query = getZhuoYin();
-            for(JPItem item:query){
+            for (JPItem item : query) {
 
-                if(item.getRow()!=0&&item.getColumn()!=0&&item.isExisted()){
+                if (item.getRow() != 0 && item.getColumn() != 0 && item.isExisted()) {
                     zhuoYinWithoutHeader.add(item);
                 }
 
@@ -189,13 +187,13 @@ public class DBManager {
 
     public List<JPItem> getAoYinWithoutHeader() {
 
-        if (aoYinWithoutHeader==null){
+        if (aoYinWithoutHeader == null) {
 
-            aoYinWithoutHeader=new ArrayList<>();
+            aoYinWithoutHeader = new ArrayList<>();
             List<JPItem> query = getAoYin();
-            for(JPItem item:query){
+            for (JPItem item : query) {
 
-                if(item.getRow()!=0&&item.getColumn()!=0&&item.isExisted()){
+                if (item.getRow() != 0 && item.getColumn() != 0 && item.isExisted()) {
                     aoYinWithoutHeader.add(item);
                 }
 
@@ -205,30 +203,29 @@ public class DBManager {
         return aoYinWithoutHeader;
     }
 
-    public static void addHeaderString(List<JPItem> list, int row, int column){
+    public static void addHeaderString(List<JPItem> list, int row, int column) {
 
-        for(int i=1;i<column;i++){
+        for (int i = 1; i < column; i++) {
 
             JPItem item = list.get(i);
             String hiragana = item.getHiragana();
             String katakana = item.getKatakana();
-            item.setHiragana(hiragana+ResourceUtils.getString(App.getInstance(),R.string.column));
-            item.setKatakana(katakana+ResourceUtils.getString(App.getInstance(),R.string.column));
+            item.setHiragana(hiragana + ResourceUtils.getString(App.getInstance(), R.string.column));
+            item.setKatakana(katakana + ResourceUtils.getString(App.getInstance(), R.string.column));
 
         }
 
-        for(int i = 1;i<row;i++){
+        for (int i = 1; i < row; i++) {
 
             JPItem item = list.get(i * column);
             String hiragana = item.getHiragana();
             String katakana = item.getKatakana();
-            item.setHiragana(hiragana+ResourceUtils.getString(App.getInstance(),R.string.row));
-            item.setKatakana(katakana+ResourceUtils.getString(App.getInstance(),R.string.row));
+            item.setHiragana(hiragana + ResourceUtils.getString(App.getInstance(), R.string.row));
+            item.setKatakana(katakana + ResourceUtils.getString(App.getInstance(), R.string.row));
 
         }
 
     }
-
 
 
 }

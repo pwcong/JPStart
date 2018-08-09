@@ -11,12 +11,12 @@ import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 public class JPStartDatabase extends SQLiteAssetHelper {
 
     public static final String DB_NAME = "jpstart.db";
-    public static final String DB_TABLE_NAME ="data";
+    public static final String DB_TABLE_NAME = "data";
     public static final int DB_VERSON = 1;
 
-    public JPStartDatabase(Context context){
+    public JPStartDatabase(Context context) {
 
-        super(context,DB_NAME,null,DB_VERSON);
+        super(context, DB_NAME, null, DB_VERSON);
 
     }
 

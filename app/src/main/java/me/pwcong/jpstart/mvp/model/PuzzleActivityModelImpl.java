@@ -27,7 +27,7 @@ public class PuzzleActivityModelImpl implements BaseModel.PuzzleActivityModel {
     @Override
     public List<JPItem> getItems() {
 
-        List<JPItem> items =new ArrayList<>();
+        List<JPItem> items = new ArrayList<>();
         items.addAll(DBManager.getInstance().getQingYinWithoutHeader());
 
         Collections.shuffle(items);

@@ -20,19 +20,21 @@ public interface BaseModel<T> {
     List<T> getData();
 
 
-    interface MainActivityModel extends BaseModel<BannerItem>{}
+    interface MainActivityModel extends BaseModel<BannerItem> {
+    }
 
 
-    interface JPStartTabFragmentModel extends BaseModel<JPTab>{
+    interface JPStartTabFragmentModel extends BaseModel<JPTab> {
     }
 
     interface JPStartFragmentModel {
         void getData(int category, Subscriber<List<JPItem>> subscriber);
     }
 
-    interface TranslateFragmentModel{
+    interface TranslateFragmentModel {
 
         List<TranslateSpinnerItem> getFromList();
+
         List<TranslateSpinnerItem> getToList();
 
         void translate(String q, String from, String to, Subscriber<BaiduTranslateBean> subscriber);
@@ -47,19 +49,23 @@ public interface BaseModel<T> {
 
     }
 
-    interface PixivIllustTabFragmentModel extends BaseModel<PixivIllustTab>{}
+    interface PixivIllustTabFragmentModel extends BaseModel<PixivIllustTab> {
+    }
 
-    interface MemoryFragmentModel{
+    interface MemoryFragmentModel {
 
         List<JPItem> getQingYinWithoutHeader();
+
         List<JPItem> getZhuoYinWithoutHeader();
+
         List<JPItem> getAoYinWithoutHeader();
 
 
     }
 
-    interface  PuzzleActivityModel{
+    interface PuzzleActivityModel {
         String[] getOptions();
+
         List<JPItem> getItems();
     }
 

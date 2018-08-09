@@ -136,4 +136,5 @@
     <string name="trust_to_save_qrcode">Do you save the WeChat Pay QRCode ?</string>
     <string name="success_to_save">Save successfully !</string>
     <string name="fail_to_save">Save failed !</string>
+    <string name="saving">In saving</string>
 </resources>

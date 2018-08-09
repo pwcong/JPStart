@@ -28,21 +28,21 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        instance=this;
+        instance = this;
 
-        setDayNightMode(SharedPreferenceManager.getInstance().getString(Constants.MODE_THEME,Constants.MODE_DAY));
+        setDayNightMode(SharedPreferenceManager.getInstance().getString(Constants.MODE_THEME, Constants.MODE_DAY));
 
         ISWIFI = NetworkUtils.isWifiConnected();
 
     }
 
-    public synchronized static App getInstance(){
+    public synchronized static App getInstance() {
         return instance;
     }
 
-    public void setDayNightMode(String mode){
+    public void setDayNightMode(String mode) {
 
-        switch (mode){
+        switch (mode) {
             case Constants.MODE_AUTO:
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO);
                 break;

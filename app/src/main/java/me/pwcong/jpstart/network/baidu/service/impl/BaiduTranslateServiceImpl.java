@@ -21,11 +21,11 @@ public class BaiduTranslateServiceImpl implements BaiduService.TranslateService 
 
     private static Retrofit instance = null;
 
-    public static synchronized Retrofit getInstance(){
+    public static synchronized Retrofit getInstance() {
 
-        if (instance==null){
+        if (instance == null) {
 
-            instance=new Retrofit.Builder()
+            instance = new Retrofit.Builder()
                     .baseUrl(Api.BAIDU_TRANSLATE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
@@ -39,11 +39,11 @@ public class BaiduTranslateServiceImpl implements BaiduService.TranslateService 
     @Override
     public void translate(String q, String from, String to, Subscriber<BaiduTranslateBean> subscriber) {
 
-        int salt= (int) (Math.random()*99999);
-        String sign= EncryptUtils.encryptMD5ToString(Api.BAIDU_TRANSLATE_APPID+q+salt+Api.BAIDU_TRANSLATE_SECRETKEY).toLowerCase();
+        int salt = (int) (Math.random() * 99999);
+        String sign = EncryptUtils.encryptMD5ToString(Api.BAIDU_TRANSLATE_APPID + q + salt + Api.BAIDU_TRANSLATE_SECRETKEY).toLowerCase();
 
         getInstance().create(BaiduTranslateApi.class)
-                .request(q,from,to,Api.BAIDU_TRANSLATE_APPID,salt,sign)
+                .request(q, from, to, Api.BAIDU_TRANSLATE_APPID, salt, sign)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(subscriber);

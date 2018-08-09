@@ -132,4 +132,5 @@
     <string name="trust_to_save_qrcode">是否保存該微信支付二維碼？</string>
     <string name="success_to_save">保存成功！</string>
     <string name="fail_to_save">保存失败！</string>
+    <string name="saving">正在保存中</string>
 </resources>

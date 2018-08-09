@@ -19,11 +19,11 @@ public class YoudaoTranslateServiceImpl implements YoudaoService.YoudaoTranslate
 
     private static Retrofit instance = null;
 
-    public static synchronized Retrofit getInstance(){
+    public static synchronized Retrofit getInstance() {
 
-        if (instance==null){
+        if (instance == null) {
 
-            instance=new Retrofit.Builder()
+            instance = new Retrofit.Builder()
                     .baseUrl(Api.YOUDAO_TRANSLATE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
@@ -34,17 +34,15 @@ public class YoudaoTranslateServiceImpl implements YoudaoService.YoudaoTranslate
     }
 
 
-
     @Override
     public void translate(String q, Subscriber<YoudaoTranslateBean> subscriber) {
 
         getInstance().create(YoudaoTranslateApi.class)
-                .request(Api.YOUDAO_TRANSLATE_KEYFROM,Api.YOUDAO_TRANSLATE_APIKEY,YoudaoTranslateApi.TYPE,
-                        YoudaoTranslateApi.DOCTYPE_JSON,YoudaoTranslateApi.VERSION,q)
+                .request(Api.YOUDAO_TRANSLATE_KEYFROM, Api.YOUDAO_TRANSLATE_APIKEY, YoudaoTranslateApi.TYPE,
+                        YoudaoTranslateApi.DOCTYPE_JSON, YoudaoTranslateApi.VERSION, q)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(subscriber);
-
 
 
     }

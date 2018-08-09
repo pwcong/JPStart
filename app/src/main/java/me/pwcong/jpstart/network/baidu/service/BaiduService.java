@@ -9,7 +9,7 @@ import rx.Subscriber;
 
 public interface BaiduService {
 
-    interface TranslateService{
+    interface TranslateService {
 
         void translate(String q, String from, String to, Subscriber<BaiduTranslateBean> subscriber);
 

@@ -9,10 +9,10 @@ import rx.Subscriber;
 
 public interface PixivService {
 
-    interface IllustService{
+    interface IllustService {
         void getIllusts(String mode, Subscriber<ResponseBody> subscriber);
 
-        void getIllust(int id,Subscriber<ResponseBody> subscriber);
+        void getIllust(int id, Subscriber<ResponseBody> subscriber);
 
     }
 

@@ -39,18 +39,18 @@ public class JPStartTabFragment extends BaseFragment implements BaseView.JPStart
     @Override
     protected void initVariable(@Nullable Bundle savedInstanceState) {
 
-        presenter=new JPStartTabFragmentPresenterImpl(this);
+        presenter = new JPStartTabFragmentPresenterImpl(this);
 
         initTabLayout();
         initViewPager();
 
     }
 
-    private void initTabLayout(){
+    private void initTabLayout() {
         mTabLayout.setupWithViewPager(mViewPager);
     }
 
-    private void initViewPager(){
+    private void initViewPager() {
 
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -82,12 +82,12 @@ public class JPStartTabFragment extends BaseFragment implements BaseView.JPStart
     @Override
     public void setData(List<JPTab> data) {
 
-        mViewPager.setAdapter(new JPStartTabPagerAdapter(getChildFragmentManager(),data));
+        mViewPager.setAdapter(new JPStartTabPagerAdapter(getChildFragmentManager(), data));
 
     }
 
     @Override
     public void scrollViewPager(int position) {
-        mViewPager.setCurrentItem(position,true);
+        mViewPager.setCurrentItem(position, true);
     }
 }

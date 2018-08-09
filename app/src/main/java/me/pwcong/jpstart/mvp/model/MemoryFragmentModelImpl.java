@@ -17,7 +17,7 @@ public class MemoryFragmentModelImpl implements BaseModel.MemoryFragmentModel {
     @Override
     public List<JPItem> getQingYinWithoutHeader() {
 
-        List<JPItem> list=new ArrayList<>();
+        List<JPItem> list = new ArrayList<>();
         list.addAll(DBManager.getInstance().getQingYinWithoutHeader());
 
         Collections.shuffle(list);
@@ -29,7 +29,7 @@ public class MemoryFragmentModelImpl implements BaseModel.MemoryFragmentModel {
     @Override
     public List<JPItem> getZhuoYinWithoutHeader() {
 
-        List<JPItem> list=new ArrayList<>();
+        List<JPItem> list = new ArrayList<>();
         list.addAll(DBManager.getInstance().getZhuoYinWithoutHeader());
 
         Collections.shuffle(list);
@@ -40,7 +40,7 @@ public class MemoryFragmentModelImpl implements BaseModel.MemoryFragmentModel {
     @Override
     public List<JPItem> getAoYinWithoutHeader() {
 
-        List<JPItem> list=new ArrayList<>();
+        List<JPItem> list = new ArrayList<>();
         list.addAll(DBManager.getInstance().getAoYinWithoutHeader());
 
         Collections.shuffle(list);

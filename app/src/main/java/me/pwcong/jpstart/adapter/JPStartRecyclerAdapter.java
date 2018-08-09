@@ -18,7 +18,7 @@ import me.pwcong.jpstart.mvp.bean.JPItem;
  * Created by Pwcong on 2016/9/27.
  */
 
-public class JPStartRecyclerAdapter extends RecyclerView.Adapter<JPStartRecyclerAdapter.ViewHolder>{
+public class JPStartRecyclerAdapter extends RecyclerView.Adapter<JPStartRecyclerAdapter.ViewHolder> {
 
     private List<JPItem> list;
 
@@ -35,13 +35,12 @@ public class JPStartRecyclerAdapter extends RecyclerView.Adapter<JPStartRecycler
 
         View view;
 
-        if(viewType== Constants.TYPE_HEADER) {
-            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_jpitem_header,parent,false);
-        }else if (viewType==Constants.TYPE_ITEM_DISABLE){
-            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_jpitem_disable,parent,false);
-        }
-        else {
-            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_jpitem,parent,false);
+        if (viewType == Constants.TYPE_HEADER) {
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_jpitem_header, parent, false);
+        } else if (viewType == Constants.TYPE_ITEM_DISABLE) {
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_jpitem_disable, parent, false);
+        } else {
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_jpitem, parent, false);
         }
         return new ViewHolder(view);
     }
@@ -51,37 +50,37 @@ public class JPStartRecyclerAdapter extends RecyclerView.Adapter<JPStartRecycler
 
         JPItem item = list.get(position);
 
-        if(App.TYPE_MING==Constants.TYPE_HIRAGANA){
+        if (App.TYPE_MING == Constants.TYPE_HIRAGANA) {
             holder.tv_jiaming.setText(item.getHiragana());
-        }else {
+        } else {
             holder.tv_jiaming.setText(item.getKatakana());
         }
 
-        if(holder.tv_rome!=null){
+        if (holder.tv_rome != null) {
             holder.tv_rome.setText(item.getRome());
         }
 
-        holder.item=item;
+        holder.item = item;
 
-        if(getItemViewType(position)==Constants.TYPE_ITEM&&holder.item.isExisted()){
+        if (getItemViewType(position) == Constants.TYPE_ITEM && holder.item.isExisted()) {
 
             holder.view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
-                    if(onItemClickListener!=null){
+                    if (onItemClickListener != null) {
                         onItemClickListener.onClick(holder.item);
                     }
 
                 }
             });
 
-            if(holder.item.getCategory()!=Constants.CATEGORY_AOYIN){
+            if (holder.item.getCategory() != Constants.CATEGORY_AOYIN) {
                 holder.view.setOnLongClickListener(new View.OnLongClickListener() {
                     @Override
                     public boolean onLongClick(View v) {
 
-                        if(onItemLongClickListener!=null){
+                        if (onItemLongClickListener != null) {
                             onItemLongClickListener.onLongClick(holder.item);
                         }
 
@@ -89,7 +88,7 @@ public class JPStartRecyclerAdapter extends RecyclerView.Adapter<JPStartRecycler
                     }
                 });
             }
-            
+
 
         }
 
@@ -105,7 +104,7 @@ public class JPStartRecyclerAdapter extends RecyclerView.Adapter<JPStartRecycler
         return list.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         public final View view;
         public final TextView tv_jiaming;
@@ -115,9 +114,9 @@ public class JPStartRecyclerAdapter extends RecyclerView.Adapter<JPStartRecycler
         public ViewHolder(View itemView) {
             super(itemView);
 
-            this.view=itemView;
-            this.tv_jiaming= (TextView) itemView.findViewById(R.id.tv_jiaming);
-            this.tv_rome= (TextView) itemView.findViewById(R.id.tv_rome);
+            this.view = itemView;
+            this.tv_jiaming = (TextView) itemView.findViewById(R.id.tv_jiaming);
+            this.tv_rome = (TextView) itemView.findViewById(R.id.tv_rome);
 
         }
     }
@@ -131,13 +130,13 @@ public class JPStartRecyclerAdapter extends RecyclerView.Adapter<JPStartRecycler
         this.onItemLongClickListener = onItemLongClickListener;
     }
 
-    public interface OnItemClickListener{
+    public interface OnItemClickListener {
 
         void onClick(JPItem item);
 
     }
 
-    public interface OnItemLongClickListener{
+    public interface OnItemLongClickListener {
 
         void onLongClick(JPItem item);
 

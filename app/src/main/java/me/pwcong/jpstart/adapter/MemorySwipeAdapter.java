@@ -49,29 +49,29 @@ public class MemorySwipeAdapter extends BaseAdapter {
         ViewHolder holder;
         final JPItem item = list.get(position);
 
-        if(convertView==null){
+        if (convertView == null) {
 
-            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_memory,parent,false);
-            holder=new ViewHolder();
+            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_memory, parent, false);
+            holder = new ViewHolder();
 
-            holder.tv_rome= (TextView) convertView.findViewById(R.id.tv_rome);
-            holder.btn_yin= (Button) convertView.findViewById(R.id.btn_yin);
-            holder.btn_write= (Button) convertView.findViewById(R.id.btn_write);
-            holder.tv_hiragana= (TextView) convertView.findViewById(R.id.tv_hiragana);
-            holder.tv_katakana= (TextView) convertView.findViewById(R.id.tv_katakana);
+            holder.tv_rome = (TextView) convertView.findViewById(R.id.tv_rome);
+            holder.btn_yin = (Button) convertView.findViewById(R.id.btn_yin);
+            holder.btn_write = (Button) convertView.findViewById(R.id.btn_write);
+            holder.tv_hiragana = (TextView) convertView.findViewById(R.id.tv_hiragana);
+            holder.tv_katakana = (TextView) convertView.findViewById(R.id.tv_katakana);
 
             convertView.setTag(holder);
 
-        }else {
-            holder= (ViewHolder) convertView.getTag();
+        } else {
+            holder = (ViewHolder) convertView.getTag();
         }
 
         holder.tv_rome.setText(item.getRome());
 
-        if(item.getCategory()== Constants.CATEGORY_AOYIN){
-            holder.tv_hiragana.setTextSize(ResourceUtils.getDimension(parent.getContext(),R.dimen.memory_item_text_size_mini));
-        }else {
-            holder.tv_hiragana.setTextSize(ResourceUtils.getDimension(parent.getContext(),R.dimen.memory_item_text_size));
+        if (item.getCategory() == Constants.CATEGORY_AOYIN) {
+            holder.tv_hiragana.setTextSize(ResourceUtils.getDimension(parent.getContext(), R.dimen.memory_item_text_size_mini));
+        } else {
+            holder.tv_hiragana.setTextSize(ResourceUtils.getDimension(parent.getContext(), R.dimen.memory_item_text_size));
         }
 
         holder.tv_hiragana.setText(item.getHiragana());
@@ -80,26 +80,25 @@ public class MemorySwipeAdapter extends BaseAdapter {
         holder.btn_yin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(onYinButtonClickListener!=null){
+                if (onYinButtonClickListener != null) {
                     onYinButtonClickListener.onClick(item);
                 }
             }
         });
 
-        if(item.getCategory()==Constants.CATEGORY_AOYIN){
+        if (item.getCategory() == Constants.CATEGORY_AOYIN) {
             holder.btn_write.setEnabled(false);
-        }else {
+        } else {
             holder.btn_write.setEnabled(true);
             holder.btn_write.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(onWriteButtonClickListener!=null){
+                    if (onWriteButtonClickListener != null) {
                         onWriteButtonClickListener.onClick(item);
                     }
                 }
             });
         }
-
 
 
         return convertView;
@@ -110,14 +109,14 @@ public class MemorySwipeAdapter extends BaseAdapter {
         return list.isEmpty();
     }
 
-    public void remove(int index){
-        if (index>-1&&index<list.size()){
+    public void remove(int index) {
+        if (index > -1 && index < list.size()) {
             list.remove(index);
             notifyDataSetChanged();
         }
     }
 
-    public class ViewHolder{
+    public class ViewHolder {
 
         public TextView tv_rome;
         public Button btn_yin;
@@ -140,11 +139,11 @@ public class MemorySwipeAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
-    public interface OnYinButtonClickListener{
+    public interface OnYinButtonClickListener {
         void onClick(JPItem item);
     }
 
-    public interface OnWriteButtonClickListener{
+    public interface OnWriteButtonClickListener {
         void onClick(JPItem item);
     }
 

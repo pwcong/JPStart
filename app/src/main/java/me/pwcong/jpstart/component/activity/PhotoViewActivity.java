@@ -53,7 +53,7 @@ public class PhotoViewActivity extends BaseActivity {
 
     }
 
-    private void initPhotoView(){
+    private void initPhotoView() {
 
         Glide.with(this).asBitmap().load(img_url).into(mPhotoView);
 
@@ -77,10 +77,10 @@ public class PhotoViewActivity extends BaseActivity {
                                     .get();
 
 
-                            if(FileUtils.createOrExistsDir(Constants.FILEDIR_ROOT)){
+                            if (FileUtils.createOrExistsDir(Constants.FILEDIR_ROOT)) {
 
-                                File dstFile = new File(Constants.FILEDIR_ROOT,String.valueOf(img_id)+Constants.FILETYPE_JPG);
-                                FileUtils.copyFile(srcFile,dstFile);
+                                File dstFile = new File(Constants.FILEDIR_ROOT, String.valueOf(img_id) + Constants.FILETYPE_JPG);
+                                FileUtils.copyFile(srcFile, dstFile);
 
                             }
 
@@ -100,13 +100,13 @@ public class PhotoViewActivity extends BaseActivity {
                     @Override
                     public void onError(Throwable e) {
 
-                        showSnackBar(mRootLayout,R.string.save_error);
+                        showSnackBar(mRootLayout, R.string.save_error);
                     }
 
                     @Override
                     public void onNext(Integer s) {
 
-                        showSnackBar(mRootLayout,s);
+                        showSnackBar(mRootLayout, s);
                     }
                 });
 
@@ -122,11 +122,11 @@ public class PhotoViewActivity extends BaseActivity {
         hideState();
     }
 
-    private void hideState(){
+    private void hideState() {
 
-        if(Build.VERSION.SDK_INT < 16){
-            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        }else {
+        if (Build.VERSION.SDK_INT < 16) {
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        } else {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
         }
 
@@ -135,6 +135,6 @@ public class PhotoViewActivity extends BaseActivity {
     @Override
     public void onBackPressed() {
         finish();
-        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 }

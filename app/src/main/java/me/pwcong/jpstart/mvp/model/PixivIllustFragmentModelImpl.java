@@ -32,7 +32,7 @@ public class PixivIllustFragmentModelImpl implements BaseModel.PixivIllustFragme
     private PixivService.IllustService service;
 
     public PixivIllustFragmentModelImpl() {
-        service=new PixivIllustServiceImpl();
+        service = new PixivIllustServiceImpl();
     }
 
     @Override
@@ -72,14 +72,14 @@ public class PixivIllustFragmentModelImpl implements BaseModel.PixivIllustFragme
     public String[] getOptions() {
 
         return new String[]{ResourceUtils.getString(App.getInstance(), R.string.source_img),
-                ResourceUtils.getString(App.getInstance(),R.string.thumbnail),
-                ResourceUtils.getString(App.getInstance(),R.string.share)};
+                ResourceUtils.getString(App.getInstance(), R.string.thumbnail),
+                ResourceUtils.getString(App.getInstance(), R.string.share)};
 
     }
 
-    private static List<PixivIllustBean> handleResponseBody(ResponseBody responseBody){
+    private static List<PixivIllustBean> handleResponseBody(ResponseBody responseBody) {
 
-        List<PixivIllustBean> list=new ArrayList<>();
+        List<PixivIllustBean> list = new ArrayList<>();
 
         Document document = null;
 
@@ -91,7 +91,7 @@ public class PixivIllustFragmentModelImpl implements BaseModel.PixivIllustFragme
 
         responseBody.close();
 
-        if(document!=null) {
+        if (document != null) {
 
             Elements elements = document.getElementsByClass("ranking-item");
 
@@ -107,8 +107,8 @@ public class PixivIllustFragmentModelImpl implements BaseModel.PixivIllustFragme
                 bean.setDate(element.attr("data-date"));
 
                 Element link_element = element.getElementsByClass("ranking-image-item").first().select("a").first();
-                if(link_element!=null){
-                    bean.setLink(Api.PIXIV_URL+"/"+link_element.attr("href"));
+                if (link_element != null) {
+                    bean.setLink(Api.PIXIV_URL + "/" + link_element.attr("href"));
                 }
 
                 Element thumbnail_element = element.getElementsByClass("_layout-thumbnail").first().select("img").first();
@@ -116,11 +116,11 @@ public class PixivIllustFragmentModelImpl implements BaseModel.PixivIllustFragme
                 if (thumbnail_element != null) {
                     bean.setImg_240x480(thumbnail_element.attr("data-src"));
 
-                    if(bean.getImg_240x480()!=null){
+                    if (bean.getImg_240x480() != null) {
 
-                        bean.setImg_600x600(bean.getImg_240x480().replace("/c/240x480/","/c/600x600/"));
-                        bean.setImg_1200x1200(bean.getImg_240x480().replace("/c/240x480/","/c/1200x1200/"));
-                        bean.setImg_original(bean.getImg_240x480().replace("/c/240x480/img-master/","/img-original/").replace("_master1200",""));
+                        bean.setImg_600x600(bean.getImg_240x480().replace("/c/240x480/", "/c/600x600/"));
+                        bean.setImg_1200x1200(bean.getImg_240x480().replace("/c/240x480/", "/c/1200x1200/"));
+                        bean.setImg_original(bean.getImg_240x480().replace("/c/240x480/img-master/", "/img-original/").replace("_master1200", ""));
 
                     }
                 }
@@ -131,8 +131,6 @@ public class PixivIllustFragmentModelImpl implements BaseModel.PixivIllustFragme
 
         return list;
     }
-
-
 
 
 }

@@ -46,11 +46,11 @@ public class SplashActivity extends BaseActivity {
             public void call(Subscriber<? super String> subscriber) {
 
                 subscriber.onStart();
-                subscriber.onNext(ResourceUtils.getString(SplashActivity.this,R.string.loading_data));
+                subscriber.onNext(ResourceUtils.getString(SplashActivity.this, R.string.loading_data));
                 DBManager.getInstance().init();
                 SoundPoolManager.getInstance().init();
                 GifManager.getInstance().init();
-                subscriber.onNext(ResourceUtils.getString(SplashActivity.this,R.string.loading_data_success));
+                subscriber.onNext(ResourceUtils.getString(SplashActivity.this, R.string.loading_data_success));
                 subscriber.onCompleted();
 
             }
@@ -61,13 +61,13 @@ public class SplashActivity extends BaseActivity {
                     @Override
                     public void onCompleted() {
 
-                        startActivity(new Intent(SplashActivity.this,MainActivity.class));
+                        startActivity(new Intent(SplashActivity.this, MainActivity.class));
                         finish();
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        mTextView.setText(ResourceUtils.getString(SplashActivity.this,R.string.loading_data_error));
+                        mTextView.setText(ResourceUtils.getString(SplashActivity.this, R.string.loading_data_error));
                     }
 
                     @Override
@@ -77,11 +77,11 @@ public class SplashActivity extends BaseActivity {
                 });
     }
 
-    private void hideState(){
+    private void hideState() {
 
-        if(Build.VERSION.SDK_INT < 16){
-            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        }else {
+        if (Build.VERSION.SDK_INT < 16) {
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        } else {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
         }
 

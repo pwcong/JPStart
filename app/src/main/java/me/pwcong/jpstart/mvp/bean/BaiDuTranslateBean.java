@@ -73,7 +73,7 @@ public class BaiduTranslateBean {
         this.error_msg = error_msg;
     }
 
-    public class TranslateResult{
+    public class TranslateResult {
 
         String src;
         String dst;

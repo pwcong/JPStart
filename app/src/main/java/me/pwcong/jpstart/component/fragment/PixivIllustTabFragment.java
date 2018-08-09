@@ -22,9 +22,9 @@ import me.pwcong.jpstart.mvp.view.BaseView;
  * Created by Pwcong on 2016/9/25.
  */
 
-public class PixivIllustTabFragment extends BaseFragment implements BaseView.PixivIllustTabFragmentView{
+public class PixivIllustTabFragment extends BaseFragment implements BaseView.PixivIllustTabFragmentView {
 
-    private final String TAG=getClass().getSimpleName();
+    private final String TAG = getClass().getSimpleName();
 
     @BindView(R.id.tab_layout)
     TabLayout mTabLayout;
@@ -42,18 +42,18 @@ public class PixivIllustTabFragment extends BaseFragment implements BaseView.Pix
     @Override
     protected void initVariable(@Nullable Bundle savedInstanceState) {
 
-        presenter=new PixivIllustTabFragmentPresenterImpl(this);
+        presenter = new PixivIllustTabFragmentPresenterImpl(this);
 
         initTabLayout();
         initViewPager();
 
     }
 
-    private void initTabLayout(){
+    private void initTabLayout() {
         mTabLayout.setupWithViewPager(mViewPager);
     }
 
-    private void initViewPager(){
+    private void initViewPager() {
         // doo something
     }
 
@@ -69,7 +69,7 @@ public class PixivIllustTabFragment extends BaseFragment implements BaseView.Pix
 
     @Override
     public void setData(List<PixivIllustTab> data) {
-        mViewPager.setAdapter(new PixivIllustTabPagerAdapter(getChildFragmentManager(),data));
+        mViewPager.setAdapter(new PixivIllustTabPagerAdapter(getChildFragmentManager(), data));
     }
 
     @Override
@@ -78,8 +78,8 @@ public class PixivIllustTabFragment extends BaseFragment implements BaseView.Pix
                 .setTitle(titleId)
                 .setMessage(messageId)
                 .setCancelable(false)
-                .setPositiveButton(positiveTextId,positiveButtonListener)
-                .setNegativeButton(negativeTextId,negativeButtonListener)
+                .setPositiveButton(positiveTextId, positiveButtonListener)
+                .setNegativeButton(negativeTextId, negativeButtonListener)
                 .setIcon(R.drawable.ic_lightbulb_outline_black_24dp)
                 .create()
                 .show();
@@ -87,12 +87,12 @@ public class PixivIllustTabFragment extends BaseFragment implements BaseView.Pix
 
     @Override
     public void showMsg(String msg) {
-        showSnackBar(mTabLayout,msg);
+        showSnackBar(mTabLayout, msg);
     }
 
     @Override
     public void showMsg(int msg) {
-        showSnackBar(mTabLayout,msg);
+        showSnackBar(mTabLayout, msg);
     }
 
 

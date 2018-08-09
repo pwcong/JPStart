@@ -10,8 +10,6 @@ import me.pwcong.jpstart.App;
  */
 
 public class ClipboardManager {
-
-
     private static ClipboardManager instance;
     private android.content.ClipboardManager clipboardManager;
 

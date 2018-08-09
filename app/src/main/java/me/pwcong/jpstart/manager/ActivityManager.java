@@ -58,7 +58,7 @@ public class ActivityManager {
 
         current = null;
 
-        for (Activity t: activities) {
+        for (Activity t : activities) {
             t.finish();
             Log.i(TAG, "unregister: OK -> " + t);
         }

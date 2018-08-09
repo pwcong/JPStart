@@ -8,20 +8,19 @@ import android.content.Context;
 
 public class ResourceUtils {
 
-    private ResourceUtils(){
+    private ResourceUtils() {
         throw new RuntimeException("♪(^∇^*)");
     }
 
-    public static String getString(Context context,int resId){
+    public static String getString(Context context, int resId) {
         return context.getResources().getString(resId);
     }
 
-    public static float getDimension(Context context,int resId){
+    public static float getDimension(Context context, int resId) {
 
         return context.getResources().getDimension(resId);
 
     }
-
 
 
 }

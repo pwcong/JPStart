@@ -11,27 +11,26 @@ import rx.Observable;
 
 public interface YoudaoTranslateApi {
 
-    String DOCTYPE_JSON     = "json";
-    String DOCTYPE_XML      = "xml";
-    String DOCTYPE_JSONP    = "jsonp";
+    String DOCTYPE_JSON = "json";
+    String DOCTYPE_XML = "xml";
+    String DOCTYPE_JSONP = "jsonp";
 
-    String VERSION          = "1.1";
+    String VERSION = "1.1";
 
-    String TYPE             = "data";
+    String TYPE = "data";
 
 
-    int OK                  = 0;
-    int ERROR_TOOLONG       = 20;
-    int ERROR_INVALID       = 30;
-    int ERROR_UNSUPPORT     = 40;
-    int ERROR_KEY           = 50;
-    int ERROR_NONE          = 60;
-
+    int OK = 0;
+    int ERROR_TOOLONG = 20;
+    int ERROR_INVALID = 30;
+    int ERROR_UNSUPPORT = 40;
+    int ERROR_KEY = 50;
+    int ERROR_NONE = 60;
 
 
     @GET("/openapi.doo")
     Observable<YoudaoTranslateBean> request(@Query("keyfrom") String keyfrom, @Query("key") String key, @Query("type") String type,
-                                            @Query("doctype") String doctype, @Query("version")String version, @Query("q") String q);
+                                            @Query("doctype") String doctype, @Query("version") String version, @Query("q") String q);
 
 
 }

@@ -9,7 +9,7 @@ import rx.Subscriber;
 
 public interface YoudaoService {
 
-    interface YoudaoTranslateService{
+    interface YoudaoTranslateService {
 
         void translate(String q, Subscriber<YoudaoTranslateBean> subscriber);
     }

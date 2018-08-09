@@ -15,7 +15,7 @@ import me.pwcong.jpstart.rxbus.event.GameEvent;
  * Created by Pwcong on 2016/10/24.
  */
 
-public class GameFragment extends BaseFragment{
+public class GameFragment extends BaseFragment {
 
     @BindView(R.id.cv_puzzle)
     CardView mPuzzleCardView;
@@ -33,14 +33,14 @@ public class GameFragment extends BaseFragment{
         mPuzzleCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RxBus.getDefault().post(new EventContainer(EventContainer.TYPE_GAME,new GameEvent(GameEvent.TYPE_PUZZLE)));
+                RxBus.getDefault().post(new EventContainer(EventContainer.TYPE_GAME, new GameEvent(GameEvent.TYPE_PUZZLE)));
             }
         });
 
         mSupperzzleCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RxBus.getDefault().post(new EventContainer(EventContainer.TYPE_GAME,new GameEvent(GameEvent.TYPE_SUPPERZZLE)));
+                RxBus.getDefault().post(new EventContainer(EventContainer.TYPE_GAME, new GameEvent(GameEvent.TYPE_SUPPERZZLE)));
             }
         });
 

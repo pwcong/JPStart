@@ -22,17 +22,17 @@ public class TranslateFragmentModelImpl implements BaseModel.TranslateFragmentMo
 
     public TranslateFragmentModelImpl() {
         super();
-        service=new BaiduTranslateServiceImpl();
+        service = new BaiduTranslateServiceImpl();
     }
 
     @Override
     public List<TranslateSpinnerItem> getFromList() {
 
         List<TranslateSpinnerItem> fromList = new ArrayList<>();
-        fromList.add(new TranslateSpinnerItem(0, ResourceUtils.getString(App.getInstance(), R.string.auto_check),false));
-        fromList.add(new TranslateSpinnerItem(R.drawable.china_icon_64,ResourceUtils.getString(App.getInstance(),R.string.chinese),true));
-        fromList.add(new TranslateSpinnerItem(R.drawable.kingdom_united_icon_64,ResourceUtils.getString(App.getInstance(),R.string.english),true));
-        fromList.add(new TranslateSpinnerItem(R.drawable.japan_icon_64,ResourceUtils.getString(App.getInstance(),R.string.japanese),true));
+        fromList.add(new TranslateSpinnerItem(0, ResourceUtils.getString(App.getInstance(), R.string.auto_check), false));
+        fromList.add(new TranslateSpinnerItem(R.drawable.china_icon_64, ResourceUtils.getString(App.getInstance(), R.string.chinese), true));
+        fromList.add(new TranslateSpinnerItem(R.drawable.kingdom_united_icon_64, ResourceUtils.getString(App.getInstance(), R.string.english), true));
+        fromList.add(new TranslateSpinnerItem(R.drawable.japan_icon_64, ResourceUtils.getString(App.getInstance(), R.string.japanese), true));
 
         return fromList;
     }
@@ -41,9 +41,9 @@ public class TranslateFragmentModelImpl implements BaseModel.TranslateFragmentMo
     public List<TranslateSpinnerItem> getToList() {
 
         List<TranslateSpinnerItem> toList = new ArrayList<>();
-        toList.add(new TranslateSpinnerItem(R.drawable.china_icon_64,ResourceUtils.getString(App.getInstance(),R.string.chinese),true));
-        toList.add(new TranslateSpinnerItem(R.drawable.kingdom_united_icon_64,ResourceUtils.getString(App.getInstance(),R.string.english),true));
-        toList.add(new TranslateSpinnerItem(R.drawable.japan_icon_64,ResourceUtils.getString(App.getInstance(),R.string.japanese),true));
+        toList.add(new TranslateSpinnerItem(R.drawable.china_icon_64, ResourceUtils.getString(App.getInstance(), R.string.chinese), true));
+        toList.add(new TranslateSpinnerItem(R.drawable.kingdom_united_icon_64, ResourceUtils.getString(App.getInstance(), R.string.english), true));
+        toList.add(new TranslateSpinnerItem(R.drawable.japan_icon_64, ResourceUtils.getString(App.getInstance(), R.string.japanese), true));
 
         return toList;
     }
@@ -51,7 +51,7 @@ public class TranslateFragmentModelImpl implements BaseModel.TranslateFragmentMo
     @Override
     public void translate(String q, String from, String to, Subscriber<BaiduTranslateBean> subscriber) {
 
-        service.translate(q,from,to,subscriber);
+        service.translate(q, from, to, subscriber);
 
     }
 

@@ -20,86 +20,122 @@ public interface BaseView<T> {
 
     void setData(List<T> data);
 
-    interface MainActivityView{
+    interface MainActivityView {
         void setViewPager(List<BannerItem> data);
+
         void openDrawer();
+
         void closeDrawer();
+
         void switchJPStart();
+
         void switchMemory();
+
         void switchTranslate();
+
         void switchGame();
+
         void switchPixivIllust();
+
         void switchAbout();
+
         void switchSetting();
+
         void startPhotoViewActivity(Bundle bundle);
+
         void startPuzzleActivity();
+
         void startSupperzzleActivity();
+
         void showAlertDialog(int titleId, int messageId,
                              int positiveTextId, DialogInterface.OnClickListener positiveButtonListener,
                              int negativeTextId, DialogInterface.OnClickListener negativeButtonListener);
     }
 
-    interface JPStartTabFragmentView extends BaseView<JPTab>{
+    interface JPStartTabFragmentView extends BaseView<JPTab> {
         void scrollViewPager(int position);
     }
 
-    interface JPStartFragmentView extends BaseView<JPItem>{
+    interface JPStartFragmentView extends BaseView<JPItem> {
 
         void setRecyclerView(int type);
 
     }
 
-    interface TranslateFragmentView{
+    interface TranslateFragmentView {
         void showMsg(String msg);
+
         void showMsg(int msg);
+
         String getSrcText();
+
         void setSrcEditText(String text);
+
         String getDstText();
+
         void setDstTextView(String text);
+
         void setFromSpinner(List<TranslateSpinnerItem> list);
+
         void setToSpinner(List<TranslateSpinnerItem> list);
     }
 
-    interface PixivIllustTabFragmentView extends BaseView<PixivIllustTab>{
+    interface PixivIllustTabFragmentView extends BaseView<PixivIllustTab> {
         void showAlertDialog(int titleId, int messageId,
                              int positiveTextId, DialogInterface.OnClickListener positiveButtonListener,
                              int negativeTextId, DialogInterface.OnClickListener negativeButtonListener);
+
         void showMsg(String msg);
+
         void showMsg(int msg);
     }
 
-    interface PixivIllustFragmentView extends BaseView<PixivIllustBean>{
+    interface PixivIllustFragmentView extends BaseView<PixivIllustBean> {
 
         void showMsg(int msg);
+
         void showMsg(String msg);
+
         void showProgress();
+
         void hideProgress();
+
         void showOptionsDialog(String[] options, DialogInterface.OnClickListener listener);
-        void showImg(String url,int id);
+
+        void showImg(String url, int id);
 
     }
 
-    interface MemoryFragmentView extends BaseView<JPItem>{
+    interface MemoryFragmentView extends BaseView<JPItem> {
         void showMsg(int msg);
+
         void showMsg(String msg);
+
         void hideFabMenu();
 
     }
 
-    interface PuzzleActivityView{
-        void setData(JPItem current,List<JPItem> jams);
+    interface PuzzleActivityView {
+        void setData(JPItem current, List<JPItem> jams);
+
         void showSelectDialog(String[] selection);
+
         void showResultDialog(int title, String msg, int icon,
                               int pbt, DialogInterface.OnClickListener pbl,
                               int nbt, DialogInterface.OnClickListener nbl);
 
-        void showDialog(int icon,int title,String msg);
+        void showDialog(int icon, int title, String msg);
 
         void setTitle(String title);
+
         void setTitle(int title);
+
         void addCount();
+
         void clearCount();
+
         void showMsg(int msg);
+
         void showMsg(String msg);
     }
 

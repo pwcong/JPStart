@@ -18,11 +18,11 @@ public class PixivIllustServiceImpl implements PixivService.IllustService {
 
     private static Retrofit instance = null;
 
-    public static synchronized Retrofit getInstance(){
+    public static synchronized Retrofit getInstance() {
 
-        if (instance==null){
+        if (instance == null) {
 
-            instance=new Retrofit.Builder()
+            instance = new Retrofit.Builder()
                     .baseUrl(Api.PIXIV_URL)
                     .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                     .build();
@@ -46,7 +46,7 @@ public class PixivIllustServiceImpl implements PixivService.IllustService {
     public void getIllust(int id, Subscriber<ResponseBody> subscriber) {
 
         getInstance().create(PixivIllustApi.class)
-                .requestIllust(PixivIllustApi.MODE_MEDIUM,id)
+                .requestIllust(PixivIllustApi.MODE_MEDIUM, id)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(subscriber);

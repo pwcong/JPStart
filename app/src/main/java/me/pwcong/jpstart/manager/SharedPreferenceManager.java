@@ -17,50 +17,50 @@ public class SharedPreferenceManager {
 
     private final SharedPreferences sharedPreferences;
 
-    private SharedPreferenceManager(){
+    private SharedPreferenceManager() {
 
         sharedPreferences = App.getInstance().getSharedPreferences(Constants.PREF_NAME, Context.MODE_PRIVATE);
 
     }
 
-    public static synchronized SharedPreferenceManager getInstance(){
+    public static synchronized SharedPreferenceManager getInstance() {
 
-        if(instance==null){
-            instance=new SharedPreferenceManager();
+        if (instance == null) {
+            instance = new SharedPreferenceManager();
         }
 
         return instance;
     }
 
-    public String getString(String key, @Nullable String defValue){
+    public String getString(String key, @Nullable String defValue) {
 
-        return sharedPreferences.getString(key,defValue);
-
-    }
-
-    public void putString(String key,String value){
-
-        sharedPreferences.edit().putString(key,value).apply();
+        return sharedPreferences.getString(key, defValue);
 
     }
 
-    public int getInt(String key,int defValue){
+    public void putString(String key, String value) {
 
-        return sharedPreferences.getInt(key,defValue);
-
-    }
-
-    public void putInt(String key,int value){
-        sharedPreferences.edit().putInt(key,value).apply();
+        sharedPreferences.edit().putString(key, value).apply();
 
     }
 
-    public boolean getBoolean(String key,boolean defValue){
-        return sharedPreferences.getBoolean(key,defValue);
+    public int getInt(String key, int defValue) {
+
+        return sharedPreferences.getInt(key, defValue);
+
     }
 
-    public void putBoolean(String key,boolean value){
-        sharedPreferences.edit().putBoolean(key,value).apply();
+    public void putInt(String key, int value) {
+        sharedPreferences.edit().putInt(key, value).apply();
+
+    }
+
+    public boolean getBoolean(String key, boolean defValue) {
+        return sharedPreferences.getBoolean(key, defValue);
+    }
+
+    public void putBoolean(String key, boolean value) {
+        sharedPreferences.edit().putBoolean(key, value).apply();
     }
 
 

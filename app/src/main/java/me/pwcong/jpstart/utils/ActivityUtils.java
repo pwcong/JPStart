@@ -12,7 +12,7 @@ import me.pwcong.jpstart.manager.ActivityManager;
 
 public class ActivityUtils {
 
-    private ActivityUtils(){
+    private ActivityUtils() {
         throw new RuntimeException("(￣y▽￣)╭ Ohohoho.....");
     }
 
@@ -22,13 +22,13 @@ public class ActivityUtils {
         intent.putExtra(Intent.EXTRA_TEXT, message);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-        ActivityManager.getCurrent().startActivity(Intent.createChooser(intent, ResourceUtils.getString(ActivityManager.getCurrent(),R.string.share_to)));
+        ActivityManager.getCurrent().startActivity(Intent.createChooser(intent, ResourceUtils.getString(ActivityManager.getCurrent(), R.string.share_to)));
 
     }
 
-    public static void openUrl(String url){
+    public static void openUrl(String url) {
 
-        Intent intent=new Intent(Intent.ACTION_VIEW);
+        Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(url));
 
         ActivityManager.getCurrent().startActivity(intent);

@@ -38,16 +38,16 @@ public class SettingActivity extends BaseActivity {
     @Override
     protected void initVariable(@Nullable Bundle savedInstanceState) {
 
-        if(!registered){
+        if (!registered) {
 
             subscription = RxBus.getDefault().toObserverable(EventContainer.class).subscribe(new Action1<EventContainer>() {
                 @Override
                 public void call(EventContainer eventContainer) {
 
-                    if(eventContainer.getType()==EventContainer.TYPE_SETTING){
+                    if (eventContainer.getType() == EventContainer.TYPE_SETTING) {
 
                         SettingEvent event = (SettingEvent) eventContainer.getEvent();
-                        showSnackBar(mRootLayout,event.getMsg());
+                        showSnackBar(mRootLayout, event.getMsg());
                     }
 
 
@@ -65,11 +65,11 @@ public class SettingActivity extends BaseActivity {
     @Override
     protected void doAction() {
 
-        getFragmentManager().beginTransaction().replace(R.id.content,new SettingFragment()).commit();
+        getFragmentManager().beginTransaction().replace(R.id.content, new SettingFragment()).commit();
 
     }
 
-    private void initToolbar(){
+    private void initToolbar() {
 
         mToolbar.setTitle(R.string.setting);
         setSupportActionBar(mToolbar);
