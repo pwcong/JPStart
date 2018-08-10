@@ -60,9 +60,7 @@ public class SplashActivity extends BaseActivity {
                 .subscribe(new Subscriber<String>() {
                     @Override
                     public void onCompleted() {
-
                         startActivity(new Intent(SplashActivity.this, MainActivity.class));
-//                        startActivity(new Intent(SplashActivity.this, SupperzzleActivity.class));
                         finish();
                     }
 

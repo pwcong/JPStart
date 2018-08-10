@@ -202,9 +202,9 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
                     case GameEvent.TYPE_PUZZLE:
                         view.startPuzzleActivity();
                         break;
-                    case GameEvent.TYPE_SUPPERZZLE:
-                        view.startSupperzzleActivity();
-                        break;
+//                    case GameEvent.TYPE_SUPPERZZLE:
+//                        view.startSupperzzleActivity();
+//                        break;
                     default:
                         break;
                 }
