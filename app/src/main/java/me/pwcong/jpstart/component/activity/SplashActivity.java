@@ -50,7 +50,17 @@ public class SplashActivity extends BaseActivity {
                 DBManager.getInstance().init();
                 SoundPoolManager.getInstance().init();
                 GifManager.getInstance().init();
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 subscriber.onNext(ResourceUtils.getString(SplashActivity.this, R.string.loading_data_success));
+                try {
+                    Thread.sleep(200);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 subscriber.onCompleted();
 
             }
