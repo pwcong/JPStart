@@ -15,7 +15,8 @@ import rx.Subscriber;
  * Created by Pwcong on 2016/10/2.
  */
 
-public class TranslateFragmentPresenterImpl extends BasePresenter<BaseView.TranslateFragmentView> implements BasePresenter.TranslateFragmentPresenter {
+public class TranslateFragmentPresenterImpl extends BasePresenter<BaseView.TranslateFragmentView>
+        implements BasePresenter.TranslateFragmentPresenter {
 
     private BaseModel.TranslateFragmentModel model;
 
@@ -147,7 +148,6 @@ public class TranslateFragmentPresenterImpl extends BasePresenter<BaseView.Trans
                 }
             });
         }
-
 
     }
 }

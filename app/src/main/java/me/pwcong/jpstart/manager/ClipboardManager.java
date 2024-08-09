@@ -15,10 +15,10 @@ public class ClipboardManager {
 
     private ClipboardManager() {
 
-        clipboardManager = (android.content.ClipboardManager) App.getInstance().getSystemService(Context.CLIPBOARD_SERVICE);
+        clipboardManager = (android.content.ClipboardManager) App.getInstance()
+                .getSystemService(Context.CLIPBOARD_SERVICE);
 
     }
-
 
     public static synchronized ClipboardManager getInstance() {
 

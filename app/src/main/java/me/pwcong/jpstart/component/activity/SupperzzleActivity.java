@@ -28,7 +28,7 @@ public class SupperzzleActivity extends BaseActivity {
         initToolbar();
     }
 
-    private void initToolbar(){
+    private void initToolbar() {
         mToolbar.setTitle(R.string.supperzzle);
         mToolbar.setNavigationIcon(R.drawable.ic_chevron_left_white_24dp);
         setSupportActionBar(mToolbar);
@@ -41,7 +41,6 @@ public class SupperzzleActivity extends BaseActivity {
         });
 
     }
-
 
     @Override
     protected void doAction() {

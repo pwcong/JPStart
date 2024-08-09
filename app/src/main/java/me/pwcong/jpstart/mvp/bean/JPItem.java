@@ -16,7 +16,8 @@ public class JPItem {
     private int type;
     private boolean existed;
 
-    public JPItem(int id, int row, int column, String hiragana, String katakana, String rome, int category, int type, boolean existed) {
+    public JPItem(int id, int row, int column, String hiragana, String katakana, String rome, int category, int type,
+            boolean existed) {
         this.id = id;
         this.row = row;
         this.column = column;

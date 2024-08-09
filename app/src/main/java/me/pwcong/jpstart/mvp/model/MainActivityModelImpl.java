@@ -12,7 +12,6 @@ import me.pwcong.jpstart.mvp.bean.BannerItem;
 
 public class MainActivityModelImpl implements BaseModel.MainActivityModel {
 
-
     @Override
     public List<BannerItem> getData() {
 

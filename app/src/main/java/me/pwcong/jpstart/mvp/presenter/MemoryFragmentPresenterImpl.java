@@ -10,7 +10,8 @@ import me.pwcong.jpstart.mvp.view.BaseView;
  * Created by Pwcong on 2016/10/5.
  */
 
-public class MemoryFragmentPresenterImpl extends BasePresenter<BaseView.MemoryFragmentView> implements BasePresenter.MemoryFragmentPresenter {
+public class MemoryFragmentPresenterImpl extends BasePresenter<BaseView.MemoryFragmentView>
+        implements BasePresenter.MemoryFragmentPresenter {
 
     private BaseModel.MemoryFragmentModel model;
 
@@ -54,10 +55,8 @@ public class MemoryFragmentPresenterImpl extends BasePresenter<BaseView.MemoryFr
             default:
                 break;
 
-
         }
 
     }
-
 
 }

@@ -49,5 +49,3 @@ public class JPGif {
         this.katakana = katakana;
     }
 }
-
-

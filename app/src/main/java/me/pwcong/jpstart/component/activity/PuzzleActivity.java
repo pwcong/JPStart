@@ -37,7 +37,6 @@ public class PuzzleActivity extends BaseActivity implements BaseView.PuzzleActiv
     public static final int TYPE_HIRAGANA_KATAKANA = 1;
     public static final int TYPE_KATAKANA_ROME = 2;
 
-
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
     @BindView(R.id.tv_show)
@@ -104,7 +103,6 @@ public class PuzzleActivity extends BaseActivity implements BaseView.PuzzleActiv
         mCountTextView.setText(String.valueOf(count));
     }
 
-
     @Override
     protected void doAction() {
 
@@ -117,7 +115,6 @@ public class PuzzleActivity extends BaseActivity implements BaseView.PuzzleActiv
         presenter.checkAnswerSelect(v.getId(), current, items);
 
     }
-
 
     @Override
     public void setData(JPItem current, List<JPItem> jams) {
@@ -150,7 +147,6 @@ public class PuzzleActivity extends BaseActivity implements BaseView.PuzzleActiv
                 mButton3.setText(this.items.get(2).getKatakana());
                 mButton4.setText(this.items.get(3).getKatakana());
 
-
                 break;
             case TYPE_KATAKANA_ROME:
 
@@ -168,7 +164,6 @@ public class PuzzleActivity extends BaseActivity implements BaseView.PuzzleActiv
         }
 
     }
-
 
     @Override
     public void showSelectDialog(String[] selection) {
@@ -189,9 +184,8 @@ public class PuzzleActivity extends BaseActivity implements BaseView.PuzzleActiv
 
     @Override
     public void showResultDialog(int title, String msg, int icon,
-                                 int pbt, DialogInterface.OnClickListener pbl,
-                                 int nbt, DialogInterface.OnClickListener nbl) {
-
+            int pbt, DialogInterface.OnClickListener pbl,
+            int nbt, DialogInterface.OnClickListener nbl) {
 
         new AlertDialog.Builder(this)
                 .setCancelable(false)
@@ -241,7 +235,6 @@ public class PuzzleActivity extends BaseActivity implements BaseView.PuzzleActiv
         if (count > hs)
             SharedPreferenceManager.getInstance().putInt(Constants.HIGHEST_SCORE, count);
 
-
         count = 0;
         mCountTextView.setText(String.valueOf(count));
 
@@ -290,7 +283,6 @@ public class PuzzleActivity extends BaseActivity implements BaseView.PuzzleActiv
         }
         return true;
     }
-
 
     private Animation getTipsAnimation() {
 

@@ -63,7 +63,6 @@ public class JPStartFragment extends BaseFragment implements BaseView.JPStartFra
 
     }
 
-
     @Override
     protected void doAction() {
         presenter.initJPStartFragment(category_yin);
@@ -103,7 +102,6 @@ public class JPStartFragment extends BaseFragment implements BaseView.JPStartFra
                     }
                 }
 
-
             }
         });
 
@@ -116,10 +114,12 @@ public class JPStartFragment extends BaseFragment implements BaseView.JPStartFra
 
         switch (type) {
             case Constants.CATEGORY_QINGYIN:
-                RecyclerView.LayoutManager layoutManager1 = new GridLayoutManager(getContext(), Constants.COLUMN_QINGYIN);
+                RecyclerView.LayoutManager layoutManager1 = new GridLayoutManager(getContext(),
+                        Constants.COLUMN_QINGYIN);
                 mRecyclerView.setLayoutManager(layoutManager1);
             case Constants.CATEGORY_ZHUOYIN:
-                RecyclerView.LayoutManager layoutManager2 = new GridLayoutManager(getContext(), Constants.COLUMN_ZHUOYIN);
+                RecyclerView.LayoutManager layoutManager2 = new GridLayoutManager(getContext(),
+                        Constants.COLUMN_ZHUOYIN);
                 mRecyclerView.setLayoutManager(layoutManager2);
                 break;
             case Constants.CATEGORY_AOYIN:

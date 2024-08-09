@@ -9,7 +9,8 @@ import me.pwcong.jpstart.mvp.view.BaseView;
  * Created by Pwcong on 2016/9/27.
  */
 
-public class JPStartTabFragmentPresenterImpl extends BasePresenter<BaseView.JPStartTabFragmentView> implements BasePresenter.JPStartTabFragmentPresenter {
+public class JPStartTabFragmentPresenterImpl extends BasePresenter<BaseView.JPStartTabFragmentView>
+        implements BasePresenter.JPStartTabFragmentPresenter {
 
     private BaseModel.JPStartTabFragmentModel model;
 

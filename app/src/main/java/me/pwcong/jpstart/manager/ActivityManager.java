@@ -23,7 +23,6 @@ public class ActivityManager {
     private ActivityManager() {
     }
 
-
     public synchronized static ActivityManager getInstance() {
 
         if (instance == null) {
@@ -52,7 +51,6 @@ public class ActivityManager {
         }
 
     }
-
 
     public void finishAll() {
 

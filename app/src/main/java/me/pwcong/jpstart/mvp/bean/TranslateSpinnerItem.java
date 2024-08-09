@@ -10,7 +10,6 @@ public class TranslateSpinnerItem {
     private String name;
     private boolean hasIcon;
 
-
     public TranslateSpinnerItem(int icon, String name, boolean hasIcon) {
         this.icon = icon;
         this.name = name;

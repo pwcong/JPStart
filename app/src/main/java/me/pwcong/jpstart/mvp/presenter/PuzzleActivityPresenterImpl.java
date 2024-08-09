@@ -21,7 +21,8 @@ import me.pwcong.jpstart.utils.ResourceUtils;
  * Created by Pwcong on 2016/10/24.
  */
 
-public class PuzzleActivityPresenterImpl extends BasePresenter<BaseView.PuzzleActivityView> implements BasePresenter.PuzzleActivityPresenter {
+public class PuzzleActivityPresenterImpl extends BasePresenter<BaseView.PuzzleActivityView>
+        implements BasePresenter.PuzzleActivityPresenter {
 
     private BaseModel.PuzzleActivityModel model;
 
@@ -165,7 +166,6 @@ public class PuzzleActivityPresenterImpl extends BasePresenter<BaseView.PuzzleAc
                 break;
 
         }
-
 
     }
 

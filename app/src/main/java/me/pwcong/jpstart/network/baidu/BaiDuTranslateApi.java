@@ -28,10 +28,8 @@ public interface BaiduTranslateApi {
     String ERROR_NO_MONEY = "54004";
     String ERROR_LONG_FREQUENT = "54005";
 
-
     @GET("/api/trans/vip/translate")
     Observable<BaiduTranslateBean> request(@Query("q") String q, @Query("from") String from, @Query("to") String to,
-                                           @Query("appid") String appId, @Query("salt") int salt, @Query("sign") String sign);
-
+            @Query("appid") String appId, @Query("salt") int salt, @Query("sign") String sign);
 
 }

@@ -16,10 +16,10 @@ import rx.Subscriber;
  * Created by Pwcong on 2016/10/3.
  */
 
-public class PixivIllustFragmentPresenterImpl extends BasePresenter<BaseView.PixivIllustFragmentView> implements BasePresenter.PixivIllustFragmentPresenter {
+public class PixivIllustFragmentPresenterImpl extends BasePresenter<BaseView.PixivIllustFragmentView>
+        implements BasePresenter.PixivIllustFragmentPresenter {
 
     private BaseModel.PixivIllustFragmentModel model;
-
 
     public PixivIllustFragmentPresenterImpl(BaseView.PixivIllustFragmentView view) {
         super(view);
@@ -83,7 +83,6 @@ public class PixivIllustFragmentPresenterImpl extends BasePresenter<BaseView.Pix
                 dialog.dismiss();
             }
         });
-
 
     }
 }

@@ -25,7 +25,6 @@ public class RxBus {
         private static final RxBus sInstance = new RxBus();
     }
 
-
     public void post(Object o) {
         bus.onNext(o);
     }

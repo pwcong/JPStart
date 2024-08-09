@@ -19,13 +19,20 @@ public class PixivIllustTabFragmentModelImpl implements BaseModel.PixivIllustTab
     public List<PixivIllustTab> getData() {
 
         List<PixivIllustTab> data = new ArrayList<>();
-        data.add(new PixivIllustTab(PixivIllustApi.MODE_DAILY, ResourceUtils.getString(App.getInstance(), R.string.daily)));
-        data.add(new PixivIllustTab(PixivIllustApi.MODE_WEEKLY, ResourceUtils.getString(App.getInstance(), R.string.weekly)));
-        data.add(new PixivIllustTab(PixivIllustApi.MODE_MONTHLY, ResourceUtils.getString(App.getInstance(), R.string.monthly)));
-        data.add(new PixivIllustTab(PixivIllustApi.MODE_ROOKIE, ResourceUtils.getString(App.getInstance(), R.string.rookie)));
-        data.add(new PixivIllustTab(PixivIllustApi.MODE_ORIGINAL, ResourceUtils.getString(App.getInstance(), R.string.original)));
-        data.add(new PixivIllustTab(PixivIllustApi.MODE_MALE, ResourceUtils.getString(App.getInstance(), R.string.male)));
-        data.add(new PixivIllustTab(PixivIllustApi.MODE_FEMALE, ResourceUtils.getString(App.getInstance(), R.string.female)));
+        data.add(new PixivIllustTab(PixivIllustApi.MODE_DAILY,
+                ResourceUtils.getString(App.getInstance(), R.string.daily)));
+        data.add(new PixivIllustTab(PixivIllustApi.MODE_WEEKLY,
+                ResourceUtils.getString(App.getInstance(), R.string.weekly)));
+        data.add(new PixivIllustTab(PixivIllustApi.MODE_MONTHLY,
+                ResourceUtils.getString(App.getInstance(), R.string.monthly)));
+        data.add(new PixivIllustTab(PixivIllustApi.MODE_ROOKIE,
+                ResourceUtils.getString(App.getInstance(), R.string.rookie)));
+        data.add(new PixivIllustTab(PixivIllustApi.MODE_ORIGINAL,
+                ResourceUtils.getString(App.getInstance(), R.string.original)));
+        data.add(new PixivIllustTab(PixivIllustApi.MODE_MALE,
+                ResourceUtils.getString(App.getInstance(), R.string.male)));
+        data.add(new PixivIllustTab(PixivIllustApi.MODE_FEMALE,
+                ResourceUtils.getString(App.getInstance(), R.string.female)));
 
         return data;
     }

@@ -20,5 +20,4 @@ public class Api {
 
     public static final String PIXIV_URL = "http://www.pixiv.net";
 
-
 }

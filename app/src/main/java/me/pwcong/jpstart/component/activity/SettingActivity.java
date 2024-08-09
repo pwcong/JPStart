@@ -40,24 +40,23 @@ public class SettingActivity extends BaseActivity {
 
         if (!registered) {
 
-            subscription = RxBus.getDefault().toObserverable(EventContainer.class).subscribe(new Action1<EventContainer>() {
-                @Override
-                public void call(EventContainer eventContainer) {
+            subscription = RxBus.getDefault().toObserverable(EventContainer.class)
+                    .subscribe(new Action1<EventContainer>() {
+                        @Override
+                        public void call(EventContainer eventContainer) {
 
-                    if (eventContainer.getType() == EventContainer.TYPE_SETTING) {
+                            if (eventContainer.getType() == EventContainer.TYPE_SETTING) {
 
-                        SettingEvent event = (SettingEvent) eventContainer.getEvent();
-                        showSnackBar(mRootLayout, event.getMsg());
-                    }
+                                SettingEvent event = (SettingEvent) eventContainer.getEvent();
+                                showSnackBar(mRootLayout, event.getMsg());
+                            }
 
-
-                }
-            });
+                        }
+                    });
 
             registered = true;
 
         }
-
 
         initToolbar();
     }

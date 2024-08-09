@@ -25,7 +25,6 @@ public class JPStartRecyclerAdapter extends RecyclerView.Adapter<JPStartRecycler
     private OnItemClickListener onItemClickListener;
     private OnItemLongClickListener onItemLongClickListener;
 
-
     public JPStartRecyclerAdapter(List<JPItem> list) {
         this.list = list;
     }
@@ -89,7 +88,6 @@ public class JPStartRecyclerAdapter extends RecyclerView.Adapter<JPStartRecycler
                 });
             }
 
-
         }
 
     }
@@ -121,7 +119,6 @@ public class JPStartRecyclerAdapter extends RecyclerView.Adapter<JPStartRecycler
         }
     }
 
-
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
     }
@@ -141,6 +138,5 @@ public class JPStartRecyclerAdapter extends RecyclerView.Adapter<JPStartRecycler
         void onLongClick(JPItem item);
 
     }
-
 
 }

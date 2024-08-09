@@ -19,7 +19,6 @@ import me.pwcong.jpstart.manager.ActivityManager;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,8 +59,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     public void showAlertDialog(Context context, int titleId, String message,
-                                int iconId,
-                                int positiveTextId, DialogInterface.OnClickListener positiveButtonListener) {
+            int iconId,
+            int positiveTextId, DialogInterface.OnClickListener positiveButtonListener) {
 
         new AlertDialog.Builder(context)
                 .setTitle(titleId)
@@ -74,8 +73,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     public void showAlertDialog(Context context, int titleId, int messageId,
-                                int iconId,
-                                int positiveTextId, DialogInterface.OnClickListener positiveButtonListener) {
+            int iconId,
+            int positiveTextId, DialogInterface.OnClickListener positiveButtonListener) {
 
         new AlertDialog.Builder(context)
                 .setTitle(titleId)
@@ -88,9 +87,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     public void showAlertDialog(Context context, int titleId, String message,
-                                int iconId,
-                                int positiveTextId, DialogInterface.OnClickListener positiveButtonListener,
-                                int negativeTextId, DialogInterface.OnClickListener negativeButtonListener) {
+            int iconId,
+            int positiveTextId, DialogInterface.OnClickListener positiveButtonListener,
+            int negativeTextId, DialogInterface.OnClickListener negativeButtonListener) {
 
         new AlertDialog.Builder(context)
                 .setTitle(titleId)
@@ -104,9 +103,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     public void showAlertDialog(Context context, int titleId, int messageId,
-                                int iconId,
-                                int positiveTextId, DialogInterface.OnClickListener positiveButtonListener,
-                                int negativeTextId, DialogInterface.OnClickListener negativeButtonListener) {
+            int iconId,
+            int positiveTextId, DialogInterface.OnClickListener positiveButtonListener,
+            int negativeTextId, DialogInterface.OnClickListener negativeButtonListener) {
 
         new AlertDialog.Builder(context)
                 .setTitle(titleId)

@@ -14,7 +14,8 @@ public class BaiduTranslateBean {
     private String error_code;
     private String error_msg;
 
-    public BaiduTranslateBean(String from, String to, TranslateResult[] trans_result, String error_code, String error_msg) {
+    public BaiduTranslateBean(String from, String to, TranslateResult[] trans_result, String error_code,
+            String error_msg) {
         this.from = from;
         this.to = to;
         this.trans_result = trans_result;
@@ -107,6 +108,5 @@ public class BaiduTranslateBean {
             this.dst = dst;
         }
     }
-
 
 }

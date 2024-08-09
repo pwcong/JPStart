@@ -29,7 +29,6 @@ import me.pwcong.jpstart.rxbus.event.PhotoViewEvent;
 
 public class PixivIllustFragment extends BaseFragment implements BaseView.PixivIllustFragmentView {
 
-
     @BindView(R.id.layout_root)
     LinearLayout mRootLayout;
     @BindView(R.id.recycler_view)
@@ -51,7 +50,6 @@ public class PixivIllustFragment extends BaseFragment implements BaseView.PixivI
         return fragment;
 
     }
-
 
     @Override
     protected int getViewId() {
@@ -79,10 +77,10 @@ public class PixivIllustFragment extends BaseFragment implements BaseView.PixivI
 
     }
 
-
     private void initRefreshLayout() {
 
-        mRefreshLayout.setColorSchemeResources(R.color.colorPrimary, R.color.blue, R.color.orange, R.color.amber, R.color.green, R.color.purple);
+        mRefreshLayout.setColorSchemeResources(R.color.colorPrimary, R.color.blue, R.color.orange, R.color.amber,
+                R.color.green, R.color.purple);
 
         mRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -92,7 +90,6 @@ public class PixivIllustFragment extends BaseFragment implements BaseView.PixivI
         });
 
     }
-
 
     @Override
     protected void doAction() {
@@ -132,9 +129,7 @@ public class PixivIllustFragment extends BaseFragment implements BaseView.PixivI
         PhotoViewEvent event = new PhotoViewEvent(url, id);
         RxBus.getDefault().post(new EventContainer(EventContainer.TYPE_PHOTOVIEW, event));
 
-
     }
-
 
     @Override
     public void setData(List<PixivIllustBean> data) {

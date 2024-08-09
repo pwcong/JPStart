@@ -19,8 +19,8 @@ public class GameFragment extends BaseFragment {
 
     @BindView(R.id.cv_puzzle)
     CardView mPuzzleCardView;
-//    @BindView(R.id.cv_supperzzle)
-//    CardView mSupperzzleCardView;
+    // @BindView(R.id.cv_supperzzle)
+    // CardView mSupperzzleCardView;
 
     @Override
     protected int getViewId() {
@@ -33,16 +33,18 @@ public class GameFragment extends BaseFragment {
         mPuzzleCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RxBus.getDefault().post(new EventContainer(EventContainer.TYPE_GAME, new GameEvent(GameEvent.TYPE_PUZZLE)));
+                RxBus.getDefault()
+                        .post(new EventContainer(EventContainer.TYPE_GAME, new GameEvent(GameEvent.TYPE_PUZZLE)));
             }
         });
 
-//        mSupperzzleCardView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                RxBus.getDefault().post(new EventContainer(EventContainer.TYPE_GAME, new GameEvent(GameEvent.TYPE_SUPPERZZLE)));
-//            }
-//        });
+        // mSupperzzleCardView.setOnClickListener(new View.OnClickListener() {
+        // @Override
+        // public void onClick(View v) {
+        // RxBus.getDefault().post(new EventContainer(EventContainer.TYPE_GAME, new
+        // GameEvent(GameEvent.TYPE_SUPPERZZLE)));
+        // }
+        // });
 
     }
 
@@ -50,6 +52,5 @@ public class GameFragment extends BaseFragment {
     protected void doAction() {
 
     }
-
 
 }

@@ -22,7 +22,8 @@ public class ActivityUtils {
         intent.putExtra(Intent.EXTRA_TEXT, message);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-        ActivityManager.getCurrent().startActivity(Intent.createChooser(intent, ResourceUtils.getString(ActivityManager.getCurrent(), R.string.share_to)));
+        ActivityManager.getCurrent().startActivity(
+                Intent.createChooser(intent, ResourceUtils.getString(ActivityManager.getCurrent(), R.string.share_to)));
 
     }
 

@@ -8,7 +8,6 @@ import android.webkit.WebViewClient;
 
 public class MyWebViewClient extends WebViewClient {
 
-
     private OnPageFinishedListener onPageFinishedListener;
     private OnPageStartedListener onPageStartedListener;
     private OnReceivedErrorListener onReceivedErrorListener;
@@ -33,7 +32,6 @@ public class MyWebViewClient extends WebViewClient {
         } else {
             super.onPageStarted(view, url, favicon);
         }
-
 
     }
 

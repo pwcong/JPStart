@@ -69,9 +69,11 @@ public class MemorySwipeAdapter extends BaseAdapter {
         holder.tv_rome.setText(item.getRome());
 
         if (item.getCategory() == Constants.CATEGORY_AOYIN) {
-            holder.tv_hiragana.setTextSize(ResourceUtils.getDimension(parent.getContext(), R.dimen.memory_item_text_size_mini));
+            holder.tv_hiragana
+                    .setTextSize(ResourceUtils.getDimension(parent.getContext(), R.dimen.memory_item_text_size_mini));
         } else {
-            holder.tv_hiragana.setTextSize(ResourceUtils.getDimension(parent.getContext(), R.dimen.memory_item_text_size));
+            holder.tv_hiragana
+                    .setTextSize(ResourceUtils.getDimension(parent.getContext(), R.dimen.memory_item_text_size));
         }
 
         holder.tv_hiragana.setText(item.getHiragana());
@@ -99,7 +101,6 @@ public class MemorySwipeAdapter extends BaseAdapter {
                 }
             });
         }
-
 
         return convertView;
     }
@@ -146,6 +147,5 @@ public class MemorySwipeAdapter extends BaseAdapter {
     public interface OnWriteButtonClickListener {
         void onClick(JPItem item);
     }
-
 
 }

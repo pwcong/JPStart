@@ -24,7 +24,6 @@ public class App extends Application {
 
     public static boolean ISWIFI = false;
 
-
     @Override
     public void onCreate() {
         super.onCreate();

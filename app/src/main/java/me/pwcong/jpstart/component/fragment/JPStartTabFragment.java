@@ -22,14 +22,12 @@ import me.pwcong.jpstart.mvp.view.BaseView;
 
 public class JPStartTabFragment extends BaseFragment implements BaseView.JPStartTabFragmentView {
 
-
     @BindView(R.id.tab_layout)
     TabLayout mTabLayout;
     @BindView(R.id.view_pager)
     ViewPager mViewPager;
 
     private BasePresenter.JPStartTabFragmentPresenter presenter;
-
 
     @Override
     protected int getViewId() {
@@ -70,7 +68,6 @@ public class JPStartTabFragment extends BaseFragment implements BaseView.JPStart
         });
 
     }
-
 
     @Override
     protected void doAction() {

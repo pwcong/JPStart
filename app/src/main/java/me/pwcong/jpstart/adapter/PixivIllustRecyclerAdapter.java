@@ -85,12 +85,9 @@ public class PixivIllustRecyclerAdapter extends RecyclerView.Adapter<PixivIllust
             this.tv_id = (TextView) itemView.findViewById(R.id.tv_id);
             this.tv_author = (TextView) itemView.findViewById(R.id.tv_author);
 
-
         }
 
-
     }
-
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;

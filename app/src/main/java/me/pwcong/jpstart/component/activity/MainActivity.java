@@ -17,7 +17,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -81,12 +80,13 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
 
         if (!registered) {
 
-            busSubscription = RxBus.getDefault().toObserverable(EventContainer.class).subscribe(new Action1<EventContainer>() {
-                @Override
-                public void call(EventContainer eventContainer) {
-                    presenter.onBusEventInteraction(eventContainer);
-                }
-            });
+            busSubscription = RxBus.getDefault().toObserverable(EventContainer.class)
+                    .subscribe(new Action1<EventContainer>() {
+                        @Override
+                        public void call(EventContainer eventContainer) {
+                            presenter.onBusEventInteraction(eventContainer);
+                        }
+                    });
 
             registered = true;
 
@@ -117,7 +117,8 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
             }
         });
 
-        Toolbar.LayoutParams params = new Toolbar.LayoutParams((int) (ResourceUtils.getDimension(MainActivity.this, R.dimen.radio_button_width)),
+        Toolbar.LayoutParams params = new Toolbar.LayoutParams(
+                (int) (ResourceUtils.getDimension(MainActivity.this, R.dimen.radio_button_width)),
                 ViewGroup.LayoutParams.MATCH_PARENT, GravityCompat.END);
         mToolbar.addView(mRadioButtonView, params);
 
@@ -158,7 +159,6 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
         mBannerViewPager = (ViewPager) view.findViewById(R.id.banner_view_pager);
         mCircleIndicator = (CircleIndicator) view.findViewById(R.id.indicator);
 
-
     }
 
     @Override
@@ -168,7 +168,6 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
 
         Log.i(TAG, "doAction: OK");
     }
-
 
     @Override
     public void onBackPressed() {
@@ -187,7 +186,6 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
             }
         }
     }
-
 
     @Override
     public void openDrawer() {
@@ -255,7 +253,8 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
 
         mRadioButtonView.setVisibility(View.GONE);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.content_main, new PixivIllustTabFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_main, new PixivIllustTabFragment())
+                .commit();
 
         Log.i(TAG, "switchPixivIllust: OK");
     }
@@ -294,8 +293,8 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
 
     @Override
     public void showAlertDialog(int titleId, int messageId,
-                                int positiveTextId, DialogInterface.OnClickListener positiveButtonListener,
-                                int negativeTextId, DialogInterface.OnClickListener negativeButtonListener) {
+            int positiveTextId, DialogInterface.OnClickListener positiveButtonListener,
+            int negativeTextId, DialogInterface.OnClickListener negativeButtonListener) {
 
         new AlertDialog.Builder(MainActivity.this)
                 .setTitle(titleId)
@@ -333,7 +332,6 @@ public class MainActivity extends BaseActivity implements BaseView.MainActivityV
         if (bannerSubscription.isUnsubscribed()) {
             bannerSubscription.unsubscribe();
         }
-
 
     }
 

@@ -88,8 +88,6 @@ public abstract class BasePresenter<T> {
 
         void checkMenuSelect(int id);
 
-
     }
-
 
 }

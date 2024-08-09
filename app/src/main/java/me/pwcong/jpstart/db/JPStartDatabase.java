@@ -20,5 +20,4 @@ public class JPStartDatabase extends SQLiteAssetHelper {
 
     }
 
-
 }

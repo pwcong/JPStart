@@ -51,7 +51,6 @@ public class DBManager {
 
     }
 
-
     public synchronized List<JPItem> query() {
 
         if (query == null) {
@@ -97,7 +96,6 @@ public class DBManager {
 
             Collections.sort(qingYin, new JPItemComparator());
 
-
         }
 
         return qingYin;
@@ -119,9 +117,7 @@ public class DBManager {
 
             Collections.sort(zhuoYin, new JPItemComparator());
 
-
         }
-
 
         return zhuoYin;
     }
@@ -142,7 +138,6 @@ public class DBManager {
 
             Collections.sort(aoYin, new JPItemComparator());
 
-
         }
 
         return aoYin;
@@ -162,7 +157,6 @@ public class DBManager {
 
             }
         }
-
 
         return qingYinWithoutHeader;
     }
@@ -226,6 +220,5 @@ public class DBManager {
         }
 
     }
-
 
 }

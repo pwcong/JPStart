@@ -10,7 +10,6 @@ public class StringUtils {
         throw new RuntimeException("(￣y▽,￣)╭ ");
     }
 
-
     public static String checkNullOrEmpty(String ss, String ds) {
         if (ss == null || ss.isEmpty())
             return ds;
@@ -23,6 +22,5 @@ public class StringUtils {
         return s == null || s.isEmpty();
 
     }
-
 
 }

@@ -17,7 +17,7 @@ import me.pwcong.jpstart.utils.ResourceUtils;
 public class PuzzleActivityModelImpl implements BaseModel.PuzzleActivityModel {
     @Override
     public String[] getOptions() {
-        return new String[]{
+        return new String[] {
                 ResourceUtils.getString(App.getInstance(), R.string.hiragana_rome),
                 ResourceUtils.getString(App.getInstance(), R.string.hiragana_katakana),
                 ResourceUtils.getString(App.getInstance(), R.string.katakana_rome)

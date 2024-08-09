@@ -14,8 +14,8 @@ import me.pwcong.jpstart.mvp.view.BaseView;
  * Created by Pwcong on 2016/10/3.
  */
 
-public class PixivIllustTabFragmentPresenterImpl extends BasePresenter<BaseView.PixivIllustTabFragmentView> implements BasePresenter.PixivIllustTabFragmentPresenter {
-
+public class PixivIllustTabFragmentPresenterImpl extends BasePresenter<BaseView.PixivIllustTabFragmentView>
+        implements BasePresenter.PixivIllustTabFragmentPresenter {
 
     private BaseModel.PixivIllustTabFragmentModel model;
 
@@ -31,7 +31,6 @@ public class PixivIllustTabFragmentPresenterImpl extends BasePresenter<BaseView.
 
             view.setData(model.getData());
 
-
         } else {
 
             if (SharedPreferenceManager.getInstance().getBoolean(Constants.FLAG_TIPS_WIFI, true)) {
@@ -41,7 +40,8 @@ public class PixivIllustTabFragmentPresenterImpl extends BasePresenter<BaseView.
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS_WIFI, false);
-                                SharedPreferenceManager.getInstance().putBoolean(Constants.ALLOW_CONNECT_WITHOUT_WIFI, true);
+                                SharedPreferenceManager.getInstance().putBoolean(Constants.ALLOW_CONNECT_WITHOUT_WIFI,
+                                        true);
                                 dialog.dismiss();
                                 view.setData(model.getData());
                             }
@@ -49,7 +49,8 @@ public class PixivIllustTabFragmentPresenterImpl extends BasePresenter<BaseView.
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS_WIFI, false);
-                                SharedPreferenceManager.getInstance().putBoolean(Constants.ALLOW_CONNECT_WITHOUT_WIFI, false);
+                                SharedPreferenceManager.getInstance().putBoolean(Constants.ALLOW_CONNECT_WITHOUT_WIFI,
+                                        false);
                                 dialog.dismiss();
                                 view.showMsg(R.string.loading_disallow_pixiv);
                             }
@@ -68,7 +69,6 @@ public class PixivIllustTabFragmentPresenterImpl extends BasePresenter<BaseView.
             }
 
         }
-
 
     }
 }

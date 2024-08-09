@@ -115,10 +115,9 @@ public class AboutActivity extends BaseActivity {
                                 dialog.dismiss();
 
                                 if (Build.VERSION.SDK_INT >= 23 && ContextCompat.checkSelfPermission(AboutActivity.this,
-                                        Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                                        != PackageManager.PERMISSION_GRANTED) {
+                                        Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
                                     ActivityCompat.requestPermissions(AboutActivity.this,
-                                            new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                                            new String[] { Manifest.permission.WRITE_EXTERNAL_STORAGE },
                                             MY_PERMISSIONS_REQUEST_STORAGE);
                                 } else {
                                     saveQRCodeImage();
@@ -135,7 +134,8 @@ public class AboutActivity extends BaseActivity {
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+            @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
         if (requestCode == MY_PERMISSIONS_REQUEST_STORAGE) {
@@ -194,8 +194,8 @@ public class AboutActivity extends BaseActivity {
     }
 
     public void showAlertDialog(int titleId, int messageId,
-                                int positiveTextId, DialogInterface.OnClickListener positiveButtonListener,
-                                int negativeTextId, DialogInterface.OnClickListener negativeButtonListener) {
+            int positiveTextId, DialogInterface.OnClickListener positiveButtonListener,
+            int negativeTextId, DialogInterface.OnClickListener negativeButtonListener) {
 
         new AlertDialog.Builder(AboutActivity.this)
                 .setTitle(titleId)
@@ -207,7 +207,6 @@ public class AboutActivity extends BaseActivity {
                 .show();
 
     }
-
 
     @Override
     protected void doAction() {

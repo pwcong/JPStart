@@ -17,7 +17,6 @@ import me.pwcong.jpstart.R;
 
 public class ImageDialog extends Dialog {
 
-
     private ImageDialog(Context context, int themeResId) {
         super(context, themeResId);
     }
@@ -59,8 +58,6 @@ public class ImageDialog extends Dialog {
             return dialog;
         }
 
-
     }
-
 
 }

@@ -27,7 +27,6 @@ import me.pwcong.jpstart.mvp.view.BaseView;
 
 public class TranslateFragment extends BaseFragment implements BaseView.TranslateFragmentView, View.OnClickListener {
 
-
     @BindView(R.id.layout_root)
     LinearLayout mRootLayout;
     @BindView(R.id.spinner_from)
@@ -153,7 +152,6 @@ public class TranslateFragment extends BaseFragment implements BaseView.Translat
         mDstTextView.setText(text);
     }
 
-
     @Override
     public void setFromSpinner(List<TranslateSpinnerItem> list) {
 
@@ -167,11 +165,9 @@ public class TranslateFragment extends BaseFragment implements BaseView.Translat
         mToSpinner.setSelection(App.TO_LAN);
     }
 
-
     @Override
     public void onClick(View v) {
         presenter.checkImageViewClick(v.getId());
     }
-
 
 }

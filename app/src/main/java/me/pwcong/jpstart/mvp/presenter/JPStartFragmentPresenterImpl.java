@@ -14,7 +14,8 @@ import rx.Subscriber;
  * Created by Pwcong on 2016/9/27.
  */
 
-public class JPStartFragmentPresenterImpl extends BasePresenter<BaseView.JPStartFragmentView> implements BasePresenter.JPStartFragmentPresenter {
+public class JPStartFragmentPresenterImpl extends BasePresenter<BaseView.JPStartFragmentView>
+        implements BasePresenter.JPStartFragmentPresenter {
 
     private final String TAG = getClass().getSimpleName();
 

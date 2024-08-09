@@ -21,7 +21,6 @@ public interface PixivIllustApi {
     String MODE_MALE = "male";
     String MODE_FEMALE = "female";
 
-
     String MODE_MEDIUM = "medium";
 
     @GET("/ranking.php")
@@ -29,6 +28,5 @@ public interface PixivIllustApi {
 
     @GET("/member_illust.php")
     Observable<ResponseBody> requestIllust(@Query("mode") String mode, @Query("illust_id") int id);
-
 
 }

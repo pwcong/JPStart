@@ -19,7 +19,8 @@ import me.pwcong.jpstart.rxbus.event.PhotoViewEvent;
  * Created by Pwcong on 2016/9/24.
  */
 
-public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivityView> implements BasePresenter.MainActivityPresenter {
+public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivityView>
+        implements BasePresenter.MainActivityPresenter {
 
     private final String TAG = getClass().getSimpleName();
 
@@ -74,7 +75,8 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
                             }, R.string.do_not_remind, new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS_JPSTART, false);
+                                    SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS_JPSTART,
+                                            false);
                                     dialog.dismiss();
                                 }
                             });
@@ -119,7 +121,8 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
                             }, R.string.do_not_remind, new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS_TRANSLATE, false);
+                                    SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS_TRANSLATE,
+                                            false);
                                     dialog.dismiss();
                                 }
                             });
@@ -127,31 +130,34 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
                 }
 
                 break;
-//            case R.id.item_pixiv_illust:
-//
-//                view.switchPixivIllust();
-//
-//                if (SharedPreferenceManager.getInstance().getBoolean(Constants.FLAG_TIPS_PIXIVILLUST, true)) {
-//
-//                    view.showAlertDialog(R.string.small_tips, R.string.tips_pixivillust,
-//                            R.string.remember, new DialogInterface.OnClickListener() {
-//                                @Override
-//                                public void onClick(DialogInterface dialog, int which) {
-//                                    dialog.dismiss();
-//                                }
-//                            }, R.string.do_not_remind, new DialogInterface.OnClickListener() {
-//                                @Override
-//                                public void onClick(DialogInterface dialog, int which) {
-//                                    SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS_PIXIVILLUST, false);
-//                                    dialog.dismiss();
-//                                }
-//                            });
-//
-//
-//                }
-//
-//
-//                break;
+            // case R.id.item_pixiv_illust:
+            //
+            // view.switchPixivIllust();
+            //
+            // if
+            // (SharedPreferenceManager.getInstance().getBoolean(Constants.FLAG_TIPS_PIXIVILLUST,
+            // true)) {
+            //
+            // view.showAlertDialog(R.string.small_tips, R.string.tips_pixivillust,
+            // R.string.remember, new DialogInterface.OnClickListener() {
+            // @Override
+            // public void onClick(DialogInterface dialog, int which) {
+            // dialog.dismiss();
+            // }
+            // }, R.string.do_not_remind, new DialogInterface.OnClickListener() {
+            // @Override
+            // public void onClick(DialogInterface dialog, int which) {
+            // SharedPreferenceManager.getInstance().putBoolean(Constants.FLAG_TIPS_PIXIVILLUST,
+            // false);
+            // dialog.dismiss();
+            // }
+            // });
+            //
+            //
+            // }
+            //
+            //
+            // break;
 
             case R.id.item_game:
 
@@ -171,7 +177,6 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
         }
 
         view.closeDrawer();
-
 
     }
 
@@ -202,9 +207,9 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
                     case GameEvent.TYPE_PUZZLE:
                         view.startPuzzleActivity();
                         break;
-//                    case GameEvent.TYPE_SUPPERZZLE:
-//                        view.startSupperzzleActivity();
-//                        break;
+                    // case GameEvent.TYPE_SUPPERZZLE:
+                    // view.startSupperzzleActivity();
+                    // break;
                     default:
                         break;
                 }
@@ -213,9 +218,7 @@ public class MainActivityPresenterImpl extends BasePresenter<BaseView.MainActivi
             default:
                 break;
 
-
         }
-
 
     }
 }

@@ -121,7 +121,8 @@ public class FlingCardListener implements View.OnTouchListener {
                     final float xMove = event.getX(pointerIndexMove);
                     final float yMove = event.getY(pointerIndexMove);
 
-                    // from http://android-developers.blogspot.com/2010/06/making-sense-of-multitouch.html
+                    // from
+                    // http://android-developers.blogspot.com/2010/06/making-sense-of-multitouch.html
                     // Calculate the distance moved
                     final float dx = xMove - aDownTouchX;
                     final float dy = yMove - aDownTouchY;
@@ -137,7 +138,8 @@ public class FlingCardListener implements View.OnTouchListener {
                         rotation = -rotation;
                     }
 
-                    // in this area would be code for doing something with the view as the frame moves.
+                    // in this area would be code for doing something with the view as the frame
+                    // moves.
                     if (isNeedSwipe) {
                         frame.setX(aPosX);
                         frame.setY(aPosY);
@@ -148,7 +150,7 @@ public class FlingCardListener implements View.OnTouchListener {
 
                 case MotionEvent.ACTION_UP:
                 case MotionEvent.ACTION_CANCEL:
-                    //mActivePointerId = INVALID_POINTER_ID;
+                    // mActivePointerId = INVALID_POINTER_ID;
                     int pointerCount = event.getPointerCount();
                     int activePointerId = Math.min(mActivePointerId, pointerCount - 1);
                     aTouchUpX = event.getX(activePointerId);
@@ -163,7 +165,6 @@ public class FlingCardListener implements View.OnTouchListener {
 
         return true;
     }
-
 
     private float getScrollProgress() {
         float dx = aPosX - objectX;
@@ -244,7 +245,6 @@ public class FlingCardListener implements View.OnTouchListener {
         return aPosX + halfWidth > rightBorder();
     }
 
-
     public float leftBorder() {
         return parentWidth / 4f;
     }
@@ -252,7 +252,6 @@ public class FlingCardListener implements View.OnTouchListener {
     public float rightBorder() {
         return 3 * parentWidth / 4f;
     }
-
 
     public void onSelected(final boolean isLeft, float exitY, long duration) {
         isAnimationRunning = true;
@@ -268,7 +267,7 @@ public class FlingCardListener implements View.OnTouchListener {
                 .setInterpolator(new LinearInterpolator())
                 .translationX(exitX)
                 .translationY(exitY)
-                //.rotation(isLeft ? -BASE_ROTATION_DEGREES:BASE_ROTATION_DEGREES)
+                // .rotation(isLeft ? -BASE_ROTATION_DEGREES:BASE_ROTATION_DEGREES)
                 .setListener(new AnimatorListenerAdapter() {
                     @Override
                     public void onAnimationEnd(Animator animation) {
@@ -327,7 +326,7 @@ public class FlingCardListener implements View.OnTouchListener {
 
         LinearRegression regression = new LinearRegression(x, y);
 
-        //Your typical y = ax+b linear regression
+        // Your typical y = ax+b linear regression
         return (float) regression.slope() * exitXPoint + (float) regression.intercept();
     }
 
@@ -352,11 +351,9 @@ public class FlingCardListener implements View.OnTouchListener {
         return objectW / MAX_COS - objectW;
     }
 
-
     public void setRotationDegrees(float degrees) {
         this.BASE_ROTATION_DEGREES = degrees;
     }
-
 
     protected interface FlingListener {
         void onCardExited();
@@ -370,6 +367,4 @@ public class FlingCardListener implements View.OnTouchListener {
         void onScroll(float progress, float scrollXProgress);
     }
 
-
 }
-

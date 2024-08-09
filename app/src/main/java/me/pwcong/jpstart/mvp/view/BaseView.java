@@ -48,8 +48,8 @@ public interface BaseView<T> {
         void startSupperzzleActivity();
 
         void showAlertDialog(int titleId, int messageId,
-                             int positiveTextId, DialogInterface.OnClickListener positiveButtonListener,
-                             int negativeTextId, DialogInterface.OnClickListener negativeButtonListener);
+                int positiveTextId, DialogInterface.OnClickListener positiveButtonListener,
+                int negativeTextId, DialogInterface.OnClickListener negativeButtonListener);
     }
 
     interface JPStartTabFragmentView extends BaseView<JPTab> {
@@ -82,8 +82,8 @@ public interface BaseView<T> {
 
     interface PixivIllustTabFragmentView extends BaseView<PixivIllustTab> {
         void showAlertDialog(int titleId, int messageId,
-                             int positiveTextId, DialogInterface.OnClickListener positiveButtonListener,
-                             int negativeTextId, DialogInterface.OnClickListener negativeButtonListener);
+                int positiveTextId, DialogInterface.OnClickListener positiveButtonListener,
+                int negativeTextId, DialogInterface.OnClickListener negativeButtonListener);
 
         void showMsg(String msg);
 
@@ -121,8 +121,8 @@ public interface BaseView<T> {
         void showSelectDialog(String[] selection);
 
         void showResultDialog(int title, String msg, int icon,
-                              int pbt, DialogInterface.OnClickListener pbl,
-                              int nbt, DialogInterface.OnClickListener nbl);
+                int pbt, DialogInterface.OnClickListener pbl,
+                int nbt, DialogInterface.OnClickListener nbl);
 
         void showDialog(int icon, int title, String msg);
 
@@ -138,6 +138,5 @@ public interface BaseView<T> {
 
         void showMsg(String msg);
     }
-
 
 }

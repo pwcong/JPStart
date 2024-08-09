@@ -33,7 +33,6 @@ public class PixivIllustTabFragment extends BaseFragment implements BaseView.Pix
 
     BasePresenter.PixivIllustTabFragmentPresenter presenter;
 
-
     @Override
     protected int getViewId() {
         return R.layout.fragment_pixivillust_tab;
@@ -57,7 +56,6 @@ public class PixivIllustTabFragment extends BaseFragment implements BaseView.Pix
         // doo something
     }
 
-
     @Override
     protected void doAction() {
 
@@ -73,7 +71,9 @@ public class PixivIllustTabFragment extends BaseFragment implements BaseView.Pix
     }
 
     @Override
-    public void showAlertDialog(int titleId, int messageId, int positiveTextId, DialogInterface.OnClickListener positiveButtonListener, int negativeTextId, DialogInterface.OnClickListener negativeButtonListener) {
+    public void showAlertDialog(int titleId, int messageId, int positiveTextId,
+            DialogInterface.OnClickListener positiveButtonListener, int negativeTextId,
+            DialogInterface.OnClickListener negativeButtonListener) {
         new AlertDialog.Builder(getContext())
                 .setTitle(titleId)
                 .setMessage(messageId)
@@ -94,6 +94,5 @@ public class PixivIllustTabFragment extends BaseFragment implements BaseView.Pix
     public void showMsg(int msg) {
         showSnackBar(mTabLayout, msg);
     }
-
 
 }

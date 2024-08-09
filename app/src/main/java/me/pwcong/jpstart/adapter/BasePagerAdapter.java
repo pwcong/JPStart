@@ -6,7 +6,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import java.util.List;
 
-
 /**
  * Created by Pwcong on 2016/9/27.
  */

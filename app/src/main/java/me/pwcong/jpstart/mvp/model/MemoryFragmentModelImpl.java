@@ -13,7 +13,6 @@ import me.pwcong.jpstart.mvp.bean.JPItem;
 
 public class MemoryFragmentModelImpl implements BaseModel.MemoryFragmentModel {
 
-
     @Override
     public List<JPItem> getQingYinWithoutHeader() {
 

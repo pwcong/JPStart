@@ -30,7 +30,6 @@ public class PixivIllustServiceImpl implements PixivService.IllustService {
         return instance;
     }
 
-
     @Override
     public void getIllusts(String mode, Subscriber<ResponseBody> subscriber) {
 

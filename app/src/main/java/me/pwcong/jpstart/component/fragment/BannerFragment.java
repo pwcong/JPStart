@@ -33,7 +33,6 @@ public class BannerFragment extends BaseFragment {
 
     }
 
-
     @Override
     protected int getViewId() {
         return R.layout.fragment_banner;

@@ -19,10 +19,8 @@ public interface BaseModel<T> {
 
     List<T> getData();
 
-
     interface MainActivityModel extends BaseModel<BannerItem> {
     }
-
 
     interface JPStartTabFragmentModel extends BaseModel<JPTab> {
     }
@@ -59,7 +57,6 @@ public interface BaseModel<T> {
         List<JPItem> getZhuoYinWithoutHeader();
 
         List<JPItem> getAoYinWithoutHeader();
-
 
     }
 

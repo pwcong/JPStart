@@ -129,7 +129,6 @@ public class SoundPoolManager implements SoundPool.OnLoadCompleteListener {
         sounds.add(new JPSound("wo", R.raw.wo));
         sounds.add(new JPSound("du", R.raw.du));
 
-
     }
 
     private static SoundPoolManager instance = null;

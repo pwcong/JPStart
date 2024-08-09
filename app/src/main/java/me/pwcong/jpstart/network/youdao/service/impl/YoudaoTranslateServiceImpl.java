@@ -33,7 +33,6 @@ public class YoudaoTranslateServiceImpl implements YoudaoService.YoudaoTranslate
         return instance;
     }
 
-
     @Override
     public void translate(String q, Subscriber<YoudaoTranslateBean> subscriber) {
 
@@ -43,7 +42,6 @@ public class YoudaoTranslateServiceImpl implements YoudaoService.YoudaoTranslate
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(subscriber);
-
 
     }
 }

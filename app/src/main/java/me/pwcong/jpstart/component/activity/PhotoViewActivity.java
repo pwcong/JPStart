@@ -29,7 +29,6 @@ import rx.schedulers.Schedulers;
 
 public class PhotoViewActivity extends BaseActivity {
 
-
     @BindView(R.id.layout_root)
     LinearLayout mRootLayout;
     @BindView(R.id.pv)
@@ -76,10 +75,10 @@ public class PhotoViewActivity extends BaseActivity {
                                     .downloadOnly(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
                                     .get();
 
-
                             if (FileUtils.createOrExistsDir(Constants.FILEDIR_ROOT)) {
 
-                                File dstFile = new File(Constants.FILEDIR_ROOT, String.valueOf(img_id) + Constants.FILETYPE_JPG);
+                                File dstFile = new File(Constants.FILEDIR_ROOT,
+                                        String.valueOf(img_id) + Constants.FILETYPE_JPG);
                                 FileUtils.copyFile(srcFile, dstFile);
 
                             }
@@ -91,29 +90,29 @@ public class PhotoViewActivity extends BaseActivity {
                         subscriber.onNext(R.string.save_success);
 
                     }
-                }).observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io()).subscribe(new Subscriber<Integer>() {
-                    @Override
-                    public void onCompleted() {
+                }).observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io())
+                        .subscribe(new Subscriber<Integer>() {
+                            @Override
+                            public void onCompleted() {
 
-                    }
+                            }
 
-                    @Override
-                    public void onError(Throwable e) {
+                            @Override
+                            public void onError(Throwable e) {
 
-                        showSnackBar(mRootLayout, R.string.save_error);
-                    }
+                                showSnackBar(mRootLayout, R.string.save_error);
+                            }
 
-                    @Override
-                    public void onNext(Integer s) {
+                            @Override
+                            public void onNext(Integer s) {
 
-                        showSnackBar(mRootLayout, s);
-                    }
-                });
+                                showSnackBar(mRootLayout, s);
+                            }
+                        });
 
                 return false;
             }
         });
-
 
     }
 
@@ -125,7 +124,8 @@ public class PhotoViewActivity extends BaseActivity {
     private void hideState() {
 
         if (Build.VERSION.SDK_INT < 16) {
-            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                    WindowManager.LayoutParams.FLAG_FULLSCREEN);
         } else {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
         }

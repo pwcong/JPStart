@@ -19,7 +19,6 @@ public interface YoudaoTranslateApi {
 
     String TYPE = "data";
 
-
     int OK = 0;
     int ERROR_TOOLONG = 20;
     int ERROR_INVALID = 30;
@@ -27,10 +26,9 @@ public interface YoudaoTranslateApi {
     int ERROR_KEY = 50;
     int ERROR_NONE = 60;
 
-
     @GET("/openapi.doo")
-    Observable<YoudaoTranslateBean> request(@Query("keyfrom") String keyfrom, @Query("key") String key, @Query("type") String type,
-                                            @Query("doctype") String doctype, @Query("version") String version, @Query("q") String q);
-
+    Observable<YoudaoTranslateBean> request(@Query("keyfrom") String keyfrom, @Query("key") String key,
+            @Query("type") String type,
+            @Query("doctype") String doctype, @Query("version") String version, @Query("q") String q);
 
 }

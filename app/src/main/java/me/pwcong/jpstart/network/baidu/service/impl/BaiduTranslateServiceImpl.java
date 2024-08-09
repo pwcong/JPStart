@@ -35,12 +35,12 @@ public class BaiduTranslateServiceImpl implements BaiduService.TranslateService 
         return instance;
     }
 
-
     @Override
     public void translate(String q, String from, String to, Subscriber<BaiduTranslateBean> subscriber) {
 
         int salt = (int) (Math.random() * 99999);
-        String sign = EncryptUtils.encryptMD5ToString(Api.BAIDU_TRANSLATE_APPID + q + salt + Api.BAIDU_TRANSLATE_SECRETKEY).toLowerCase();
+        String sign = EncryptUtils
+                .encryptMD5ToString(Api.BAIDU_TRANSLATE_APPID + q + salt + Api.BAIDU_TRANSLATE_SECRETKEY).toLowerCase();
 
         getInstance().create(BaiduTranslateApi.class)
                 .request(q, from, to, Api.BAIDU_TRANSLATE_APPID, salt, sign)

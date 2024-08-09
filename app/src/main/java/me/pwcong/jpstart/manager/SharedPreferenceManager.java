@@ -63,5 +63,4 @@ public class SharedPreferenceManager {
         sharedPreferences.edit().putBoolean(key, value).apply();
     }
 
-
 }

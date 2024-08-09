@@ -44,14 +44,12 @@ public class SettingFragment extends PreferenceFragment {
         addPreferencesFromResource(R.xml.preference_setting);
     }
 
-
     private void initVariable() {
 
         mode_theme = SharedPreferenceManager.getInstance().getString(Constants.MODE_THEME, Constants.MODE_DAY);
         allow_connect = SharedPreferenceManager.getInstance().getBoolean(Constants.ALLOW_CONNECT_WITHOUT_WIFI, false);
 
     }
-
 
     private void initPreference() {
         mThemesListPreference = (ListPreference) getPreferenceManager().findPreference("setting_theme");
@@ -63,7 +61,8 @@ public class SettingFragment extends PreferenceFragment {
             public boolean onPreferenceChange(Preference preference, Object newValue) {
 
                 SharedPreferenceManager.getInstance().putString(Constants.MODE_THEME, (String) newValue);
-                RxBus.getDefault().post(new EventContainer(EventContainer.TYPE_SETTING, new SettingEvent(R.string.reboot_to_take_effect)));
+                RxBus.getDefault().post(new EventContainer(EventContainer.TYPE_SETTING,
+                        new SettingEvent(R.string.reboot_to_take_effect)));
 
                 return true;
             }
@@ -77,8 +76,10 @@ public class SettingFragment extends PreferenceFragment {
 
                 Log.i(TAG, "onPreferenceChange: " + newValue);
 
-                SharedPreferenceManager.getInstance().putBoolean(Constants.ALLOW_CONNECT_WITHOUT_WIFI, (Boolean) newValue);
-                RxBus.getDefault().post(new EventContainer(EventContainer.TYPE_SETTING, new SettingEvent(R.string.setting_effect)));
+                SharedPreferenceManager.getInstance().putBoolean(Constants.ALLOW_CONNECT_WITHOUT_WIFI,
+                        (Boolean) newValue);
+                RxBus.getDefault().post(
+                        new EventContainer(EventContainer.TYPE_SETTING, new SettingEvent(R.string.setting_effect)));
                 return true;
             }
         });

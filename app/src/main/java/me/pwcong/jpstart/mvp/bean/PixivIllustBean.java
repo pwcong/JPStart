@@ -19,7 +19,8 @@ public class PixivIllustBean {
     public PixivIllustBean() {
     }
 
-    public PixivIllustBean(int id, String title, String author, String date, String img_240x480, String img_600x600, String img_1200x1200, String img_original, String link) {
+    public PixivIllustBean(int id, String title, String author, String date, String img_240x480, String img_600x600,
+            String img_1200x1200, String img_original, String link) {
         this.id = id;
         this.title = title;
         this.author = author;

@@ -28,7 +28,6 @@ import rx.schedulers.Schedulers;
 
 public class PixivIllustFragmentModelImpl implements BaseModel.PixivIllustFragmentModel {
 
-
     private PixivService.IllustService service;
 
     public PixivIllustFragmentModelImpl() {
@@ -71,9 +70,9 @@ public class PixivIllustFragmentModelImpl implements BaseModel.PixivIllustFragme
     @Override
     public String[] getOptions() {
 
-        return new String[]{ResourceUtils.getString(App.getInstance(), R.string.source_img),
+        return new String[] { ResourceUtils.getString(App.getInstance(), R.string.source_img),
                 ResourceUtils.getString(App.getInstance(), R.string.thumbnail),
-                ResourceUtils.getString(App.getInstance(), R.string.share)};
+                ResourceUtils.getString(App.getInstance(), R.string.share) };
 
     }
 
@@ -111,7 +110,8 @@ public class PixivIllustFragmentModelImpl implements BaseModel.PixivIllustFragme
                     bean.setLink(Api.PIXIV_URL + "/" + link_element.attr("href"));
                 }
 
-                Element thumbnail_element = element.getElementsByClass("_layout-thumbnail").first().select("img").first();
+                Element thumbnail_element = element.getElementsByClass("_layout-thumbnail").first().select("img")
+                        .first();
 
                 if (thumbnail_element != null) {
                     bean.setImg_240x480(thumbnail_element.attr("data-src"));
@@ -120,7 +120,8 @@ public class PixivIllustFragmentModelImpl implements BaseModel.PixivIllustFragme
 
                         bean.setImg_600x600(bean.getImg_240x480().replace("/c/240x480/", "/c/600x600/"));
                         bean.setImg_1200x1200(bean.getImg_240x480().replace("/c/240x480/", "/c/1200x1200/"));
-                        bean.setImg_original(bean.getImg_240x480().replace("/c/240x480/img-master/", "/img-original/").replace("_master1200", ""));
+                        bean.setImg_original(bean.getImg_240x480().replace("/c/240x480/img-master/", "/img-original/")
+                                .replace("_master1200", ""));
 
                     }
                 }
@@ -131,6 +132,5 @@ public class PixivIllustFragmentModelImpl implements BaseModel.PixivIllustFragme
 
         return list;
     }
-
 
 }
