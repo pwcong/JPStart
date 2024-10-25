@@ -4,11 +4,12 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <include layout="@layout/item_puzzle"/>
-        <!--<include layout="@layout/item_supperzzle"/>-->
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/item_puzzle" />
+
     </LinearLayout>
 </ScrollView>
 

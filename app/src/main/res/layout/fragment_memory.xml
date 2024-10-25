@@ -1,33 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:id="@+id/layout_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    
-    <me.pwcong.jpstart.widget.swipecardview.SwipeFlingAdapterView
-        android:id="@+id/swipe_view"
-        app:min_adapter_stack="4"
-        app:max_visible="4"
-        app:y_offset_step="@dimen/memory_swipe_offset_y"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
 
-    <com.getbase.floatingactionbutton.FloatingActionsMenu
+    <com.github.pwcong.swipecards.SwipeFlingAdapterView
+        android:id="@+id/swipe_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:max_visible="4"
+        app:min_adapter_stack="4"
+        app:y_offset_step="@dimen/memory_swipe_offset_y" />
+
+    <com.github.pwcong.floatingactionbutton.FloatingActionsMenu
         android:id="@+id/fab_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
         fab:fab_addButtonColorNormal="@color/colorPrimary"
         fab:fab_addButtonColorPressed="@color/colorPrimaryDark"
         fab:fab_addButtonPlusIconColor="@color/white"
-        fab:fab_labelStyle="@style/menu_labels_style"
-        android:layout_marginBottom="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginEnd="16dp"/>
+        fab:fab_labelStyle="@style/menu_labels_style" />
 
 </RelativeLayout>

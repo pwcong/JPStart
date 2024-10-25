@@ -98,14 +98,13 @@
     <string name="here">Here</string>
     <string name="here_contents">如果你喜歡這個App，期望你能打賞一毛兩毛。\n( •̀ ω •́ )y</string>
     <string name="now">Now</string>
-    <string name="now_contents">當前版本：v1.1.0</string>
+    <string name="now_contents">當前版本：v2.0.0</string>
 
     <string name="loading_data">正在加載數據</string>
     <string name="loading_data_success">加載完成</string>
     <string name="loading_data_error">數據加載錯誤，請重新啟動</string>
     <string name="author">Author</string>
     <string name="pwcong">Pwcong</string>
-    <string name="panda">Panda</string>
     <string name="title_allow_download_without_wifi">啟用移動網絡下載</string>
     <string name="summary_allow_download_without_wifi">允許通過需要付費的移動網絡下載</string>
     <string name="yes">是</string>

@@ -1,97 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <include layout="@layout/app_bar_layout"/>
-
+        <include layout="@layout/app_bar_layout" />
 
         <RelativeLayout
-            android:background="@color/colorPrimary"
-            android:padding="@dimen/activity_horizontal_margin"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:padding="@dimen/activity_horizontal_margin">
 
             <TextView
-                android:gravity="center"
                 android:id="@+id/tv_tips"
-                android:textSize="250sp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="250sp" />
 
             <TextView
-                android:textColor="@color/item"
                 android:id="@+id/tv_show"
-                android:textSize="200sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:textAppearance="@style/TextAppearance.AppCompat"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:textColor="@color/item"
+                android:textSize="200sp" />
 
             <TableLayout
                 android:id="@+id/tl_select"
-                android:layout_alignParentBottom="true"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
 
                 <TableRow>
-                    <android.support.v7.widget.ButtonBarLayout android:layout_weight="1">
+
+                    <androidx.appcompat.widget.ButtonBarLayout android:layout_weight="1">
 
                         <Button
                             android:id="@+id/btn_answer1"
-                            android:drawableLeft="@drawable/ic_chevron_right_black_24dp"
-                            android:drawableStart="@drawable/ic_chevron_right_black_24dp"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawableStart="@drawable/ic_chevron_right_black_24dp"
+                            android:drawableLeft="@drawable/ic_chevron_right_black_24dp" />
 
-                    </android.support.v7.widget.ButtonBarLayout>
-                    <android.support.v7.widget.ButtonBarLayout android:layout_weight="1">
+                    </androidx.appcompat.widget.ButtonBarLayout>
+
+                    <androidx.appcompat.widget.ButtonBarLayout android:layout_weight="1">
 
                         <Button
                             android:id="@+id/btn_answer2"
-                            android:drawableLeft="@drawable/ic_chevron_right_black_24dp"
-                            android:drawableStart="@drawable/ic_chevron_right_black_24dp"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawableStart="@drawable/ic_chevron_right_black_24dp"
+                            android:drawableLeft="@drawable/ic_chevron_right_black_24dp" />
 
-                    </android.support.v7.widget.ButtonBarLayout>
+                    </androidx.appcompat.widget.ButtonBarLayout>
 
                 </TableRow>
 
                 <TableRow>
 
-                    <android.support.v7.widget.ButtonBarLayout android:layout_weight="1">
+                    <androidx.appcompat.widget.ButtonBarLayout android:layout_weight="1">
 
                         <Button
                             android:id="@+id/btn_answer3"
-                            android:drawableLeft="@drawable/ic_chevron_right_black_24dp"
-                            android:drawableStart="@drawable/ic_chevron_right_black_24dp"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawableStart="@drawable/ic_chevron_right_black_24dp"
+                            android:drawableLeft="@drawable/ic_chevron_right_black_24dp" />
 
-                    </android.support.v7.widget.ButtonBarLayout>
+                    </androidx.appcompat.widget.ButtonBarLayout>
 
-                    <android.support.v7.widget.ButtonBarLayout android:layout_weight="1">
+                    <androidx.appcompat.widget.ButtonBarLayout android:layout_weight="1">
 
                         <Button
                             android:id="@+id/btn_answer4"
-                            android:drawableLeft="@drawable/ic_chevron_right_black_24dp"
-                            android:drawableStart="@drawable/ic_chevron_right_black_24dp"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawableStart="@drawable/ic_chevron_right_black_24dp"
+                            android:drawableLeft="@drawable/ic_chevron_right_black_24dp" />
 
-                    </android.support.v7.widget.ButtonBarLayout>
+                    </androidx.appcompat.widget.ButtonBarLayout>
 
                 </TableRow>
 
@@ -99,27 +99,27 @@
             </TableLayout>
 
             <LinearLayout
-                android:layout_marginBottom="12dp"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/tl_select"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true">
+                android:layout_marginBottom="12dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
 
 
                 <TextView
-                    android:textColor="@color/item"
-                    android:text="@string/tips_correct_contents"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="@string/tips_correct_contents"
+                    android:textColor="@color/item" />
 
                 <TextView
                     android:id="@+id/tv_count"
-                    android:textColor="@color/item"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/item" />
 
 
             </LinearLayout>
@@ -129,8 +129,7 @@
     </LinearLayout>
 
 
-
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
 

@@ -3,15 +3,19 @@
 
     <PreferenceCategory android:title="@string/system_setting">
 
-        <ListPreference android:title="@string/theme" android:key="setting_theme"/>
-        <CheckBoxPreference android:title="@string/title_allow_download_without_wifi"
-            android:summary="@string/summary_allow_download_without_wifi" android:key="setting_wifi"/>
+        <ListPreference
+            android:key="setting_theme"
+            android:title="@string/theme" />
+        <CheckBoxPreference
+            android:key="setting_wifi"
+            android:summary="@string/summary_allow_download_without_wifi"
+            android:title="@string/title_allow_download_without_wifi" />
 
     </PreferenceCategory>
 
     <!--<PreferenceCategory android:title="@string/more_setting">-->
 
-        <!--<Preference android:title="@string/tips_setting"/>-->
+    <!--<Preference android:title="@string/tips_setting"/>-->
 
     <!--</PreferenceCategory>-->
 

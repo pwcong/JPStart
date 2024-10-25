@@ -1,167 +1,156 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
 
         <TextView
-            android:textColor="@color/colorPrimaryDark"
-            android:drawablePadding="4dp"
-            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
             android:drawableStart="@drawable/ic_chat_bubble_outline_black_24dp"
             android:drawableLeft="@drawable/ic_chat_bubble_outline_black_24dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginStart="4dp"
-            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:drawablePadding="4dp"
+            android:gravity="center_vertical"
             android:text="@string/hello_u"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textColor="@color/colorPrimaryDark" />
 
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:lineSpacingMultiplier="1.3"
-            android:text="@string/hello_contents"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:text="@string/hello_contents" />
 
     </LinearLayout>
 
     <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@color/colorPrimaryDark"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"/>
+        android:background="@color/colorPrimaryDark" />
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
 
         <TextView
-            android:textColor="@color/colorPrimaryDark"
-            android:drawableLeft="@drawable/ic_insert_emoticon_black_24dp"
-            android:drawableStart="@drawable/ic_insert_emoticon_black_24dp"
-            android:drawablePadding="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:gravity="center_vertical"
             android:layout_marginLeft="4dp"
+            android:drawableStart="@drawable/ic_insert_emoticon_black_24dp"
+            android:drawableLeft="@drawable/ic_insert_emoticon_black_24dp"
+            android:drawablePadding="4dp"
+            android:gravity="center_vertical"
             android:text="@string/thanks"
             android:textAppearance="@style/TextAppearance.AppCompat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textColor="@color/colorPrimaryDark" />
 
 
         <LinearLayout
-            android:layout_marginLeft="16dp"
-            android:layout_marginStart="16dp"
-            android:orientation="vertical"
-            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
 
             <TextView
-                android:lineSpacingMultiplier="1.3"
-                android:text="@string/thanks_contents"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:lineSpacingMultiplier="1.3"
+                android:text="@string/thanks_contents" />
 
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_marginTop="8dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
 
                 <TextView
-                    android:textAppearance="@style/TextAppearance.AppCompat"
-                    android:gravity="center_vertical"
-                    android:drawablePadding="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_filter_1_black_24dp"
                     android:drawableLeft="@drawable/ic_filter_1_black_24dp"
+                    android:drawablePadding="4dp"
+                    android:gravity="center_vertical"
                     android:text="@string/rxjava_rxandroid"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:textAppearance="@style/TextAppearance.AppCompat" />
 
                 <TextView
-                    android:drawablePadding="4dp"
-                    android:gravity="center_vertical"
-                    android:textAppearance="@style/TextAppearance.AppCompat"
-                    android:text="@string/butterknife"
-                    android:drawableLeft="@drawable/ic_filter_2_black_24dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_filter_2_black_24dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <TextView
+                    android:drawableLeft="@drawable/ic_filter_2_black_24dp"
                     android:drawablePadding="4dp"
                     android:gravity="center_vertical"
-                    android:textAppearance="@style/TextAppearance.AppCompat"
                     android:text="@string/retrofit2"
-                    android:drawableLeft="@drawable/ic_filter_3_black_24dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_filter_3_black_24dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <TextView
+                    android:drawableLeft="@drawable/ic_filter_3_black_24dp"
                     android:drawablePadding="4dp"
                     android:gravity="center_vertical"
-                    android:textAppearance="@style/TextAppearance.AppCompat"
                     android:text="@string/glide"
-                    android:drawableLeft="@drawable/ic_filter_4_black_24dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_filter_4_black_24dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <TextView
+                    android:drawableLeft="@drawable/ic_filter_4_black_24dp"
                     android:drawablePadding="4dp"
                     android:gravity="center_vertical"
-                    android:textAppearance="@style/TextAppearance.AppCompat"
                     android:text="@string/photoview"
-                    android:drawableLeft="@drawable/ic_filter_5_black_24dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_filter_5_black_24dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <TextView
+                    android:drawableLeft="@drawable/ic_filter_5_black_24dp"
                     android:drawablePadding="4dp"
                     android:gravity="center_vertical"
-                    android:textAppearance="@style/TextAppearance.AppCompat"
                     android:text="@string/floatingactionbutton"
-                    android:drawableLeft="@drawable/ic_filter_6_black_24dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_filter_6_black_24dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <TextView
+                    android:drawableLeft="@drawable/ic_filter_6_black_24dp"
                     android:drawablePadding="4dp"
                     android:gravity="center_vertical"
-                    android:textAppearance="@style/TextAppearance.AppCompat"
                     android:text="@string/swipecardview"
-                    android:drawableLeft="@drawable/ic_filter_7_black_24dp"
-                    android:drawableStart="@drawable/ic_filter_7_black_24dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:textAppearance="@style/TextAppearance.AppCompat" />
 
                 <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_filter_7_black_24dp"
+                    android:drawableLeft="@drawable/ic_filter_7_black_24dp"
                     android:drawablePadding="4dp"
                     android:gravity="center_vertical"
-                    android:textAppearance="@style/TextAppearance.AppCompat"
                     android:text="@string/baidu_translate"
-                    android:drawableLeft="@drawable/ic_filter_8_black_24dp"
-                    android:drawableStart="@drawable/ic_filter_8_black_24dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:textAppearance="@style/TextAppearance.AppCompat" />
 
             </LinearLayout>
 
@@ -170,162 +159,147 @@
     </LinearLayout>
 
 
-
     <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@color/colorPrimaryDark"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"/>
+        android:background="@color/colorPrimaryDark" />
 
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <TextView
-            android:textColor="@color/colorPrimaryDark"
-            android:drawableLeft="@drawable/ic_favorite_border_black_24dp"
-            android:drawableStart="@drawable/ic_favorite_border_black_24dp"
-            android:drawablePadding="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:gravity="center_vertical"
             android:layout_marginLeft="4dp"
+            android:drawableStart="@drawable/ic_favorite_border_black_24dp"
+            android:drawableLeft="@drawable/ic_favorite_border_black_24dp"
+            android:drawablePadding="4dp"
+            android:gravity="center_vertical"
             android:text="@string/here"
             android:textAppearance="@style/TextAppearance.AppCompat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textColor="@color/colorPrimaryDark" />
 
         <LinearLayout
-            android:layout_marginLeft="16dp"
-            android:layout_marginStart="16dp"
-            android:orientation="vertical"
-            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
 
             <TextView
-                android:lineSpacingMultiplier="1.3"
-                android:text="@string/here_contents"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:lineSpacingMultiplier="1.3"
+                android:text="@string/here_contents" />
 
             <ImageView
                 android:id="@+id/img_qrcode"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
                 android:layout_marginTop="12dp"
-                android:src="@drawable/mm_facetoface_collect_qrcode"
                 android:contentDescription="@string/image"
                 android:scaleType="centerInside"
-                android:layout_width="match_parent"
-                android:layout_height="280dp" />
+                android:src="@drawable/mm_facetoface_collect_qrcode" />
 
         </LinearLayout>
 
     </LinearLayout>
 
-
     <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@color/colorPrimaryDark"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"/>
+        android:background="@color/colorPrimaryDark" />
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <TextView
-            android:textColor="@color/colorPrimaryDark"
-            android:drawableLeft="@drawable/ic_people_outline_black_24dp"
-            android:drawableStart="@drawable/ic_people_outline_black_24dp"
-            android:drawablePadding="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:gravity="center_vertical"
             android:layout_marginLeft="4dp"
+            android:drawableStart="@drawable/ic_people_outline_black_24dp"
+            android:drawableLeft="@drawable/ic_people_outline_black_24dp"
+            android:drawablePadding="4dp"
+            android:gravity="center_vertical"
             android:text="@string/author"
             android:textAppearance="@style/TextAppearance.AppCompat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textColor="@color/colorPrimaryDark" />
 
         <LinearLayout
             style="?buttonBarStyle"
-            android:layout_marginLeft="16dp"
-            android:layout_marginStart="16dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
 
 
             <Button
-                style="?buttonBarButtonStyle"
                 android:id="@+id/btn_pwcong"
-                android:gravity="center"
-                android:textAppearance="@style/TextAppearance.AppCompat"
-                android:drawableStart="@drawable/github_box"
-                android:drawablePadding="4dp"
-                android:drawableLeft="@drawable/github_box"
-                android:text="@string/pwcong"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content" />
-
-            <Button
                 style="?buttonBarButtonStyle"
-                android:id="@+id/btn_panda"
-                android:gravity="center"
-                android:textAppearance="@style/TextAppearance.AppCompat"
-                android:drawableStart="@drawable/blogger"
+                android:layout_width="112dp"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/github_box"
+                android:drawableLeft="@drawable/github_box"
                 android:drawablePadding="4dp"
-                android:drawableLeft="@drawable/blogger"
-                android:text="@string/panda"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content" />
-
+                android:gravity="center"
+                android:text="@string/pwcong"
+                android:textAppearance="@style/TextAppearance.AppCompat" />
 
         </LinearLayout>
     </LinearLayout>
 
     <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@color/colorPrimaryDark"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"/>
+        android:background="@color/colorPrimaryDark" />
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <TextView
-            android:textColor="@color/colorPrimaryDark"
-            android:drawableLeft="@drawable/ic_access_time_black_24dp"
-            android:drawableStart="@drawable/ic_access_time_black_24dp"
-            android:drawablePadding="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:gravity="center_vertical"
             android:layout_marginLeft="4dp"
+            android:drawableStart="@drawable/ic_access_time_black_24dp"
+            android:drawableLeft="@drawable/ic_access_time_black_24dp"
+            android:drawablePadding="4dp"
+            android:gravity="center_vertical"
             android:text="@string/now"
             android:textAppearance="@style/TextAppearance.AppCompat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textColor="@color/colorPrimaryDark" />
+
         <LinearLayout
-            android:layout_marginLeft="16dp"
-            android:layout_marginStart="16dp"
-            android:orientation="vertical"
-            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
+
             <TextView
-                android:lineSpacingMultiplier="1.3"
-                android:text="@string/now_contents"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:lineSpacingMultiplier="1.3"
+                android:text="@string/now_contents" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

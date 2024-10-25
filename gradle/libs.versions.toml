@@ -1,0 +1,57 @@
+[versions]
+agp = "8.6.1"
+appcompat = "1.7.0"
+circleindicator = "2.1.6"
+floatingactionbutton = "1.0.0"
+glide = "4.16.0"
+kotlin = "1.9.0"
+coreKtx = "1.13.1"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+lifecycleRuntimeKtx = "2.8.6"
+activityCompose = "1.9.3"
+composeBom = "2024.10.00"
+material = "1.12.0"
+radiobuttonview = "2.0.0"
+recyclerview = "1.3.2"
+rxandroid = "1.2.1"
+rxjava = "1.3.0"
+sqliteassethelper = "2.0.1"
+swipecards = "1.0.0"
+utilcode = "1.30.7"
+
+[libraries]
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
+circleindicator = { module = "me.relex:circleindicator", version.ref = "circleindicator" }
+floatingactionbutton = { module = "com.github.pwcong:FloatingActionButton", version.ref = "floatingactionbutton" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
+photoview = { module = "com.github.pwcong:PhotoView", version.ref = "floatingactionbutton" }
+radiobuttonview = { module = "com.github.pwcong:RadioButtonView", version.ref = "radiobuttonview" }
+rxandroid = { module = "io.reactivex:rxandroid", version.ref = "rxandroid" }
+rxjava = { module = "io.reactivex:rxjava", version.ref = "rxjava" }
+sqliteassethelper = { module = "com.readystatesoftware.sqliteasset:sqliteassethelper", version.ref = "sqliteassethelper" }
+swipecards = { module = "com.github.pwcong:Swipecards", version.ref = "swipecards" }
+textdrawable = { module = "com.github.pwcong:TextDrawable", version.ref = "floatingactionbutton" }
+utilcode = { module = "com.blankj:utilcode", version.ref = "utilcode" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+

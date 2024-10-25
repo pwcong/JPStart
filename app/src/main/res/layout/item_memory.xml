@@ -1,85 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/bg_card"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/layout_root"
     android:layout_width="match_parent"
-    android:layout_marginTop="@dimen/memory_item_margin_top"
-    android:layout_marginLeft="@dimen/memory_item_margin"
-    android:layout_marginRight="@dimen/memory_item_margin"
     android:layout_height="wrap_content"
-    >
+    android:layout_marginLeft="@dimen/memory_item_margin"
+    android:layout_marginTop="@dimen/memory_item_margin_top"
+    android:layout_marginRight="@dimen/memory_item_margin"
+    android:background="@drawable/bg_card">
 
     <LinearLayout
-        android:orientation="vertical"
-        android:padding="@dimen/memory_item_padding"
-        android:gravity="center_horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="@dimen/memory_item_padding">
 
         <LinearLayout
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/tv_rome"
-                android:textSize="@dimen/memory_item_text_size_second"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/memory_item_text_size_second" />
 
             <TextView
-                android:textAppearance="@style/TextAppearance.AppCompat"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
                 android:id="@+id/tv_katakana"
-                android:textSize="@dimen/memory_item_text_size_second"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="@dimen/memory_item_text_size_second" />
 
 
             <LinearLayout
-                android:gravity="end|center_vertical"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:gravity="end|center_vertical"
+                android:orientation="horizontal">
 
                 <Button
-                    style="?android:attr/buttonBarButtonStyle"
                     android:id="@+id/btn_yin"
-                    android:text="@string/yin"
-                    android:layout_marginLeft="@dimen/memory_item_button_margin"
-                    android:layout_marginStart="@dimen/memory_item_button_margin"
-                    android:textColor="@color/white"
-                    android:background="@drawable/selector_memory_button"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="@dimen/memory_item_button_size"
-                    android:layout_height="@dimen/memory_item_button_size" />
+                    android:layout_height="@dimen/memory_item_button_size"
+                    android:layout_marginStart="@dimen/memory_item_button_margin"
+                    android:layout_marginLeft="@dimen/memory_item_button_margin"
+                    android:background="@drawable/selector_memory_button"
+                    android:text="@string/yin"
+                    android:textColor="@color/white" />
 
                 <Button
-                    style="?android:attr/buttonBarButtonStyle"
                     android:id="@+id/btn_write"
-                    android:textColor="@color/white"
-                    android:text="@string/write"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="@dimen/memory_item_button_size"
+                    android:layout_height="@dimen/memory_item_button_size"
                     android:layout_marginLeft="@dimen/memory_item_button_margin"
                     android:layout_marginRight="@dimen/memory_item_button_margin"
                     android:background="@drawable/selector_memory_button"
-                    android:layout_width="@dimen/memory_item_button_size"
-                    android:layout_height="@dimen/memory_item_button_size" />
+                    android:text="@string/write"
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 
         </LinearLayout>
 
         <TextView
-            android:layout_marginTop="12dp"
             android:id="@+id/tv_hiragana"
-            android:textAppearance="@style/TextAppearance.AppCompat"
-            android:gravity="center_horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center_horizontal"
+            android:textAppearance="@style/TextAppearance.AppCompat" />
     </LinearLayout>
 
 </LinearLayout>
