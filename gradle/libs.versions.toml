@@ -1,5 +1,7 @@
 [versions]
+adapterRxjava = "2.4.0"
 agp = "8.6.1"
+alibabacloudAlimt20181012 = "1.0.2"
 appcompat = "1.7.0"
 circleindicator = "2.1.6"
 floatingactionbutton = "1.0.0"
@@ -22,10 +24,13 @@ swipecards = "1.0.0"
 utilcode = "1.30.7"
 
 [libraries]
+adapter-rxjava = { module = "com.squareup.retrofit2:adapter-rxjava", version.ref = "adapterRxjava" }
+alibabacloud-alimt20181012 = { module = "com.aliyun:alibabacloud-alimt20181012", version.ref = "alibabacloudAlimt20181012" }
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
 circleindicator = { module = "me.relex:circleindicator", version.ref = "circleindicator" }
+converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "adapterRxjava" }
 floatingactionbutton = { module = "com.github.pwcong:FloatingActionButton", version.ref = "floatingactionbutton" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -44,6 +49,7 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 material = { module = "com.google.android.material:material", version.ref = "material" }
 photoview = { module = "com.github.pwcong:PhotoView", version.ref = "floatingactionbutton" }
 radiobuttonview = { module = "com.github.pwcong:RadioButtonView", version.ref = "radiobuttonview" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "adapterRxjava" }
 rxandroid = { module = "io.reactivex:rxandroid", version.ref = "rxandroid" }
 rxjava = { module = "io.reactivex:rxjava", version.ref = "rxjava" }
 sqliteassethelper = { module = "com.readystatesoftware.sqliteasset:sqliteassethelper", version.ref = "sqliteassethelper" }

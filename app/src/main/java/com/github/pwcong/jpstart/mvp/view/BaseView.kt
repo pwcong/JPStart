@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.github.pwcong.jpstart.mvp.bean.BannerItem
 import com.github.pwcong.jpstart.mvp.bean.JPItem
 import com.github.pwcong.jpstart.mvp.bean.JPTab
+import com.github.pwcong.jpstart.mvp.bean.TranslateSpinnerItem
 
 interface BaseView<T> {
     fun setData(data: List<T>)
@@ -80,5 +81,24 @@ interface BaseView<T> {
 
         fun showMsg(msg: String)
     }
+
+    interface TranslateFragmentView {
+        fun showMsg(msg: String)
+
+        fun showMsg(msg: Int)
+
+        val srcText: String
+
+        fun setSrcEditText(text: String)
+
+        val dstText: String
+
+        fun setDstTextView(text: String)
+
+        fun setFromSpinner(list: List<TranslateSpinnerItem>)
+
+        fun setToSpinner(list: List<TranslateSpinnerItem>)
+    }
+
 
 }

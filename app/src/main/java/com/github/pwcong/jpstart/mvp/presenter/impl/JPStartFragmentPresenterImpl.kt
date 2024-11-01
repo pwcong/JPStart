@@ -17,9 +17,9 @@ class JPStartFragmentPresenterImpl(view: JPStartFragmentView) :
 
     private val model: JPStartFragmentModel = JPStartFragmentModelImpl()
 
-    override fun initJPStartFragment(type: Int) {
-        view.setRecyclerView(type)
-        model.getData(type, object : Subscriber<List<JPItem>>() {
+    override fun initJPStartFragment(category: Int) {
+        view.setRecyclerView(category)
+        model.getData(category, object : Subscriber<List<JPItem>>() {
             override fun onCompleted() {
                 Log.i(TAG, "onCompleted: OK")
             }

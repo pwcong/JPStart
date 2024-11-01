@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/translate_spinner_padding"
+    android:orientation="horizontal"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="@dimen/translate_spinner_width"
+        android:layout_height="@dimen/translate_spinner_height"
+        android:contentDescription="@string/national_flag"
+        android:src="@drawable/china_icon_64"/>
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/translate_margin"
+        android:layout_marginLeft="@dimen/translate_margin"
+        android:textSize="@dimen/translate_spinner_text_size"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:text="@string/chinese"/>
+
+</LinearLayout>

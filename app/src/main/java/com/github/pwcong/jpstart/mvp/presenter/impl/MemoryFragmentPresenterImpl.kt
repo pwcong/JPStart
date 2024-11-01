@@ -12,28 +12,24 @@ import com.github.pwcong.jpstart.mvp.view.BaseView.MemoryFragmentView
 class MemoryFragmentPresenterImpl(view: MemoryFragmentView) :
     BasePresenter<MemoryFragmentView>(view),
     MemoryFragmentPresenter {
-    private val model: BaseModel.MemoryFragmentModel
-
-    init {
-        model = MemoryFragmentModelImpl()
-    }
+    private val model: BaseModel.MemoryFragmentModel = MemoryFragmentModelImpl()
 
     override fun initMemoryFragment() {
         setDate(Constant.CATEGORY_QINGYIN)
     }
 
-    override fun loadMore(categiry: Int) {
-        setDate(categiry)
-        view?.showMsg(R.string.one_more_time)
+    override fun loadMore(category: Int) {
+        setDate(category)
+        view.showMsg(R.string.one_more_time)
     }
 
     override fun setDate(category: Int) {
         when (category) {
-            Constant.CATEGORY_QINGYIN -> view!!.setData(model.qingYinWithoutHeader)
+            Constant.CATEGORY_QINGYIN -> view.setData(model.qingYinWithoutHeader)
 
-            Constant.CATEGORY_ZHUOYIN -> view!!.setData(model.zhuoYinWithoutHeader)
+            Constant.CATEGORY_ZHUOYIN -> view.setData(model.zhuoYinWithoutHeader)
 
-            Constant.CATEGORY_AOYIN -> view!!.setData(model.aoYinWithoutHeader)
+            Constant.CATEGORY_AOYIN -> view.setData(model.aoYinWithoutHeader)
 
             else -> {}
         }

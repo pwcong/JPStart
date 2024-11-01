@@ -1,6 +1,19 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+}
+
+fun getLocalProperty(propertyName: String): String? {
+    val propertiesFile = rootProject.file("local.properties")
+    if (propertiesFile.exists()) {
+        val properties = Properties().apply {
+            load(propertiesFile.inputStream())
+        }
+        return properties.getProperty(propertyName)
+    }
+    return null
 }
 
 android {
@@ -18,6 +31,14 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        buildConfigField("String", "ALIYUN_API_KEY", "\"${getLocalProperty("aliyun_api_key")}\"")
+        buildConfigField(
+            "String",
+            "ALIYUN_API_SECRET",
+            "\"${getLocalProperty("aliyun_api_secret")}\""
+        )
+
     }
     buildTypes {
         release {
@@ -37,6 +58,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -80,6 +102,10 @@ dependencies {
     implementation(libs.sqliteassethelper)
     implementation(libs.utilcode)
     implementation(libs.glide)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.adapter.rxjava)
+    implementation(libs.alibabacloud.alimt20181012)
 
     // UI Component
     implementation(libs.circleindicator)

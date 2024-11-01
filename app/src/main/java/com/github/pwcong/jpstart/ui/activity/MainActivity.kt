@@ -27,6 +27,7 @@ import com.github.pwcong.jpstart.rxbus.event.EventContainer
 import com.github.pwcong.jpstart.ui.fragment.GameFragment
 import com.github.pwcong.jpstart.ui.fragment.JPStartTabFragment
 import com.github.pwcong.jpstart.ui.fragment.MemoryFragment
+import com.github.pwcong.jpstart.ui.fragment.TranslateFragment
 import com.github.pwcong.jpstart.utils.ResourceUtils
 import com.github.pwcong.radiobuttonview.RadioButtonView
 import me.relex.circleindicator.CircleIndicator
@@ -195,14 +196,14 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), BaseView.MainActivityV
     }
 
     override fun switchTranslate() {
-//        mToolbar.setTitle(R.string.translate)
-//
-//        mRadioButtonView!!.visibility = View.GONE
-//
-//        supportFragmentManager.beginTransaction().replace(R.id.content_main, TranslateFragment())
-//            .commit()
-//
-//        Log.i(TAG, "switchTranslate: OK")
+        mToolbar.setTitle(R.string.translate)
+
+        mRadioButtonView.visibility = View.GONE
+
+        supportFragmentManager.beginTransaction().replace(R.id.content_main, TranslateFragment())
+            .commit()
+
+        Log.i(TAG, "switchTranslate: OK")
     }
 
     override fun switchGame() {

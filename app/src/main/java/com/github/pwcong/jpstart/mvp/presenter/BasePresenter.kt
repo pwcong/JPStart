@@ -42,5 +42,17 @@ abstract class BasePresenter<T>(val view: T) {
         fun checkMenuSelect(id: Int)
     }
 
+    interface TranslateFragmentPresenter {
+        fun initTranslateFragment()
+
+        fun checkFromLanguage(from: Int)
+
+        fun checkToLanguage(to: Int)
+
+        fun checkImageViewClick(id: Int)
+
+        fun doTranslate()
+    }
+
 
 }

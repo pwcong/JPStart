@@ -3,6 +3,8 @@ package com.github.pwcong.jpstart.mvp.model
 import com.github.pwcong.jpstart.mvp.bean.BannerItem
 import com.github.pwcong.jpstart.mvp.bean.JPItem
 import com.github.pwcong.jpstart.mvp.bean.JPTab
+import com.github.pwcong.jpstart.mvp.bean.TranslateBean
+import com.github.pwcong.jpstart.mvp.bean.TranslateSpinnerItem
 import rx.Subscriber
 
 interface BaseModel<T> {
@@ -24,11 +26,24 @@ interface BaseModel<T> {
         val aoYinWithoutHeader: List<JPItem>
     }
 
-
     interface PuzzleActivityModel {
         val options: Array<String>
 
         val items: List<JPItem>
     }
+
+    interface TranslateFragmentModel {
+        val fromList: List<TranslateSpinnerItem>
+
+        val toList: List<TranslateSpinnerItem>
+
+        fun translate(
+            q: String,
+            from: String,
+            to: String,
+            subscriber: Subscriber<TranslateBean>
+        )
+    }
+
 
 }
