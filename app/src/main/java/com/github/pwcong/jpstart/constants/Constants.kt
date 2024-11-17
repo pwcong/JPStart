@@ -1,8 +1,8 @@
-package com.github.pwcong.jpstart.constant
+package com.github.pwcong.jpstart.constants
 
 import android.os.Environment
 
-class Constant private constructor() {
+class Constants private constructor() {
     init {
         throw RuntimeException("/(ㄒoㄒ)/~~")
     }

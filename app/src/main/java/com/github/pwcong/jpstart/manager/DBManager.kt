@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase
 import com.github.pwcong.jpstart.App
 import com.github.pwcong.jpstart.R
 import com.github.pwcong.jpstart.comparator.JPItemComparator
-import com.github.pwcong.jpstart.constant.Constant
+import com.github.pwcong.jpstart.constants.Constants
 import com.github.pwcong.jpstart.db.JPStartDatabase
 import com.github.pwcong.jpstart.mvp.bean.JPItem
 import com.github.pwcong.jpstart.utils.ResourceUtils
@@ -79,7 +79,7 @@ class DBManager private constructor() {
             qingYin = mutableListOf()
             val query = query()
             for (item in query) {
-                if (item.category == Constant.CATEGORY_QINGYIN) {
+                if (item.category == Constants.CATEGORY_QINGYIN) {
                     qingYin!!.add(item)
                 }
             }
@@ -96,7 +96,7 @@ class DBManager private constructor() {
             zhuoYin = mutableListOf()
             val query = query()
             for (item in query) {
-                if (item.category == Constant.CATEGORY_ZHUOYIN) {
+                if (item.category == Constants.CATEGORY_ZHUOYIN) {
                     zhuoYin!!.add(item)
                 }
             }
@@ -113,7 +113,7 @@ class DBManager private constructor() {
             aoYin = mutableListOf()
             val query = query()
             for (item in query) {
-                if (item.category == Constant.CATEGORY_AOYIN) {
+                if (item.category == Constants.CATEGORY_AOYIN) {
                     aoYin!!.add(item)
                 }
             }

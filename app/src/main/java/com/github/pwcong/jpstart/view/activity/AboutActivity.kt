@@ -1,4 +1,4 @@
-package com.github.pwcong.jpstart.ui.activity
+package com.github.pwcong.jpstart.view.activity
 
 import android.Manifest
 import android.content.DialogInterface
@@ -10,8 +10,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.widget.Toolbar
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.blankj.utilcode.util.FileUtils
@@ -28,13 +26,8 @@ import java.io.FileOutputStream
 
 class AboutActivity : BaseActivity<ActivityAboutBinding>() {
     private val MY_PERMISSIONS_REQUEST_STORAGE = 10000
-
-    private lateinit var mRootLayout: CoordinatorLayout
-
-    private lateinit var mToolbar: Toolbar
-
-    private lateinit var mPwcongButton: Button
-
+    
+    private lateinit var pwcongButton: Button
     private lateinit var qrcodeImage: ImageView
 
     override fun initViewBinding(): ActivityAboutBinding {
@@ -42,9 +35,7 @@ class AboutActivity : BaseActivity<ActivityAboutBinding>() {
     }
 
     override fun init(savedInstanceState: Bundle?) {
-        mRootLayout = viewBinding.layoutRoot
-        mToolbar = viewBinding.toolbar
-        mPwcongButton = viewBinding.root.findViewById(R.id.btn_pwcong)
+        pwcongButton = viewBinding.root.findViewById(R.id.btn_pwcong)
         qrcodeImage = viewBinding.root.findViewById(R.id.img_qrcode)
 
         initToolbar()
@@ -53,13 +44,13 @@ class AboutActivity : BaseActivity<ActivityAboutBinding>() {
     }
 
     private fun initToolbar() {
-        mToolbar.setTitle(R.string.app_name)
-        setSupportActionBar(mToolbar)
-        mToolbar.setNavigationOnClickListener { finish() }
+        viewBinding.toolbar.setTitle(R.string.app_name)
+        setSupportActionBar(viewBinding.toolbar)
+        viewBinding.toolbar.setNavigationOnClickListener { finish() }
     }
 
     private fun initButton() {
-        mPwcongButton.setOnClickListener { ActivityUtils.openUrl(Constants.URL_PWCONG) }
+        pwcongButton.setOnClickListener { ActivityUtils.openUrl(Constants.URL_PWCONG) }
 
     }
 
@@ -126,15 +117,15 @@ class AboutActivity : BaseActivity<ActivityAboutBinding>() {
         }.observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io())
             .subscribe(object : Subscriber<Int>() {
                 override fun onCompleted() {
-                    showSnackBar(mRootLayout, R.string.success_to_save)
+                    showSnackBar(viewBinding.layoutRoot, R.string.success_to_save)
                 }
 
                 override fun onError(e: Throwable?) {
-                    showSnackBar(mRootLayout, R.string.fail_to_save)
+                    showSnackBar(viewBinding.layoutRoot, R.string.fail_to_save)
                 }
 
                 override fun onNext(s: Int) {
-                    showSnackBar(mRootLayout, s)
+                    showSnackBar(viewBinding.layoutRoot, s)
                 }
             })
     }

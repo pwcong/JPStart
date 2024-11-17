@@ -7,7 +7,7 @@ import android.widget.BaseAdapter
 import android.widget.Button
 import android.widget.TextView
 import com.github.pwcong.jpstart.R
-import com.github.pwcong.jpstart.constant.Constant
+import com.github.pwcong.jpstart.constants.Constants
 import com.github.pwcong.jpstart.mvp.bean.JPItem
 import com.github.pwcong.jpstart.utils.ResourceUtils
 
@@ -51,7 +51,7 @@ class MemorySwipeAdapter(private var list: List<JPItem>) : BaseAdapter() {
 
         holder.tv_rome!!.text = item.rome
 
-        if (item.category == Constant.CATEGORY_AOYIN) {
+        if (item.category == Constants.CATEGORY_AOYIN) {
             holder.tv_hiragana
                 ?.setTextSize(
                     ResourceUtils.getDimension(
@@ -78,7 +78,7 @@ class MemorySwipeAdapter(private var list: List<JPItem>) : BaseAdapter() {
             }
         }
 
-        if (item.category == Constant.CATEGORY_AOYIN) {
+        if (item.category == Constants.CATEGORY_AOYIN) {
             holder.btn_write!!.isEnabled = false
         } else {
             holder.btn_write!!.isEnabled = true

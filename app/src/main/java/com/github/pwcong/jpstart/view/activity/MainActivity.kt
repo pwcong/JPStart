@@ -1,4 +1,4 @@
-package com.github.pwcong.jpstart.ui.activity
+package com.github.pwcong.jpstart.view.activity
 
 import android.content.DialogInterface
 import android.content.Intent
@@ -11,9 +11,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.widget.Toolbar.LayoutParams
 import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.viewpager.widget.ViewPager
-import com.google.android.material.navigation.NavigationView
 import com.github.pwcong.jpstart.R
 import com.github.pwcong.jpstart.adapter.BannerPagerAdapter
 import com.github.pwcong.jpstart.databinding.ActivityMainBinding
@@ -24,10 +22,10 @@ import com.github.pwcong.jpstart.mvp.presenter.impl.MainActivityPresenterImpl
 import com.github.pwcong.jpstart.mvp.view.BaseView
 import com.github.pwcong.jpstart.rxbus.RxBus
 import com.github.pwcong.jpstart.rxbus.event.EventContainer
-import com.github.pwcong.jpstart.ui.fragment.GameFragment
-import com.github.pwcong.jpstart.ui.fragment.JPStartTabFragment
-import com.github.pwcong.jpstart.ui.fragment.MemoryFragment
-import com.github.pwcong.jpstart.ui.fragment.TranslateFragment
+import com.github.pwcong.jpstart.view.fragment.GameFragment
+import com.github.pwcong.jpstart.view.fragment.JPStartTabFragment
+import com.github.pwcong.jpstart.view.fragment.MemoryFragment
+import com.github.pwcong.jpstart.view.fragment.TranslateFragment
 import com.github.pwcong.jpstart.utils.ResourceUtils
 import com.github.pwcong.radiobuttonview.RadioButtonView
 import me.relex.circleindicator.CircleIndicator
@@ -43,15 +41,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), BaseView.MainActivityV
     private val TAG: String = javaClass.simpleName
 
     private lateinit var mToolbar: Toolbar
-
-    private lateinit var mDrawerLayout: DrawerLayout
-
-    private lateinit var mNavigationView: NavigationView
-
     private lateinit var mBannerViewPager: ViewPager
     private lateinit var mCircleIndicator: CircleIndicator
-
     private lateinit var mRadioButtonView: RadioButtonView
+
     private lateinit var busSubscription: Subscription
     private var bannerSubscription: Subscription? = null
 
@@ -110,34 +103,32 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), BaseView.MainActivityV
     }
 
     private fun initDrawerLayout() {
-        mDrawerLayout = getViewBinding().drawerLayout
         val toggle = ActionBarDrawerToggle(
             this,
-            mDrawerLayout,
+            viewBinding.drawerLayout,
             mToolbar,
             R.string.navigation_drawer_open,
             R.string.navigation_drawer_close
         )
-        mDrawerLayout.addDrawerListener(toggle)
+        viewBinding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
         Log.i(TAG, "initDrawerLayout: OK")
     }
 
     private fun initNavigationView() {
-        mNavigationView = getViewBinding().navView
-        mNavigationView.setNavigationItemSelectedListener { item ->
+        viewBinding.navView.setNavigationItemSelectedListener { item ->
             presenter.onNavigationItemSelected(item.itemId)
             Log.i(TAG, "onNavigationItemSelected: OK")
             true
         }
-        mNavigationView.setCheckedItem(R.id.item_jpstart)
+        viewBinding.navView.setCheckedItem(R.id.item_jpstart)
 
         Log.i(TAG, "initNavigationView: OK")
     }
 
     private fun initBanner() {
-        val view = mNavigationView.getHeaderView(0)
+        val view = viewBinding.navView.getHeaderView(0)
 
         mBannerViewPager = view.findViewById<View>(R.id.banner_view_pager) as ViewPager
         mCircleIndicator = view.findViewById<View>(R.id.indicator) as CircleIndicator
@@ -146,7 +137,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), BaseView.MainActivityV
     override fun onBackPressed() {
         super.onBackPressed()
 
-        if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
+        if (viewBinding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
             closeDrawer()
         } else {
             if ((System.currentTimeMillis() - mExitTime) > 2000) {
@@ -160,12 +151,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), BaseView.MainActivityV
     }
 
     override fun openDrawer() {
-        mDrawerLayout.openDrawer(GravityCompat.START)
+        viewBinding.drawerLayout.openDrawer(GravityCompat.START)
         Log.i(TAG, "openDrawer: OK")
     }
 
     override fun closeDrawer() {
-        mDrawerLayout.closeDrawer(GravityCompat.START)
+        viewBinding.drawerLayout.closeDrawer(GravityCompat.START)
         Log.i(TAG, "closeDrawer: OK")
     }
 

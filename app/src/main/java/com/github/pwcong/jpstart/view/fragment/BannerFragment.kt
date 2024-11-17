@@ -1,4 +1,4 @@
-package com.github.pwcong.jpstart.ui.fragment
+package com.github.pwcong.jpstart.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -22,13 +22,10 @@ class BannerFragment : BaseFragment<FragmentBannerBinding>() {
         return FragmentBannerBinding.inflate(inflater, container, false)
     }
 
-    override fun initVariable(savedInstanceState: Bundle?) {
-        mImageView = getViewBinding().ivBanner
-
+    override fun init(savedInstanceState: Bundle?) {
+        mImageView = viewBinding.ivBanner
         banner = requireArguments().getInt(Constants.IMG_BANNER)
-    }
 
-    override fun doAction() {
         context?.let { Glide.with(it).asBitmap().load(banner).into(mImageView) }
     }
 

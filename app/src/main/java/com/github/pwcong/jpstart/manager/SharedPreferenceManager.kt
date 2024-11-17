@@ -4,11 +4,11 @@ import android.content.Context
 import android.content.SharedPreferences
 
 import com.github.pwcong.jpstart.App
-import com.github.pwcong.jpstart.constant.Constant
+import com.github.pwcong.jpstart.constants.Constants
 
 class SharedPreferenceManager private constructor() {
     private val sharedPreferences: SharedPreferences = App.getInstance()
-        .getSharedPreferences(Constant.PREF_NAME, Context.MODE_PRIVATE)
+        .getSharedPreferences(Constants.PREF_NAME, Context.MODE_PRIVATE)
 
     fun getString(key: String?, defValue: String?): String? {
         return sharedPreferences.getString(key, defValue)

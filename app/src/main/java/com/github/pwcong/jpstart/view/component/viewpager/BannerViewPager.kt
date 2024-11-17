@@ -1,4 +1,4 @@
-package com.github.pwcong.jpstart.ui.component.viewpager
+package com.github.pwcong.jpstart.view.component.viewpager
 
 import android.content.Context
 import android.util.AttributeSet

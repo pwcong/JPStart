@@ -3,7 +3,7 @@ package com.github.pwcong.jpstart.adapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.github.pwcong.jpstart.mvp.bean.BannerItem
-import com.github.pwcong.jpstart.ui.fragment.BannerFragment
+import com.github.pwcong.jpstart.view.fragment.BannerFragment
 
 class BannerPagerAdapter(fm: FragmentManager, list: List<BannerItem>) :
     BasePagerAdapter<BannerItem>(fm, list) {

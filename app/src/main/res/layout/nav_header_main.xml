@@ -5,7 +5,7 @@
     android:background="@color/colorPrimary"
     android:paddingTop="12dp">
 
-    <com.github.pwcong.jpstart.ui.component.viewpager.BannerViewPager
+    <com.github.pwcong.jpstart.view.component.viewpager.BannerViewPager
         android:id="@+id/banner_view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

@@ -5,7 +5,7 @@ import android.util.Log
 
 import com.github.pwcong.jpstart.App
 import com.github.pwcong.jpstart.R
-import com.github.pwcong.jpstart.constant.Constant
+import com.github.pwcong.jpstart.constants.Constants
 import com.github.pwcong.jpstart.manager.SharedPreferenceManager
 import com.github.pwcong.jpstart.mvp.model.BaseModel.MainActivityModel
 import com.github.pwcong.jpstart.mvp.model.impl.MainActivityModelImpl
@@ -29,8 +29,8 @@ class MainActivityPresenterImpl(view: MainActivityView) : BasePresenter<MainActi
 
     override fun onRadioButtonChanged(position: Int) {
         when (position) {
-            0 -> App.TYPE_MING = Constant.TYPE_HIRAGANA
-            1 -> App.TYPE_MING = Constant.TYPE_KATAKANA
+            0 -> App.TYPE_MING = Constants.TYPE_HIRAGANA
+            1 -> App.TYPE_MING = Constants.TYPE_KATAKANA
             else -> {}
         }
         view.switchJPStart()
@@ -42,14 +42,14 @@ class MainActivityPresenterImpl(view: MainActivityView) : BasePresenter<MainActi
                 view.switchJPStart()
 
                 if (SharedPreferenceManager.getInstance()
-                        .getBoolean(Constant.FLAG_TIPS_JPSTART, true)
+                        .getBoolean(Constants.FLAG_TIPS_JPSTART, true)
                 ) {
                     view.showAlertDialog(R.string.small_tips,
                         R.string.tips_jpstart, R.string.remember,
                         { dialog, which -> dialog.dismiss() }, R.string.do_not_remind,
                         { dialog, which ->
                             SharedPreferenceManager.getInstance().putBoolean(
-                                Constant.FLAG_TIPS_JPSTART,
+                                Constants.FLAG_TIPS_JPSTART,
                                 false
                             )
                             dialog.dismiss()
@@ -59,14 +59,14 @@ class MainActivityPresenterImpl(view: MainActivityView) : BasePresenter<MainActi
 
             R.id.item_memory -> {
                 if (SharedPreferenceManager.getInstance()
-                        .getBoolean(Constant.FLAG_TIPS_MEMORY, true)
+                        .getBoolean(Constants.FLAG_TIPS_MEMORY, true)
                 ) {
                     view.showAlertDialog(R.string.small_tips,
                         R.string.tips_memory, R.string.remember,
                         { dialog, which -> dialog.dismiss() }, R.string.do_not_remind,
                         { dialog, which ->
                             SharedPreferenceManager.getInstance()
-                                .putBoolean(Constant.FLAG_TIPS_MEMORY, false)
+                                .putBoolean(Constants.FLAG_TIPS_MEMORY, false)
                             dialog.dismiss()
                         })
                 }
@@ -78,14 +78,14 @@ class MainActivityPresenterImpl(view: MainActivityView) : BasePresenter<MainActi
                 view.switchTranslate()
 
                 if (SharedPreferenceManager.getInstance()
-                        .getBoolean(Constant.FLAG_TIPS_TRANSLATE, true)
+                        .getBoolean(Constants.FLAG_TIPS_TRANSLATE, true)
                 ) {
                     view.showAlertDialog(R.string.small_tips,
                         R.string.tips_translate, R.string.remember,
                         { dialog, which -> dialog.dismiss() }, R.string.do_not_remind,
                         { dialog, which ->
                             SharedPreferenceManager.getInstance().putBoolean(
-                                Constant.FLAG_TIPS_TRANSLATE,
+                                Constants.FLAG_TIPS_TRANSLATE,
                                 false
                             )
                             dialog.dismiss()
@@ -110,8 +110,8 @@ class MainActivityPresenterImpl(view: MainActivityView) : BasePresenter<MainActi
                 val photoViewEvent = eventContainer.event as PhotoViewEvent
 
                 val bundle = Bundle()
-                bundle.putString(Constant.IMG_URL, photoViewEvent.img_url)
-                bundle.putInt(Constant.IMG_ID, photoViewEvent.img_id)
+                bundle.putString(Constants.IMG_URL, photoViewEvent.img_url)
+                bundle.putInt(Constants.IMG_ID, photoViewEvent.img_id)
 
                 view.startPhotoViewActivity(bundle)
             }

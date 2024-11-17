@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.github.pwcong.jpstart.App
 import com.github.pwcong.jpstart.R
-import com.github.pwcong.jpstart.constant.Constant
+import com.github.pwcong.jpstart.constants.Constants
 import com.github.pwcong.jpstart.mvp.bean.JPItem
 
 class JPStartRecyclerAdapter(private val list: List<JPItem>) :
@@ -18,10 +18,10 @@ class JPStartRecyclerAdapter(private val list: List<JPItem>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view: View
 
-        if (viewType == Constant.TYPE_HEADER) {
+        if (viewType == Constants.TYPE_HEADER) {
             view = LayoutInflater.from(parent.context)
                 .inflate(R.layout.item_jpitem_header, parent, false)
-        } else if (viewType == Constant.TYPE_ITEM_DISABLE) {
+        } else if (viewType == Constants.TYPE_ITEM_DISABLE) {
             view = LayoutInflater.from(parent.context)
                 .inflate(R.layout.item_jpitem_disable, parent, false)
         } else {
@@ -33,7 +33,7 @@ class JPStartRecyclerAdapter(private val list: List<JPItem>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = list[position]
 
-        if (App.TYPE_MING == Constant.TYPE_HIRAGANA) {
+        if (App.TYPE_MING == Constants.TYPE_HIRAGANA) {
             holder.tv_jiaming.text = item.hiragana
         } else {
             holder.tv_jiaming.text = item.katakana
@@ -45,14 +45,14 @@ class JPStartRecyclerAdapter(private val list: List<JPItem>) :
 
         holder.item = item
 
-        if (getItemViewType(position) == Constant.TYPE_ITEM && holder.item!!.isExisted) {
+        if (getItemViewType(position) == Constants.TYPE_ITEM && holder.item!!.isExisted) {
             holder.view.setOnClickListener {
                 if (onItemClickListener != null) {
                     onItemClickListener!!.onClick(holder.item!!)
                 }
             }
 
-            if (holder.item!!.category != Constant.CATEGORY_AOYIN) {
+            if (holder.item!!.category != Constants.CATEGORY_AOYIN) {
                 holder.view.setOnLongClickListener {
                     if (onItemLongClickListener != null) {
                         onItemLongClickListener!!.onLongClick(holder.item!!)

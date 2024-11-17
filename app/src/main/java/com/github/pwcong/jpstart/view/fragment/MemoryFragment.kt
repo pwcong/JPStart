@@ -1,4 +1,4 @@
-package com.github.pwcong.jpstart.ui.fragment
+package com.github.pwcong.jpstart.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -16,7 +16,7 @@ import com.github.pwcong.jpstart.mvp.bean.JPItem
 import com.github.pwcong.jpstart.mvp.presenter.BasePresenter
 import com.github.pwcong.jpstart.mvp.presenter.impl.MemoryFragmentPresenterImpl
 import com.github.pwcong.jpstart.mvp.view.BaseView.MemoryFragmentView
-import com.github.pwcong.jpstart.ui.component.dialog.ImageDialog
+import com.github.pwcong.jpstart.view.component.dialog.ImageDialog
 import com.github.pwcong.jpstart.utils.ResourceUtils
 import com.github.pwcong.swipecards.SwipeFlingAdapterView
 import com.github.pwcong.textdrawable.view.TextDrawable
@@ -39,13 +39,15 @@ class MemoryFragment : BaseFragment<FragmentMemoryBinding>(), MemoryFragmentView
         return FragmentMemoryBinding.inflate(inflater, container, false)
     }
 
-    override fun initVariable(savedInstanceState: Bundle?) {
-        mFabMenu = getViewBinding().fabMenu
-        mSwipeFlingAdapterView = getViewBinding().swipeView
+    override fun init(savedInstanceState: Bundle?) {
+        mFabMenu = viewBinding.fabMenu
+        mSwipeFlingAdapterView = viewBinding.swipeView
         presenter = MemoryFragmentPresenterImpl(this)
 
         initSwipeFlingAdapterView()
         initFabMenu()
+
+        presenter.initMemoryFragment()
     }
 
     private fun initSwipeFlingAdapterView() {
@@ -129,10 +131,6 @@ class MemoryFragment : BaseFragment<FragmentMemoryBinding>(), MemoryFragmentView
         mFabMenu.addButton(fabQingyin)
         mFabMenu.addButton(fabZhuoyin)
         mFabMenu.addButton(fabAoyin)
-    }
-
-    override fun doAction() {
-        presenter.initMemoryFragment()
     }
 
     override fun setData(data: List<JPItem>) {

@@ -1,4 +1,4 @@
-package com.github.pwcong.jpstart.ui.fragment
+package com.github.pwcong.jpstart.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -16,7 +16,7 @@ import com.github.pwcong.jpstart.mvp.bean.JPItem
 import com.github.pwcong.jpstart.mvp.presenter.BasePresenter.JPStartFragmentPresenter
 import com.github.pwcong.jpstart.mvp.presenter.impl.JPStartFragmentPresenterImpl
 import com.github.pwcong.jpstart.mvp.view.BaseView.JPStartFragmentView
-import com.github.pwcong.jpstart.ui.component.dialog.ImageDialog
+import com.github.pwcong.jpstart.view.component.dialog.ImageDialog
 import com.github.pwcong.jpstart.utils.ResourceUtils
 
 class JPStartFragment : BaseFragment<FragmentJpstartBinding>(), JPStartFragmentView {
@@ -34,15 +34,12 @@ class JPStartFragment : BaseFragment<FragmentJpstartBinding>(), JPStartFragmentV
         return FragmentJpstartBinding.inflate(inflater, container, false)
     }
 
-    override fun initVariable(savedInstanceState: Bundle?) {
-        mRecyclerView = getViewBinding().recyclerView
+    override fun init(savedInstanceState: Bundle?) {
+        mRecyclerView = viewBinding.recyclerView
 
         categoryYin = requireArguments().getInt(Constants.CATEGORY_YIN)
 
         presenter = JPStartFragmentPresenterImpl(this)
-    }
-
-    override fun doAction() {
         presenter.initJPStartFragment(categoryYin)
     }
 

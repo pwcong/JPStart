@@ -2,7 +2,7 @@ package com.github.pwcong.jpstart.mvp.presenter.impl
 
 
 import com.github.pwcong.jpstart.R
-import com.github.pwcong.jpstart.constant.Constant
+import com.github.pwcong.jpstart.constants.Constants
 import com.github.pwcong.jpstart.mvp.model.BaseModel
 import com.github.pwcong.jpstart.mvp.model.impl.MemoryFragmentModelImpl
 import com.github.pwcong.jpstart.mvp.presenter.BasePresenter
@@ -15,7 +15,7 @@ class MemoryFragmentPresenterImpl(view: MemoryFragmentView) :
     private val model: BaseModel.MemoryFragmentModel = MemoryFragmentModelImpl()
 
     override fun initMemoryFragment() {
-        setDate(Constant.CATEGORY_QINGYIN)
+        setDate(Constants.CATEGORY_QINGYIN)
     }
 
     override fun loadMore(category: Int) {
@@ -25,11 +25,11 @@ class MemoryFragmentPresenterImpl(view: MemoryFragmentView) :
 
     override fun setDate(category: Int) {
         when (category) {
-            Constant.CATEGORY_QINGYIN -> view.setData(model.qingYinWithoutHeader)
+            Constants.CATEGORY_QINGYIN -> view.setData(model.qingYinWithoutHeader)
 
-            Constant.CATEGORY_ZHUOYIN -> view.setData(model.zhuoYinWithoutHeader)
+            Constants.CATEGORY_ZHUOYIN -> view.setData(model.zhuoYinWithoutHeader)
 
-            Constant.CATEGORY_AOYIN -> view.setData(model.aoYinWithoutHeader)
+            Constants.CATEGORY_AOYIN -> view.setData(model.aoYinWithoutHeader)
 
             else -> {}
         }

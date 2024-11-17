@@ -1,4 +1,4 @@
-package com.github.pwcong.jpstart.ui.fragment
+package com.github.pwcong.jpstart.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding
 import com.google.android.material.snackbar.Snackbar
 
 abstract class BaseFragment<T : ViewBinding> : Fragment() {
-    private lateinit var viewBinding: T
+    lateinit var viewBinding: T
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,22 +22,15 @@ abstract class BaseFragment<T : ViewBinding> : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initVariable(savedInstanceState)
-        doAction()
-    }
-
-    protected fun getViewBinding(): T {
-        return viewBinding
+        init(savedInstanceState)
     }
 
     protected abstract fun initViewBinding(inflater: LayoutInflater, container: ViewGroup?): T
 
-    protected abstract fun initVariable(savedInstanceState: Bundle?)
+    protected abstract fun init(savedInstanceState: Bundle?)
 
-    protected abstract fun doAction()
-
-    fun showSnackBar(msg: String?) {
-        Snackbar.make(requireView(), msg!!, Snackbar.LENGTH_SHORT).show()
+    fun showSnackBar(msg: String) {
+        Snackbar.make(requireView(), msg, Snackbar.LENGTH_SHORT).show()
     }
 
     fun showSnackBar(msg: Int) {

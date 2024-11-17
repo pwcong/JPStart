@@ -1,4 +1,4 @@
-package com.github.pwcong.jpstart.ui.fragment
+package com.github.pwcong.jpstart.view.fragment
 
 
 import android.os.Bundle
@@ -22,8 +22,8 @@ class GameFragment : BaseFragment<FragmentGameBinding>() {
         return FragmentGameBinding.inflate(inflater, container, false)
     }
 
-    override fun initVariable(savedInstanceState: Bundle?) {
-        mPuzzleCardView = getViewBinding().root.findViewById(R.id.cv_puzzle)
+    override fun init(savedInstanceState: Bundle?) {
+        mPuzzleCardView = viewBinding.root.findViewById(R.id.cv_puzzle)
         mPuzzleCardView.setOnClickListener {
             RxBus.getDefault()
                 .post(
@@ -33,8 +33,5 @@ class GameFragment : BaseFragment<FragmentGameBinding>() {
                     )
                 )
         }
-    }
-
-    override fun doAction() {
     }
 }

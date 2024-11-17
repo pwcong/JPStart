@@ -1,4 +1,4 @@
-package com.github.pwcong.jpstart.ui.activity
+package com.github.pwcong.jpstart.view.activity
 
 import android.os.Bundle
 import android.view.View
@@ -9,7 +9,7 @@ import com.github.pwcong.jpstart.databinding.ActivitySettingBinding
 import com.github.pwcong.jpstart.rxbus.RxBus
 import com.github.pwcong.jpstart.rxbus.event.EventContainer
 import com.github.pwcong.jpstart.rxbus.event.SettingEvent
-import com.github.pwcong.jpstart.ui.fragment.SettingFragment
+import com.github.pwcong.jpstart.view.fragment.SettingFragment
 import rx.Subscription
 
 class SettingActivity : BaseActivity<ActivitySettingBinding>() {
@@ -27,8 +27,8 @@ class SettingActivity : BaseActivity<ActivitySettingBinding>() {
     }
 
     override fun init(savedInstanceState: Bundle?) {
-        mRootLayout = getViewBinding().layoutRoot
-        mToolbar = getViewBinding().toolbar
+        mRootLayout = viewBinding.layoutRoot
+        mToolbar = viewBinding.toolbar
 
         if (!registered) {
             subscription = RxBus.getDefault().toObserverable(EventContainer::class.java)

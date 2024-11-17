@@ -2,7 +2,7 @@ package com.github.pwcong.jpstart.mvp.presenter.impl
 
 import com.github.pwcong.jpstart.App
 import com.github.pwcong.jpstart.R
-import com.github.pwcong.jpstart.constant.Constant
+import com.github.pwcong.jpstart.constants.Constants
 import com.github.pwcong.jpstart.manager.ActivityManager
 import com.github.pwcong.jpstart.manager.SharedPreferenceManager
 import com.github.pwcong.jpstart.mvp.bean.JPItem
@@ -11,7 +11,7 @@ import com.github.pwcong.jpstart.mvp.model.impl.PuzzleActivityModelImpl
 import com.github.pwcong.jpstart.mvp.presenter.BasePresenter
 import com.github.pwcong.jpstart.mvp.presenter.BasePresenter.PuzzleActivityPresenter
 import com.github.pwcong.jpstart.mvp.view.BaseView.PuzzleActivityView
-import com.github.pwcong.jpstart.ui.activity.PuzzleActivity
+import com.github.pwcong.jpstart.view.activity.PuzzleActivity
 import com.github.pwcong.jpstart.utils.ResourceUtils
 
 class PuzzleActivityPresenterImpl(view: PuzzleActivityView) :
@@ -104,7 +104,7 @@ class PuzzleActivityPresenterImpl(view: PuzzleActivityView) :
             )
 
             R.id.menu_ranking -> {
-                val hs = SharedPreferenceManager.getInstance().getInt(Constant.HIGHEST_SCORE, 0)
+                val hs = SharedPreferenceManager.getInstance().getInt(Constants.HIGHEST_SCORE, 0)
 
                 view.showDialog(
                     R.drawable.ic_filter_list_black_24dp, R.string.highedt_score,

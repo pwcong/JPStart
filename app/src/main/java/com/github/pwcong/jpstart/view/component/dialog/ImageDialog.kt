@@ -1,4 +1,4 @@
-package com.github.pwcong.jpstart.ui.component.dialog
+package com.github.pwcong.jpstart.view.component.dialog
 
 import android.app.Dialog
 import android.content.Context

@@ -21,7 +21,7 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity
-            android:name=".ui.activity.SplashActivity"
+            android:name=".view.activity.SplashActivity"
             android:configChanges="locale"
             android:exported="true"
             android:theme="@style/Theme.Design.NoActionBar">
@@ -32,24 +32,29 @@
         </activity>
 
         <activity
-            android:name=".ui.activity.MainActivity"
+            android:name=".view.activity.MainActivity"
             android:configChanges="locale"
             android:label="@string/jp_start" />
 
         <activity
-            android:name=".ui.activity.SettingActivity"
+            android:name=".view.activity.SettingActivity"
             android:configChanges="locale"
             android:label="@string/setting" />
 
         <activity
-            android:name=".ui.activity.PuzzleActivity"
+            android:name=".view.activity.PuzzleActivity"
             android:configChanges="locale"
             android:label="@string/whoami" />
 
         <activity
-            android:name=".ui.activity.AboutActivity"
+            android:name=".view.activity.AboutActivity"
             android:configChanges="locale"
             android:label="@string/about" />
+
+        <activity
+            android:name=".view.activity.PhotoViewActivity"
+            android:configChanges="locale"
+            android:label="@string/photoview" />
 
     </application>
 

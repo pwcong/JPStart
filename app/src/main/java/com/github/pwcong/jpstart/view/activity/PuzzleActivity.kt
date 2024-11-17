@@ -1,4 +1,4 @@
-package com.github.pwcong.jpstart.ui.activity
+package com.github.pwcong.jpstart.view.activity
 
 import android.content.DialogInterface
 import android.os.Bundle
@@ -54,14 +54,14 @@ class PuzzleActivity : BaseActivity<ActivityPuzzleBinding>(), PuzzleActivityView
     }
 
     override fun init(savedInstanceState: Bundle?) {
-        mToolbar = getViewBinding().root.findViewById(R.id.toolbar)
-        mShowTextView = getViewBinding().tvShow
-        mCountTextView = getViewBinding().tvCount
-        mTipsTextView = getViewBinding().tvTips
-        mButton1 = getViewBinding().btnAnswer1
-        mButton2 = getViewBinding().btnAnswer2
-        mButton3 = getViewBinding().btnAnswer3
-        mButton4 = getViewBinding().btnAnswer4
+        mToolbar = viewBinding.root.findViewById(R.id.toolbar)
+        mShowTextView = viewBinding.tvShow
+        mCountTextView = viewBinding.tvCount
+        mTipsTextView = viewBinding.tvTips
+        mButton1 = viewBinding.btnAnswer1
+        mButton2 = viewBinding.btnAnswer2
+        mButton3 = viewBinding.btnAnswer3
+        mButton4 = viewBinding.btnAnswer4
 
         presenter = PuzzleActivityPresenterImpl(this)
 

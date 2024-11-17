@@ -1,4 +1,4 @@
-package com.github.pwcong.jpstart.ui.activity
+package com.github.pwcong.jpstart.view.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -64,12 +64,12 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
                 }
 
                 override fun onError(e: Throwable) {
-                    getViewBinding().tvTips.text =
+                    viewBinding.tvTips.text =
                         ResourceUtils.getString(this@SplashActivity, R.string.loading_data_error)
                 }
 
                 override fun onNext(t: String?) {
-                    getViewBinding().tvTips.text = t
+                    viewBinding.tvTips.text = t
                 }
             })
     }

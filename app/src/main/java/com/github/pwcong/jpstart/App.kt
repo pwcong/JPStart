@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate
 import com.blankj.utilcode.util.NetworkUtils
 
-import com.github.pwcong.jpstart.constant.Constant
+import com.github.pwcong.jpstart.constants.Constants
 import com.github.pwcong.jpstart.manager.SharedPreferenceManager
 
 class App : Application() {
@@ -14,8 +14,8 @@ class App : Application() {
 
         setDayNightMode(
             SharedPreferenceManager.getInstance().getString(
-                Constant.MODE_THEME,
-                Constant.MODE_DAY
+                Constants.MODE_THEME,
+                Constants.MODE_DAY
             )
         )
 
@@ -24,15 +24,15 @@ class App : Application() {
 
     private fun setDayNightMode(mode: String?) {
         when (mode) {
-            Constant.MODE_AUTO -> AppCompatDelegate.setDefaultNightMode(
+            Constants.MODE_AUTO -> AppCompatDelegate.setDefaultNightMode(
                 AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
             )
 
-            Constant.MODE_NIGHT -> AppCompatDelegate.setDefaultNightMode(
+            Constants.MODE_NIGHT -> AppCompatDelegate.setDefaultNightMode(
                 AppCompatDelegate.MODE_NIGHT_YES
             )
 
-            Constant.MODE_DAY -> AppCompatDelegate.setDefaultNightMode(
+            Constants.MODE_DAY -> AppCompatDelegate.setDefaultNightMode(
                 AppCompatDelegate.MODE_NIGHT_NO
             )
 
@@ -44,7 +44,7 @@ class App : Application() {
         private lateinit var instance: App
 
         var CURRENT_ITEM: Int = 0
-        var TYPE_MING: Int = Constant.TYPE_HIRAGANA
+        var TYPE_MING: Int = Constants.TYPE_HIRAGANA
 
         var FROM_LAN: Int = 0
         var TO_LAN: Int = 0

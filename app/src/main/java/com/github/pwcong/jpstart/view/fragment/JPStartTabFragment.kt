@@ -1,4 +1,4 @@
-package com.github.pwcong.jpstart.ui.fragment
+package com.github.pwcong.jpstart.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -28,14 +28,16 @@ class JPStartTabFragment : BaseFragment<FragmentTabBinding>(), JPStartTabFragmen
         return FragmentTabBinding.inflate(inflater, container, false)
     }
 
-    override fun initVariable(savedInstanceState: Bundle?) {
-        mTabLayout = getViewBinding().tabLayout
-        mViewPager = getViewBinding().viewPager
+    override fun init(savedInstanceState: Bundle?) {
+        mTabLayout = viewBinding.tabLayout
+        mViewPager = viewBinding.viewPager
 
         presenter = JPStartTabFragmentPresenterImpl(this)
 
         initTabLayout()
         initViewPager()
+
+        presenter.initJPStartTabFragment()
     }
 
     private fun initTabLayout() {
@@ -58,10 +60,6 @@ class JPStartTabFragment : BaseFragment<FragmentTabBinding>(), JPStartTabFragmen
             override fun onPageScrollStateChanged(state: Int) {
             }
         })
-    }
-
-    override fun doAction() {
-        presenter.initJPStartTabFragment()
     }
 
     override fun scrollViewPager(position: Int) {

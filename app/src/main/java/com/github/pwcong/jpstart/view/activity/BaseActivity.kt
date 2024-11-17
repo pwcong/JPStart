@@ -1,4 +1,4 @@
-package com.github.pwcong.jpstart.ui.activity
+package com.github.pwcong.jpstart.view.activity
 
 import android.content.Context
 import android.content.DialogInterface
@@ -108,6 +108,7 @@ abstract class BaseActivity<T : ViewBinding> : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+
         ActivityManager.getInstance().setCurrent(this)
     }
 }

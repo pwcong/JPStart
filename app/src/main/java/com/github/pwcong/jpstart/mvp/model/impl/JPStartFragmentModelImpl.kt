@@ -1,6 +1,6 @@
 package com.github.pwcong.jpstart.mvp.model.impl
 
-import com.github.pwcong.jpstart.constant.Constant
+import com.github.pwcong.jpstart.constants.Constants
 import com.github.pwcong.jpstart.manager.DBManager
 import com.github.pwcong.jpstart.mvp.bean.JPItem
 import com.github.pwcong.jpstart.mvp.model.BaseModel.JPStartFragmentModel
@@ -14,11 +14,11 @@ class JPStartFragmentModelImpl : JPStartFragmentModel {
         Observable.create { subscriber ->
             subscriber.onStart()
             val list: List<JPItem>? = when (category) {
-                Constant.CATEGORY_QINGYIN -> DBManager.getInstance().getQingYin()
+                Constants.CATEGORY_QINGYIN -> DBManager.getInstance().getQingYin()
 
-                Constant.CATEGORY_ZHUOYIN -> DBManager.getInstance().getZhuoYin()
+                Constants.CATEGORY_ZHUOYIN -> DBManager.getInstance().getZhuoYin()
 
-                Constant.CATEGORY_AOYIN -> DBManager.getInstance().getAoYin()
+                Constants.CATEGORY_AOYIN -> DBManager.getInstance().getAoYin()
 
                 else -> null
             }
