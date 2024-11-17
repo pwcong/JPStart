@@ -8,7 +8,7 @@ import com.github.pwcong.floatingactionbutton.FloatingActionButton
 import com.github.pwcong.floatingactionbutton.FloatingActionsMenu
 import com.github.pwcong.jpstart.R
 import com.github.pwcong.jpstart.adapter.MemorySwipeAdapter
-import com.github.pwcong.jpstart.constant.Constant
+import com.github.pwcong.jpstart.constants.Constants
 import com.github.pwcong.jpstart.databinding.FragmentMemoryBinding
 import com.github.pwcong.jpstart.manager.GifManager
 import com.github.pwcong.jpstart.manager.SoundPoolManager
@@ -30,7 +30,7 @@ class MemoryFragment : BaseFragment<FragmentMemoryBinding>(), MemoryFragmentView
     private var adapter: MemorySwipeAdapter? = null
     private lateinit var presenter: BasePresenter.MemoryFragmentPresenter
 
-    private var category: Int = Constant.CATEGORY_QINGYIN
+    private var category: Int = Constants.CATEGORY_QINGYIN
 
     override fun initViewBinding(
         inflater: LayoutInflater,
@@ -85,8 +85,8 @@ class MemoryFragment : BaseFragment<FragmentMemoryBinding>(), MemoryFragmentView
         fabQingyin.setColorNormal(requireContext().resources.getColor(R.color.green))
         fabQingyin.setColorPressed(requireContext().resources.getColor(R.color.window))
         fabQingyin.setOnClickListener {
-            presenter.setDate(Constant.CATEGORY_QINGYIN)
-            category = Constant.CATEGORY_QINGYIN
+            presenter.setDate(Constants.CATEGORY_QINGYIN)
+            category = Constants.CATEGORY_QINGYIN
             hideFabMenu()
         }
 
@@ -103,8 +103,8 @@ class MemoryFragment : BaseFragment<FragmentMemoryBinding>(), MemoryFragmentView
         fabZhuoyin.setColorNormal(requireContext().resources.getColor(R.color.orange))
         fabZhuoyin.setColorPressed(requireContext().resources.getColor(R.color.window))
         fabZhuoyin.setOnClickListener {
-            presenter.setDate(Constant.CATEGORY_ZHUOYIN)
-            category = Constant.CATEGORY_ZHUOYIN
+            presenter.setDate(Constants.CATEGORY_ZHUOYIN)
+            category = Constants.CATEGORY_ZHUOYIN
             hideFabMenu()
         }
 
@@ -121,8 +121,8 @@ class MemoryFragment : BaseFragment<FragmentMemoryBinding>(), MemoryFragmentView
         fabAoyin.setColorNormal(requireContext().resources.getColor(R.color.blue))
         fabAoyin.setColorPressed(requireContext().resources.getColor(R.color.window))
         fabAoyin.setOnClickListener {
-            presenter.setDate(Constant.CATEGORY_AOYIN)
-            category = Constant.CATEGORY_AOYIN
+            presenter.setDate(Constants.CATEGORY_AOYIN)
+            category = Constants.CATEGORY_AOYIN
             hideFabMenu()
         }
 

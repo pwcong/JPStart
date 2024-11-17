@@ -8,7 +8,7 @@ import android.preference.PreferenceFragment
 import android.util.Log
 
 import com.github.pwcong.jpstart.R
-import com.github.pwcong.jpstart.constant.Constant
+import com.github.pwcong.jpstart.constants.Constants
 import com.github.pwcong.jpstart.manager.SharedPreferenceManager
 import com.github.pwcong.jpstart.rxbus.RxBus
 import com.github.pwcong.jpstart.rxbus.event.EventContainer
@@ -39,9 +39,9 @@ class SettingFragment : PreferenceFragment() {
 
     private fun initVariable() {
         modeTheme = SharedPreferenceManager.getInstance()
-            .getString(Constant.MODE_THEME, Constant.MODE_DAY)
+            .getString(Constants.MODE_THEME, Constants.MODE_DAY)
         allowConnect = SharedPreferenceManager.getInstance()
-            .getBoolean(Constant.ALLOW_CONNECT_WITHOUT_WIFI, false)
+            .getBoolean(Constants.ALLOW_CONNECT_WITHOUT_WIFI, false)
     }
 
     private fun initPreference() {
@@ -52,7 +52,7 @@ class SettingFragment : PreferenceFragment() {
         mThemesListPreference.onPreferenceChangeListener =
             OnPreferenceChangeListener { preference, newValue ->
                 SharedPreferenceManager.getInstance()
-                    .putString(Constant.MODE_THEME, newValue as String)
+                    .putString(Constants.MODE_THEME, newValue as String)
                 RxBus.getDefault().post(
                     EventContainer(
                         EventContainer.TYPE_SETTING,
@@ -69,7 +69,7 @@ class SettingFragment : PreferenceFragment() {
             OnPreferenceChangeListener { _, newValue ->
                 Log.i(TAG, "onPreferenceChange: $newValue")
                 SharedPreferenceManager.getInstance().putBoolean(
-                    Constant.ALLOW_CONNECT_WITHOUT_WIFI,
+                    Constants.ALLOW_CONNECT_WITHOUT_WIFI,
                     (newValue as Boolean)
                 )
                 RxBus.getDefault().post(

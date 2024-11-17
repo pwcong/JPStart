@@ -14,7 +14,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.github.pwcong.jpstart.manager.ActivityManager
 
 abstract class BaseActivity<T : ViewBinding> : AppCompatActivity() {
-    private lateinit var viewBinding: T
+    lateinit var viewBinding: T
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,20 +25,12 @@ abstract class BaseActivity<T : ViewBinding> : AppCompatActivity() {
         viewBinding = initViewBinding()
         setContentView(viewBinding.root)
 
-        initVariable(savedInstanceState)
-
-        doAction()
-    }
-
-    protected fun getViewBinding(): T {
-        return viewBinding
+        init(savedInstanceState)
     }
 
     protected abstract fun initViewBinding(): T
 
-    protected abstract fun initVariable(savedInstanceState: Bundle?)
-
-    protected abstract fun doAction()
+    protected abstract fun init(savedInstanceState: Bundle?)
 
     override fun onDestroy() {
         super.onDestroy()
@@ -117,9 +109,5 @@ abstract class BaseActivity<T : ViewBinding> : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         ActivityManager.getInstance().setCurrent(this)
-    }
-
-    override fun onPause() {
-        super.onPause()
     }
 }

@@ -16,7 +16,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.blankj.utilcode.util.FileUtils
 import com.github.pwcong.jpstart.R
-import com.github.pwcong.jpstart.constant.Constant
+import com.github.pwcong.jpstart.constants.Constants
 import com.github.pwcong.jpstart.databinding.ActivityAboutBinding
 import com.github.pwcong.jpstart.utils.ActivityUtils
 import rx.Observable
@@ -41,11 +41,11 @@ class AboutActivity : BaseActivity<ActivityAboutBinding>() {
         return ActivityAboutBinding.inflate(layoutInflater)
     }
 
-    override fun initVariable(savedInstanceState: Bundle?) {
-        mRootLayout = getViewBinding().layoutRoot
-        mToolbar = getViewBinding().toolbar
-        mPwcongButton = getViewBinding().root.findViewById(R.id.btn_pwcong)
-        qrcodeImage = getViewBinding().root.findViewById(R.id.img_qrcode)
+    override fun init(savedInstanceState: Bundle?) {
+        mRootLayout = viewBinding.layoutRoot
+        mToolbar = viewBinding.toolbar
+        mPwcongButton = viewBinding.root.findViewById(R.id.btn_pwcong)
+        qrcodeImage = viewBinding.root.findViewById(R.id.img_qrcode)
 
         initToolbar()
         initButton()
@@ -59,7 +59,7 @@ class AboutActivity : BaseActivity<ActivityAboutBinding>() {
     }
 
     private fun initButton() {
-        mPwcongButton.setOnClickListener { ActivityUtils.openUrl(Constant.URL_PWCONG) }
+        mPwcongButton.setOnClickListener { ActivityUtils.openUrl(Constants.URL_PWCONG) }
 
     }
 
@@ -104,9 +104,9 @@ class AboutActivity : BaseActivity<ActivityAboutBinding>() {
             subscriber.onNext(R.string.saving)
 
             try {
-                if (FileUtils.createOrExistsDir(Constant.FILEDIR_ROOT)) {
+                if (FileUtils.createOrExistsDir(Constants.FILEDIR_ROOT)) {
                     val dstFile =
-                        File(Constant.FILEDIR_ROOT, "qrcode_pwcong" + Constant.FILETYPE_PNG)
+                        File(Constants.FILEDIR_ROOT, "qrcode_pwcong" + Constants.FILETYPE_PNG)
                     FileUtils.createOrExistsFile(dstFile)
                     val bitmapDrawable = qrcodeImage.drawable as BitmapDrawable
                     val bitmap = bitmapDrawable.bitmap
@@ -152,8 +152,5 @@ class AboutActivity : BaseActivity<ActivityAboutBinding>() {
             .setIcon(R.drawable.ic_lightbulb_outline_black_24dp)
             .create()
             .show()
-    }
-
-    override fun doAction() {
     }
 }

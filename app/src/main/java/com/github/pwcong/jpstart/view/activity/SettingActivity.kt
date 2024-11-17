@@ -26,7 +26,7 @@ class SettingActivity : BaseActivity<ActivitySettingBinding>() {
         return ActivitySettingBinding.inflate(layoutInflater)
     }
 
-    override fun initVariable(savedInstanceState: Bundle?) {
+    override fun init(savedInstanceState: Bundle?) {
         mRootLayout = getViewBinding().layoutRoot
         mToolbar = getViewBinding().toolbar
 
@@ -43,9 +43,7 @@ class SettingActivity : BaseActivity<ActivitySettingBinding>() {
         }
 
         initToolbar()
-    }
 
-    override fun doAction() {
         fragmentManager.beginTransaction().replace(R.id.content, SettingFragment()).commit()
     }
 

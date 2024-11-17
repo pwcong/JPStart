@@ -1,10 +1,7 @@
 package com.github.pwcong.jpstart.ui.activity
 
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
-import android.view.View
-import android.view.WindowManager
 
 import rx.Observable
 import rx.Subscriber
@@ -23,10 +20,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
         return ActivitySplashBinding.inflate(layoutInflater)
     }
 
-    override fun initVariable(savedInstanceState: Bundle?) {
-    }
-
-    override fun doAction() {
+    override fun init(savedInstanceState: Bundle?) {
         Observable.create<String> { subscriber ->
             subscriber.onStart()
             subscriber.onNext(
@@ -78,16 +72,5 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
                     getViewBinding().tvTips.text = t
                 }
             })
-    }
-
-    private fun hideState() {
-        if (Build.VERSION.SDK_INT < 16) {
-            getWindow().setFlags(
-                WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN
-            )
-        } else {
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN)
-        }
     }
 }

@@ -64,7 +64,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), BaseView.MainActivityV
         return ActivityMainBinding.inflate(layoutInflater)
     }
 
-    override fun initVariable(savedInstanceState: Bundle?) {
+    override fun init(savedInstanceState: Bundle?) {
         presenter = MainActivityPresenterImpl(this)
 
         if (!registered) {
@@ -79,6 +79,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), BaseView.MainActivityV
         initDrawerLayout()
         initNavigationView()
         initBanner()
+
+        presenter.initMainActivity()
     }
 
     private fun initToolbar() {
@@ -139,12 +141,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), BaseView.MainActivityV
 
         mBannerViewPager = view.findViewById<View>(R.id.banner_view_pager) as ViewPager
         mCircleIndicator = view.findViewById<View>(R.id.indicator) as CircleIndicator
-    }
-
-    override fun doAction() {
-        presenter.initMainActivity()
-
-        Log.i(TAG, "doAction: OK")
     }
 
     override fun onBackPressed() {

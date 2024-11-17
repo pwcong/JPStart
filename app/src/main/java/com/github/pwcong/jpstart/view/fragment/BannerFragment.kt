@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import com.bumptech.glide.Glide
-import com.github.pwcong.jpstart.constant.Constant
+import com.github.pwcong.jpstart.constants.Constants
 import com.github.pwcong.jpstart.databinding.FragmentBannerBinding
 import com.github.pwcong.jpstart.mvp.bean.BannerItem
 
@@ -25,7 +25,7 @@ class BannerFragment : BaseFragment<FragmentBannerBinding>() {
     override fun initVariable(savedInstanceState: Bundle?) {
         mImageView = getViewBinding().ivBanner
 
-        banner = requireArguments().getInt(Constant.IMG_BANNER)
+        banner = requireArguments().getInt(Constants.IMG_BANNER)
     }
 
     override fun doAction() {
@@ -35,7 +35,7 @@ class BannerFragment : BaseFragment<FragmentBannerBinding>() {
     companion object {
         fun newInstance(item: BannerItem): BannerFragment {
             val arguments = Bundle()
-            arguments.putInt(Constant.IMG_BANNER, item.banner)
+            arguments.putInt(Constants.IMG_BANNER, item.banner)
             val fragment = BannerFragment()
             fragment.arguments = arguments
 

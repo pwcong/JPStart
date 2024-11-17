@@ -13,7 +13,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.Toolbar
 import com.github.pwcong.jpstart.R
-import com.github.pwcong.jpstart.constant.Constant
+import com.github.pwcong.jpstart.constants.Constants
 import com.github.pwcong.jpstart.databinding.ActivityPuzzleBinding
 import com.github.pwcong.jpstart.manager.SharedPreferenceManager
 import com.github.pwcong.jpstart.mvp.bean.JPItem
@@ -53,7 +53,7 @@ class PuzzleActivity : BaseActivity<ActivityPuzzleBinding>(), PuzzleActivityView
         return ActivityPuzzleBinding.inflate(layoutInflater)
     }
 
-    override fun initVariable(savedInstanceState: Bundle?) {
+    override fun init(savedInstanceState: Bundle?) {
         mToolbar = getViewBinding().root.findViewById(R.id.toolbar)
         mShowTextView = getViewBinding().tvShow
         mCountTextView = getViewBinding().tvCount
@@ -68,6 +68,8 @@ class PuzzleActivity : BaseActivity<ActivityPuzzleBinding>(), PuzzleActivityView
         initToolbar()
         initButton()
         initTextView()
+
+        presenter.initPuzzleActivity()
     }
 
     private fun initToolbar() {
@@ -87,10 +89,6 @@ class PuzzleActivity : BaseActivity<ActivityPuzzleBinding>(), PuzzleActivityView
 
     private fun initTextView() {
         mCountTextView.text = count.toString()
-    }
-
-    override fun doAction() {
-        presenter.initPuzzleActivity()
     }
 
     override fun onClick(v: View) {
@@ -189,8 +187,8 @@ class PuzzleActivity : BaseActivity<ActivityPuzzleBinding>(), PuzzleActivityView
     }
 
     override fun clearCount() {
-        val hs = SharedPreferenceManager.getInstance().getInt(Constant.HIGHEST_SCORE, 0)
-        if (count > hs) SharedPreferenceManager.getInstance().putInt(Constant.HIGHEST_SCORE, count)
+        val hs = SharedPreferenceManager.getInstance().getInt(Constants.HIGHEST_SCORE, 0)
+        if (count > hs) SharedPreferenceManager.getInstance().putInt(Constants.HIGHEST_SCORE, count)
 
         count = 0
         mCountTextView.text = count.toString()

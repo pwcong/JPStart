@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.github.pwcong.jpstart.App
 import com.github.pwcong.jpstart.R
 import com.github.pwcong.jpstart.adapter.JPStartRecyclerAdapter
-import com.github.pwcong.jpstart.constant.Constant
+import com.github.pwcong.jpstart.constants.Constants
 import com.github.pwcong.jpstart.databinding.FragmentJpstartBinding
 import com.github.pwcong.jpstart.manager.GifManager
 import com.github.pwcong.jpstart.manager.SoundPoolManager
@@ -37,7 +37,7 @@ class JPStartFragment : BaseFragment<FragmentJpstartBinding>(), JPStartFragmentV
     override fun initVariable(savedInstanceState: Bundle?) {
         mRecyclerView = getViewBinding().recyclerView
 
-        categoryYin = requireArguments().getInt(Constant.CATEGORY_YIN)
+        categoryYin = requireArguments().getInt(Constants.CATEGORY_YIN)
 
         presenter = JPStartFragmentPresenterImpl(this)
     }
@@ -60,7 +60,7 @@ class JPStartFragment : BaseFragment<FragmentJpstartBinding>(), JPStartFragmentV
             override fun onLongClick(item: JPItem) {
                 val gif = GifManager.getInstance().getJPGif(item.rome)
                 if (gif != null) {
-                    if (App.TYPE_MING == Constant.TYPE_HIRAGANA) {
+                    if (App.TYPE_MING == Constants.TYPE_HIRAGANA) {
                         context?.let {
                             ImageDialog.Builder(it)
                                 .setResId(gif.hiragana)
@@ -92,25 +92,25 @@ class JPStartFragment : BaseFragment<FragmentJpstartBinding>(), JPStartFragmentV
 
     override fun setRecyclerView(type: Int) {
         when (type) {
-            Constant.CATEGORY_QINGYIN -> {
+            Constants.CATEGORY_QINGYIN -> {
                 val layoutManager: RecyclerView.LayoutManager = GridLayoutManager(
                     context,
-                    Constant.COLUMN_QINGYIN
+                    Constants.COLUMN_QINGYIN
                 )
                 mRecyclerView.layoutManager = layoutManager
             }
 
-            Constant.CATEGORY_ZHUOYIN -> {
+            Constants.CATEGORY_ZHUOYIN -> {
                 val layoutManager: RecyclerView.LayoutManager = GridLayoutManager(
                     context,
-                    Constant.COLUMN_ZHUOYIN
+                    Constants.COLUMN_ZHUOYIN
                 )
                 mRecyclerView.layoutManager = layoutManager
             }
 
-            Constant.CATEGORY_AOYIN -> {
+            Constants.CATEGORY_AOYIN -> {
                 val layoutManager: RecyclerView.LayoutManager =
-                    GridLayoutManager(context, Constant.COLUMN_AOYIN)
+                    GridLayoutManager(context, Constants.COLUMN_AOYIN)
                 mRecyclerView.layoutManager = layoutManager
             }
 
@@ -121,7 +121,7 @@ class JPStartFragment : BaseFragment<FragmentJpstartBinding>(), JPStartFragmentV
     companion object {
         fun newInstance(type: Int): JPStartFragment {
             val argument = Bundle()
-            argument.putInt(Constant.CATEGORY_YIN, type)
+            argument.putInt(Constants.CATEGORY_YIN, type)
 
             val fragment = JPStartFragment()
             fragment.arguments = argument
